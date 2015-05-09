@@ -1,0 +1,8 @@
+<aspectj>
+   <aspects>
+     <!-- declare two existing aspects to the weaver -->
+    </aspects>
+   <weaver options="-verbose -Xset:weaveJavaxPackages=true">
+     <include within="com.shiva..*"/>
+   </weaver>
+ </aspectj>

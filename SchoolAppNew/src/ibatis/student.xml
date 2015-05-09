@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN"  "http://www.iBATIS.com/dtd/sql-map-2.dtd">
+
+<sqlMap>
+	<resultMap id="Student" class="com.shiva.entity.Student">
+		<result property="rollno" column="roll_no" />
+		<result property="studentName" column="student_name" />
+		<result property="classs" column="class" />
+		<result property="section" column="section" />
+		<result property="medium" column="medium" />
+		<result property="fees" column="fees" />
+		<result property="mobileNo" column="mobile_no" />
+	</resultMap>
+
+	<!-- UserDao -->
+
+	<select id="authenticateUser" parameterClass="java.util.Map" resultClass="string">
+		select u.u_id from user u where u.u_login=#u_login# and u_password=#u_password#
+	</select>
+
+	<!-- StudentDao -->
+
+	<select id="isStudentExists" parameterClass="string"
+		resultClass="int">
+		select u_id from Student where u_login=#u_login#
+	</select>
+
+	<insert id="createStudent" parameterClass="java.util.Map">
+		insert into student(rollNo, studentName,classs, section, medium, fees,
+		mobileNo) values (#rollNo#, #name#,#classs#, #section#, #medium#,
+		#fees#, #mobileno#)
+		<selectKey resultClass="int" keyProperty="id">
+			select last_insert_id() as id
+		</selectKey>
+	</insert>
+
+	<delete id="deleteAllStudents">
+		delete from Student where u_id not in (0, 10, 100,
+		1000) and u_mgr_id not in (10, 1000)
+	</delete>
+
+	<select id="getStudents" resultMap="Student">
+		select *,
+		aes_decrypt(u_password, u_login) as u_pwd, aes_decrypt(u_ssn, u_login)
+		as u_s_ssn from Student where u_id not in (0, 10, 100, 1000) and
+		u_mgr_id not in (10, 1000)
+	</select>
+
+	<select id="getStudentByStudentname" parameterClass="string"
+		resultMap="Student">
+		select *, aes_decrypt(u_password, u_login) as u_pwd,
+		aes_decrypt(u_ssn, u_login) as u_s_ssn from Student where
+		u_login=#u_login#
+	</select>
+
+	<select id="getStudentById" parameterClass="int" resultMap="Student">
+		select *, aes_decrypt(u_password, u_login) as u_pwd,
+		aes_decrypt(u_ssn, u_login) as u_s_ssn from Student where u_id=#u_id#
+	</select>
+
+	<select id="getStudentByEmailId" parameterClass="string"
+		resultMap="Student">
+		select *, aes_decrypt(u_password, u_login) as u_pwd,
+		aes_decrypt(u_ssn, u_login) as u_s_ssn from Student where
+		u_email=#u_email#
+	</select>
+
+	<select id="getManagerId" parameterClass="int" resultClass="int">
+		select u_mgr_id from Student where u_id=#u_id#
+	</select>
+
+	<select id="getMgrId" parameterClass="String" resultClass="int">
+		select u_id from Student where u_login=#u_login#
+	</select>
+
+	<select id="getStudentsForManager" parameterClass="int"
+		resultClass="int">
+		select u_id from Student where u_mgr_id=#u_mgr_id#
+	</select>
+
+	<select id="getEmployeesWithAlerts" resultClass="string">
+		select distinct
+		u_login from Student u, process_instance pi where
+		pi.pi_subject_id=u.u_id and pi.pi_status not in (1) and pi.p_id in
+		(1,3,4)
+	</select>
+
+	<select id="getManagersWithAlerts" resultClass="string">
+		select
+		distinct u_login from Student u, process_instance pi where
+		pi.pi_owner_id=u.u_id and pi.pi_status not in (1)
+	</select>
+
+	<select id="isManager" parameterClass="string" resultClass="int">
+		select u_mgr_id from Student where u_login=#u_login#
+	</select>
+
+	<select id="getStudentId" parameterClass="string" resultClass="int">
+		select u_id from Student where u_login=#u_login#
+	</select>
+
+	<select id="getStudentname" parameterClass="int" resultClass="string">
+		select u_login from Student where u_id=#u_id#
+	</select>
+
+	<select id="getMgrIdByStudentId" parameterClass="int"
+		resultClass="int">
+		select u_mgr_id from Student where u_id=#u_id#
+	</select>
+
+	<select id="getMgrIdByStudentname" parameterClass="string"
+		resultClass="int">
+		select u_mgr_id from Student where u_login=#u_login#
+	</select>
+
+	<select id="getStudentsMap" resultClass="java.util.HashMap">
+		select *,
+		aes_decrypt(u_password, u_login) as u_pwd, aes_decrypt(u_ssn, u_login)
+		as u_s_ssn from Student where u_id not in (0, 10, 100, 1000) and
+		u_mgr_id not in (10, 1000)
+	</select>
+
+	<select id="getStudentnameByTaskId_ProcessId" parameterClass="java.util.Map"
+		resultClass="string">
+		select u.u_login from step_instance si join
+		process_instance pi join Student u where si.si_task_id=#si_task_id#
+		and pi.pi_id=#pi_id# and si.pi_id = pi.pi_id and
+		pi.pi_subject_id=u.u_id
+	</select>
+
+	<select id="getStudentMap" parameterClass="String" resultClass="java.util.HashMap">
+		select *, aes_decrypt(u_password, u_login) as u_pwd,
+		aes_decrypt(u_ssn, u_login) as u_s_ssn from Student where
+		u_login=#u_login#
+	</select>
+
+	<update id="updateStudentMap" parameterClass="java.util.Map">
+		<!-- update Student set u_login=#u_login#, u_first_name=#u_first_name#, 
+			u_last_name=#u_last_name#, u_mgr_id=#u_mgr_id#, u_email=#u_email#, u_homePhone=#u_homePhone#, 
+			u_workPhone=#u_workPhone#, u_mobilePhone=#u_mobilePhone#, u_middle_initial=#u_middle_initial#, 
+			u_address_line1=#u_address_line1#, u_address_line2=#u_address_line2#, u_address_city=#u_address_city#, 
+			u_address_state=#u_address_state#, u_address_zip=#u_address_zip#, u_marital_status=#u_marital_status#, 
+			u_date_of_birth=#u_date_of_birth#, u_contact_name=#u_contact_name#, u_eme_address1=#u_eme_address1#, 
+			u_eme_address2=#u_eme_address2#, u_eme_city=#u_eme_city#, u_eme_state=#u_eme_state#, 
+			u_eme_zip=#u_eme_zip#, u_eme_country=#u_eme_country#, u_eme_primary_ph=#u_eme_primary_ph#, 
+			u_eme_alternate_ph=#u_eme_alternate_ph#, u_eme_contact_relation=#u_eme_contact_relation#, 
+			u_preferred_first_name=#u_preferred_first_name#, u_gender=#u_gender#, u_job_title=#u_job_title#, 
+			u_job_location=#u_job_location#, u_address_country=#u_address_country#, u_preferred_last_name=#u_preferred_last_name#, 
+			u_pers_email=#u_pers_email# where u_id=#u_id# -->
+		update Student set u_login=#u_login#, u_first_name=#u_first_name#,
+		u_last_name=#u_last_name#, u_mgr_id=#u_mgr_id#, u_email=#u_email#,
+		u_homePhone=#u_homePhone#, u_workPhone=#u_workPhone#,
+		u_mobilePhone=#u_mobilePhone#, u_middle_initial=#u_middle_initial#,
+		u_address_line1=#u_address_line1#, u_address_line2=#u_address_line2#,
+		u_address_city=#u_address_city#, u_address_state=#u_address_state#,
+		u_address_zip=#u_address_zip#, u_marital_status=#u_marital_status#,
+		u_date_of_birth=#u_date_of_birth#, u_contact_name=#u_contact_name#,
+		u_eme_address1=#u_eme_address1#, u_eme_address2=#u_eme_address2#,
+		u_eme_city=#u_eme_city#, u_eme_state=#u_eme_state#,
+		u_eme_zip=#u_eme_zip#, u_eme_country=#u_eme_country#,
+		u_eme_primary_ph=#u_eme_primary_ph#,
+		u_eme_alternate_ph=#u_eme_alternate_ph#,
+		u_eme_contact_relation=#u_eme_contact_relation#,
+		u_preferred_first_name=#u_preferred_first_name#, u_gender=#u_gender#,
+		u_job_title=#u_job_title#, u_job_location=#u_job_location#,
+		u_address_country=#u_address_country#,
+		u_preferred_last_name=#u_preferred_last_name#,
+		u_pers_email=#u_pers_email#
+		<isNotNull property="u_ssn">,u_ssn=aes_encrypt(#u_ssn#, u_login)
+		</isNotNull>
+		where u_id=#u_id#
+	</update>
+
+</sqlMap>
