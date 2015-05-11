@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="EN" lang="EN"
 	dir="ltr">
 <head profile="http://gmpg.org/xfn/11">
-<title>Sri Narayana Olympiod School-Fee Registration</title>
+<title>Sri Narayana Olympiod School-Student Registration</title>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
 <meta http-equiv="imagetoolbar" content="no" />
 <link rel="stylesheet" href="resources/styles/layout.css" type="text/css" />
@@ -10,6 +10,11 @@
 <script type="text/javascript" src="resources/scripts/jquery.slidepanel.setup.js"></script>
 <script type="text/javascript" src="resources/scripts/jquery.cycle.min.js"></script>
 <script type="text/javascript" src="resources/scripts/jquery.cycle.setup.js"></script>
+<script>
+			$(function() {
+				$("#datepicker").datepicker();
+			});
+		</script>
 </head>
 <body>
 
@@ -40,21 +45,17 @@
 				details.</p>
 				<p align="left"><a href="student.do"><input type="button" name="add" value="BACK" ></input></a></p>
 			<table>
-			<tr>
-					<td align="right"><label for="name">Roll Number*: </label></td>
-					<td><input id="rollno" name="rollno" type="text" /></td>
-				</tr>
 				<tr>
 					<td align="right"><label>First Name*: </label></td>
-					<td><input id="name" name="studentFirstName" type="text" /></td>
+					<td><input id="studentFirstName" name="studentFirstName" type="text" /></td>
 				</tr>
 				<tr>
 					<td align="right"><label>Last Name*: </label></td>
-					<td><input id="name" name="studentLastName" type="text" /></td>
+					<td><input id="studentLastName" name="studentLastName" type="text" /></td>
 				</tr>
 				
 				<tr>
-					<td align="right"><label for="name">Class*: </label></td>
+					<td align="right"><label>Class*: </label></td>
 					<td><select name="classs">
 							<option value="lkg">lkg</option>
 							<option value="ukg">ukg</option>
@@ -72,9 +73,8 @@
 				</tr>
 
 				<tr>
-					<td align="right"><label for="name">Section*: </label></td>
-
-					<td><select name="section">
+					<td align="right"><label>Section*: </label></td>
+                    <td><select name="section">
 							<option value="A">A</option>
 							<option value="B">B</option>
 					</select></td>
@@ -82,7 +82,7 @@
 				</tr>
 
 				<tr>
-					<td align="right"><label for="medium">Medium*: </label></td>
+					<td align="right"><label>Medium*: </label></td>
 					<td><select name="medium">
 							<option value="English">English</option>
 							<option value="Telugu">Telugu</option>
@@ -90,35 +90,35 @@
 				</tr>
                  <tr>
 					<td align="right"><label>Father's Name*: </label></td>
-					<td><input id="name" name="studentFatherName" type="text" /></td>
+					<td><input id="studentFatherName" name="studentFatherName" type="text" /></td>
 				</tr>
 				<tr>
 					<td align="right"><label>Mother's Name*: </label></td>
-					<td><input id="name" name="studentMotherName" type="text" /></td>
+					<td><input id="studentMotherName" name="studentMotherName" type="text" /></td>
 				</tr>
 				<tr>
 					<td align="right"><label>Date of birth*: </label></td>
-					<td><input id="name" name="studentDob" type="text" /></td>
+					<td><input id="datepicker" name="studentDob" type="text" /></td>
 				</tr>
 				<tr>
 					<td align="right"><label>Cast*: </label></td>
-					<td><input id="mobileNo" name="cast" type="text" /></td>
+					<td><input id="cast" name="cast" type="text" /></td>
 				</tr>
 				<tr>
 					<td align="right"><label>Religion*: </label></td>
-					<td><input id="mobileNo" name="religion" type="text" /></td>
+					<td><input id="religion" name="religion" type="text" /></td>
 				</tr>
 				<tr>
 					<td align="right"><label>Mobile Number*: </label></td>
 					<td><input id="mobileNo" name="mobileNo" type="text" /></td>
 				</tr>
 				<tr>
-					<td align="right"><label>Village*: </label></td>
-					<td><input id="mobileNo" name="village" type="text" /></td>
+					<td align="right"><label>Address*: </label></td>
+					<td><input id="village" name="village" type="text" /></td>
 				</tr>
 				<tr>
 					<td align="right"><label>Gender*: </label></td>
-					<td><input id="mobileNo" name="gender" type="text" /></td>
+					<td><input id="gender" name="gender" type="text" /></td>
 				</tr>
 				<tr>
 					<td align="right"><label for="fee">Fee Pay*: </label></td>
@@ -126,7 +126,7 @@
 				</tr>
 				<tr>
 					<td align="right"><label for="fee">Date of Joinee*: </label></td>
-					<td><input id="fee" name="dateOfJoinee" type="text" /></td>
+					<td><input id="datepicker" name="dateOfJoinee" type="text" /></td>
 				</tr>
 				<tr>
 					<td align="right"><input name="Submit" type="submit"

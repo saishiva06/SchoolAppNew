@@ -60,12 +60,10 @@ public class TeacherController {
 			String experience = request.getParameter("experience");
 			String dob = request.getParameter("dob");
 			String caste = request.getParameter("caste");
-			String religion = request.getParameter("religion");
 			String mobileNo = request.getParameter("mobileNo");
 			String village = request.getParameter("village");
 			String gender = request.getParameter("gender");
-
-			SimpleDateFormat sdf = new SimpleDateFormat("MM/dd/yyyy");
+            SimpleDateFormat sdf = new SimpleDateFormat("MM/dd/yyyy");
 			SimpleDateFormat output = new SimpleDateFormat(
 					"yyyy-MM-dd HH:mm:ss");
 			Date d = null;

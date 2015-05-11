@@ -30,12 +30,11 @@ public class StudentDaoImpl extends SqlMapClientDaoSupport implements StudentDao
 	}
 
 	@Override
-	public int createStudent(String rollNo, String studentFirstName,String studentLastName, String studentClass, String section, String medium,
+	public int createStudent(String studentFirstName,String studentLastName, String studentClass, String section, String medium,
 			String studentFatherName,String studentMotherName, String dob, String caste, String religion,String phoneNumber,
 			String village,String gender, String fees, String doj,int status) { 
 		// TODO Auto-generated method stub
 		Map<String, Object> paramsMap = new HashMap<String, Object>();
-		paramsMap.put("rollNo", rollNo);
 		paramsMap.put("student_first_name", studentFirstName);
 		paramsMap.put("student_last_name", studentLastName);
 		paramsMap.put("class", studentClass);
@@ -43,10 +42,10 @@ public class StudentDaoImpl extends SqlMapClientDaoSupport implements StudentDao
 		paramsMap.put("medium", medium);
 		paramsMap.put("student_father_name", studentFatherName);
 		paramsMap.put("student_mother_name", studentMotherName);
-		paramsMap.put("student_dob", studentClass);
-		paramsMap.put("student_caste", section);
-		paramsMap.put("student_religion", medium);
-		paramsMap.put("student_phone_num", section);
+		paramsMap.put("student_dob", dob);
+		paramsMap.put("student_caste", caste);
+		paramsMap.put("student_religion", religion);
+		paramsMap.put("student_phone_num", phoneNumber);
 		paramsMap.put("student_village", village);
 		paramsMap.put("student_gender", gender);
 		paramsMap.put("student_fees", fees);
@@ -77,6 +76,7 @@ public class StudentDaoImpl extends SqlMapClientDaoSupport implements StudentDao
 		try {
 			resultList = template.queryForList("getStudents");
 		} catch (Exception ex) {
+			System.out.println(ex.getMessage());
 			//log.error("StudentDao:getStudents::" + ex.getMessage());
 		} finally {
 			return resultList;
@@ -90,7 +90,7 @@ public class StudentDaoImpl extends SqlMapClientDaoSupport implements StudentDao
 			 String rollNo = Student.getRollno();
 			 String studentFirstName=Student.getStudentFirstName();
 			 String studentLastName=Student.getStudentFirstName();
-			 String classs=Student.getClasss();
+			 String classs=Student.getStudentClass();
              String section=Student.getSection();
              String medium=Student.getMedium();
              String studentFatherName = Student.getStudentFatherName();
@@ -101,7 +101,7 @@ public class StudentDaoImpl extends SqlMapClientDaoSupport implements StudentDao
              String phoneNumber = Student.getPhoneNumber();
              String village = Student.getVillage();
              String gender = Student.getGender();
-             Double fees = Student.getFees();
+             String fees = Student.getFees();
              String doj = Student.getDoj();
              int status = Student.getStatus();
             Student resultStudent = new Student(rollNo,  studentFirstName, studentLastName,  classs,  section,  medium, studentFatherName, studentMotherName,  dob,  caste,  religion, phoneNumber, village, gender, fees,  doj,status);
@@ -113,13 +113,13 @@ public class StudentDaoImpl extends SqlMapClientDaoSupport implements StudentDao
 	}
 
 	@Override
-	public Student getStudentById(int StudentId) {
+	public Student getStudentById(String StudentId) {
 		try {
 			Student Student = (Student) template.queryForObject("getStudentByStudentname", StudentId);
 			 String rollNo = Student.getRollno();
 			 String studentFirstName=Student.getStudentFirstName();
 			 String studentLastName=Student.getStudentFirstName();
-			 String classs=Student.getClasss();
+			 String classs=Student.getStudentClass();
             String section=Student.getSection();
             String medium=Student.getMedium();
             String studentFatherName = Student.getStudentFatherName();
@@ -130,7 +130,7 @@ public class StudentDaoImpl extends SqlMapClientDaoSupport implements StudentDao
             String phoneNumber = Student.getPhoneNumber();
             String village = Student.getVillage();
             String gender = Student.getGender();
-            Double fees = Student.getFees();
+            String fees = Student.getFees();
             String doj = Student.getDoj();
             int status = Student.getStatus();
             Student resultStudent = new Student(rollNo,  studentFirstName, studentLastName,  classs,  section,  medium, studentFatherName, studentMotherName,  dob,  caste,  religion, phoneNumber, village, gender, fees,  doj,status);
@@ -194,5 +194,15 @@ public class StudentDaoImpl extends SqlMapClientDaoSupport implements StudentDao
     	}
 	}
 
+	@Override
+	public boolean deleteStudent(String StudentId) {
+		try {
+			int result = template.delete("deleteStudent",StudentId);
+			return result != -1 ? true : false;
+		} catch (Exception ex) {
+			// log.error("TeacherDao:deleteAllTeachers::" + ex.getMessage());
+			return false;
+		}
+	}
 	
 }

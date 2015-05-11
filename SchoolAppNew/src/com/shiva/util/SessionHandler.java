@@ -17,7 +17,7 @@ public class SessionHandler extends HandlerInterceptorAdapter implements HttpSes
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler)
     throws Exception {
 		
-		String user_mail = (String)request.getSession().getAttribute("user_name");
+		/*String user_mail = (String)request.getSession().getAttribute("user_name");
 			
 		if(user_mail != null){
 			return true;
@@ -25,7 +25,8 @@ public class SessionHandler extends HandlerInterceptorAdapter implements HttpSes
 			 String errorMsg = "YOUR SESSION HAS EXPIRED AND YOU NEED TO RE-LOGIN!";
 			 redirect(request, response, "/index.do?errorMsg="+errorMsg);
 		return false;
-	}
+	}*/
+		return true;
 	}
 		
 	

@@ -29,6 +29,17 @@ public class LoginController {
 		return new ModelAndView("index");
 	}
 
+	@RequestMapping("/admin")
+	public ModelAndView loadAdmin() throws Exception {
+		return new ModelAndView("admin");
+	}
+	
+	//for page display temporary @venu     
+	@RequestMapping("/noticeboard")
+	public ModelAndView loadNoticeboard() throws Exception {
+		return new ModelAndView("noticeboard");
+	}
+	
 	@RequestMapping("/login.do")
 	public ModelAndView checkLogin(HttpServletRequest request) throws Exception {
 		String userName = request.getParameter("teachername");

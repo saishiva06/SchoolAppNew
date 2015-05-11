@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="EN" lang="EN"
 	dir="ltr">
 <head profile="http://gmpg.org/xfn/11">
-<title>Sri Narayana Olympiod School-Fee Registration</title>
+<title>Sri Narayana Olympiod School-Teacher Registration</title>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
 <meta http-equiv="imagetoolbar" content="no" />
 <link rel="stylesheet" href="resources/styles/layout.css"
@@ -95,20 +95,20 @@
 					<td><input id="caste" name="caste" type="text" /></td>
 				</tr>
 				<tr>
-					<td align="right"><label>Religion*: </label></td>
-					<td><input id="religion" name="religion" type="text" /></td>
-				</tr>
-				<tr>
 					<td align="right"><label>Mobile Number*: </label></td>
 					<td><input id="mobileNo" name="mobileNo" type="text" /></td>
 				</tr>
 				<tr>
-					<td align="right"><label>Village*: </label></td>
+					<td align="right"><label>Address*: </label></td>
 					<td><input id="village" name="village" type="text" /></td>
 				</tr>
 				<tr>
 					<td align="right"><label>Gender*: </label></td>
-					<td><input id="gender" name="gender" type="text" /></td>
+					<td><select name="classs">
+							<option value="Male">male</option>
+							<option value="Female">female</option>
+					</select>
+					</td>
 				</tr>
 
 				<tr>

@@ -2,10 +2,10 @@ package com.shiva.entity;
 
 public class Student {
 
+	private String rollno;
 	private String studentFirstName;
 	private String studentLastName;
-	private String studentName;
-	private String classs;
+	private String studentClass;
 	private String section;
 	private String medium;
 	private String studentFatherName;
@@ -16,19 +16,19 @@ public class Student {
 	private String phoneNumber;
 	private String village;
 	private String gender;
-	private double fees;
+	private String fees;
 	private String doj;
 	private int status;
 
 	public Student(String rollno, String studentFirstName,
-			String studentLastName, String classs, String section,
+			String studentLastName, String studentClass, String section,
 			String medium, String studentFatherName, String studentMotherName,
 			String dob, String caste, String religion, String phoneNumber,
-			String village, String gender, Double fees, String doj, int status) {
+			String village, String gender, String fees, String doj, int status) {
 		// TODO Auto-generated constructor stub
 	}
 
-	private String rollno;
+	
 
 	public String getRollno() {
 		return rollno;
@@ -54,12 +54,12 @@ public class Student {
 		this.studentLastName = studentLastName;
 	}
 
-	public String getClasss() {
-		return classs;
+	public String getStudentClass() {
+		return studentClass;
 	}
 
-	public void setClasss(String classs) {
-		this.classs = classs;
+	public void setStudentClass(String studentClass) {
+		this.studentClass = studentClass;
 	}
 
 	public String getSection() {
@@ -142,11 +142,11 @@ public class Student {
 		this.gender = gender;
 	}
 
-	public double getFees() {
+	public String getFees() {
 		return fees;
 	}
 
-	public void setFees(double fees) {
+	public void setFees(String fees) {
 		this.fees = fees;
 	}
 
@@ -164,14 +164,6 @@ public class Student {
 
 	public void setStatus(int status) {
 		this.status = status;
-	}
-
-	public String getStudentName() {
-		return studentName;
-	}
-
-	public void setStudentName(String studentName) {
-		this.studentName = studentName;
 	}
 
 }

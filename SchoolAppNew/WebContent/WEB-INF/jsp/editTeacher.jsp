@@ -11,7 +11,7 @@ Teacher teacher = (Teacher)request.getAttribute("teacher");
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="EN" lang="EN"
 	dir="ltr">
 <head profile="http://gmpg.org/xfn/11">
-<title>Sri Narayana Olympiod School-Fee Registration</title>
+<title>Sri Narayana Olympiod School-Teacher Details</title>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
 <meta http-equiv="imagetoolbar" content="no" />
 <link rel="stylesheet" href="resources/styles/layout.css"

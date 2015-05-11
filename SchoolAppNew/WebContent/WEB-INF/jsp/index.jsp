@@ -11,82 +11,78 @@
 <script type="text/javascript" src="resources/scripts/jquery.cycle.setup.js"></script>
 </head>
 <body>
-<!-- ####################################################################################################### -->
+
+<!-- Header -->
 <div class="wrapper col1">
   <div id="header">
     <div id="logo">
-      <!-- <h1><a href="#">Sri Narayana Olympiod School</a></h1> -->
-      <p><img src="resources/images/logo.jpg" alt="" /></p>
+      <p><img src="resources/images/logo.jpg" alt="" />Sri Narayana Olympiod School</p>
     </div>
-    <!-- <div id="topnav">
+    <div id="topnav">
       <ul>
-        <li class="active"><a href="index1.html">Home</a></li>
-        <li><a href="feeRegistration.jsp">Fee Registration</a></li>
-        <li><a href="full-width.html">Full Width</a></li>
-        <li><a href="#">Link Text</a></li>
-        <li class="last"><a href="#">A Long Link Text</a></li>
+       <li class="active"><a href="#">Home</a></li>
+        <li ><a href="admin.do">Admin</a></li>
+        <li><a href="noticeboard.do">NoticeBoard</a></li>
       </ul>
-    </div> -->
+    </div>
     <br class="clear" />
   </div>
 </div>
-<!-- ####################################################################################################### -->
+<!-- Header -- End>
+
+<!-- Slide -->
 <div class="wrapper col2">
   <div id="featured_slide">
-    <div class="featured_box"><a href="#"><img src="resources/images/Education.jpg" alt="" /></a>
+    <div class="featured_box"><a href="#"><img src="resources/images/images.jpg" alt="" /></a>
       <div class="floater">
         <h2>1. School Activities</h2>
-        <p>Orcimagna rhoncus et a nec antesque sed temportor pellus nibh conseque. Accumstsemper wisi pretium feugiat non ut eleifendrerisque at et condisse sce. Iaculumorci congue nam mollis odio id cras orci vestique euisquet at. Donecconsectetus lacilis ac pellus nam nibh curabitur sed anterdum nectetus adipis. Pretiummagnisse antes nunc pretium convallis tincidunt non at rutrumt.</p>
+        <p>We have good experienced faculty.</p>
         <p class="readmore"><a href="#">Continue Reading &raquo;</a></p>
       </div>
     </div>
     <div class="featured_box"><a href="#"><img src="resources/images/images.jpg" alt="" /></a>
       <div class="floater">
         <h2>2. School Grades</h2>
-        <p>Duisvest lacus pellus purus temper maurisus et sodalesuada loreet sapiente et. Quissociis magnisl orci dui nulla ut antesque malesuada sed pede et. Idlacus ridiculisi nec cursus enim ac tur urnar nunc pellus pellenterdum. Necelisi aliquat curabiturpiscing semportortor sed et velit convallis quat adipiscing cursus. Rutrumeget id ipsum et sed maurisuspendimentum auctor siti.</p>
-        <p class="readmore"><a href="#">Continue Reading &raquo;</a></p>
-      </div>
-    </div>
-    <div class="featured_box"><a href="#"><img src="resources/images/school1.jpg" alt="" /></a>
-      <div class="floater">
-        <h2>3. School Address</h2>
-        <p>Pharetiumurna habitur et enim pellentesque phasellus aliquam nunc quis justo nam. Lobortororci dapibulum ac intesquet ut id sed intesque nec alique congue. Liberoaenec vest maurisus libero pede nisl ligula cursus vitae dis metus. Aeneanaccumsan orci nasce ac pulvinare enim tor quis antesque cumsan in. Justomontesque sem ac dolor iaculum dolor orci elit lacus et vestibulum.</p>
+        <p>For All 10th Class students 100% Pass guarantee and A grade</p>
         <p class="readmore"><a href="#">Continue Reading &raquo;</a></p>
       </div>
     </div>
   </div>
-   <div class="wrapper col2">
-   <div class="featured_box">
-        <h2>Login Here</h2>
-        <form action="login.do" method="post">
-          <fieldset>
-          <table>
-           <tr>
-           <td>
-            <label for="teachername">Username:
-             </td><td> <input type="text" name="teachername" id="teachername" value="" />
-            </td></label></tr>
-           <tr><td> <label for="teacherpass">Password:</td><td>
-              <input type="password" name="teacherpass" id="teacherpass" value="" />
-            </label></td></tr>
-           <tr><td> <label for="teacherremember">
-             <input class="checkbox" type="checkbox" name="teacherremember" id="teacherremember" checked="checked" />
-              Remember me</label></td>
-             <td><input type="submit" name="teacherlogin" id="teacherlogin" value="Login" /></td></tr>
-           </table>
-          </fieldset>
-          
-        </form>
-       
-      </div>
-      </div>
 </div>
-<!-- ####################################################################################################### -->
+<!-- Slide End -->
+
+<div class="wrapper col3">
+  <div id="homecontent">
+    <div class="fl_left">
+      <div class="column2">
+        <ul>
+          <li>
+            <h2>About Staff </h2>
+            <div class="imgholder"><img src="resources/images/logo.jpg" alt="" /></div>
+            <p>We have well experienced and well qualified staff.</p>
+            <p>Urnau ltrices quis curabitur pha sellent esque congue magnisve stib ulum quismodo nulla et feugiat. Adipisciniap ellentum leo ut consequam.</p>
+            <p class="readmore"><a href="#">Continue Reading &raquo;</a></p>
+          </li>
+          <li class="last">
+            <h2>-Student Corner-</h2>
+            <div class="imgholder"><img src="resources/images/logo.jpg" alt="" /></div>
+            <p>Our Students got so many awards in many competetions.</p>
+            <p>Urnau ltrices quis curabitur pha sellent esque congue magnisve stib ulum quismodo nulla et feugiat. Adipisciniap ellentum leo ut consequam.</p>
+            <p class="readmore"><a href="#">Continue Reading &raquo;</a></p>
+          </li>
+        </ul>
+        <br class="clear" />
+      </div>
+     
+    </div>
+    
+    <br class="clear" />
+  </div>
+</div>
+
 <div class="wrapper col5">
   <div id="copyright">
-    <p class="fl_left">Copyright &copy; 2014 - All Rights Reserved - <a href="#">Sharadha Education</a></p>
-    <!-- <p class="fl_right">Template by <a href="http://www.os-templates.com/" title="Free Website Templates">OS Templates</a></p>
-    <br class="clear" /> -->
+    <p class="fl_left">Copyright &copy; 2015 - All Rights Reserved - <a href="#">Sri Narayana Olympiod School</a></p>
   </div>
 </div>
 </body>

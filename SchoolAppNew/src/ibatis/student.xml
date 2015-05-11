@@ -3,13 +3,23 @@
 
 <sqlMap>
 	<resultMap id="Student" class="com.shiva.entity.Student">
-		<result property="rollno" column="roll_no" />
-		<result property="studentName" column="student_name" />
-		<result property="classs" column="class" />
+		<result property="rollno" column="roll_num" />
+		<result property="studentFirstName" column="student_fisrt_name" />
+		<result property="studentLastName" column="student_last_name" />
+		<result property="studentClass" column="class" />
 		<result property="section" column="section" />
 		<result property="medium" column="medium" />
+		<result property="studentFatherName" column="student_father_name" />
+		<result property="studentMotherName" column="student_mother_name" />
+		<result property="dob" column="student_dob" />
+		<result property="caste" column="student_caste" />
+		<result property="religion" column="student_religion" />
+		<result property="phoneNumber" column="student_phone_num" />
+		<result property="village" column="student_village" />
+		<result property="gender" column="student_gender" />
 		<result property="fees" column="fees" />
-		<result property="phoneNumber" column="mobile_no" />
+		<result property="doj" column="student_doj" />
+		<result property="status" column="student_status" />
 	</resultMap>
 	
 	<resultMap id="Teacher" class="com.shiva.entity.Teacher">
@@ -79,9 +89,7 @@
 	</select>
 
 	<insert id="createStudent" parameterClass="java.util.Map">
-		insert into student(rollNo, studentName,classs, section, medium, fees,
-		mobileNo) values (#rollNo#, #name#,#classs#, #section#, #medium#,
-		#fees#, #mobileno#)
+		insert into student(student_fisrt_name,student_last_name,class, section, medium, student_father_name,student_mother_name,student_dob,student_caste,student_religion,student_phone_num,student_village,student_gender,fees,student_doj,student_status) values (#student_fisrt_name#,#student_last_name#,#class#,#section#,#medium#,#student_father_name#,#student_mother_name#,#student_dob#,#student_caste#,#student_religion#,#student_phone_num#,#student_village#,#student_gender#,#fees#,#student_doj#,#student_status#)
 		<selectKey resultClass="int" keyProperty="id">
 			select
 			last_insert_id() as id
@@ -94,10 +102,7 @@
 	</delete>
 
 	<select id="getStudents" resultMap="Student">
-		select *,
-		aes_decrypt(u_password, u_login) as u_pwd, aes_decrypt(u_ssn, u_login)
-		as u_s_ssn from Student where u_id not in (0, 10, 100, 1000) and
-		u_mgr_id not in (10, 1000)
+		select s.* from student s
 	</select>
 
 	<select id="getStudentByStudentname" parameterClass="string"
@@ -226,4 +231,7 @@
 		where u_id=#u_id#
 	</update>
 
+<delete id="deleteStudent">
+		delete from student where student_rollno=#StudentId#
+	</delete>
 </sqlMap>
