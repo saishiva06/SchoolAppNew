@@ -104,36 +104,7 @@
 	</fieldset>
 
 
-	<!-- ***************************************************** -->
-	<div class="wrapper col4">
-		<div id="footer">
-			<div class="footbox">
-				<h2>School Activities</h2>
-				<ul>
-					<li><a href="#">Lorem ipsum dolor</a></li>
-					<li><a href="#">Suspendisse in neque</a></li>
-					<li><a href="#">Praesent et eros</a></li>
-					<li><a href="#">Lorem ipsum dolor</a></li>
-					<li><a href="#">Suspendisse in neque</a></li>
-					<li class="last"><a href="#">Praesent et eros</a></li>
-				</ul>
-			</div>
 
-
-			<div class="footbox last">
-				<h2>Games Zone</h2>
-				<ul>
-					<li><a href="#">Lorem ipsum dolor</a></li>
-					<li><a href="#">Suspendisse in neque</a></li>
-					<li><a href="#">Praesent et eros</a></li>
-					<li><a href="#">Lorem ipsum dolor</a></li>
-					<li><a href="#">Suspendisse in neque</a></li>
-					<li class="last"><a href="#">Praesent et eros</a></li>
-				</ul>
-			</div>
-			<br class="clear" />
-		</div>
-	</div>
 	<!--************************************************ -->
 	<div class="wrapper col5">
 		<div id="copyright">

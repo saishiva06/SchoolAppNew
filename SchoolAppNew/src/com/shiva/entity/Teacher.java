@@ -3,46 +3,26 @@ package com.shiva.entity;
 public class Teacher {
 
 	private String teacherId;
-	
-	private String teacherFirstName;
-    private String teacherLastName;
-    private String qualification;
-    private String exp;
-    private String subject;
-    private String dob;
-    private String caste;
-   private String phoneNumber;
-    private String village;
-    private String gender;
-    private String doj;
-    private int status;
-    
-   public Teacher(String teacherId, String teacherFirstName,String teacherLastName, String qualification, String exp, String subject, String dob, String caste, String phoneNumber,String village,String gender, String doj,int status) {
-		// TODO Auto-generated constructor stub
-	}
-	
-   public String getTeacherId() {
+	private String firstName;
+	private String lastName;
+	private String qualification;
+	private String exp;
+	private String subject;
+	private String dob;
+	private String caste;
+	private String religion;
+	private String phoneNumber;
+	private String village;
+	private String gender;
+	private String doj;
+	private int status;
+
+	public String getTeacherId() {
 		return teacherId;
 	}
 
 	public void setTeacherId(String teacherId) {
 		this.teacherId = teacherId;
-	}
-
-	public String getTeacherFirstName() {
-		return teacherFirstName;
-	}
-
-	public void setTeacherFirstName(String teacherFirstName) {
-		this.teacherFirstName = teacherFirstName;
-	}
-
-	public String getTeacherLastName() {
-		return teacherLastName;
-	}
-
-	public void setTeacherLastName(String teacherLastName) {
-		this.teacherLastName = teacherLastName;
 	}
 
 	public String getQualification() {
@@ -123,6 +103,30 @@ public class Teacher {
 
 	public void setStatus(int status) {
 		this.status = status;
+	}
+
+	public String getFirstName() {
+		return firstName;
+	}
+
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
+
+	public String getLastName() {
+		return lastName;
+	}
+
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
+
+	public String getReligion() {
+		return religion;
+	}
+
+	public void setReligion(String religion) {
+		this.religion = religion;
 	}
 
 }

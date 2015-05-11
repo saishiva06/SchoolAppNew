@@ -1,3 +1,13 @@
+<%@page import="com.shiva.entity.Teacher"%>
+<%@page import="java.util.List"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	session="true" pageEncoding="ISO-8859-1"%>
+
+<%
+	List<Teacher> mydata = (List<Teacher>) request
+			.getAttribute("teachersData");
+%>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="EN" lang="EN"
 	dir="ltr">
@@ -5,11 +15,37 @@
 <title>School Education-Fee Registration</title>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
 <meta http-equiv="imagetoolbar" content="no" />
-<link rel="stylesheet" href="resources/styles/layout.css" type="text/css" />
-<script type="text/javascript" src="resources/scripts/jquery-1.4.1.min.js"></script>
-<script type="text/javascript" src="resources/scripts/jquery.slidepanel.setup.js"></script>
-<script type="text/javascript" src="resources/scripts/jquery.cycle.min.js"></script>
-<script type="text/javascript" src="resources/scripts/jquery.cycle.setup.js"></script>
+<link rel="stylesheet" href="resources/styles/layout.css"
+	type="text/css" />
+<script type="text/javascript"
+	src="resources/scripts/jquery-1.4.1.min.js"></script>
+<script type="text/javascript"
+	src="resources/scripts/jquery.slidepanel.setup.js"></script>
+<script type="text/javascript"
+	src="resources/scripts/jquery.cycle.min.js"></script>
+<script type="text/javascript"
+	src="resources/scripts/jquery.cycle.setup.js"></script>
+	
+	<script type="text/javascript">
+	
+	function editTeacher(teacherId){   	        	
+		var f=document.form2;
+		f.teacher_id.value = teacherId;
+	    f.method="post";
+	    f.action='editTeacher.do';
+	    f.submit();	
+    }
+	
+	function deleteTeacher(teacherId){   	        	
+		var f=document.form2;
+		f.teacher_id.value = teacherId;
+    	f.method="post";
+    	f.action='deleteTeacher.do';
+    	f.submit();	
+    }
+
+
+</script>
 </head>
 <body>
 
@@ -41,56 +77,53 @@
 	<!-- -->
 
 	<fieldset>
-
-		<h2 align="center">Teacher Details</h2>
-
-		<form name="schoolInfo" action="infoServlet" method="post">
+		<form name="form1" action="" method="post">
 
 			<a href="teacherRegistration.do"><input type="button" name="add"
-					value="Click Here to add new Teacher Registration"></input></a>
-				<table>
-
+				value="Add Teacher"></input></a>
+			<table>
+				<thead>
 					<tr>
-						<th>Sl No</th>
+						<th>SNo</th>
 						<th>Name</th>
-						<th>Designation</th>
-						<th>Exp</th>
+						<th>Subject</th>
+						<th>Experience</th>
+						<th>Phone Number</th>
 						<th>Address</th>
 						<th>Edit</th>
+						<th>Delete</th>
 					</tr>
+				</thead>
+				<%
+					if (mydata != null && mydata.size() > 0) {
+						for (int i = 0; i < mydata.size(); i++) {
+							Teacher teacher = mydata.get(i);
+				%>
+				<tbody>
 					<tr>
-						<td>1</td>
-						<td>Shiva Kumar</td>
-						<td>Senior Faculty Maths</td>
-						<td>4</td>
-						<td>HYD</td>
-						<td><input type="button" name="add" value="Edit"></td>
+						<td><%=i + 1%></td>
+						<td><%=teacher.getFirstName() + " "
+							+ teacher.getLastName()%></td>
+						<td><%=teacher.getSubject()%></td>
+						<td><%=teacher.getExp()%></td>
+						<td><%=teacher.getPhoneNumber()%></td>
+						<td><%=teacher.getVillage()%></td>
+						<td><input type="button"
+								name="edit" value="Edit" 
+								onclick="editTeacher('<%=teacher.getTeacherId()%>')"/></td>
+						<td><input type="button"
+								name="delete" value="Delete" 
+								onclick="deleteTeacher('<%=teacher.getTeacherId()%>')"/></td>
 					</tr>
-					<tr>
-						<td>1</td>
-						<td>Shiva Kumar</td>
-						<td>Senior Faculty Maths</td>
-						<td>4</td>
-						<td>HYD</td>
-						<td><input type="button" name="add" value="Edit"></td>
-					</tr>
-					<tr>
-						<td>1</td>
-						<td>Shiva Kumar</td>
-						<td>Senior Faculty Maths</td>
-						<td>4</td>
-						<td>HYD</td>
-						<td><input type="button" name="add" value="Edit"></td>
-					</tr>
-					<tr>
-						<td>1</td>
-						<td>Shiva Kumar</td>
-						<td>Senior Faculty Maths</td>
-						<td>4</td>
-						<td>HYD</td>
-						<td><input type="button" name="add" value="Edit"></td>
-					</tr>
-				</table>
+				</tbody>
+				<%
+					}
+					}
+				%>
+			</table>
+		</form>
+		<form name="form2" method="post" id="form2">
+			<input type="hidden" name="teacher_id" value="">
 		</form>
 	</fieldset>
 
@@ -98,7 +131,8 @@
 	<div class="wrapper col5">
 		<div id="copyright">
 			<p class="fl_left">
-				Copyright &copy; 2014 - All Rights Reserved - <a href="#">Sri Narayana Olympiod School</a>
+				Copyright &copy; 2014 - All Rights Reserved - <a href="#">Sri
+					Narayana Olympiod School</a>
 			</p>
 			<!-- <p class="fl_right">Template by <a href="http://www.os-templates.com/" title="Free Website Templates">OS Templates</a></p>
     <br class="clear" /> -->

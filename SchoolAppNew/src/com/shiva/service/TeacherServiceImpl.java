@@ -1,14 +1,18 @@
 package com.shiva.service;
 
+import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
 import com.shiva.dao.TeacherDao;
 import com.shiva.entity.Teacher;
+
 public class TeacherServiceImpl implements TeacherService {
+
 	private TeacherDao teacherDao;
-	
-	public TeacherServiceImpl() { }
+
+	public TeacherServiceImpl() {
+	}
 
 	public void setTeacherDao(TeacherDao teacherDao) {
 		this.teacherDao = teacherDao;
@@ -21,10 +25,15 @@ public class TeacherServiceImpl implements TeacherService {
 	}
 
 	@Override
-	public int createTeacher(String teacherId, String teacherFirstName,String teacherLastName, String qualification, String exp, String subject, String dob, String caste, String phoneNumber,String village,String gender, String doj,int status) {
+	public int createTeacher(String teacherId, String teacherFirstName,
+			String teacherLastName, String qualification, String exp,
+			String subject, String dob, String caste, String phoneNumber,
+			String village, String gender, Date doj, int status) {
 		// TODO Auto-generated method stub
-		return teacherDao.createTeacher(teacherId,  teacherFirstName, teacherLastName,  qualification,  exp,  subject,  dob,  caste,  phoneNumber, village, gender, doj,status);
-		
+		return teacherDao.createTeacher(teacherId, teacherFirstName,
+				teacherLastName, qualification, exp, subject, dob, caste,
+				phoneNumber, village, gender, doj, status);
+
 	}
 
 	@Override
@@ -46,9 +55,9 @@ public class TeacherServiceImpl implements TeacherService {
 	}
 
 	@Override
-	public Teacher getTeacherById(int TeacherId) {
+	public Teacher getTeacherById(String teacherId) {
 		// TODO Auto-generated method stub
-		return teacherDao.getTeacherById(TeacherId);
+		return teacherDao.getTeacherById(teacherId);
 	}
 
 	@Override
@@ -81,5 +90,12 @@ public class TeacherServiceImpl implements TeacherService {
 		return teacherDao.updateTeacher(TeacherMap);
 	}
 
+	@Override
+	public boolean deleteTeacher(String teacherId) {
+		// TODO Auto-generated method stub
+		return teacherDao.deleteTeacher(teacherId);
+	}
+
 	
+
 }

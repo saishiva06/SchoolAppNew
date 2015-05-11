@@ -52,16 +52,16 @@ xsi:schemaLocation="http://www.springframework.org/schema/beans
 
 
 	<bean name="loginController" class="com.shiva.controller.LoginController" ><property name="userService" ref="userServiceImpl" /></bean>
-
+	<bean name="teacherController" class="com.shiva.controller.TeacherController" ><property name="teacherService" ref="teacherServiceImpl" /></bean>
+	
 
 	<bean id="userServiceImpl" class="com.shiva.service.UserServiceImpl"><property name="userDao" ref="userDaoImpl" /></bean>
+	<bean id="teacherServiceImpl" class="com.shiva.service.TeacherServiceImpl"><property name="teacherDao" ref="teacherDaoImpl" /></bean>
 	
 	
 	
 	<bean id="userDaoImpl" class="com.shiva.dao.UserDaoImpl"><property name="sqlMapClient" ref="sqlMapClient" /></bean>
-	
-	
-	
+	<bean id="teacherDaoImpl" class="com.shiva.dao.TeacherDaoImpl"><property name="sqlMapClient" ref="sqlMapClient" /></bean>
 
 	<bean id="sqlMapClient" class="org.springframework.orm.ibatis.SqlMapClientFactoryBean">
 		<property name="configLocation">

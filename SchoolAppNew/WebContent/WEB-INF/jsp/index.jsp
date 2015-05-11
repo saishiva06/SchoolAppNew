@@ -18,7 +18,7 @@
       <!-- <h1><a href="#">Sri Narayana Olympiod School</a></h1> -->
       <p><img src="resources/images/logo.jpg" alt="" /></p>
     </div>
-    <div id="topnav">
+    <!-- <div id="topnav">
       <ul>
         <li class="active"><a href="index1.html">Home</a></li>
         <li><a href="feeRegistration.jsp">Fee Registration</a></li>
@@ -26,7 +26,7 @@
         <li><a href="#">Link Text</a></li>
         <li class="last"><a href="#">A Long Link Text</a></li>
       </ul>
-    </div>
+    </div> -->
     <br class="clear" />
   </div>
 </div>

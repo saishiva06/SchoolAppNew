@@ -9,15 +9,68 @@
 		<result property="section" column="section" />
 		<result property="medium" column="medium" />
 		<result property="fees" column="fees" />
-		<result property="mobileNo" column="mobile_no" />
+		<result property="phoneNumber" column="mobile_no" />
+	</resultMap>
+	
+	<resultMap id="Teacher" class="com.shiva.entity.Teacher">
+	    <result property="teacherId" column="teacher_id" />
+		<result property="firstName" column="teacher_fisrt_name" />
+		<result property="lastName" column="teacher_last_name" />
+		<result property="qualification" column="teacher_qualification" />
+		<result property="exp" column="teacher_exp" />
+		<result property="subject" column="teacher_subject" />
+		<result property="dob" column="teacher_dob" />
+		<result property="caste" column="teacher_caste" />
+		<result property="phoneNumber" column="teacher_phone_num" />
+		<result property="village" column="teacher_village" />
+		<result property="gender" column="teacher_gender" />
+		<result property="doj" column="teacher_doj" />
+		<result property="status" column="teacher_status" />
 	</resultMap>
 
 	<!-- UserDao -->
 
-	<select id="authenticateUser" parameterClass="java.util.Map" resultClass="string">
-		select u.u_id from user u where u.u_login=#u_login# and u_password=#u_password#
+	<select id="authenticateUser" parameterClass="java.util.Map"
+		resultClass="string">
+		select u.u_id from user u where u.u_login=#u_login# and
+		u_password=#u_password#
 	</select>
+	
+	<!-- TeacherDao -->
 
+	<insert id="createTeacher" parameterClass="java.util.Map">
+		insert into teacher(teacher_id, teacher_fisrt_name,teacher_last_name,
+		teacher_qualification, teacher_exp, teacher_subject,
+		teacher_dob,
+		teacher_caste, teacher_phone_num, teacher_village,
+		teacher_gender,teacher_doj, teacher_status) values (#teacher_id#,
+		#teacher_fisrt_name#,#teacher_last_name#, #teacher_qualification#,
+		#teacher_exp#,
+		#teacher_subject#, #teacher_dob#, #teacher_caste#,
+		#teacher_phone_num#, #teacher_village#, #teacher_gender#, #teacher_doj#,
+		#teacher_status#)
+		<selectKey resultClass="int" keyProperty="id">
+			select
+			last_insert_id() as id
+		</selectKey>
+	</insert>
+	
+	<select id="getTeachers" resultMap="Teacher">
+		select t.* from teacher t;
+	</select>
+	
+	<delete id="deleteTeacher">
+		delete from teacher where teacher_id=#teacher_id#
+	</delete>
+	
+	<select id="getTeacherById" parameterClass="string" resultMap="Teacher">
+		select t.* from teacher t where t.teacher_id=#teacher_id#;
+	</select>
+	
+	<update id="updateTeacherMap" parameterClass="java.util.Map">
+		update teacher t set  t.teacher_fisrt_name=#teacher_fisrt_name#, t.teacher_last_name=#teacher_last_name#, t.teacher_qualification=#teacher_qualification#, t.teacher_exp=#teacher_exp#, t.teacher_subject=#teacher_subject#, t.teacher_dob=#teacher_dob#, t.teacher_caste=#teacher_caste# ,t.teacher_phone_num=#teacher_phone_num#, t.teacher_village=#teacher_village#, t.teacher_gender=#teacher_gender#, t.teacher_doj=#teacher_doj#, t.teacher_status=#teacher_status# where t.teacher_id=#teacher_id#
+	</update>
+	
 	<!-- StudentDao -->
 
 	<select id="isStudentExists" parameterClass="string"
@@ -30,7 +83,8 @@
 		mobileNo) values (#rollNo#, #name#,#classs#, #section#, #medium#,
 		#fees#, #mobileno#)
 		<selectKey resultClass="int" keyProperty="id">
-			select last_insert_id() as id
+			select
+			last_insert_id() as id
 		</selectKey>
 	</insert>
 
@@ -87,7 +141,8 @@
 
 	<select id="getManagersWithAlerts" resultClass="string">
 		select
-		distinct u_login from Student u, process_instance pi where
+		distinct
+		u_login from Student u, process_instance pi where
 		pi.pi_owner_id=u.u_id and pi.pi_status not in (1)
 	</select>
 

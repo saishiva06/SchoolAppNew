@@ -3,28 +3,34 @@ package com.shiva.entity;
 public class Student {
 
 	private String studentFirstName;
-    private String studentLastName;
-    private String classs;
-    private String section;
-    private String medium;
-    private String studentFatherName;
-    private String studentMotherName;
-    private String dob;
-    private String caste;
-    private String religion;
-    private String phoneNumber;
-    private String village;
-    private String gender;
-    private double fees;
-    private String doj;
-    private int status;
-    
-   public Student(String rollno, String studentFirstName,String studentLastName, String classs, String section, String medium,String studentFatherName,String studentMotherName, String dob, String caste, String religion,String phoneNumber,String village,String gender, Double fees, String doj,int status) {
+	private String studentLastName;
+	private String studentName;
+	private String classs;
+	private String section;
+	private String medium;
+	private String studentFatherName;
+	private String studentMotherName;
+	private String dob;
+	private String caste;
+	private String religion;
+	private String phoneNumber;
+	private String village;
+	private String gender;
+	private double fees;
+	private String doj;
+	private int status;
+
+	public Student(String rollno, String studentFirstName,
+			String studentLastName, String classs, String section,
+			String medium, String studentFatherName, String studentMotherName,
+			String dob, String caste, String religion, String phoneNumber,
+			String village, String gender, Double fees, String doj, int status) {
 		// TODO Auto-generated constructor stub
 	}
-	
-    private String rollno;
-    public String getRollno() {
+
+	private String rollno;
+
+	public String getRollno() {
 		return rollno;
 	}
 
@@ -48,22 +54,13 @@ public class Student {
 		this.studentLastName = studentLastName;
 	}
 
-
-
-
 	public String getClasss() {
 		return classs;
 	}
 
-
-
-
 	public void setClasss(String classs) {
 		this.classs = classs;
 	}
-
-
-
 
 	public String getSection() {
 		return section;
@@ -72,18 +69,20 @@ public class Student {
 	public void setSection(String section) {
 		this.section = section;
 	}
-   public String getMedium() {
+
+	public String getMedium() {
 		return medium;
 	}
 
 	public void setMedium(String medium) {
 		this.medium = medium;
 	}
- public String getStudentFatherName() {
+
+	public String getStudentFatherName() {
 		return studentFatherName;
 	}
 
-public void setStudentFatherName(String studentFatherName) {
+	public void setStudentFatherName(String studentFatherName) {
 		this.studentFatherName = studentFatherName;
 	}
 
@@ -99,7 +98,7 @@ public void setStudentFatherName(String studentFatherName) {
 		return dob;
 	}
 
-public void setDob(String dob) {
+	public void setDob(String dob) {
 		this.dob = dob;
 	}
 
@@ -119,21 +118,23 @@ public void setDob(String dob) {
 		this.religion = religion;
 	}
 
-public String getPhoneNumber() {
+	public String getPhoneNumber() {
 		return phoneNumber;
 	}
+
 	public void setPhoneNumber(String phoneNumber) {
 		this.phoneNumber = phoneNumber;
 	}
 
-public String getVillage() {
+	public String getVillage() {
 		return village;
 	}
 
 	public void setVillage(String village) {
 		this.village = village;
 	}
-public String getGender() {
+
+	public String getGender() {
 		return gender;
 	}
 
@@ -141,27 +142,36 @@ public String getGender() {
 		this.gender = gender;
 	}
 
-public double getFees() {
+	public double getFees() {
 		return fees;
 	}
-public void setFees(double fees) {
+
+	public void setFees(double fees) {
 		this.fees = fees;
 	}
-public String getDoj() {
+
+	public String getDoj() {
 		return doj;
 	}
-public void setDoj(String doj) {
+
+	public void setDoj(String doj) {
 		this.doj = doj;
 	}
 
-public int getStatus() {
+	public int getStatus() {
 		return status;
 	}
 
-public void setStatus(int status) {
+	public void setStatus(int status) {
 		this.status = status;
 	}
 
+	public String getStudentName() {
+		return studentName;
+	}
 
+	public void setStudentName(String studentName) {
+		this.studentName = studentName;
+	}
 
 }
