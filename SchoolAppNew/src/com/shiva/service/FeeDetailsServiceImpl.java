@@ -1,5 +1,6 @@
 package com.shiva.service;
 
+import java.util.List;
 import java.util.Map;
 
 import com.shiva.dao.FeeDetailsDao;
@@ -18,10 +19,9 @@ public class FeeDetailsServiceImpl implements FeeDetailsService {
 
 	@Override
 	public int createFeeDetails(String recieptNo, String rollNo,String studentName, String studentClass, String admissionFee, 
-			   String tutionFee, String examFee, String vanFee, String iitFee,String otherFee,
-			   String feePayDate1, String feePayDate2, String feePayDate3,String feePayDate4,String feePayDate5,int feeStatus) {
+			   String otherFee,String feePayDate1) {
 		// TODO Auto-generated method stub
-		return feeDetailsDao.createFeeDetails(recieptNo,  rollNo, studentName,  studentClass,  admissionFee, tutionFee,  examFee,  vanFee,  iitFee, otherFee,feePayDate1,  feePayDate2,  feePayDate3, feePayDate4, feePayDate5, 0);
+		return feeDetailsDao.createFeeDetails(recieptNo,  rollNo, studentName,  studentClass,  admissionFee, otherFee,feePayDate1);
 	}
 
 	@Override
@@ -31,13 +31,13 @@ public class FeeDetailsServiceImpl implements FeeDetailsService {
 	}
 
 	@Override
-	public <List> FeeDetails getFeeDetailsMap() {
+	public List<FeeDetails>  getFeeDetailsMap() {
 		// TODO Auto-generated method stub
 		return feeDetailsDao.getFeeDetailsMap();
 	}
 
 	@Override
-	public <List> FeeDetails getAllFeeDetailsBySearch(String studentsClass,
+	public List<FeeDetails>  getAllFeeDetailsBySearch(String studentsClass,
 			String rollNum, String studentName) {
 		// TODO Auto-generated method stub
 		return feeDetailsDao.getAllFeeDetailsBySearch(studentsClass, rollNum, studentName);
@@ -53,7 +53,7 @@ public class FeeDetailsServiceImpl implements FeeDetailsService {
 	@Override
 	public FeeDetails getFeeDetailsById(String reciptId) {
 		// TODO Auto-generated method stub
-		return null;
+		return feeDetailsDao.getFeeDetailsById(reciptId);
 	}
 
 	

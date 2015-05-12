@@ -4,6 +4,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
@@ -14,7 +15,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.shiva.entity.FeeDetails;
+import com.shiva.entity.Student;
 import com.shiva.service.FeeDetailsService;
+import com.shiva.util.*;
 
 @Controller
 public class FeeDetailsController {
@@ -33,7 +36,13 @@ public class FeeDetailsController {
 	
 	@RequestMapping("/feeDetails")
 	public ModelAndView loadFeeDetailsDashboard() throws Exception {
-		return new ModelAndView("feeDetails");
+		List<FeeDetails> feeDetailsList = feeDetailsService.getFeeDetailsMap();
+		ModelAndView mav = new ModelAndView();
+		mav.setViewName("feeDetails");
+		if (feeDetailsList != null && feeDetailsList.size() > 0) {
+			mav.addObject("feeDetailsData", feeDetailsList);
+		}
+		return mav;
 	}
 	
 	@RequestMapping("/feeRegistration")
@@ -48,27 +57,22 @@ public class FeeDetailsController {
             String studentName = request.getParameter("studentName");
 			String rollNo = request.getParameter("rollno");
 			String studentClass = request.getParameter("StudentClass");
-			String section = request.getParameter("section");
-			String medium = request.getParameter("medium");
-			String mobileNo = request.getParameter("mobileNo");
-			String feePaid = request.getParameter("feePaid");
 			String feeType = request.getParameter("feeType");
+			String otherFee = request.getParameter("feePaid");
 			String feepaidDate = request.getParameter("feepaidDate");
-			String recieptNo = "", admissionFee = "",tutionFee = "",  examFee = "",  vanFee  = "",  iitFee  = "", otherFee = "";
-			
 			SimpleDateFormat sdf = new SimpleDateFormat("MM/dd/yyyy");
-			SimpleDateFormat output = new SimpleDateFormat(
-					"yyyy-MM-dd HH:mm:ss");
-			Date feepaidDate1 = null,feeDetailsDoj = null;
+			SimpleDateFormat output = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+			Date feepaidDate1 = null;
 			try {
 				feepaidDate1 = sdf.parse(feepaidDate);
 			} catch (ParseException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
+			String recieptNo = RandomGenerator.getReciptNo();
 			String formattedDob = output.format(feepaidDate1);
 			String today = output.format(new Date());
-			int result = feeDetailsService.createFeeDetails(recieptNo,  rollNo, studentName,  studentClass,  admissionFee, tutionFee,  examFee,  vanFee,  iitFee, otherFee,formattedDob,  today,  today, today, today, 0);
+			int result = feeDetailsService.createFeeDetails(recieptNo,  rollNo, studentName,  studentClass,  feeType, otherFee,formattedDob);
 			System.out.println("@@@ FeeDetails added..........");
 			return new ModelAndView("redirect:feeDetails.do");
 		} catch (Exception e) {
@@ -78,7 +82,7 @@ public class FeeDetailsController {
 	}
 	@RequestMapping("/editFeeDetails.do")
 	public ModelAndView editFeeDetails(HttpServletRequest request, HttpServletResponse response) throws Exception {
-		String feeDetailsId = request.getParameter("reciept_no");
+		String feeDetailsId = request.getParameter("recieptNo");
 		System.out.println("@@@ edit feeDetailsId.........."+feeDetailsId);
 		ModelAndView mav = new ModelAndView();
 		mav.setViewName("editFeeDetails");
@@ -116,54 +120,33 @@ public class FeeDetailsController {
 			HttpServletResponse response) throws Exception {
 
 		try {
-			String rollnum = request.getParameter("rollno");
-			String feeDetailsFirstName = request.getParameter("feeDetailsFirstName");
-			String feeDetailsLastName = request.getParameter("feeDetailsLastName");
-			String feeDetailsClass = request.getParameter("feeDetailsClass");
-			String section = request.getParameter("section");
-			String medium = request.getParameter("medium");
-			String feeDetailsFatherName = request.getParameter("feeDetailsFatherName");
-			String feeDetailsMotherName = request.getParameter("feeDetailsMotherName");
-			String feeDetailsDob = request.getParameter("dob");
-			String caste = request.getParameter("caste");
-			String religion = request.getParameter("religion");
-			String phoneNumber = request.getParameter("mobileNo");
-			String village = request.getParameter("village");
-			String gender = request.getParameter("gender");
-			String fees = request.getParameter("fee");
-			String dateOfJoinee = request.getParameter("dateOfJoinee");
-            SimpleDateFormat sdf = new SimpleDateFormat("MM/dd/yyyy");
+			String recieptNo = request.getParameter("recieptNo");
+			String studentName = request.getParameter("studentName");
+			String rollNo = request.getParameter("rollno");
+			String studentClass = request.getParameter("StudentClass");
+			String feeType = request.getParameter("feeType");
+			String otherFee = request.getParameter("feePaid");
+			String feepaidDate = request.getParameter("feepaidDate");
+			SimpleDateFormat sdf = new SimpleDateFormat("MM/dd/yyyy");
 			SimpleDateFormat output = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-			Date feeDetailsDob1 = null,feeDetailsDoj = null;
+			Date feepaidDate1 = null;
 			try {
-				feeDetailsDob1 = sdf.parse(feeDetailsDob);
-				feeDetailsDoj = sdf.parse(dateOfJoinee);
-				
+				feepaidDate1 = sdf.parse(feepaidDate);
 			} catch (ParseException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-			String formattedDob = output.format(feeDetailsDob1);
-			String dateOfJoinee1 = output.format(feeDetailsDoj);
+			String formattedDob = output.format(feepaidDate1);
+			String today = output.format(new Date());
 			Map<String, Object> paramsMap = new HashMap<String, Object>();
-			paramsMap.put("roll_num", rollnum);
-			paramsMap.put("feeDetails_fisrt_name", feeDetailsFirstName);
-			paramsMap.put("feeDetails_last_name", feeDetailsLastName);
-			paramsMap.put("feeDetails_class", feeDetailsClass);
-			paramsMap.put("section", section);
-			paramsMap.put("medium", medium);
-			paramsMap.put("feeDetails_father_name", feeDetailsFatherName);
-			paramsMap.put("feeDetails_mother_name", feeDetailsMotherName);
-			paramsMap.put("feeDetails_dob", formattedDob);
-			paramsMap.put("feeDetails_caste", caste);
-			paramsMap.put("feeDetails_religion", religion);
-			paramsMap.put("feeDetails_phone_num", phoneNumber);
-			paramsMap.put("feeDetails_village", village);
-			paramsMap.put("feeDetails_gender", gender);
-			paramsMap.put("feeDetails_doj", dateOfJoinee1);
-			paramsMap.put("fees", fees);
-			paramsMap.put("feeDetails_status", 0);
-		    int result = feeDetailsService.updateFeeDetails(paramsMap);
+			paramsMap.put("recipt_no", recieptNo);
+			paramsMap.put("roll_no", rollNo);
+			paramsMap.put("student_name", studentName);
+			paramsMap.put("student_class", studentClass);
+			paramsMap.put("fee_type", feeType);
+			paramsMap.put("fee_paid", otherFee);
+			paramsMap.put("fee_pay_date_1", formattedDob);
+			int result = feeDetailsService.updateFeeDetails(paramsMap);
 			System.out.println("@@@ FeeDetails updated..........");
 		} catch (Exception e) {
 			e.printStackTrace();

@@ -10,39 +10,62 @@ import org.springframework.orm.ibatis.SqlMapClientTemplate;
 import org.springframework.orm.ibatis.support.SqlMapClientDaoSupport;
 
 import com.shiva.entity.FeeDetails;
+import com.shiva.entity.Student;
 import com.shiva.entity.Teacher;
 
 public class FeeDetailsDaoImpl extends SqlMapClientDaoSupport implements
 		FeeDetailsDao {
-	// private static final Logger log =
-	// Logger.getLogger(TeacherDaoImpl.class.getName());
 	private SqlMapClientTemplate template = getSqlMapClientTemplate();
 
 	public FeeDetailsDaoImpl() {
 	}
 
 	@Override
-	public int createFeeDetails(String recieptNo, String rollNo,String studentName, String studentClass, String admissionFee, 
-			   String tutionFee, String examFee, String vanFee, String iitFee,String otherFee,
-			   String feePayDate1, String feePayDate2, String feePayDate3,String feePayDate4,String feePayDate5,int feeStatus) {
+	public int createFeeDetails(String recieptNo, String rollNo,String studentName, String studentClass, String feeType, 
+	String otherFee, String feePayDate1) {
 		// TODO Auto-generated method stub
-		return 0;
+		Map<String, Object> paramsMap = new HashMap<String, Object>();
+		paramsMap.put("recipt_no", recieptNo);
+		paramsMap.put("roll_no", rollNo);
+		paramsMap.put("student_name", studentName);
+		paramsMap.put("student_class", studentClass);
+		paramsMap.put("fee_type", feeType);
+		paramsMap.put("fee_paid", otherFee);
+		paramsMap.put("fee_pay_date_1", feePayDate1);
+		try {
+			int result = (Integer) template.insert("createFeeDetails", paramsMap);
+			return result;
+		} catch (Exception ex) {
+			return -1;
+		}
 	}
 
 	@Override
 	public int updateFeeDetails(Map<String, Object> feeDeailsMap) {
-		// TODO Auto-generated method stub
-		return 0;
+		try {
+			int result = template.update("updateFeeDetails", feeDeailsMap);
+			return result;
+		} catch (Exception ex) {
+			// log.error("TeacherDao:updateTeacher::" + ex.getMessage());
+			return -1;
+		}
 	}
 
 	@Override
-	public <List> FeeDetails getFeeDetailsMap() {
-		// TODO Auto-generated method stub
-		return null;
+	public List<FeeDetails>  getFeeDetailsMap() {
+		List<FeeDetails> resultList = new LinkedList<FeeDetails>();
+		try {
+			resultList = template.queryForList("getFeeDetailsMap");
+		} catch (Exception ex) {
+			System.out.println(ex.getMessage());
+			//log.error("StudentDao:getStudents::" + ex.getMessage());
+		} finally {
+			return resultList;
+		}
 	}
 
 	@Override
-	public <List> FeeDetails getAllFeeDetailsBySearch(String studentsClass,
+	public List<FeeDetails> getAllFeeDetailsBySearch(String studentsClass,
 			String rollNum, String studentName) {
 		// TODO Auto-generated method stub
 		return null;
@@ -56,8 +79,13 @@ public class FeeDetailsDaoImpl extends SqlMapClientDaoSupport implements
 
 	@Override
 	public FeeDetails getFeeDetailsById(String reciptId) {
-		// TODO Auto-generated method stub
-		return null;
+		try {
+			FeeDetails feeDetails = (FeeDetails) template.queryForObject("getFeeDetailsById", reciptId);
+            return feeDetails;
+		} catch (Exception e) {
+			e.printStackTrace();
+			return null;
+		}
 	}
 
 	

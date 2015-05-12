@@ -39,6 +39,17 @@
 		<result property="status" column="teacher_status" />
 	</resultMap>
 
+
+<resultMap id="FeeDetails" class="com.shiva.entity.FeeDetails">
+	    <result property="recieptNo" column="recipt_no" />
+		<result property="rollNo" column="roll_no" />
+		<result property="studentName" column="student_name" />
+		<result property="studentClass" column="student_class" />
+		<result property="feeType" column="fee_type" />
+		<result property="otherFee" column="fee_paid" />
+		<result property="feePayDate1" column="fee_pay_date_1" />
+	</resultMap>
+
 	<!-- UserDao -->
 
 	<select id="authenticateUser" parameterClass="java.util.Map"
@@ -201,4 +212,23 @@
      <delete id="deleteStudent">
 		delete from student where roll_num=#roll_num#
 	 </delete>
+	 <!-- FeeDao -->
+	 <insert id="createFeeDetails" parameterClass="java.util.Map">
+		insert into fee_details(recipt_no,roll_no,student_name, student_class, fee_type, fee_paid,fee_pay_date_1) values (#recipt_no#,#roll_no#,#student_name#, #student_class#, #fee_type#, #fee_paid#,#fee_pay_date_1#)
+		<selectKey resultClass="int" keyProperty="id">
+			select
+			last_insert_id() as id
+		</selectKey>
+	</insert>
+	
+	<select id="getFeeDetailsMap" resultMap="FeeDetails">
+		select f.* from fee_details f;
+	</select>
+	<select id="getFeeDetailsById" parameterClass="string" resultMap="FeeDetails">
+		select f.* from fee_details f where f.recipt_no=#reciptId#;
+	</select>
+	
+<update id="updateFeeDetails" parameterClass="java.util.Map">
+		update fee_details f set f.student_name=#student_name#, f.student_class=#student_class#, f.fee_type=#fee_type#, f.fee_paid=#fee_paid#,f.fee_pay_date_1=#fee_pay_date_1# where recipt_no =#recipt_no#
+	</update>
 </sqlMap>

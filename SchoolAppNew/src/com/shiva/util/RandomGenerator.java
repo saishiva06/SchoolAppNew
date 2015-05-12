@@ -55,4 +55,14 @@ public class RandomGenerator {
 		return randStr.toString();
 	}
 
+	public static String getReciptNo() {
+		StringBuffer randStr = new StringBuffer();
+		for (int i = 0; i < 4; i++) {
+			int number = new Random().nextInt(NUM_LIST.length());
+			number = (number - 1 == -1) ? number : number - 1;
+			char ch = NUM_LIST.charAt(number);
+			randStr.append(ch);
+		}
+		return randStr.toString();
+	}
 }

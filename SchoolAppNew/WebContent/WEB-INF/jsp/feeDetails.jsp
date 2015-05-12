@@ -18,6 +18,26 @@
 <script type="text/javascript" src="resources/scripts/jquery.slidepanel.setup.js"></script>
 <script type="text/javascript" src="resources/scripts/jquery.cycle.min.js"></script>
 <script type="text/javascript" src="resources/scripts/jquery.cycle.setup.js"></script>
+<script type="text/javascript">
+	
+	function editFeeDetails(recieptNo){   	        	
+		var f=document.form2;
+		f.recieptNo.value = recieptNo;
+	    f.method="post";
+	    f.action='editFeeDetails.do';
+	    f.submit();	
+    }
+	
+	function deleteFeeDetails(recieptNo){   	        	
+		var f=document.form2;
+		f.recieptNo.value = recieptNo;
+    	f.method="post";
+    	f.action='deleteFeeDetails.do';
+    	f.submit();	
+    }
+
+
+</script>
 </head>
 <body>
 <!-- ####################################################################################################### -->
@@ -85,9 +105,9 @@
 						<th>Roll No</th>
 						<th>Name</th>
 						<th>Class</th>
-						<th>Total Fee</th>
+						<th>Fee Type</th>
 						<th>Paid Fee</th>
-						<th>Due Fee</th>
+						<th>Paid Date</th>
 						<th>Edit</th>
 						<th>Delete</th>
 					</tr>
@@ -103,9 +123,9 @@
 						<td><%=feeDetails.getRollNo()%></td>
 						<td><%=feeDetails.getStudentName()%></td>
 						<td><%=feeDetails.getStudentClass()%></td>
-						<td><%=feeDetails.getAdmissionFee()%></td>
-						<td><%=feeDetails.getTutionFee()%></td>
-						<td><%=feeDetails.getExamFee()%></td>
+						<td><%=feeDetails.getFeeType()%></td>
+						<td><%=feeDetails.getOtherFee()%></td>
+						<td><%=feeDetails.getFeePayDate1()%></td>
 						<td><input type="button"
 								name="edit" value="Edit" 
 								onclick="editFeeDetails('<%=feeDetails.getRecieptNo()%>')"/></td>
@@ -120,6 +140,9 @@
 				%>
 			</table>
 			</form>
+			<form name="form2" method="post" id="form2">
+			<input type="hidden" name="recieptNo" value="">
+		</form>
 		</fieldset>
 </div>
 <!-- ####################################################################################################### -->

@@ -1,3 +1,11 @@
+<%@page import="com.shiva.entity.FeeDetails"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	session="true" pageEncoding="ISO-8859-1"%>
+
+<%
+FeeDetails feeDetails = (FeeDetails)request.getAttribute("feeDetails");
+
+%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="EN" lang="EN"
 	dir="ltr">
@@ -55,22 +63,24 @@
 	<!-- *************************** -->
 	<fieldset>
 		<h2 align="center">Fee Registration:</h2>
-		<form name="SchoolInfo" action="addFeeDetails.do" method="post">
+		<form name="SchoolInfo" action="updateFeeDetails.do" method="post">
 			<p align="center">Please Fill the following details to submit fee
 				details.</p>
 				<p align="left"><a href="feeDetails.do"><input type="button" name="add" value="BACK" ></input></a></p>
+			   <input type="hidden" name="recieptNo" value="<%= feeDetails.getRecieptNo()%>">
 			<table>
 				<tr>
 					<td align="right"><label>Full Name*: </label></td>
-					<td><input id="name" name="studentName" type="text" /></td>
+					<td><input id="name" name="studentName" type="text" value = "<%=feeDetails.getStudentName() %>"/></td>
 				</tr>
 				<tr>
 					<td align="right"><label for="name">Roll Number*: </label></td>
-					<td><input id="name" name="rollno" type="text" /></td>
+					<td><input id="name" name="rollno" type="text"  value = "<%=feeDetails.getRollNo() %>"/></td>
 				</tr>
 				<tr>
 					<td align="right"><label for="name">Class*: </label></td>
-					<td><select name="StudentClass">
+					<td><select name="StudentClass" >
+					         <option value = "<%=feeDetails.getStudentClass() %>" selected = "selected"></option>
 							<option value="lkg">lkg</option>
 							<option value="ukg">ukg</option>
 							<option value="1st class">1st class</option>
@@ -105,11 +115,6 @@
 				</tr>
 
 				<tr>
-					<td align="right"><label for="mobileNo">Mobile
-							Number*: </label></td>
-					<td><input id="mobileNo" name="mobileNo" type="text" /></td>
-				</tr>
-				<tr>
 					<td align="right"><label for="name">Fee Type*: </label></td>
                     <td><select name="feeType">
 							<option value="admissionFee">Admission Fee</option>
@@ -123,11 +128,11 @@
 				</tr>
 				<tr>
 					<td align="right"><label for="feePaid">Fee Paid*: </label></td>
-					<td><input id="feePaid" name="feePaid" type="text" /></td>
+					<td><input id="feePaid" name="feePaid" type="text"  value = "<%=feeDetails.getOtherFee() %>"/></td>
 				</tr>
 				<tr>
 					<td align="right"><label for="feepaidDate">Fee Paid Date*: </label></td>
-					<td><input id="datepicker" name="feepaidDate" type="text" /></td>
+					<td><input id="datepicker" name="feepaidDate" type="text"  value = "<%=feeDetails.getFeePayDate1() %>"/></td>
 				</tr>
 				<tr>
 					<td align="right"><input name="Submit" type="submit"
