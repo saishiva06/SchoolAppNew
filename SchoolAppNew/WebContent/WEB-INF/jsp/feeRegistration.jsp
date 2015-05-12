@@ -10,6 +10,14 @@
 <script type="text/javascript" src="resources/scripts/jquery.slidepanel.setup.js"></script>
 <script type="text/javascript" src="resources/scripts/jquery.cycle.min.js"></script>
 <script type="text/javascript" src="resources/scripts/jquery.cycle.setup.js"></script>
+<script>
+			$(function() {
+				$("#datepicker").datepicker({
+				changeMonth: true,
+                 changeYear: true
+			});
+			});
+		</script>	
 </head>
 <body>
 
@@ -51,7 +59,7 @@
 				</tr>
 				<tr>
 					<td align="right"><label for="name">Class*: </label></td>
-					<td><select name="classs">
+					<td><select name="StudentClass">
 							<option value="lkg">lkg</option>
 							<option value="ukg">ukg</option>
 							<option value="1st class">1st class</option>
@@ -91,8 +99,24 @@
 					<td><input id="mobileNo" name="mobileNo" type="text" /></td>
 				</tr>
 				<tr>
-					<td align="right"><label for="fee">Fee Pay*: </label></td>
-					<td><input id="fee" name="fee" type="text" /></td>
+					<td align="right"><label for="name">Fee Type*: </label></td>
+                    <td><select name="feeType">
+							<option value="Admission Fee">admissionFee</option>
+							<option value="Tution Fee">tutionFee</option>
+							<option value="Exam Fee">examFee</option>
+							<option value="Transport Fee">transportFee</option>
+							<option value="IIT Fee">iiTFee</option>
+							<option value="Other Fee">otherFee</option>
+					</select></td>
+
+				</tr>
+				<tr>
+					<td align="right"><label for="feePaid">Fee Paid*: </label></td>
+					<td><input id="feePaid" name="feePaid" type="text" /></td>
+				</tr>
+				<tr>
+					<td align="right"><label for="feepaidDate">Fee Paid Date*: </label></td>
+					<td><input id="datepicker" name="feepaidDate" type="text" /></td>
 				</tr>
 				<tr>
 					<td align="right"><input name="Submit" type="submit"

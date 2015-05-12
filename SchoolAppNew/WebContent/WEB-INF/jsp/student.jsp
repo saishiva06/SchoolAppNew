@@ -23,17 +23,17 @@
 <script type="text/javascript" src="resources/scripts/jquery.cycle.setup.js"></script>
 <script type="text/javascript">
 	
-	function editStudent(studentId){   	        	
+	function editStudent(rollno){   	        	
 		var f=document.form2;
-		f.student_id.value = studentId;
+		f.rollno.value = rollno;
 	    f.method="post";
 	    f.action='editStudent.do';
 	    f.submit();	
     }
 	
-	function deleteStudent(studentId){   	        	
+	function deleteStudent(rollno){   	        	
 		var f=document.form2;
-		f.student_id.value = studentId;
+		f.rollno.value = rollno;
     	f.method="post";
     	f.action='deleteStudent.do';
     	f.submit();	
@@ -55,7 +55,7 @@
 			<div id="topnav">
 				<ul>
 					<li><a href="dashboard.do">Home</a></li>
-					<li><a href="student.do">Student</a></li>
+					<li><a href="teacher.do">Teacher</a></li>
 					<li class="active"><a href="#">Student</a></li>
 					<li><a href="feeDetails.do">Fee Details</a></li>
 					<li><a href="exams.do">Examination Results</a></li>
@@ -83,8 +83,10 @@
 						<th>Name</th>
 						<th>Class</th>
 						<th>Section</th>
+						<th>Phone Number</th>
 						<th>Address</th>
 						<th>Edit</th>
+						<th>Delete</th>
 						</thead>
 					<%
 					if (mydata != null && mydata.size() > 0) {
@@ -93,10 +95,10 @@
 				%>
 				<tbody>
 					<tr>
-						<td><%=i + 1%></td>
+						<td><%=student.getRollno()%></td>
 						<td><%=student.getStudentFirstName() + " "
 							+ student.getStudentLastName()%></td>
-						<td><%=student.getClass()%></td>
+						<td><%=student.getStudentClass()%></td>
 						<td><%=student.getSection()%></td>
 						<td><%=student.getPhoneNumber()%></td>
 						<td><%=student.getVillage()%></td>
@@ -113,6 +115,9 @@
 					}
 				%>
 			</table>
+		</form>
+		<form name="form2" method="post" id="form2">
+			<input type="hidden" name="rollno" value="">
 		</form>
 	</fieldset>
 	

@@ -2,17 +2,37 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="EN" lang="EN"
 	dir="ltr">
 <head profile="http://gmpg.org/xfn/11">
-<title>Sri Narayana Olympiod School-Student Registration</title>
+<title>Sri Narayana Olympiod School-Teacher Registration</title>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
 <meta http-equiv="imagetoolbar" content="no" />
-<link rel="stylesheet" href="resources/styles/layout.css" type="text/css" />
-<script type="text/javascript" src="resources/scripts/jquery-1.4.1.min.js"></script>
-<script type="text/javascript" src="resources/scripts/jquery.slidepanel.setup.js"></script>
-<script type="text/javascript" src="resources/scripts/jquery.cycle.min.js"></script>
-<script type="text/javascript" src="resources/scripts/jquery.cycle.setup.js"></script>
-<script>
+<link rel="stylesheet" href="resources/styles/layout.css"
+	type="text/css" />
+<script type="text/javascript"
+	src="resources/scripts/jquery-1.4.1.min.js"></script>
+<script type="text/javascript"
+	src="resources/scripts/jquery.slidepanel.setup.js"></script>
+<script type="text/javascript"
+	src="resources/scripts/jquery.cycle.min.js"></script>
+<script type="text/javascript"
+	src="resources/scripts/jquery.cycle.setup.js"></script>
+
+<link rel="stylesheet"
+	href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css" />
+	<script src="//code.jquery.com/jquery-1.10.2.js"></script>
+	<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+	<link rel="stylesheet" href="/resources/demos/style.css" />
+		<script>
 			$(function() {
-				$("#datepicker").datepicker();
+				$("#datepicker").datepicker({
+				changeMonth: true,
+                 changeYear: true
+			});
+			});
+			$(function() {
+				$("#datepicker1").datepicker({
+				changeMonth: true,
+                 changeYear: true
+			});
 			});
 		</script>
 </head>
@@ -40,7 +60,7 @@
 	<!-- *************************** -->
 	<fieldset>
 		<h2 align="center">Student Registration:</h2>
-		<form name="SchoolInfo" action="#" method="post">
+		<form name="SchoolInfo" action="addStudent.do" method="post">
 			<p align="center">Please Fill the following details to submit Student
 				details.</p>
 				<p align="left"><a href="student.do"><input type="button" name="add" value="BACK" ></input></a></p>
@@ -56,7 +76,7 @@
 				
 				<tr>
 					<td align="right"><label>Class*: </label></td>
-					<td><select name="classs">
+					<td><select name="studentClass">
 							<option value="lkg">lkg</option>
 							<option value="ukg">ukg</option>
 							<option value="1st class">1st class</option>
@@ -102,7 +122,7 @@
 				</tr>
 				<tr>
 					<td align="right"><label>Cast*: </label></td>
-					<td><input id="cast" name="cast" type="text" /></td>
+					<td><input id="caste" name="caste" type="text" /></td>
 				</tr>
 				<tr>
 					<td align="right"><label>Religion*: </label></td>
@@ -118,7 +138,10 @@
 				</tr>
 				<tr>
 					<td align="right"><label>Gender*: </label></td>
-					<td><input id="gender" name="gender" type="text" /></td>
+					<td><select name="gender">
+							<option value="Male">Male</option>
+							<option value="Female">Female</option>
+					</select></td>
 				</tr>
 				<tr>
 					<td align="right"><label for="fee">Fee Pay*: </label></td>
@@ -126,7 +149,7 @@
 				</tr>
 				<tr>
 					<td align="right"><label for="fee">Date of Joinee*: </label></td>
-					<td><input id="datepicker" name="dateOfJoinee" type="text" /></td>
+					<td><input id="datepicker1" name="dateOfJoinee" type="text" /></td>
 				</tr>
 				<tr>
 					<td align="right"><input name="Submit" type="submit"

@@ -32,7 +32,16 @@ Student student = (Student)request.getAttribute("student");
 	<link rel="stylesheet" href="/resources/demos/style.css" />
 		<script>
 			$(function() {
-				$("#datepicker").datepicker();
+				$("#datepicker").datepicker({
+				 changeMonth: true,
+                 changeYear: true
+			});
+			});
+			$(function() {
+				$("#datepicker1").datepicker({
+				 changeMonth: true,
+                 changeYear: true
+			});
 			});
 		</script>
 </head>
@@ -51,7 +60,7 @@ Student student = (Student)request.getAttribute("student");
 				<ul>
 					<ul>
 						<li><a href="dashboard.do">Home</a></li>
-						<li class="active"><a href="student.do">Student</a></li>
+						<li><a href="teacher.do">Teacher</a></li>
 						<li class="active"><a href="#">Student</a></li>
 						<li><a href="feeDetails.do">Fee Details</a></li>
 						<li><a href="exams.do">Examination Results</a></li>
@@ -72,7 +81,7 @@ Student student = (Student)request.getAttribute("student");
 				<a href="student.do"><input type="button" name="add"
 					value="BACK"></input></a>
 			</p>
-			<input type="hidden" name="student_id" value="<%= student.getRollno()%>">
+			<input type="hidden" name="rollno" value="<%= student.getRollno()%>">
 			<table>
 
 				<tr>
@@ -85,7 +94,7 @@ Student student = (Student)request.getAttribute("student");
 				</tr>
 				<tr>
 					<td align="right"><label>Class*: </label></td>
-					<td><select name="classs">
+					<td><select name="studentClass">
 							<option value="lkg">lkg</option>
 							<option value="ukg">ukg</option>
 							<option value="1st class">1st class</option>
@@ -156,7 +165,7 @@ Student student = (Student)request.getAttribute("student");
 				</tr>
 				<tr>
 					<td align="right"><label>Date of Joinee*: </label></td>
-					<td><input id="datepicker" name="dateOfJoinee" type="text" value = "<%=student.getDoj() %>"/></td>
+					<td><input id="datepicker1" name="dateOfJoinee" type="text" value = "<%=student.getDoj() %>"/></td>
 				</tr>
 
 				<tr>

@@ -24,6 +24,10 @@ public class FeeDetails {
 		   String feePayDate1, String feePayDate2, String feePayDate3,String feePayDate4,String feePayDate5,int feeStatus) {
 		// TODO Auto-generated constructor stub
 	}
+   
+   public FeeDetails() {
+		// TODO Auto-generated constructor stub
+	}
 
 public String getRecieptNo() {
 	return recieptNo;

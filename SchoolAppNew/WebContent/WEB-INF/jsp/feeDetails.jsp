@@ -1,3 +1,12 @@
+<%@page import="com.shiva.entity.FeeDetails"%>
+<%@page import="java.util.List"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	session="true" pageEncoding="ISO-8859-1"%>
+
+<%
+	List<FeeDetails> mydata = (List<FeeDetails>) request.getAttribute("feeDetailsData");
+%>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="EN" lang="EN" dir="ltr">
 <head profile="http://gmpg.org/xfn/11">
@@ -37,10 +46,10 @@
 		<h2 align="center">Fee Details</h2>
 		<fieldset>
 			<table>
-
-				<tr>
+             <tr>
 					<td align="right"><label>Full Name*: </label>
 					<input id="name" name="studentName" type="text" /></td>
+					
 					<td align="right"><label for="name">Roll Number*: </label></td>
 					<td><input id="name" name="rollno" type="text" /></td>
 					
@@ -70,48 +79,46 @@
 				<a href="feeRegistration.do"><input type="button" name="add"
 					value="Click Here to add new Fee Registration"></input></a>
 				<table>
-
+                   <thead>
 					<tr>
+					  <th>Reciept No</th>
 						<th>Roll No</th>
 						<th>Name</th>
 						<th>Class</th>
-						<th>Section</th>
-						<th>Address</th>
+						<th>Total Fee</th>
+						<th>Paid Fee</th>
+						<th>Due Fee</th>
 						<th>Edit</th>
+						<th>Delete</th>
 					</tr>
+					</thead>
+					<%
+					if (mydata != null && mydata.size() > 0) {
+						for (int i = 0; i < mydata.size(); i++) {
+							FeeDetails feeDetails = mydata.get(i);
+				%>
+				<tbody>
 					<tr>
-						<td>1</td>
-						<td>Shiva Kumar</td>
-						<td>SSC</td>
-						<td>4</td>
-						<td>HYD</td>
-						<td><input type="button" name="add" value="Edit"></td>
+					   <td><%=feeDetails.getRecieptNo()%></td>
+						<td><%=feeDetails.getRollNo()%></td>
+						<td><%=feeDetails.getStudentName()%></td>
+						<td><%=feeDetails.getStudentClass()%></td>
+						<td><%=feeDetails.getAdmissionFee()%></td>
+						<td><%=feeDetails.getTutionFee()%></td>
+						<td><%=feeDetails.getExamFee()%></td>
+						<td><input type="button"
+								name="edit" value="Edit" 
+								onclick="editFeeDetails('<%=feeDetails.getRecieptNo()%>')"/></td>
+						<td><input type="button"
+								name="delete" value="Delete" 
+								onclick="deleteFeeDetails('<%=feeDetails.getRecieptNo()%>')"/></td>
 					</tr>
-					<tr>
-						<td>1</td>
-						<td>Shiva Kumar</td>
-						<td>SSC</td>
-						<td>4</td>
-						<td>HYD</td>
-						<td><input type="button" name="add" value="Edit"></td>
-					</tr>
-					<tr>
-						<td>1</td>
-						<td>Shiva Kumar</td>
-						<td>SSC</td>
-						<td>4</td>
-						<td>HYD</td>
-						<td><input type="button" name="add" value="Edit"></td>
-					</tr>
-					<tr>
-						<td>1</td>
-						<td>Shiva Kumar</td>
-						<td>SSC</td>
-						<td>4</td>
-						<td>HYD</td>
-						<td><input type="button" name="add" value="Edit"></td>
-					</tr>
-				</table>
+				</tbody>
+				<%
+					}
+					}
+				%>
+			</table>
 			</form>
 		</fieldset>
 </div>

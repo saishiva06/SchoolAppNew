@@ -96,8 +96,7 @@ public class TeacherController {
 			Teacher teacher = teacherService.getTeacherById(teacherId);
 			teacher.setReligion("");
 			SimpleDateFormat output = new SimpleDateFormat("MM/dd/yyyy");
-			SimpleDateFormat sdf = new SimpleDateFormat(
-					"yyyy-MM-dd HH:mm:ss");
+			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 			Date d = null;
 			try {
 				d = sdf.parse(teacher.getDob());

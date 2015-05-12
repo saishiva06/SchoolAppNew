@@ -2,11 +2,12 @@
 <!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN"  "http://www.iBATIS.com/dtd/sql-map-2.dtd">
 
 <sqlMap>
+
 	<resultMap id="Student" class="com.shiva.entity.Student">
 		<result property="rollno" column="roll_num" />
 		<result property="studentFirstName" column="student_fisrt_name" />
 		<result property="studentLastName" column="student_last_name" />
-		<result property="studentClass" column="class" />
+		<result property="studentClass" column="student_class" />
 		<result property="section" column="section" />
 		<result property="medium" column="medium" />
 		<result property="studentFatherName" column="student_father_name" />
@@ -89,7 +90,7 @@
 	</select>
 
 	<insert id="createStudent" parameterClass="java.util.Map">
-		insert into student(student_fisrt_name,student_last_name,class, section, medium, student_father_name,student_mother_name,student_dob,student_caste,student_religion,student_phone_num,student_village,student_gender,fees,student_doj,student_status) values (#student_fisrt_name#,#student_last_name#,#class#,#section#,#medium#,#student_father_name#,#student_mother_name#,#student_dob#,#student_caste#,#student_religion#,#student_phone_num#,#student_village#,#student_gender#,#fees#,#student_doj#,#student_status#)
+		insert into student(student_fisrt_name,student_last_name,student_class, section, medium, student_father_name,student_mother_name,student_dob,student_caste,student_religion,student_phone_num,student_village,student_gender,fees,student_doj,student_status) values (#student_fisrt_name#,#student_last_name#,#student_class#,#section#,#medium#,#student_father_name#,#student_mother_name#,#student_dob#,#student_caste#,#student_religion#,#student_phone_num#,#student_village#,#student_gender#,#fees#,#student_doj#,#student_status#)
 		<selectKey resultClass="int" keyProperty="id">
 			select
 			last_insert_id() as id
@@ -102,7 +103,7 @@
 	</delete>
 
 	<select id="getStudents" resultMap="Student">
-		select s.* from student s
+		select s.* from student s;
 	</select>
 
 	<select id="getStudentByStudentname" parameterClass="string"
@@ -113,8 +114,7 @@
 	</select>
 
 	<select id="getStudentById" parameterClass="int" resultMap="Student">
-		select *, aes_decrypt(u_password, u_login) as u_pwd,
-		aes_decrypt(u_ssn, u_login) as u_s_ssn from Student where u_id=#u_id#
+		select s.* from student s where roll_num=#roll_num#
 	</select>
 
 	<select id="getStudentByEmailId" parameterClass="string"
@@ -195,43 +195,10 @@
 	</select>
 
 	<update id="updateStudentMap" parameterClass="java.util.Map">
-		<!-- update Student set u_login=#u_login#, u_first_name=#u_first_name#, 
-			u_last_name=#u_last_name#, u_mgr_id=#u_mgr_id#, u_email=#u_email#, u_homePhone=#u_homePhone#, 
-			u_workPhone=#u_workPhone#, u_mobilePhone=#u_mobilePhone#, u_middle_initial=#u_middle_initial#, 
-			u_address_line1=#u_address_line1#, u_address_line2=#u_address_line2#, u_address_city=#u_address_city#, 
-			u_address_state=#u_address_state#, u_address_zip=#u_address_zip#, u_marital_status=#u_marital_status#, 
-			u_date_of_birth=#u_date_of_birth#, u_contact_name=#u_contact_name#, u_eme_address1=#u_eme_address1#, 
-			u_eme_address2=#u_eme_address2#, u_eme_city=#u_eme_city#, u_eme_state=#u_eme_state#, 
-			u_eme_zip=#u_eme_zip#, u_eme_country=#u_eme_country#, u_eme_primary_ph=#u_eme_primary_ph#, 
-			u_eme_alternate_ph=#u_eme_alternate_ph#, u_eme_contact_relation=#u_eme_contact_relation#, 
-			u_preferred_first_name=#u_preferred_first_name#, u_gender=#u_gender#, u_job_title=#u_job_title#, 
-			u_job_location=#u_job_location#, u_address_country=#u_address_country#, u_preferred_last_name=#u_preferred_last_name#, 
-			u_pers_email=#u_pers_email# where u_id=#u_id# -->
-		update Student set u_login=#u_login#, u_first_name=#u_first_name#,
-		u_last_name=#u_last_name#, u_mgr_id=#u_mgr_id#, u_email=#u_email#,
-		u_homePhone=#u_homePhone#, u_workPhone=#u_workPhone#,
-		u_mobilePhone=#u_mobilePhone#, u_middle_initial=#u_middle_initial#,
-		u_address_line1=#u_address_line1#, u_address_line2=#u_address_line2#,
-		u_address_city=#u_address_city#, u_address_state=#u_address_state#,
-		u_address_zip=#u_address_zip#, u_marital_status=#u_marital_status#,
-		u_date_of_birth=#u_date_of_birth#, u_contact_name=#u_contact_name#,
-		u_eme_address1=#u_eme_address1#, u_eme_address2=#u_eme_address2#,
-		u_eme_city=#u_eme_city#, u_eme_state=#u_eme_state#,
-		u_eme_zip=#u_eme_zip#, u_eme_country=#u_eme_country#,
-		u_eme_primary_ph=#u_eme_primary_ph#,
-		u_eme_alternate_ph=#u_eme_alternate_ph#,
-		u_eme_contact_relation=#u_eme_contact_relation#,
-		u_preferred_first_name=#u_preferred_first_name#, u_gender=#u_gender#,
-		u_job_title=#u_job_title#, u_job_location=#u_job_location#,
-		u_address_country=#u_address_country#,
-		u_preferred_last_name=#u_preferred_last_name#,
-		u_pers_email=#u_pers_email#
-		<isNotNull property="u_ssn">,u_ssn=aes_encrypt(#u_ssn#, u_login)
-		</isNotNull>
-		where u_id=#u_id#
-	</update>
+	update student s set  s.student_fisrt_name=#student_fisrt_name#, s.student_last_name=#student_last_name#, s.student_class=#student_class#, s.section=#section#, s.medium=#medium#, s.student_father_name=#student_father_name#, s.student_mother_name=#student_mother_name#, s.student_dob=#student_dob#, s.student_caste=#student_caste# ,s.student_religion=#student_religion#, s.student_phone_num=#student_phone_num#, s.student_village=#student_village#, s.student_gender=#student_gender#, s.fees=#fees#, s.student_doj=#student_doj#, s.student_status=#student_status# where s.roll_num=#roll_num#
+		</update>
 
-<delete id="deleteStudent">
-		delete from student where student_rollno=#StudentId#
-	</delete>
+     <delete id="deleteStudent">
+		delete from student where roll_num=#roll_num#
+	 </delete>
 </sqlMap>

@@ -23,7 +23,10 @@
 	<link rel="stylesheet" href="/resources/demos/style.css" />
 		<script>
 			$(function() {
-				$("#datepicker").datepicker();
+				$("#datepicker").datepicker({
+				 changeMonth: true,
+                 changeYear: true
+			});
 			});
 		</script>
 </head>

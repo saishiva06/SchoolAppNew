@@ -28,7 +28,9 @@ public class Student {
 		// TODO Auto-generated constructor stub
 	}
 
-	
+	public Student() {
+		// TODO Auto-generated constructor stub
+	}
 
 	public String getRollno() {
 		return rollno;
