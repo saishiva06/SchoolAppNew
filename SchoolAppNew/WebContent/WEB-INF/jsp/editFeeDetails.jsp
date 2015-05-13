@@ -15,15 +15,6 @@ FeeDetails feeDetails = (FeeDetails)request.getAttribute("feeDetails");
 <meta http-equiv="imagetoolbar" content="no" />
 <link rel="stylesheet" href="resources/styles/layout.css"
 	type="text/css" />
-<script type="text/javascript"
-	src="resources/scripts/jquery-1.4.1.min.js"></script>
-<script type="text/javascript"
-	src="resources/scripts/jquery.slidepanel.setup.js"></script>
-<script type="text/javascript"
-	src="resources/scripts/jquery.cycle.min.js"></script>
-<script type="text/javascript"
-	src="resources/scripts/jquery.cycle.setup.js"></script>
-
 <link rel="stylesheet"
 	href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css" />
 	<script src="//code.jquery.com/jquery-1.10.2.js"></script>
@@ -142,19 +133,21 @@ FeeDetails feeDetails = (FeeDetails)request.getAttribute("feeDetails");
 			</table>
 		</form>
 	</fieldset>
-
-
-
-	<!--************************************************ -->
-	<div class="wrapper col5">
-		<div id="copyright">
-			<p class="fl_left">
-				Copyright &copy; 2014 - All Rights Reserved - <a href="#">Sri Narayana Olympiod School</a>
-			</p>
-			<!-- <p class="fl_right">Template by <a href="http://www.os-templates.com/" title="Free Website Templates">OS Templates</a></p>
-    <br class="clear" /> -->
-		</div>
-	</div>
+<div class="wrapper col4">
+  <div id="copyright">
+    <p class="fl_left">Copyright &copy; 2015 - All Rights Reserved - Sri Narayana Olympiod School</p>
+  </div>
+</div>
+<script type="text/javascript" src="resources/scripts/jquery-1.4.1.min.js"></script>
+<script type="text/javascript" src="resources/scripts/jquery.slidepanel.setup.js"></script>
+<script type="text/javascript" src="resources/scripts/jquery.cycle.min.js"></script>
+<script type="text/javascript" src="resources/scripts/jquery.cycle.setup.js"></script>
+<script type="text/javascript" src="resources/scripts/jquery-1.7.1.min.js"></script> 
+<script type="text/javascript" src="resources/scripts/jquery.validate.js"></script>
+<script type="text/javascript" src="resources/scripts/bootstrap-datepicker.min.js"></script>  
+<script type="text/javascript" src="resources/scripts/schoolscript.js"></script> 
 </body>
 </html>
+
+
 

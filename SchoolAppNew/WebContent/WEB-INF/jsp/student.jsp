@@ -17,10 +17,6 @@
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
 <meta http-equiv="imagetoolbar" content="no" />
 <link rel="stylesheet" href="resources/styles/layout.css" type="text/css" />
-<script type="text/javascript" src="resources/scripts/jquery-1.4.1.min.js"></script>
-<script type="text/javascript" src="resources/scripts/jquery.slidepanel.setup.js"></script>
-<script type="text/javascript" src="resources/scripts/jquery.cycle.min.js"></script>
-<script type="text/javascript" src="resources/scripts/jquery.cycle.setup.js"></script>
 <script type="text/javascript">
 	
 	function editStudent(rollno){   	        	
@@ -120,15 +116,19 @@
 			<input type="hidden" name="rollno" value="">
 		</form>
 	</fieldset>
-	
-	<!-- ####################################################################################################### -->
-	<div class="wrapper col5">
-		<div id="copyright">
-			<p class="fl_left">
-				Copyright &copy; 2014 - All Rights Reserved - <a href="#">Sri Narayana Olympiod School
-			</a>
-			</p>
-		</div>
-	</div>
+	 
+<div class="wrapper col4">
+  <div id="copyright">
+    <p class="fl_left">Copyright &copy; 2015 - All Rights Reserved - Sri Narayana Olympiod School</p>
+  </div>
+</div>
+<script type="text/javascript" src="resources/scripts/jquery-1.4.1.min.js"></script>
+<script type="text/javascript" src="resources/scripts/jquery.slidepanel.setup.js"></script>
+<script type="text/javascript" src="resources/scripts/jquery.cycle.min.js"></script>
+<script type="text/javascript" src="resources/scripts/jquery.cycle.setup.js"></script>
+<script type="text/javascript" src="resources/scripts/jquery-1.7.1.min.js"></script> 
+<script type="text/javascript" src="resources/scripts/jquery.validate.js"></script>
+<script type="text/javascript" src="resources/scripts/bootstrap-datepicker.min.js"></script>  
+<script type="text/javascript" src="resources/scripts/schoolscript.js"></script> 
 </body>
 </html>

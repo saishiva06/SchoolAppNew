@@ -11,6 +11,25 @@ Licence: <a href="http://www.os-templates.com/template-terms">Website Template L
 @import url(tables.css);
 @import url(featured_slide.css);
 @import url(loginslider.css);
+@import url(bootstrap.min.css);
+@import url(bootstrap-responsive.min.css);
+@import url(datepicker.min.css);
+@import url(datepicker3.min.css);
+/* New styles */
+
+label.valid {
+	width: 24px;
+	height: 24px;
+	background: url(valid.png) center center no-repeat;
+	display: inline-block;
+	text-indent: -9999px;
+}
+label.error {
+	font-weight: bold;
+	color: red;
+	padding: 2px 8px;
+	margin-top: 2px;
+}
 
 body{
 	margin:0;
