@@ -20,7 +20,7 @@ xsi:schemaLocation="http://www.springframework.org/schema/beans
    		<mvc:interceptor>
    			
      		<mvc:mapping path="/dashboard.do" />
-     		<mvc:mapping path="/exams.do" />
+     		<mvc:mapping path="/examResults.do" />
      		<mvc:mapping path="/feeDetails.do" />
      		<mvc:mapping path="/student.do" />
      		<mvc:mapping path="/teacher.do" />
@@ -29,7 +29,7 @@ xsi:schemaLocation="http://www.springframework.org/schema/beans
      		<mvc:mapping path="/teacherRegistration.do" />
      		<mvc:mapping path="/admin.do" />
      		<mvc:mapping path="/noticeboard.do" />
-     		<mvc:mapping path="/resultsEntry.do" />
+     		<mvc:mapping path="/examResultsRegistration.do" />
      		<bean class="com.shiva.util.SessionHandler" />
    		</mvc:interceptor>
 	</mvc:interceptors>

@@ -20,7 +20,7 @@
         <li><a href="teacher.do">Teacher</a></li>
         <li><a href="student.do">Student</a></li>
          <li><a href="feeDetails.do">Fee Details</a></li>
-        <li><a href="exams.do">Examination Results</a></li>
+        <li><a href="examResults.do">Examination Results</a></li>
         
       </ul>
     </div>

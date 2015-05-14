@@ -32,9 +32,9 @@ public class ExamResultsServiceImpl implements ExamResultsService {
 			String english1, String english2, String maths1, String maths2,
 			String science1, String science2, String social1, String social2,
 			String computers, String arts, String others, String total,
-			String grade, String rank, int status) {
+			String grade, String rank) {
 		// TODO Auto-generated method stub
-		return examResultsDao.createResult(rollno, studentName, studentClass, examTtile, examDate, telugu1, telugu2, hindi1, hindi2, english1, english2, maths1, maths2, science1, science2, social1, social2, computers, arts, others, total, grade, rank, status);
+		return examResultsDao.createResult(rollno, studentName, studentClass, examTtile, examDate, telugu1, telugu2, hindi1, hindi2, english1, english2, maths1, maths2, science1, science2, social1, social2, computers, arts, others, total, grade, rank);
 	}
 
 	@Override
@@ -59,13 +59,13 @@ public class ExamResultsServiceImpl implements ExamResultsService {
 	@Override
 	public boolean deleteExamResults(String recieptId) {
 		// TODO Auto-generated method stub
-		return false;
+		return examResultsDao.deleteExamResults(recieptId);
 	}
 
 	@Override
 	public ExamResults getExamResultsById(String reciptId) {
 		// TODO Auto-generated method stub
-		return null;
+		return examResultsDao.getExamResultsById(reciptId);
 	}
 
 

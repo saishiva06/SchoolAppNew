@@ -52,6 +52,7 @@
 
 
 <resultMap id="ExamResults" class="com.shiva.entity.ExamResults">
+		<result property="examResultsId" column="exam_results_id" />
 		<result property="rollNum" column="roll_num" />
 		<result property="studentName" column="student_name" />
 		<result property="studentClass" column="student_class" />
@@ -73,8 +74,8 @@
 		<result property="arts" column="arts" />
 		<result property="others" column="others" />
 		<result property="total" column="total" />
-		<result property="rank" column="rank" />
 		<result property="grade" column="grade" />
+		<result property="rank" column="rank" />
 	</resultMap>
 	
 	<!-- UserDao -->
@@ -154,46 +155,8 @@
 	<select id="getStudentById" parameterClass="int" resultMap="Student">
 		select s.* from student s where roll_num=#roll_num#
 	</select>
-
-	<select id="getStudentByEmailId" parameterClass="string"
-		resultMap="Student">
-		select *, aes_decrypt(u_password, u_login) as u_pwd,
-		aes_decrypt(u_ssn, u_login) as u_s_ssn from Student where
-		u_email=#u_email#
-	</select>
-
-	<select id="getManagerId" parameterClass="int" resultClass="int">
-		select u_mgr_id from Student where u_id=#u_id#
-	</select>
-
-	<select id="getMgrId" parameterClass="String" resultClass="int">
-		select u_id from Student where u_login=#u_login#
-	</select>
-
-	<select id="getStudentsForManager" parameterClass="int"
-		resultClass="int">
-		select u_id from Student where u_mgr_id=#u_mgr_id#
-	</select>
-
-	<select id="getEmployeesWithAlerts" resultClass="string">
-		select distinct
-		u_login from Student u, process_instance pi where
-		pi.pi_subject_id=u.u_id and pi.pi_status not in (1) and pi.p_id in
-		(1,3,4)
-	</select>
-
-	<select id="getManagersWithAlerts" resultClass="string">
-		select
-		distinct
-		u_login from Student u, process_instance pi where
-		pi.pi_owner_id=u.u_id and pi.pi_status not in (1)
-	</select>
-
-	<select id="isManager" parameterClass="string" resultClass="int">
-		select u_mgr_id from Student where u_login=#u_login#
-	</select>
-
-	<select id="getStudentId" parameterClass="string" resultClass="int">
+  
+  <select id="getStudentId" parameterClass="string" resultClass="int">
 		select u_id from Student where u_login=#u_login#
 	</select>
 
@@ -255,12 +218,14 @@
 		select f.* from fee_details f where f.recipt_no=#reciptId#;
 	</select>
 	
-<update id="updateFeeDetails" parameterClass="java.util.Map">
+    <update id="updateFeeDetails" parameterClass="java.util.Map">
 		update fee_details f set f.student_name=#student_name#, f.student_class=#student_class#, f.fee_type=#fee_type#, f.fee_paid=#fee_paid#,f.fee_pay_date_1=#fee_pay_date_1# where recipt_no =#recipt_no#
 	</update>
 	<delete id="deleteFeeDetails">
 		delete from fee_details where where recipt_no =#recieptId#
 	</delete>
+	
+	<!-- ExamResultsDao -->
 	
 	<insert id="createResult" parameterClass="java.util.Map">
 		insert into exam_results(roll_num, student_name,student_class,exam_title, exam_date, telugu_1,telugu_2,hindi_1,hindi_2,english_1,english_2,maths_1,maths_2,science_1,science_2,social_1,social_2,computers, arts, others,total,rank, grade) values (#roll_num#, #student_name#,#student_class#,#exam_title#, #exam_date#, #telugu_1#,#telugu_2#,#hindi_1#,#hindi_2#,#english_1#,#english_2#,#maths_1#,#maths_2#,#science_1#,#science_2#,#social_1#,#social_2#,#computers#, #arts#, #others#,#total#,#rank#, #grade#)
@@ -268,7 +233,24 @@
 			select
 			last_insert_id() as id
 		</selectKey>
-	</insert>
+	  </insert>
 
+     <select id="getExamResultsMap" resultMap="ExamResults">
+		select e.* from exam_results e;
+	</select>
+	
+	<select id="getExamResultsById" parameterClass="string" resultMap="ExamResults">
+		select e.* from exam_results e where e.exam_results_id=#examResultsId#;
+	</select>
+	
+    <update id="updateResults" parameterClass="java.util.Map">
+		update exam_results e set e.roll_num =#roll_num#, e.student_name=#student_name#,e.student_class=#student_class#,e.exam_title=#exam_title#,e.exam_date=#exam_date#,e.telugu_1=#telugu_1#,e.telugu_2=#telugu_2#,e.hindi_1=#hindi_1#,e.hindi_2=#hindi_2#,
+		e.english_1=#english_1#,e.english_2=#english_2#,e.maths_1=#maths_1#,e.maths_2=#maths_2#,e.science_1=#science_1#,e.science_2=#science_2#,e.social_1=#social_1#,e.social_2=#social_2#,
+		e.computers=#computers#,e.arts=#arts#,e.others=#others#,e.total=#total#,e.rank=#rank#, e.grade=#grade# where e.exam_results_id =#exam_results_id#
+	</update>
+	
+	<delete id="deleteExamResults">
+		delete from exam_results where exam_results_id =#examResultsId#
+	</delete>
 
 </sqlMap>

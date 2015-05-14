@@ -1,6 +1,5 @@
 package com.shiva.dao;
 
-import java.util.Date;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
@@ -10,9 +9,7 @@ import org.springframework.orm.ibatis.SqlMapClientTemplate;
 import org.springframework.orm.ibatis.support.SqlMapClientDaoSupport;
 
 import com.shiva.entity.ExamResults;
-import com.shiva.entity.FeeDetails;
-import com.shiva.entity.Student;
-import com.shiva.entity.Teacher;
+
 
 public class ExamResultsDaoImpl extends SqlMapClientDaoSupport implements
 ExamResultsDao {
@@ -28,7 +25,7 @@ ExamResultsDao {
 			String english1, String english2, String maths1, String maths2,
 			String science1, String science2, String social1, String social2,
 			String computers, String arts, String others, String total,
-			String grade, String rank, int status) {
+			String grade, String rank) {
 		// TODO Auto-generated method stub
 
 		Map<String, Object> paramsMap = new HashMap<String, Object>();
@@ -66,14 +63,27 @@ ExamResultsDao {
 
 	@Override
 	public int updateResults(Map<String, Object> ExamResultsMap) {
-		// TODO Auto-generated method stub
-		return 0;
+		try {
+			int result = template.update("updateResults", ExamResultsMap);
+			return result;
+		} catch (Exception ex) {
+			// log.error("TeacherDao:updateTeacher::" + ex.getMessage());
+			return -1;
+		}
 	}
 
+	@SuppressWarnings({ "unchecked", "finally" })
 	@Override
 	public List<ExamResults> getExamResultsMap() {
-		// TODO Auto-generated method stub
-		return null;
+		List<ExamResults> resultList = new LinkedList<ExamResults>();
+		try {
+			resultList = template.queryForList("getExamResultsMap");
+		} catch (Exception ex) {
+			System.out.println(ex.getMessage());
+			//log.error("StudentDao:getStudents::" + ex.getMessage());
+		} finally {
+			return resultList;
+		}
 	}
 
 	@Override
@@ -84,15 +94,25 @@ ExamResultsDao {
 	}
 
 	@Override
-	public boolean deleteExamResults(String recieptId) {
-		// TODO Auto-generated method stub
-		return false;
+	public boolean deleteExamResults(String examResultsId) {
+		try {
+			int result = template.delete("deleteExamResults",examResultsId);
+			return result != -1 ? true : false;
+		} catch (Exception ex) {
+			// log.error("TeacherDao:deleteAllTeachers::" + ex.getMessage());
+			return false;
+		}
 	}
 
 	@Override
-	public ExamResults getExamResultsById(String reciptId) {
-		// TODO Auto-generated method stub
-		return null;
+	public ExamResults getExamResultsById(String examResultsId) {
+		try {
+			ExamResults examResults = (ExamResults) template.queryForObject("getExamResultsById", examResultsId);
+            return examResults;
+		} catch (Exception e) {
+			e.printStackTrace();
+			return null;
+		}
 	}
 
 	

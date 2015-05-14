@@ -1,6 +1,5 @@
 package com.shiva.dao;
 
-import java.util.Date;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
@@ -10,8 +9,6 @@ import org.springframework.orm.ibatis.SqlMapClientTemplate;
 import org.springframework.orm.ibatis.support.SqlMapClientDaoSupport;
 
 import com.shiva.entity.FeeDetails;
-import com.shiva.entity.Student;
-import com.shiva.entity.Teacher;
 
 public class FeeDetailsDaoImpl extends SqlMapClientDaoSupport implements
 		FeeDetailsDao {

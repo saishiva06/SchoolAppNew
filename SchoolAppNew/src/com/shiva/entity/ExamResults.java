@@ -2,9 +2,10 @@ package com.shiva.entity;
 
 public class ExamResults {
 
+	private int examResultsId;
 	private String rollNum;
 	private String studentName;
-    private String studentClass;
+	private String studentClass;
     private String examTitle;
     private String examDate;
     private String telugu1;
@@ -27,12 +28,25 @@ public class ExamResults {
     private String rank;
     
     
-   public ExamResults(String rollno, String studentName,String studentClass, String examTtile, 
+   public ExamResults(int examResultsId,String rollno, String studentName,String studentClass, String examTtile, 
 		   String examDate, String telugu1,String telugu2,String hindi1, 
 		   String hindi2, String english1, String english2,String maths1,String maths2,String science1, 
 		   String science2,String social1,String social2,String computers,String arts,String others,
-		   String total,String grade,String rank,int status) {
+		   String total,String grade,String rank) {
 		// TODO Auto-generated constructor stub
+	}
+  
+   public ExamResults() {
+		// TODO Auto-generated constructor stub
+	}
+
+   public int getExamResultsId() {
+		return examResultsId;
+	}
+
+
+	public void setExamResultsId(int examResultsId) {
+		this.examResultsId = examResultsId;
 	}
 
 

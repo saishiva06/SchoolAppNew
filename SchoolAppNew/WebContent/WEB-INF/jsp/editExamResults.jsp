@@ -1,3 +1,11 @@
+<%@page import="com.shiva.entity.ExamResults"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	session="true" pageEncoding="ISO-8859-1"%>
+
+<%
+ExamResults examResults = (ExamResults)request.getAttribute("examResults");
+
+%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="EN" lang="EN"
 	dir="ltr">
@@ -46,22 +54,24 @@
 	<!-- *************************** -->
 	<fieldset>
 		<h2 align="center">Fee Registration:</h2>
-		<form name="SchoolInfo" action="addFeeDetails.do" method="post">
+		<form name="SchoolInfo" action="updateExamResults.do" method="post">
 			<p align="center">Please Fill the following details to submit fee
 				details.</p>
-				<p align="left"><a href="exams.do"><input type="button" name="add" value="BACK" ></input></a></p>
+				<p align="left"><a href="examResults.do"><input type="button" name="add" value="BACK" ></input></a></p>
+			 <input type="hidden" name="examResultsId" value="<%= examResults.getExamResultsId()%>" />
 			<table>
 				<tr>
 					<td align="right"><label>Full Name*: </label></td>
-					<td><input id="name" name="studentName" type="text" /></td>
+					<td><input id="studentName" name="studentName" type="text" value = "<%=examResults.getStudentName() %>"/></td>
 				</tr>
 				<tr>
 					<td align="right"><label for="name">Roll Number*: </label></td>
-					<td><input id="name" name="rollno" type="text" /></td>
+					<td><input id="rollno" name="rollno" type="text"  value = "<%=examResults.getRollNum() %>"/></td>
 				</tr>
 				<tr>
 					<td align="right"><label for="name">Class*: </label></td>
 					<td><select name="StudentClass">
+					 <option value = "<%=examResults.getStudentClass() %>" selected = "selected"></option>
 							<option value="lkg">lkg</option>
 							<option value="ukg">ukg</option>
 							<option value="1st class">1st class</option>
@@ -79,83 +89,89 @@
 
 				<tr>
 					<td align="right"><label>Exam Title*: </label></td>
-					<td><input id="examTitle" name="examTitle" type="text" /></td></tr>
+					<td><input id="examTitle" name="examTitle" type="text" value = "<%=examResults.getExamTitle() %>"/></td>
+					</tr>
 				<tr>
 					<td align="right"><label>Exam Date*: </label></td>
-					<td><input id="datepicker" name="examDate" type="text" /></td>
+					<td><input id="datepicker" name="examDate" type="text" value = "<%=examResults.getExamDate() %>"/></td>
 				</tr>
 
 				<tr>
 					<td align="right"><label>Telugu-1*: </label></td>
-					<td><input id="telugu_1" name="telugu_1" type="text" /></td></tr>
+					<td><input id="telugu_1" name="telugu_1" type="text" value = "<%=examResults.getTelugu1() %>"/></td>
+					</tr>
 				<tr>
 					<td align="right"><label>Telugu-2*: </label></td>
-					<td><input id="telugu_2" name="telugu_2" type="text" /></td>
+					<td><input id="telugu_2" name="telugu_2" type="text" value = "<%=examResults.getTelugu2() %>"/></td>
 				</tr>
 
 				<tr>
 					<td align="right"><label>Hindi-1*: </label></td>
-					<td><input id="hindi_1" name="hindi_1" type="text" /></td></tr>
+					<td><input id="hindi_1" name="hindi_1" type="text" value = "<%=examResults.getHindi1() %>"/></td>
+					</tr>
 				<tr>
 					<td align="right"><label>Hindi-2*: </label></td>
-					<td><input id="hindi_2" name="hindi_2" type="text" /></td>
+					<td><input id="hindi_2" name="hindi_2" type="text" value = "<%=examResults.getHindi2() %>"/></td>
 				</tr>
 				<tr>
 					<td align="right"><label>English-1*: </label></td>
-					<td><input id="english_1" name="english_1" type="text" /></td></tr>
+					<td><input id="english_1" name="english_1" type="text" value = "<%=examResults.getEnglish1() %>"/></td>
+					</tr>
 				<tr>
 					<td align="right"><label>English-2*: </label></td>
-					<td><input id="english_2" name="english_2" type="text" /></td>
+					<td><input id="english_2" name="english_2" type="text" value = "<%=examResults.getEnglish2() %>"/></td>
 				</tr>
 
                   <tr>
 					<td align="right"><label>Maths-1*: </label></td>
-					<td><input id="maths_1" name="maths_1" type="text" /></td></tr>
+					<td><input id="maths_1" name="maths_1" type="text" value = "<%=examResults.getMaths1() %>"/></td></tr>
 				<tr>
 					<td align="right"><label>Maths-2*: </label></td>
-					<td><input id="maths_2" name="maths_2" type="text" /></td>
+					<td><input id="maths_2" name="maths_2" type="text" value = "<%=examResults.getMaths2() %>"/></td>
 				</tr>
 
                    <tr>
 					<td align="right"><label>Science-1*: </label></td>
-					<td><input id="science_1" name="science_1" type="text" /></td></tr>
+					<td><input id="science_1" name="science_1" type="text" value = "<%=examResults.getScience1() %>"/></td></tr>
 				<tr>
 					<td align="right"><label>Science-2*: </label></td>
-					<td><input id="science_2" name="science_2" type="text" /></td>
+					<td><input id="science_2" name="science_2" type="text" value = "<%=examResults.getScience2() %>"/></td>
 				</tr>
 				<tr>
 					<td align="right"><label>Social-1*: </label></td>
-					<td><input id="social_1" name="social_1" type="text" /></td></tr>
+					<td><input id="social_1" name="social_1" type="text" value = "<%=examResults.getSocial1() %>"/></td></tr>
 				<tr>
 					<td align="right"><label>Social-2*: </label></td>
-					<td><input id="social_2" name="social_2" type="text" /></td>
+					<td><input id="social_2" name="social_2" type="text" value = "<%=examResults.getSocial2() %>"/></td>
 				</tr>
 				<tr>
 					<td align="right"><label>Computers*: </label></td>
-					<td><input id="computers" name="computers" type="text" /></td></tr>
+					<td><input id="computers" name="computers" type="text" value = "<%=examResults.getComputers() %>"/></td></tr>
 				<tr>
 					<td align="right"><label>Arts*: </label></td>
-					<td><input id="arts" name="arts" type="text" /></td>
+					<td><input id="arts" name="arts" type="text" value = "<%=examResults.getArts() %>"/></td>
 				</tr>
 				<tr>
 					<td align="right"><label>Others*: </label></td>
-					<td><input id="others" name="others" type="text" /></td></tr>
+					<td><input id="others" name="others" type="text" value = "<%=examResults.getOthers() %>"/></td>
+					</tr>
 				<tr>
 					<td align="right"><label>Total*: </label></td>
-					<td><input id="total" name="total" type="text" /></td>
+					<td><input id="total" name="total" type="text" value = "<%=examResults.getTotal() %>"/></td>
 				</tr>
 				
 				<tr>
 					<td align="right"><label>Grade*: </label></td>
 					<td><select name="grade">
-							<option value="A">A</option>
+					<option value = "<%=examResults.getGrade() %>" selected = "selected"></option>
+					        <option value="A">A</option>
 							<option value="B">B</option>
 							<option value="C">C</option>
 							<option value="D">D</option>
 						</select></td></tr>
 				<tr>
-					<td align="right"><label>Total*: </label></td>
-					<td><input id="total" name="total" type="text" /></td>
+					<td align="right"><label>Rank*: </label></td>
+					<td><input id="rank" name="rank" type="text" value = "<%=examResults.getRank() %>"/></td>
 				</tr>
 				<tr>
 					<td align="right"><input name="Submit" type="submit"

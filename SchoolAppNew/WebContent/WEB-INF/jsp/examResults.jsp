@@ -1,3 +1,11 @@
+<%@page import="com.shiva.entity.ExamResults"%>
+<%@page import="java.util.List"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	session="true" pageEncoding="ISO-8859-1"%>
+
+<%
+	List<ExamResults> mydata = (List<ExamResults>) request.getAttribute("examResultsData");
+%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="EN" lang="EN" dir="ltr">
 <head profile="http://gmpg.org/xfn/11">
@@ -5,6 +13,24 @@
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
 <meta http-equiv="imagetoolbar" content="no" />
 <link rel="stylesheet" href="resources/styles/layout.css" type="text/css" />
+<script type="text/javascript">
+	
+	function editExamResults(examResultsId){   	        	
+		var f=document.form2;
+		f.examResultsId.value = examResultsId;
+	    f.method="post";
+	    f.action='editExamResults.do';
+	    f.submit();	
+    }
+	
+	function deleteExamResults(examResultsId){   	        	
+		var f=document.form2;
+		f.examResultsId.value = examResultsId;
+    	f.method="post";
+    	f.action='deleteExamResults.do';
+    	f.submit();	
+    }
+</script>
 </head>
 <body>
 <!-- ####################################################################################################### -->
@@ -60,78 +86,57 @@
 			</table> 
 			
 			<form name="schoolInfo" action="infoServlet" method="post">
-         <a href="resultsEntry.do"><input type="button" name="add"
+         <a href="examResultsRegistration.do"><input type="button" name="add"
 					value="Click Here to add new Exam Resluts"></input></a>
 				<table>
-
+                   <thead>
 					<tr>
-					  <th>Examination</th>
-						<th>Telugu</th>
-						<th>Hindi</th>
-						<th>English</th>
-						<th>Maths</th>
-						<th>Science</th>
-						<th>Socail</th>
-						<th>Total</th>
-						<th>Grade</th>
+					    <th>Roll No</th>
+						<th>Student Name</th>
+						<th>Student Class</th>
+						<th>Exam Title</th>
+						<th>Exam Date</th>
+						<th>Total Marks</th>
+						<th>Scored Marks</th>
 						<th>Rank</th>
-						<th></th>
-						
+						<th>Grade</th>
+						<th>Edit</th>
+						<th>Delete</th>
 					</tr>
+					</thead>
+					<%
+					if (mydata != null && mydata.size() > 0) {
+						for (int i = 0; i < mydata.size(); i++) {
+							ExamResults examResults = mydata.get(i);
+				%>
+				<tbody>
 					<tr>
-						<td>Quarterly Exams</td>
-						<td>100</td>
-						<td>80</td>
-						<td>80</td>
-						<td>80</td>
-						<td>89</td>
-						<td>99</td>
-						<td>589</td>
-						<td>A</td>
-						<td>2</td>
-						<td><input type="button" name="add" value="Edit"></td>
+						<td><%=examResults.getRollNum()%></td>
+						<td><%=examResults.getStudentName()%></td>
+						<td><%=examResults.getStudentClass()%></td>
+						<td><%=examResults.getExamTitle()%></td>
+						<td><%=examResults.getExamDate()%></td>
+						<td><%=examResults.getOthers()%></td>
+						<td><%=examResults.getTotal()%></td>
+						<td><%=examResults.getRank()%></td>
+						<td><%=examResults.getGrade()%></td>
+						<td><input type="button"
+								name="edit" value="Edit" 
+								onclick="editExamResults('<%=examResults.getExamResultsId()%>')"/></td>
+						<td><input type="button"
+								name="delete" value="Delete" 
+								onclick="deleteExamResults('<%=examResults.getExamResultsId()%>')"/></td>
 					</tr>
-					<tr>
-						<td>Half Yearly Exams</td>
-						<td>100</td>
-						<td>80</td>
-						<td>80</td>
-						<td>80</td>
-						<td>89</td>
-						<td>99</td>
-						<td>589</td>
-						<td>A</td>
-						<td>2</td>
-						<td><input type="button" name="add" value="Edit"></td>
-					</tr>
-					<tr>
-						<td>Pre Final Exams</td>
-						<td>100</td>
-						<td>80</td>
-						<td>80</td>
-						<td>80</td>
-						<td>89</td>
-						<td>99</td>
-						<td>589</td>
-						<td>A</td>
-						<td>2</td>
-						<td><input type="button" name="add" value="Edit"></td>
-					</tr>
-					<tr>
-						<td>Final Exams</td>
-						<td>100</td>
-						<td>80</td>
-						<td>80</td>
-						<td>80</td>
-						<td>89</td>
-						<td>99</td>
-						<td>589</td>
-						<td>A</td>
-						<td>2</td>
-						<td><input type="button" name="add" value="Edit"></td>
-					</tr>
-				</table>
+				</tbody>
+				<%
+					}
+					}
+				%>
+			</table>
 			</form>
+			<form name="form2" method="post" id="form2">
+			<input type="hidden" name="examResultsId" value="">
+		</form>
 	 </fieldset>
   </div>
 </div>
