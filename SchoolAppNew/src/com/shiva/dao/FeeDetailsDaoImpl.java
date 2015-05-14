@@ -73,8 +73,13 @@ public class FeeDetailsDaoImpl extends SqlMapClientDaoSupport implements
 
 	@Override
 	public boolean deleteFeeDetails(String recieptId) {
-		// TODO Auto-generated method stub
-		return false;
+		try {
+			int result = template.delete("deleteFeeDetails",recieptId);
+			return result != -1 ? true : false;
+		} catch (Exception ex) {
+			// log.error("TeacherDao:deleteAllTeachers::" + ex.getMessage());
+			return false;
+		}
 	}
 
 	@Override

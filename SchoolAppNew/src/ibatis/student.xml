@@ -50,8 +50,35 @@
 		<result property="feePayDate1" column="fee_pay_date_1" />
 	</resultMap>
 
-	<!-- UserDao -->
 
+<resultMap id="ExamResults" class="com.shiva.entity.ExamResults">
+		<result property="rollNum" column="roll_num" />
+		<result property="studentName" column="student_name" />
+		<result property="studentClass" column="student_class" />
+		<result property="examTitle" column="exam_title" />
+		<result property="examDate" column="exam_date" />
+		<result property="telugu1" column="telugu_1" />
+		<result property="telugu2" column="telugu_2" />
+		<result property="hindi1" column="hindi_1" />
+		<result property="hindi2" column="hindi_2" />
+		<result property="english1" column="english_1" />
+		<result property="english2" column="english_2" />
+		<result property="maths1" column="maths_1" />
+		<result property="maths2" column="maths_2" />
+		<result property="science1" column="science_1" />
+		<result property="science2" column="science_2" />
+		<result property="social1" column="social_1" />
+		<result property="social2" column="social_2" />
+		<result property="computers" column="computers" />
+		<result property="arts" column="arts" />
+		<result property="others" column="others" />
+		<result property="total" column="total" />
+		<result property="rank" column="rank" />
+		<result property="grade" column="grade" />
+	</resultMap>
+	
+	<!-- UserDao -->
+    
 	<select id="authenticateUser" parameterClass="java.util.Map"
 		resultClass="string">
 		select u.u_id from user u where u.u_login=#u_login# and
@@ -231,4 +258,17 @@
 <update id="updateFeeDetails" parameterClass="java.util.Map">
 		update fee_details f set f.student_name=#student_name#, f.student_class=#student_class#, f.fee_type=#fee_type#, f.fee_paid=#fee_paid#,f.fee_pay_date_1=#fee_pay_date_1# where recipt_no =#recipt_no#
 	</update>
+	<delete id="deleteFeeDetails">
+		delete from fee_details where where recipt_no =#recieptId#
+	</delete>
+	
+	<insert id="createResult" parameterClass="java.util.Map">
+		insert into exam_results(roll_num, student_name,student_class,exam_title, exam_date, telugu_1,telugu_2,hindi_1,hindi_2,english_1,english_2,maths_1,maths_2,science_1,science_2,social_1,social_2,computers, arts, others,total,rank, grade) values (#roll_num#, #student_name#,#student_class#,#exam_title#, #exam_date#, #telugu_1#,#telugu_2#,#hindi_1#,#hindi_2#,#english_1#,#english_2#,#maths_1#,#maths_2#,#science_1#,#science_2#,#social_1#,#social_2#,#computers#, #arts#, #others#,#total#,#rank#, #grade#)
+		<selectKey resultClass="int" keyProperty="id">
+			select
+			last_insert_id() as id
+		</selectKey>
+	</insert>
+
+
 </sqlMap>

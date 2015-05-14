@@ -60,7 +60,8 @@
 			</table> 
 			
 			<form name="schoolInfo" action="infoServlet" method="post">
-
+         <a href="resultsEntry.do"><input type="button" name="add"
+					value="Click Here to add new Exam Resluts"></input></a>
 				<table>
 
 					<tr>
