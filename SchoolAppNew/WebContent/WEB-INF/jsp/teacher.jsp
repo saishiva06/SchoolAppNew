@@ -8,15 +8,14 @@
 			.getAttribute("teachersData");
 %>
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="EN" lang="EN"
-	dir="ltr">
-<head profile="http://gmpg.org/xfn/11">
-<title>School Education-Fee Registration</title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-<meta http-equiv="imagetoolbar" content="no" />
-<link rel="stylesheet" href="resources/styles/layout.css"
-	type="text/css" />
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sri Narayana Olypiad School</title>
+    <link type="text/css" rel="stylesheet" href="resources/css/bootstrap.css" />
+    <link type="text/css" href="resources/css/font-awesome.css" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="resources/css/style.css" />
+    <link href="resources/js/dataTables/dataTables.bootstrap.css" rel="stylesheet" />
 	<script type="text/javascript">
 	
 	function editTeacher(teacherId){   	        	
@@ -40,97 +39,120 @@
 </head>
 <body>
 
-	<!-- -->
-	<div class="wrapper col1">
-		<div id="header">
-			<div id="logo">
-				<!-- <h1><a href="#">Sri Narayana Olympiod School</a></h1> -->
-				<p>
-					<img src="resources/images/logo.jpg" alt="" />
-				</p>
-			</div>
-			<div id="topnav">
-				<ul>
-					<ul>
-						<li><a href="dashboard.do">Home</a></li>
-						<li class="active"><a href="#">Teacher</a></li>
-						<li><a href="student.do">Student</a></li>
-						<li><a href="feeDetails.do">Fee Details</a></li>
-						<li><a href="examResults.do">Examination Results</a></li>
-
-					</ul>
-
-				</ul>
-			</div>
-			<br class="clear" />
-		</div>
-	</div>
-	<!-- -->
-
-	<fieldset>
-		<form name="form1" action="" method="post">
-
-			<a href="teacherRegistration.do"><input type="button" name="add"
-				value="Add Teacher"></input></a>
-			<table>
-				<thead>
-					<tr>
-						<th>SNo</th>
-						<th>Name</th>
-						<th>Subject</th>
-						<th>Experience</th>
-						<th>Phone Number</th>
-						<th>Address</th>
-						<th>Edit</th>
-						<th>Delete</th>
-					</tr>
-				</thead>
-				<%
+	 <!-- Fixes Navigation Bar with drop down menu
+    ======================================================-->
+       <div class="navbar navbar-inner ">
+        <div class="container">
+             <div class="navbar-header">
+                <button type="buttton" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="#" class="navbar-brand"><img  width="90px" height="80px"  src="resources/img/logo.jpg" class="logo" alt="Logo" ></img></a>
+            </div>
+            <div>
+           <h2 class="well" > SRI NARAYANA OLYPIAD SCHOOL </h2>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li ><a href="dashboard.do">Home</a></li>
+                    <li class="active" ><a href="#">Teacher</a></li>
+                    <li  ><a href="student.do">Student</a></li>
+                    <li ><a href="feeDetails.do">Fee</a></li>
+                    <li><a href="examResults.do">Examination</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li role="presentation"><a role="menuitem" tabindex="-1" href="admin.html">Logout</a></li>
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+    
+    
+<div class="container">
+  	<div class="panel panel-primary">
+      <div class="panel-heading">
+    			Student 
+      </div>
+      <div class="panel-body">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12">
+            <form name="SchoolInfo" action="#" id="add-student" method="post">
+                     <p>
+                        <a href="teacherRegistration.do" class="btn btn-primary">Add Teacher</a>
+                    </p>
+                        <div class="table-responsive">
+                            <table class="table table-striped table-bordered table-hover" id="dataTables-example">
+                                <thead>
+                                    <tr>
+                                        <th>SNo</th>
+										<th>Name</th>
+										<th>Subject</th>
+										<th>Experience</th>
+										<th>Phone Number</th>
+										<th>Address</th>
+										<th>Edit</th>
+										<th>Delete</th>
+                                    </tr>
+					           </thead><%
 					if (mydata != null && mydata.size() > 0) {
 						for (int i = 0; i < mydata.size(); i++) {
 							Teacher teacher = mydata.get(i);
 				%>
-				<tbody>
-					<tr>
-						<td><%=i + 1%></td>
+                                
+                                <tbody>
+			                        <tr>
+										<td><%=i + 1%></td>
 						<td><%=teacher.getFirstName() + " "
 							+ teacher.getLastName()%></td>
 						<td><%=teacher.getSubject()%></td>
 						<td><%=teacher.getExp()%></td>
 						<td><%=teacher.getPhoneNumber()%></td>
 						<td><%=teacher.getVillage()%></td>
-						<td><input type="button"
-								name="edit" value="Edit" 
-								onclick="editTeacher('<%=teacher.getTeacherId()%>')"/></td>
-						<td><input type="button"
-								name="delete" value="Delete" 
-								onclick="deleteTeacher('<%=teacher.getTeacherId()%>')"/></td>
+		        		<td><button class="btn btn-primary btn-sm" onclick="editTeacher('<%=teacher.getTeacherId()%>')" ><i class="fa fa-edit "></i> Edit</button></td>
+				        <td><button class="btn btn-danger btn-sm" onclick="deleteTeacher('<%=teacher.getTeacherId()%>')"  ><i class="fa fa-pencil"></i> Delete</button></td>		
+						
 					</tr>
 				</tbody>
 				<%
 					}
 					}
 				%>
-			</table>
-		</form>
+                            </table>
+                        </div>
+           </form>
 		<form name="form2" method="post" id="form2">
 			<input type="hidden" name="teacher_id" value="">
 		</form>
-	</fieldset>
-
-
-<div class="wrapper col4">
-  <div id="copyright">
-    <p class="fl_left">Copyright &copy; 2015 - All Rights Reserved - Sri Narayana Olympiod School</p>
-  </div>
-</div>
-<script type="text/javascript" src="resources/scripts/jquery-1.4.1.min.js"></script>
-<script type="text/javascript" src="resources/scripts/jquery.slidepanel.setup.js"></script>
-<script type="text/javascript" src="resources/scripts/jquery.cycle.min.js"></script>
-<script type="text/javascript" src="resources/scripts/jquery.cycle.setup.js"></script>
-<script type="text/javascript" src="resources/scripts/jquery-1.7.1.min.js"></script> 
-<script type="text/javascript" src="resources/scripts/jquery.validate.js"></script>
-<script type="text/javascript" src="resources/scripts/bootstrap-datepicker.min.js"></script>  
-<script type="text/javascript" src="resources/scripts/schoolscript.js"></script> 
+           </div>
+          </div>
+       </div>
+      </div>
+    </div>
+   </div>
+ <!-- Footer and Modal
+    ==========================-->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <hr/>
+                <p>Copyright &copy; Sri Narayana Olypiad School.
+                    <a data-toggle="modal" href="#myModal">Terms and Conditions</a>
+                </p>
+            </div>
+        </div>
+    </div>
+<script src="resources/js/jquery.js"></script>
+    <script src="resources/js/bootstrap.js"></script>
+    <script src="resources/js/dataTables/jquery.dataTables.js"></script>
+    <script src="resources/js/dataTables/dataTables.bootstrap.js"></script>
+        <script>
+            $(document).ready(function () {
+                $('#dataTables-example').dataTable();
+            });
+    </script>
 </body>
 </html>
