@@ -48,6 +48,7 @@ public class FeeDetailsDaoImpl extends SqlMapClientDaoSupport implements
 		}
 	}
 
+	@SuppressWarnings({ "unchecked", "finally" })
 	@Override
 	public List<FeeDetails>  getFeeDetailsMap() {
 		List<FeeDetails> resultList = new LinkedList<FeeDetails>();
@@ -61,12 +62,23 @@ public class FeeDetailsDaoImpl extends SqlMapClientDaoSupport implements
 		}
 	}
 
+	@SuppressWarnings({ "unchecked", "finally" })
 	@Override
-	public List<FeeDetails> getAllFeeDetailsBySearch(String studentsClass,
-			String rollNum, String studentName) {
-		// TODO Auto-generated method stub
-		return null;
-	}
+	public List<FeeDetails> getAllFeeDetailsBySearch(String studentClass,String studentName, String rollNum) {
+		List<FeeDetails> feeDetailsList = new LinkedList<FeeDetails>();
+		try {
+				Map<String, Object> paramsMap = new HashMap<String, Object>();
+				paramsMap.put("roll_no", rollNum);
+				paramsMap.put("student_name", studentName);
+				paramsMap.put("student_class", studentClass);
+				feeDetailsList = (List<FeeDetails>) template.queryForObject("getAllFeeDetailsBySearch", paramsMap);
+	        } catch (Exception e) {
+				e.printStackTrace();
+			} finally {
+				return feeDetailsList;
+			}
+		}
+	
 
 	@Override
 	public boolean deleteFeeDetails(String recieptId) {

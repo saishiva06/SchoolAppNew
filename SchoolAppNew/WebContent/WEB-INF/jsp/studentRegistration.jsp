@@ -29,13 +29,13 @@
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li ><a href="dashboard.do">Home</a></li>
-                    <li><a href="about.html">Teacher</a></li>
+                    <li ><a href="teacher.do">Teacher</a></li>
                     <li class="active" ><a href="#">Student</a></li>
-                    <li ><a href="feature.html">Fee</a></li>
-                    <li><a href="contact.html">Examination</a></li>
+                     <li ><a href="feeDetails.do">Fee</a></li>
+                    <li><a href="examResults.do">Examination</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
-                    <li role="presentation"><a role="menuitem" tabindex="-1" href="admin.html">Logout</a></li>
+                    <li role="presentation"><a role="menuitem" tabindex="-1" href="logout.do">Logout</a></li>
                 </ul>
             </div>
             
@@ -55,7 +55,7 @@
     <div class="container">
          <div class="row">
             <div class="col-md-8">
-							<form name="schoolInfo" action="infoServlet" method="post">
+							<form name="schoolInfo" action="addStudent.do" method="post">
 								<div class="form-group">
 									    <label  for="name">First Name</label>
 									<input id="studentFirstName" name="studentFirstName"  class="form-control"
@@ -182,33 +182,13 @@
 </div>
       <!-- Footer and Modal
     ==========================-->
-    
-    <div class="container">
+  <div class="container">
         <div class="row">
             <div class="col-md-12">
-                
                 <hr/>
-                <p>Copyright &copy; Creativity Tuts.
+                <p>Copyright &copy; Sri Narayana Olypiad School.
                     <a data-toggle="modal" href="#myModal">Terms and Conditions</a>
                 </p>
-                
-                <!-- Modal -->
-                <div class="modal fade" id="myModal" tabinex="-1" role="dialog" aria-hidden="true">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h2>Terms and Conditions</h2>
-                            </div>
-                            <div class="modal-body">
-                                <p>The text will go here.....</p>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
             </div>
         </div>
     </div>
@@ -216,13 +196,10 @@
     <script src="resources/js/jquery.js"></script>
     <script src="resources/js/bootstrap.js"></script>
     <script src="resources/js/dataTables/jquery.dataTables.js"></script>
-    <script src="resources/js/dataTables/jquery.validate.js"></script>
-    <script src="resources/js/bootstrap-datepicker.js"></script>
     <script src="resources/js/dataTables/dataTables.bootstrap.js"></script>
-    <script src="resources/js/dataTables/schoolscript.js"></script>
         <script>
             $(document).ready(function () {
-            	$('.datepicker').datepicker()
+            	$('.datepicker').datepicker();
             });
     </script>
 </body>

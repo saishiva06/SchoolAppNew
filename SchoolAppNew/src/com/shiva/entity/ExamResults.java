@@ -8,31 +8,31 @@ public class ExamResults {
 	private String studentClass;
     private String examTitle;
     private String examDate;
-    private String telugu1;
-    private String telugu2;
-    private String hindi1;
-    private String hindi2;
-    private String english1;
-    private String english2;
-    private String maths1;
-    private String maths2;
-    private String science1;
-    private String science2;
-    private String social1;
-    private String social2;
-    private String computers;
-    private String arts;
-    private String others;
-    private String total;
+    private int telugu1;
+    private int telugu2;
+    private int hindi1;
+    private int hindi2;
+    private int english1;
+    private int english2;
+    private int maths1;
+    private int maths2;
+    private int science1;
+    private int science2;
+    private int social1;
+    private int social2;
+    private int computers;
+    private int arts;
+    private int others;
+    private int total;
     private String grade;
-    private String rank;
+    private int rank;
     
     
    public ExamResults(int examResultsId,String rollno, String studentName,String studentClass, String examTtile, 
-		   String examDate, String telugu1,String telugu2,String hindi1, 
-		   String hindi2, String english1, String english2,String maths1,String maths2,String science1, 
-		   String science2,String social1,String social2,String computers,String arts,String others,
-		   String total,String grade,String rank) {
+		   String examDate, int telugu1,int telugu2,int hindi1, 
+		   int hindi2, int english1, int english2,int maths1,int maths2,int science1, 
+		   int science2,int social1,int social2,int computers,int arts,int others,
+		   int total,String grade,int rank) {
 		// TODO Auto-generated constructor stub
 	}
   
@@ -100,162 +100,162 @@ public void setExamDate(String examDate) {
 }
 
 
-public String getTelugu1() {
+public int getTelugu1() {
 	return telugu1;
 }
 
 
-public void setTelugu1(String telugu1) {
+public void setTelugu1(int telugu1) {
 	this.telugu1 = telugu1;
 }
 
 
-public String getTelugu2() {
+public int getTelugu2() {
 	return telugu2;
 }
 
 
-public void setTelugu2(String telugu2) {
+public void setTelugu2(int telugu2) {
 	this.telugu2 = telugu2;
 }
 
 
-public String getHindi1() {
+public int getHindi1() {
 	return hindi1;
 }
 
 
-public void setHindi1(String hindi1) {
+public void setHindi1(int hindi1) {
 	this.hindi1 = hindi1;
 }
 
 
-public String getHindi2() {
+public int getHindi2() {
 	return hindi2;
 }
 
 
-public void setHindi2(String hindi2) {
+public void setHindi2(int hindi2) {
 	this.hindi2 = hindi2;
 }
 
 
-public String getEnglish1() {
+public int getEnglish1() {
 	return english1;
 }
 
 
-public void setEnglish1(String english1) {
+public void setEnglish1(int english1) {
 	this.english1 = english1;
 }
 
 
-public String getEnglish2() {
+public int getEnglish2() {
 	return english2;
 }
 
 
-public void setEnglish2(String english2) {
+public void setEnglish2(int english2) {
 	this.english2 = english2;
 }
 
 
-public String getMaths1() {
+public int getMaths1() {
 	return maths1;
 }
 
 
-public void setMaths1(String maths1) {
+public void setMaths1(int maths1) {
 	this.maths1 = maths1;
 }
 
 
-public String getMaths2() {
+public int getMaths2() {
 	return maths2;
 }
 
 
-public void setMaths2(String maths2) {
+public void setMaths2(int maths2) {
 	this.maths2 = maths2;
 }
 
 
-public String getScience1() {
+public int getScience1() {
 	return science1;
 }
 
 
-public void setScience1(String science1) {
+public void setScience1(int science1) {
 	this.science1 = science1;
 }
 
 
-public String getScience2() {
+public int getScience2() {
 	return science2;
 }
 
 
-public void setScience2(String science2) {
+public void setScience2(int science2) {
 	this.science2 = science2;
 }
 
 
-public String getSocial1() {
+public int getSocial1() {
 	return social1;
 }
 
 
-public void setSocial1(String social1) {
+public void setSocial1(int social1) {
 	this.social1 = social1;
 }
 
 
-public String getSocial2() {
+public int getSocial2() {
 	return social2;
 }
 
 
-public void setSocial2(String social2) {
+public void setSocial2(int social2) {
 	this.social2 = social2;
 }
 
 
-public String getComputers() {
+public int getComputers() {
 	return computers;
 }
 
 
-public void setComputers(String computers) {
+public void setComputers(int computers) {
 	this.computers = computers;
 }
 
 
-public String getArts() {
+public int getArts() {
 	return arts;
 }
 
 
-public void setArts(String arts) {
+public void setArts(int arts) {
 	this.arts = arts;
 }
 
 
-public String getOthers() {
+public int getOthers() {
 	return others;
 }
 
 
-public void setOthers(String others) {
+public void setOthers(int others) {
 	this.others = others;
 }
 
 
-public String getTotal() {
+public int getTotal() {
 	return total;
 }
 
 
-public void setTotal(String total) {
+public void setTotal(int total) {
 	this.total = total;
 }
 
@@ -270,12 +270,12 @@ public void setGrade(String grade) {
 }
 
 
-public String getRank() {
+public int getRank() {
 	return rank;
 }
 
 
-public void setRank(String rank) {
+public void setRank(int rank) {
 	this.rank = rank;
 }
 	

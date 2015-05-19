@@ -61,7 +61,7 @@ public class FeeDetailsController {
 			String otherFee = request.getParameter("feePaid");
 			String feepaidDate = request.getParameter("feepaidDate");
 			SimpleDateFormat sdf = new SimpleDateFormat("MM/dd/yyyy");
-			SimpleDateFormat output = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+			SimpleDateFormat output = new SimpleDateFormat("yyyy-MM-dd");
 			Date feepaidDate1 = null;
 			try {
 				feepaidDate1 = sdf.parse(feepaidDate);
@@ -89,7 +89,7 @@ public class FeeDetailsController {
 		if (feeDetailsId != null && feeDetailsId.length()>0) {
 			FeeDetails feeDetails = feeDetailsService.getFeeDetailsById(feeDetailsId);
 			SimpleDateFormat output = new SimpleDateFormat("MM/dd/yyyy");
-			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 			Date d = null,doj1 = null;
 			try {
 				doj1 = sdf.parse(feeDetails.getFeePayDate1());
@@ -128,7 +128,7 @@ public class FeeDetailsController {
 			String otherFee = request.getParameter("feePaid");
 			String feepaidDate = request.getParameter("feepaidDate");
 			SimpleDateFormat sdf = new SimpleDateFormat("MM/dd/yyyy");
-			SimpleDateFormat output = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+			SimpleDateFormat output = new SimpleDateFormat("yyyy-MM-dd");
 			Date feepaidDate1 = null;
 			try {
 				feepaidDate1 = sdf.parse(feepaidDate);

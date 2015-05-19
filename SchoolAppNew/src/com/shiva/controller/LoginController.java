@@ -61,4 +61,12 @@ public class LoginController {
 			return new ModelAndView("redirect:index.do");
 		}
 	}
+	
+	@RequestMapping("/logout.do")
+	public ModelAndView logout(HttpServletRequest request) throws Exception {
+				session = request.getSession(true);
+	      		session.invalidate();
+	      		System.out.println("@@@ Logout success...........");
+				return new ModelAndView("redirect:index.do");
+			} 
 }

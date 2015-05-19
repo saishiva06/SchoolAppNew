@@ -70,8 +70,7 @@ public class StudentController {
 
 
 			SimpleDateFormat sdf = new SimpleDateFormat("MM/dd/yyyy");
-			SimpleDateFormat output = new SimpleDateFormat(
-					"yyyy-MM-dd HH:mm:ss");
+			SimpleDateFormat output = new SimpleDateFormat("yyyy-MM-dd");
 			Date studentDob1 = null,studentDoj = null;
 			try {
 				studentDob1 = sdf.parse(studentDob);
@@ -84,7 +83,7 @@ public class StudentController {
 			String formattedDob = output.format(studentDob1);
 			String dateOfJoinee1 = output.format(studentDoj);
 			int result = studentService.createStudent( studentFirstName, studentLastName,  studentClass,  section,  medium, studentFatherName, studentMotherName,  formattedDob,  caste,  religion, phoneNumber, village, gender, fees,  dateOfJoinee1,0);
-			System.out.println("@@@ Student added..........");
+			System.out.println("@@@ Student added.........."+result);
 			return new ModelAndView("redirect:student.do");
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -100,7 +99,7 @@ public class StudentController {
 		if (studentId != null && studentId.length()>0) {
 			Student student = studentService.getStudentById(studentId);
 			SimpleDateFormat output = new SimpleDateFormat("MM/dd/yyyy");
-			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 			Date d = null,doj1 = null;
 			try {
 				d = sdf.parse(student.getDob());
@@ -151,7 +150,7 @@ public class StudentController {
 			String fees = request.getParameter("fee");
 			String dateOfJoinee = request.getParameter("dateOfJoinee");
             SimpleDateFormat sdf = new SimpleDateFormat("MM/dd/yyyy");
-			SimpleDateFormat output = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+			SimpleDateFormat output = new SimpleDateFormat("yyyy-MM-dd");
 			Date studentDob1 = null,studentDoj = null;
 			try {
 				studentDob1 = sdf.parse(studentDob);
@@ -182,7 +181,7 @@ public class StudentController {
 			paramsMap.put("fees", fees);
 			paramsMap.put("student_status", 0);
 		    int result = studentService.updateStudent(paramsMap);
-			System.out.println("@@@ Student updated..........");
+			System.out.println("@@@ Student updated.........."+result);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

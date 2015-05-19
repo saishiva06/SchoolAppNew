@@ -1,10 +1,12 @@
 <%@page import="com.shiva.entity.ExamResults"%>
+<%@page import="com.shiva.util.*"%>
 <%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	session="true" pageEncoding="ISO-8859-1"%>
 
 <%
 	List<ExamResults> mydata = (List<ExamResults>) request.getAttribute("examResultsData");
+	Calculation calculation = new Calculation();
 %>
 <!DOCTYPE html>
 <html>
@@ -106,8 +108,8 @@
 						<td><%=examResults.getStudentClass()%></td>
 						<td><%=examResults.getExamTitle()%></td>
 						<td><%=examResults.getExamDate()%></td>
-						<td><%=examResults.getOthers()%></td>
 						<td><%=examResults.getTotal()%></td>
+						<td><%=calculation.getTotalMarks(examResults)%></td>
 						<td><%=examResults.getRank()%></td>
 						<td><%=examResults.getGrade()%></td>
 		        		<td><button class="btn btn-primary btn-sm" onclick="editExamResults('<%=examResults.getExamResultsId()%>')" ><i class="fa fa-edit "></i> Edit</button></td>

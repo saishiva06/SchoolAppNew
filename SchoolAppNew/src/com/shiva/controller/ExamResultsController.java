@@ -15,7 +15,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.shiva.entity.ExamResults;
-import com.shiva.entity.FeeDetails;
 import com.shiva.service.ExamResultsService;
 
 @Controller
@@ -51,32 +50,33 @@ public class ExamResultsController {
 	public ModelAndView addExamResults(HttpServletRequest request,
 			HttpServletResponse response) throws Exception {
          try {
-            String studentName = request.getParameter("studentName");
-			String rollNo = request.getParameter("rollno");
-			String studentClass = request.getParameter("StudentClass");
-			String examTitle = request.getParameter("examTitle");
-			String examDate = request.getParameter("examDate");
-			String telugu1 = request.getParameter("telugu_1");
-			String telugu2 = request.getParameter("telugu_2");
-			String hindi1 = request.getParameter("hindi_1");
-			String hindi2 = request.getParameter("hindi_2");
-			String english1 = request.getParameter("english_1");
-			String english2 = request.getParameter("english_2");
-			String maths1 = request.getParameter("maths_1");
-			String maths2 = request.getParameter("maths_2");
-			String science1 = request.getParameter("science_1");
-			String science2 = request.getParameter("science_2");
-			String social1 = request.getParameter("social_1");
-			String social2 = request.getParameter("social_2");
-			String computers = request.getParameter("computers");
-			String arts = request.getParameter("arts");
-			String others = request.getParameter("others");
-			String total = request.getParameter("total");
-			String rank = request.getParameter("rank");
-			String grade = request.getParameter("grade");
+        	String studentName = request.getParameter("studentName");
+ 			String rollNo = request.getParameter("rollno");
+ 			String studentClass = request.getParameter("StudentClass");
+ 			String examTitle = request.getParameter("examTitle");
+ 			String examDate = request.getParameter("examDate");
+ 			int telugu1 = Integer.parseInt(request.getParameter("telugu_1"));
+ 			int telugu2 = Integer.parseInt(request.getParameter("telugu_2").length()!=0 ? request.getParameter("telugu_2") : "0");
+ 			int hindi1 = Integer.parseInt(request.getParameter("hindi_1"));
+ 			int hindi2 = Integer.parseInt(request.getParameter("hindi_2").trim());
+ 			int english1 = Integer.parseInt(request.getParameter("english_1"));
+ 			int english2 = Integer.parseInt(request.getParameter("english_2"));
+ 			int maths1 = Integer.parseInt(request.getParameter("maths_1"));
+ 			int maths2 = Integer.parseInt(request.getParameter("maths_2"));
+ 			int science1 = Integer.parseInt(request.getParameter("science_1"));
+ 			int science2 = Integer.parseInt(request.getParameter("science_2"));
+ 			int social1 = Integer.parseInt(request.getParameter("social_1"));
+ 			int social2 = Integer.parseInt(request.getParameter("social_2"));
+ 			int computers = Integer.parseInt(request.getParameter("computers"));
+ 			int arts = Integer.parseInt(request.getParameter("arts"));
+ 			int others = Integer.parseInt(request.getParameter("others"));
+ 			int total = Integer.parseInt(request.getParameter("total"));
+ 			int rank = Integer.parseInt(request.getParameter("rank"));
+ 			String grade = request.getParameter("grade");
+ 			
 			
 			SimpleDateFormat sdf = new SimpleDateFormat("MM/dd/yyyy");
-			SimpleDateFormat output = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+			SimpleDateFormat output = new SimpleDateFormat("yyyy-MM-dd");
 			Date examDate1 = null;
 			try {
 				examDate1 = sdf.parse(examDate);
@@ -102,7 +102,7 @@ public class ExamResultsController {
 		if (examResultsId != null && examResultsId.length()>0) {
 			ExamResults examResults = examResultsService.getExamResultsById(examResultsId);
 			SimpleDateFormat output = new SimpleDateFormat("MM/dd/yyyy");
-			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 			Date examDate = null;
 			try {
 				examDate = sdf.parse(examResults.getExamDate());
@@ -139,27 +139,27 @@ public class ExamResultsController {
 			String studentClass = request.getParameter("StudentClass");
 			String examTitle = request.getParameter("examTitle");
 			String examDate = request.getParameter("examDate");
-			String telugu1 = request.getParameter("telugu_1");
-			String telugu2 = request.getParameter("telugu_2");
-			String hindi1 = request.getParameter("hindi_1");
-			String hindi2 = request.getParameter("hindi_2");
-			String english1 = request.getParameter("english_1");
-			String english2 = request.getParameter("english_2");
-			String maths1 = request.getParameter("maths_1");
-			String maths2 = request.getParameter("maths_2");
-			String science1 = request.getParameter("science_1");
-			String science2 = request.getParameter("science_2");
-			String social1 = request.getParameter("social_1");
-			String social2 = request.getParameter("social_2");
-			String computers = request.getParameter("computers");
-			String arts = request.getParameter("arts");
-			String others = request.getParameter("others");
-			String total = request.getParameter("total");
-			String rank = request.getParameter("rank");
-			String grade = request.getParameter("grade");
+			int telugu1 = Integer.parseInt(request.getParameter("telugu_1"));
+ 			int telugu2 = Integer.parseInt(request.getParameter("telugu_2"));
+ 			int hindi1 = Integer.parseInt(request.getParameter("hindi_1"));
+ 			int hindi2 = Integer.parseInt(request.getParameter("hindi_2"));
+ 			int english1 = Integer.parseInt(request.getParameter("english_1"));
+ 			int english2 = Integer.parseInt(request.getParameter("english_2"));
+ 			int maths1 = Integer.parseInt(request.getParameter("maths_1"));
+ 			int maths2 = Integer.parseInt(request.getParameter("maths_2"));
+ 			int science1 = Integer.parseInt(request.getParameter("science_1"));
+ 			int science2 = Integer.parseInt(request.getParameter("science_2"));
+ 			int social1 = Integer.parseInt(request.getParameter("social_1"));
+ 			int social2 = Integer.parseInt(request.getParameter("social_2"));
+ 			int computers = Integer.parseInt(request.getParameter("computers"));
+ 			int arts = Integer.parseInt(request.getParameter("arts"));
+ 			int others = Integer.parseInt(request.getParameter("others"));
+ 			int total = Integer.parseInt(request.getParameter("total"));
+ 			int rank = Integer.parseInt(request.getParameter("rank"));
+ 			String grade = request.getParameter("grade");
 			
 			SimpleDateFormat sdf = new SimpleDateFormat("MM/dd/yyyy");
-			SimpleDateFormat output = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+			SimpleDateFormat output = new SimpleDateFormat("yyyy-MM-dd");
 			Date examDate1 = null;
 			try {
 				examDate1 = sdf.parse(examDate);

@@ -64,8 +64,7 @@ public class TeacherController {
 			String village = request.getParameter("village");
 			String gender = request.getParameter("gender");
             SimpleDateFormat sdf = new SimpleDateFormat("MM/dd/yyyy");
-			SimpleDateFormat output = new SimpleDateFormat(
-					"yyyy-MM-dd HH:mm:ss");
+			SimpleDateFormat output = new SimpleDateFormat("yyyy-MM-dd");
 			Date d = null;
 			try {
 				d = sdf.parse(dob);
@@ -79,7 +78,7 @@ public class TeacherController {
 					RandomGenerator.getTeacherId(), firstName, lastName,
 					qualification, experience, subject, formattedDob, caste,
 					mobileNo, village, gender, new Date(), 1);
-			System.out.println("@@@ Teacher added..........");
+			System.out.println("@@@ Teacher added.........." + result);
 			return new ModelAndView("redirect:teacher.do");
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -96,7 +95,7 @@ public class TeacherController {
 			Teacher teacher = teacherService.getTeacherById(teacherId);
 			teacher.setReligion("");
 			SimpleDateFormat output = new SimpleDateFormat("MM/dd/yyyy");
-			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 			Date d = null;
 			try {
 				d = sdf.parse(teacher.getDob());
@@ -136,14 +135,12 @@ public class TeacherController {
 			String experience = request.getParameter("experience");
 			String dob = request.getParameter("dob");
 			String caste = request.getParameter("caste");
-			String religion = request.getParameter("religion");
 			String mobileNo = request.getParameter("mobileNo");
 			String village = request.getParameter("village");
 			String gender = request.getParameter("gender");
 
 			SimpleDateFormat sdf = new SimpleDateFormat("MM/dd/yyyy");
-			SimpleDateFormat output = new SimpleDateFormat(
-					"yyyy-MM-dd HH:mm:ss");
+			SimpleDateFormat output = new SimpleDateFormat("yyyy-MM-dd");
 			Date d = null;
 			try {
 				d = sdf.parse(dob);
@@ -169,7 +166,7 @@ public class TeacherController {
 			paramsMap.put("teacher_status", 1);
 		
 			int result = teacherService.updateTeacher(paramsMap);
-			System.out.println("@@@ Teacher updated..........");
+			System.out.println("@@@ Teacher updated.........." + result);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

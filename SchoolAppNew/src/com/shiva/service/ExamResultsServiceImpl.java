@@ -26,13 +26,11 @@ public class ExamResultsServiceImpl implements ExamResultsService {
 
 	
 	@Override
-	public int createResult(String rollno, String studentName,
-			String studentClass, String examTtile, String examDate,
-			String telugu1, String telugu2, String hindi1, String hindi2,
-			String english1, String english2, String maths1, String maths2,
-			String science1, String science2, String social1, String social2,
-			String computers, String arts, String others, String total,
-			String grade, String rank) {
+	public int createResult(String rollno, String studentName,String studentClass, String examTtile, 
+    		   String examDate, int telugu1,int telugu2,int hindi1, 
+    		int hindi2, int english1, int english2,int maths1,int maths2,int science1, 
+    		int science2,int social1,int social2,int computers,int arts,int others,
+    		int total,String grade,int rank) {
 		// TODO Auto-generated method stub
 		return examResultsDao.createResult(rollno, studentName, studentClass, examTtile, examDate, telugu1, telugu2, hindi1, hindi2, english1, english2, maths1, maths2, science1, science2, social1, social2, computers, arts, others, total, grade, rank);
 	}
