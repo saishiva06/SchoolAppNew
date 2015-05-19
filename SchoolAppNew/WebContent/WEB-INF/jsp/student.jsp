@@ -15,6 +15,7 @@
     <link type="text/css" href="resources/css/font-awesome.css" rel="stylesheet">
     <link type="text/css" rel="stylesheet" href="resources/css/style.css" />
     <link href="resources/js/dataTables/dataTables.bootstrap.css" rel="stylesheet" />
+    
     <script type="text/javascript">
 	
 	function editStudent(rollno){   	        	

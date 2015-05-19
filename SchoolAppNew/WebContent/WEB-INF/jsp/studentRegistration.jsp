@@ -3,12 +3,12 @@
 <head>
     <title>Sri Narayana Olypiad School</title>
     <link type="text/css" rel="stylesheet" href="resources/css/bootstrap.css" />
-    <link type="text/css" href="resources/css/font-awesome.css" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="resources/css/font-awesome.css" >
     <link type="text/css" rel="stylesheet" href="resources/css/style.css" />
-     <link type="text/css" rel="stylesheet" href="resources/css/datepicker.min.css" />
-    <link href="resources/js/dataTables/dataTables.bootstrap.css" rel="stylesheet" />
-</head>
-
+    <link type="text/css" rel="stylesheet" href="resources/css/datepicker.min.css" />
+    <link type="text/css" rel="stylesheet" href="resources/css/datepicker3.min.css" />
+    <link type="text/css" rel="stylesheet" href="resources/css/formValidation.css"/>
+  </head>
 <body>
     
     <!-- Fixes Navigation Bar with drop down menu
@@ -55,20 +55,64 @@
     <div class="container">
          <div class="row">
             <div class="col-md-8">
-							<form name="schoolInfo" action="addStudent.do" method="post">
+       					<form action="addStudent.do"  id="addStudent" method="post" class="form-horizontal" >
 								<div class="form-group">
-									    <label  for="name">First Name</label>
-									<input id="studentFirstName" name="studentFirstName"  class="form-control"
-											type="text" />
+									<label class="col-sm-3 control-label">Full name</label>
+									<div class="col-sm-4">
+										<input type="text" class="form-control" id="studentFirstName" name="studentFirstName"
+											placeholder="First name" />
+									</div>
+									<div class="col-sm-4">
+										<input type="text" class="form-control" id="studentLastName"   name="studentLastName"
+											placeholder="Last name" />
+									</div>
 								</div>
-								<div class="form-group">
-									<label for="name">Last Name</label>
-							
-										<input id="studentLastName"  class="form-control"  name="studentLastName" type="text" />
 								
+								<div class="form-group">
+									<label class="col-sm-3 control-label">Father Name</label>
+									<div class="col-sm-5">
+										<input type="text" class="form-control" id="studentFatherName" name="studentFatherName"
+											placeholder="Father Name" />
+									</div>
+									</div>
+								<div class="form-group">
+									<label class="col-sm-3 control-label">Mother Name</label>
+									<div class="col-sm-5">
+										<input type="text" class="form-control" id="studentMotherName" name="studentMotherName"
+											placeholder="Mother name" />
+									</div>
+								</div>
+                              <div class="form-group">
+									<label class="col-sm-3 control-label">Gender</label>
+									<div class="col-sm-6">
+										<div class="radio">
+											<label> <input type="radio" name="gender"
+												value="male" /> Male
+											</label>
+										</div>
+										<div class="radio">
+											<label> <input type="radio" name="gender"
+												value="female" /> Female
+											</label>
+										</div>
+									</div>
 								</div>
 								<div class="form-group">
-								    	<label for="name">Select Class</label> <select
+									<label class="col-xs-3 control-label">Date Of Birth</label>
+									<div class="col-xs-5 date">
+										<div class="input-group input-append date"
+											id="datePicker">
+											<input type="text" class="form-control" name="studentDob" 
+											 placeholder="05/19/2015"  /> <span
+												class="input-group-addon add-on"><span
+												class="glyphicon glyphicon-calendar"></span></span>
+										</div>
+									</div>
+								</div>
+					            <div class="form-group">
+									<label class="col-sm-3 control-label">Class</label>
+									<div class="col-sm-5">
+										<select
 										name="studentClass" class="form-control">
 										<option value="lkg">lkg</option>
 										<option value="ukg">ukg</option>
@@ -83,97 +127,64 @@
 										<option value="9th class">9th class</option>
 										<option value="SSC">SSC</option>
 									</select>
+									</div>
 								</div>
 								<div class="form-group">
-									<label for="name">Gender</label> <select name="gender"
-										class="form-control">
-										<option value="male">Male</option>
-										<option value="female">Female</option>
-									</select>
-								</div>
-								<div class="form-group">
-									<label for="name">Section</label> <select name="section"
-										class="form-control">
-										<option value="A">A</option>
-										<option value="B">B</option>
-									</select>
-								</div>
-								<div class="form-group">
-									<label for="name">Medium</label>
-									  <select name="section" class="form-control">
+									<label class="col-sm-3 control-label">Medium</label>
+									<div class="col-sm-5">	
+									  <select name="medium" class="form-control">
 										<option value="English">English</option>
 										<option value="Telugu">Telugu</option>
 									</select>
+								</div>	
 								</div>
 								<div class="form-group">
-									<label  for="name">Father's Name</label>
-									
-										<input id="studentFatherName" name="studentFatherName" class="form-control"
-											type="text" />
-							
-								</div>
-								<div class="form-group">
-									<label for="name">Mother's Name</label>
-							
-										<input id="studentMotherName" name="studentMotherName" class="form-control"
-											type="text" />
-									</div>
-								<div class="form-group">
-									<label class="">Date</label>
-									<div class="date">
-										<div class="input-group input-append date" id="datePicker">
-											<input id="datepicker" name="studentDob" class="form-control"
-												type="text" /> <span class="input-group-addon add-on"><span
-												class="glyphicon glyphicon-calendar"></span></span>
-										</div>
+									<label class="col-sm-3 control-label">Section</label>
+									<div class="col-sm-5">
+										<select name="section" class="form-control">
+										<option value="A">A</option>
+										<option value="B">B</option>
+										</select>
 									</div>
 								</div>
-								<div class="form-group">
-									<label  for="name">Religion</label>
-									
+                           <div class="form-group">
+									<label class="col-sm-3 control-label" >Religion</label>
+									<div class="col-sm-5">
 										<input id="religion" name="religion" class="form-control"  type="text" />
-									
+										</div>	
 								</div>
 								<div class="form-group">
-									<label for="name">Caste</label>
-									
+									<label class="col-sm-3 control-label">Caste</label>
+									<div class="col-sm-5">
 										<input id="caste" name="caste"  class="form-control" type="text" />
-							
+									</div>
 								</div>
 								<div class="form-group">
-									<label  for="name">Mobile No</label>
-									
+									<label class="col-sm-3 control-label" >Mobile No</label>
+									<div class="col-sm-5">
 										<input id="mobileNo" name="mobileNo"  class="form-control" type="number" />
-									
+										</div>	
 								</div>
 								<div class="form-group">
-									<label  for="message">Address</label>
-									
+									<label  class="col-sm-3 control-label" >Address</label>
+									<div class="col-sm-5">
 										<textarea class=" input-xlarge form-control"  id="village" name="village"
 											rows="3"></textarea>
-								
-								</div>
-								<div class="form-group">
-									<label  for="name">Fee Pay</label>
-									
-										<input id="fee" class="form-control"  name="fee" type="text" />
-								
-								</div>
-								<div class="form-group">
-									<label for="jdate">Joining Date</label>
-									<div class="col-xs-5 date">
-										<div class="input-group input-append date" id="datePicker">
-											<input id="datepicker" name="studentDob" class="form-control"
-												type="text" /> <span class="input-group-addon add-on"><span
-												class="glyphicon glyphicon-calendar"></span></span>
 										</div>
+								</div>
+								<div class="form-group">
+									<label  class="col-sm-3 control-label" >Fee Pay</label>
+									<div class="col-sm-5">
+										<input id="fee" class="form-control"  name="fee" type="text" />
+										</div>
+								</div>
+							<div class="form-group">
+									<div class="col-sm-9 col-sm-offset-3">
+										<button type="submit" class="btn btn-primary" name="signup"
+											value="Sign up">Submit</button>
 									</div>
 								</div>
-								<div class="form-group">
-									<button type="submit" class="btn btn-success">Register</button>
-									<button type="reset" class="btn">Cancel</button>
-								</div>
-						   </form>
+							</form>
 						</div>
          </div>
     </div>
@@ -197,10 +208,10 @@
     <script src="resources/js/bootstrap.js"></script>
     <script src="resources/js/dataTables/jquery.dataTables.js"></script>
     <script src="resources/js/dataTables/dataTables.bootstrap.js"></script>
-        <script>
-            $(document).ready(function () {
-            	$('.datepicker').datepicker();
-            });
-    </script>
+    <script src="resources/js/bootstrap-datepicker.min.js"></script>
+    <script src="resources/js/formValidation.js"></script>
+    <script src="resources/js/framework/bootstrap.js"></script>
+    <script src="resources/js/schoolscript.js"></script>
+
 </body>
 </html>
