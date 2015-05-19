@@ -6,17 +6,31 @@ import java.util.Map;
 import com.shiva.dao.FeeDetailsDao;
 import com.shiva.entity.FeeDetails;
 
+
 public class FeeDetailsServiceImpl implements FeeDetailsService {
 
 	private FeeDetailsDao feeDetailsDao;
 
-	public FeeDetailsServiceImpl() {
+	public FeeDetailsDao getFeeDetailsDao() {
+		return feeDetailsDao;
 	}
+
+
+
 
 	public void setFeeDetailsDao(FeeDetailsDao feeDetailsDao) {
 		this.feeDetailsDao = feeDetailsDao;
 	}
 
+
+
+
+	public FeeDetailsServiceImpl() {
+	}
+
+	
+
+	
 	@Override
 	public int createFeeDetails(String recieptNo, String rollNo,String studentName, String studentClass, String admissionFee, 
 			   String otherFee,String feePayDate1) {
@@ -40,6 +54,7 @@ public class FeeDetailsServiceImpl implements FeeDetailsService {
 	public List<FeeDetails>  getAllFeeDetailsBySearch(String studentsClass,
 			String rollNum, String studentName) {
 		// TODO Auto-generated method stub
+		System.out.println("@@@@@@@@@@@@@");
 		return feeDetailsDao.getAllFeeDetailsBySearch(studentsClass, rollNum, studentName);
 	}
 

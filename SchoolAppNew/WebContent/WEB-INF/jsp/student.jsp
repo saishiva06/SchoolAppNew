@@ -1,11 +1,12 @@
 <%@page import="com.shiva.entity.Student"%>
+<%@page import="com.shiva.util.Calculation"%>
 <%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	session="true" pageEncoding="ISO-8859-1"%>
 
 <%
-	List<Student> mydata = (List<Student>) request
-			.getAttribute("studentsData");
+	List<Student> mydata = (List<Student>) request.getAttribute("studentsData");
+	Calculation calculation = new Calculation();
 %>
 <!DOCTYPE html>
 <html>
@@ -94,8 +95,9 @@
 										<th>Name</th>
 										<th>Class</th>
 										<th>Section</th>
-										<th>Phone Number</th>
-										<th>Address</th>
+										<th>Total Fee</th>
+										<th>Paid Fee</th>
+										<th>Due Fee</th>
 										<th>Edit</th>
 										<th>Delete</th>
                                     </tr>
@@ -112,8 +114,9 @@
 											+ student.getStudentLastName()%></td>
 										<td><%=student.getStudentClass()%></td>
 										<td><%=student.getSection()%></td>
-										<td><%=student.getPhoneNumber()%></td>
-										<td><%=student.getVillage()%></td>
+										<td><%=student.getFees()%></td>
+										<td><%=calculation.getDueFee(student)%></td>
+										<td><%=calculation.getFeePaid(student)%></td>
 										<%-- <td><input type="button"
 												name="edit" value="Edit" class="btn btn-primary"
 												onclick="editStudent('<%=student.getRollno()%>')"/></td>
