@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Sri Narayana Olypiad School</title>
-    <link type="text/css" rel="stylesheet" href="resources/css/bootstrap.css" />
-    <link type="text/css" href="resources/css/font-awesome.css" rel="stylesheet">
+    <title>Sri Narayana Olympiad School</title>
+<link type="text/css" rel="stylesheet" href="resources/css/bootstrap.css" />
+    <link type="text/css" rel="stylesheet" href="resources/css/font-awesome.css" >
     <link type="text/css" rel="stylesheet" href="resources/css/style.css" />
-     <link type="text/css" rel="stylesheet" href="resources/css/datepicker.min.css" />
-    <link href="resources/js/dataTables/dataTables.bootstrap.css" rel="stylesheet" />
+    <link type="text/css" rel="stylesheet" href="resources/css/datepicker.min.css" />
+    <link type="text/css" rel="stylesheet" href="resources/css/datepicker3.min.css" />
+    <link type="text/css" rel="stylesheet" href="resources/css/formValidation.css"/>
 </head>
 <body>
 
@@ -23,7 +24,7 @@
                 <a href="#" class="navbar-brand"><img  width="90px" height="80px"  src="resources/img/logo.jpg" class="logo" alt="Logo" ></img></a>
             </div>
             <div>
-           <h2 class="well" > SRI NARAYANA OLYPIAD SCHOOL </h2>
+           <h2 class="well" > SRI NARAYANA OLYMPIAD SCHOOL </h2>
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
@@ -40,104 +41,140 @@
             
         </div>
     </div>
-
- <div class="container">
-    <div class="panel panel-primary">
-    <div class="panel-heading">Teacher New Registration </div>
-    <div class="panel-body">
-    <div class="container">
-         <div class="row">
-            <div class="col-md-8">
-	<fieldset>
-		<h2 align="center">Teacher Registration:</h2>
-		<form name="SchoolInfo" action="addTeacher.do" method="post">
-			<p align="center">Please Fill the following details to submit
-				Teacher details.</p>
-			<p align="left">
-				<a href="teacher.do"><input type="button" name="add"
-					value="BACK"></input></a>
-			</p>
-			<table>
-
-				<tr>
-					<td align="right"><label>First Name*: </label></td>
-					<td><input id="firstName" name="firstName" type="text" /></td>
-				</tr>
-				<tr>
-					<td align="right"><label>Last Name*: </label></td>
-					<td><input id="lastName" name="lastName" type="text" /></td>
-				</tr>
-				<tr>
-					<td align="right"><label>Qualification*: </label></td>
-					<td><input id="qualification" name="qualification" type="text" /></td>
-				</tr>
-				<tr>
-					<td align="right"><label>Teaching Subject*: </label></td>
-					<td><input id="subject" name="subject" type="text" /></td>
-				</tr>
-				<tr>
-					<td align="right"><label>Experience*: </label></td>
-					<td><input id="experince" name="experience" type="text" /></td>
-				</tr>
-
-				<tr>
-					<td align="right"><label>Date of birth*: </label></td>
-					<td><input id="datepicker" name="dob" type="text" /></td>
-				</tr>
-				<tr>
-					<td align="right"><label>Caste*: </label></td>
-					<td><input id="caste" name="caste" type="text" /></td>
-				</tr>
-				<tr>
-					<td align="right"><label>Mobile Number*: </label></td>
-					<td><input id="mobileNo" name="mobileNo" type="text" /></td>
-				</tr>
-				<tr>
-					<td align="right"><label>Address*: </label></td>
-					<td><input id="village" name="village" type="text" /></td>
-				</tr>
-				<tr>
-					<td align="right"><label>Gender*: </label></td>
-					<td><select name="classs">
-							<option value="Male">male</option>
-							<option value="Female">female</option>
-					</select>
-					</td>
-				</tr>
-
-				<tr>
-					<td align="right"><input name="Submit" type="submit"
-						value="Submit" /></td>
-					<td><input name="clear" type="reset" value="Clear" /></td>
-				</tr>
-			</table>
-		</form>
-	</fieldset>
+	<div class="container">
+		<p>
+			<b> <a href="teacher.do" class="btn btn-default">Back</a></b>
+		</p>
 	</div>
-         </div>
-    </div>
-   </div>
-   </div>
-</div>
-<div class="container">
+
+	<div class="container">
+		<div class="panel panel-primary">
+			<div class="panel-heading">Teacher New Registration</div>
+			<div class="panel-body">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-8">
+
+							<form action="addTeacher.do" id="addTeacher" method="post"
+								class="form-horizontal">
+								<div class="form-group">
+									<label class="col-sm-3 control-label">Full name</label>
+									<div class="col-sm-4">
+										<input type="text" class="form-control" id="firstName"
+											name="firstName" placeholder="First name" />
+									</div>
+									<div class="col-sm-4">
+										<input type="text" class="form-control" id="lastName"
+											name="lastName" placeholder="Last name" />
+									</div>
+								</div>
+								<div class="form-group">
+									<label class="col-sm-3 control-label">Qualification</label>
+									<div class="col-sm-5">
+										<input type="text" class="form-control" id="qualification"
+											name="qualification" />
+									</div>
+								</div>
+
+								<div class="form-group">
+									<label class="col-sm-3 control-label">Teaching Subject</label>
+									<div class="col-sm-5">
+										<input type="text" class="form-control" id="subject"
+											name="subject" />
+									</div>
+								</div>
+
+								<div class="form-group">
+									<label class="col-sm-3 control-label">Experience</label>
+									<div class="col-sm-5">
+										<input type="text" class="form-control" id="experince"
+											name="experience" placeholder="2.5" />
+									</div>
+								</div>
+								<div class="form-group">
+									<label class="col-xs-3 control-label">Date Of Birth</label>
+									<div class="col-xs-5 date">
+										<div class="input-group input-append date" id="datePicker">
+											<input type="text" class="form-control" name="dob"
+												placeholder="05/19/2015" /> <span
+												class="input-group-addon add-on"><span
+												class="glyphicon glyphicon-calendar"></span></span>
+										</div>
+									</div>
+								</div>
+								<div class="form-group">
+									<label class="col-sm-3 control-label">Caste</label>
+									<div class="col-sm-5">
+										<input type="text" class="form-control" id="caste"
+											name="caste" />
+									</div>
+								</div>
+								<div class="form-group">
+									<label class="col-sm-3 control-label">Mobile No</label>
+									<div class="col-sm-5">
+										<input id="mobileNo" name="mobileNo" class="form-control"
+											type="number" />
+									</div>
+								</div>
+								<div class="form-group">
+									<label class="col-sm-3 control-label">Address</label>
+									<div class="col-sm-5">
+										<textarea class=" input-xlarge form-control" id="village"
+											name="village" rows="3"></textarea>
+									</div>
+								</div>
+
+
+								<div class="form-group">
+									<label class="col-sm-3 control-label">Gender</label>
+									<div class="col-sm-6">
+										<div class="radio">
+											<label> <input type="radio" name="gender"
+												value="male" /> Male
+											</label>
+										</div>
+										<div class="radio">
+											<label> <input type="radio" name="gender"
+												value="female" /> Female
+											</label>
+										</div>
+									</div>
+								</div>
+								<div class="form-group">
+									<div class="col-sm-9 col-sm-offset-3">
+										<button type="submit" class="btn btn-primary" name="signup"
+											value="Sign up">Submit</button>
+									</div>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+ 
+     <!-- Footer and Modal
+    ==========================-->
+  <div class="container">
         <div class="row">
             <div class="col-md-12">
                 <hr/>
-                <p>Copyright &copy; Sri Narayana Olypiad School.
+                <p>Copyright &copy; Sri Narayana Olympiad School.
                     <a data-toggle="modal" href="#myModal">Terms and Conditions</a>
                 </p>
             </div>
         </div>
     </div>
-    
+
     <script src="resources/js/jquery.js"></script>
     <script src="resources/js/bootstrap.js"></script>
     <script src="resources/js/dataTables/jquery.dataTables.js"></script>
     <script src="resources/js/dataTables/dataTables.bootstrap.js"></script>
-        <script>
-            $(document).ready(function () {
-            	$('.datepicker').datepicker();
-            });
-    </script>
+    <script src="resources/js/bootstrap-datepicker.min.js"></script>
+    <script src="resources/js/formValidation.js"></script>
+    <script src="resources/js/framework/bootstrap.js"></script>
+    <script src="resources/js/schoolscript.js"></script>
+
 </body>
 </html>

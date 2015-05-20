@@ -6,148 +6,198 @@
 FeeDetails feeDetails = (FeeDetails)request.getAttribute("feeDetails");
 
 %>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="EN" lang="EN"
-	dir="ltr">
-<head profile="http://gmpg.org/xfn/11">
-<title>Sri Narayana Olympiod School-Fee Registration</title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-<meta http-equiv="imagetoolbar" content="no" />
-<link rel="stylesheet" href="resources/styles/layout.css"
-	type="text/css" />
-<link rel="stylesheet"
-	href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css" />
-	<script src="//code.jquery.com/jquery-1.10.2.js"></script>
-	<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
-	<link rel="stylesheet" href="/resources/demos/style.css" />
-		<script>
-			$(function() {
-				$("#datepicker").datepicker({
-				changeMonth: true,
-                 changeYear: true
-			});
-			});
-		</script>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sri Narayana Olypiad School</title>
+    <link type="text/css" rel="stylesheet" href="resources/css/bootstrap.css" />
+    <link type="text/css" rel="stylesheet" href="resources/css/font-awesome.css" >
+    <link type="text/css" rel="stylesheet" href="resources/css/style.css" />
+    <link type="text/css" rel="stylesheet" href="resources/css/datepicker.min.css" />
+    <link type="text/css" rel="stylesheet" href="resources/css/datepicker3.min.css" />
+    <link type="text/css" rel="stylesheet" href="resources/css/formValidation.css"/>
 </head>
 <body>
 
-	<!-- ****************-->
-	<div class="wrapper col1">
-		<div id="header">
-			<div id="logo">
-				<!-- <h1><a href="#">Sharada Education</a></h1> -->
-				<p>
-					<img src="resources/images/logo.jpg" alt="" />
-				</p>
+	<!-- Fixes Navigation Bar with drop down menu
+    ======================================================-->
+       <div class="navbar navbar-inner ">
+        <div class="container">
+             <div class="navbar-header">
+                <button type="buttton" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="#" class="navbar-brand"><img  width="90px" height="80px"  src="resources/img/logo.jpg" class="logo" alt="Logo" ></img></a>
+            </div>
+            <div>
+           <h2 class="well" > SRI NARAYANA OLYMPIAD SCHOOL </h2>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li ><a href="dashboard.do">Home</a></li>
+                    <li  ><a href="teacher.do">Teacher</a></li>
+                    <li ><a href="student.do">Student</a></li>
+                     <li class="active" ><a href="#">Fee</a></li>
+                    <li ><a href="examResults.do">Examination</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li role="presentation"><a role="menuitem" tabindex="-1" href="logout.do">Logout</a></li>
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+	<div class="container">
+		<p>
+			<b> <a href="feeDetails.do" class="btn btn-default">Back</a></b>
+		</p>
+	</div>
+	
+	<div class="container">
+		<div class="panel panel-primary">
+			<div class="panel-heading">Fee New Registration</div>
+			<div class="panel-body">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-8">
+
+							<form action="updateFeeDetails.do" id="addFee" method="post"
+								class="form-horizontal">
+								 <input type="hidden" name="recieptNo" value="<%= feeDetails.getRecieptNo()%>">
+								<div class="form-group">
+									<label class="col-sm-3 control-label">Full name</label>
+									<div class="col-sm-4">
+										<input type="text" class="form-control" id="studentName" value = "<%=feeDetails.getStudentName() %>"
+											name="studentName" placeholder="Student full name" />
+									</div>
+								</div>
+
+								<div class="form-group">
+									<label class="col-sm-3 control-label">Roll No</label>
+									<div class="col-sm-5">
+										<input type="number" class="form-control" id="rollno" value = "<%=feeDetails.getRollNo() %>"
+											name="rollno" placeholder="Roll No:" />
+									</div>
+								</div>
+								<div class="form-group">
+									<label class="col-sm-3 control-label">Class</label>
+									<div class="col-sm-5">
+										<select name="studentClass" class="form-control">
+										  <option value = "<%=feeDetails.getStudentClass() %>" selected = "selected"></option>
+											<option value="lkg">lkg</option>
+											<option value="ukg">ukg</option>
+											<option value="1st class">1st class</option>
+											<option value="2nd class">2nd class</option>
+											<option value="3rd class">3rd class</option>
+											<option value="4th class">4th class</option>
+											<option value="5th class">5th class</option>
+											<option value="6th class">6th class</option>
+											<option value="7th class">7th class</option>
+											<option value="8th class">8th class</option>
+											<option value="9th class">9th class</option>
+											<option value="SSC">SSC</option>
+										</select>
+									</div>
+								</div>
+								<div class="form-group">
+									<label class="col-sm-3 control-label">Section</label>
+									<div class="col-sm-5">
+										<select name="section" class="form-control">
+											<option value="A">A</option>
+											<option value="B">B</option>
+										</select>
+									</div>
+								</div>
+								<div class="form-group">
+									<label class="col-sm-3 control-label">Medium</label>
+									<div class="col-sm-5">
+										<select name="medium" class="form-control">
+											<option value="English">English</option>
+											<option value="Telugu">Telugu</option>
+										</select>
+									</div>
+								</div>
+								<div class="form-group">
+									<label class="col-sm-3 control-label">Mobile No</label>
+									<div class="col-sm-5">
+										<input id="mobileNo" name="mobileNo" class="form-control"
+											type="number" />
+									</div>
+								</div>
+								<div class="form-group">
+									<label class="col-sm-3 control-label">Fee Type</label>
+									<div class="col-sm-5">
+										<select name="feeType">
+											<option value="admissionFee">Admission Fee</option>
+											<option value="tutionFee">Tution Fee</option>
+											<option value="examFee">Exam Fee</option>
+											<option value="transportFee">Transport Fee</option>
+											<option value="iiTFee">IIT Fee</option>
+											<option value="otherFee">Other Fee</option>
+										</select>
+									</div>
+								</div>
+
+								<div class="form-group">
+									<label class="col-sm-3 control-label">Fee Paid</label>
+									<div class="col-sm-5">
+										<input id="feePaid" name="feePaid"   class="form-control"  type="text"  value = "<%=feeDetails.getOtherFee() %>" />
+									</div>
+								</div>
+								
+								<div class="form-group">
+									<label class="col-xs-3 control-label">Fee Paid Date</label>
+									<div class="col-xs-5 date">
+										<div class="input-group input-append date"
+											id="datePicker">
+											<input type="text" class="form-control"  name="feepaidDate"  value = "<%=feeDetails.getFeePayDate1()%> "
+											 placeholder="05/19/2015"  /> <span
+												class="input-group-addon add-on"><span
+												class="glyphicon glyphicon-calendar"></span></span>
+										</div>
+									</div>
+								</div>
+							
+								<div class="form-group">
+									<div class="col-sm-9 col-sm-offset-3">
+										<button type="submit" class="btn btn-primary" name="signup"
+											value="Sign up">Submit</button>
+									</div>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
 			</div>
-			<div id="topnav">
-				<ul>
-					<center>
-						<li class="active">Fee
-								Registration</a></li>
-					</center>
-				</ul>
-			</div>
-			<br class="clear" />
 		</div>
 	</div>
-	<!-- *************************** -->
-	<fieldset>
-		<h2 align="center">Fee Registration:</h2>
-		<form name="SchoolInfo" action="updateFeeDetails.do" method="post">
-			<p align="center">Please Fill the following details to submit fee
-				details.</p>
-				<p align="left"><a href="feeDetails.do"><input type="button" name="add" value="BACK" ></input></a></p>
-			   <input type="hidden" name="recieptNo" value="<%= feeDetails.getRecieptNo()%>">
-			<table>
-				<tr>
-					<td align="right"><label>Full Name*: </label></td>
-					<td><input id="name" name="studentName" type="text" value = "<%=feeDetails.getStudentName() %>"/></td>
-				</tr>
-				<tr>
-					<td align="right"><label for="name">Roll Number*: </label></td>
-					<td><input id="name" name="rollno" type="text"  value = "<%=feeDetails.getRollNo() %>"/></td>
-				</tr>
-				<tr>
-					<td align="right"><label for="name">Class*: </label></td>
-					<td><select name="StudentClass" >
-					         <option value = "<%=feeDetails.getStudentClass() %>" selected = "selected"></option>
-							<option value="lkg">lkg</option>
-							<option value="ukg">ukg</option>
-							<option value="1st class">1st class</option>
-							<option value="2nd class">2nd class</option>
-							<option value="3rd class">3rd class</option>
-							<option value="4th class">4th class</option>
-							<option value="5th class">5th class</option>
-							<option value="6th class">6th class</option>
-							<option value="7th class">7th class</option>
-							<option value="8th class">8th class</option>
-							<option value="9th class">9th class</option>
-							<option value="SSC">SSC</option>
-					</select></td>
-				</tr>
+	
 
-				<tr>
-					<td align="right"><label for="name">Section*: </label></td>
+    <!-- Footer and Modal
+    ==========================-->
+  <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <hr/>
+                <p>Copyright &copy; Sri Narayana Olympiad School.
+                    <a data-toggle="modal" href="#myModal">Terms and Conditions</a>
+                </p>
+            </div>
+        </div>
+    </div>
 
-					<td><select name="section">
-							<option value="A">A</option>
-							<option value="B">B</option>
-					</select></td>
+    <script src="resources/js/jquery.js"></script>
+    <script src="resources/js/bootstrap.js"></script>
+    <script src="resources/js/dataTables/jquery.dataTables.js"></script>
+    <script src="resources/js/dataTables/dataTables.bootstrap.js"></script>
+    <script src="resources/js/bootstrap-datepicker.min.js"></script>
+    <script src="resources/js/formValidation.js"></script>
+    <script src="resources/js/framework/bootstrap.js"></script>
+    <script src="resources/js/schoolscript.js"></script>
 
-				</tr>
-
-				<tr>
-					<td align="right"><label for="medium">Medium*: </label></td>
-					<td><select name="medium">
-							<option value="English">English</option>
-							<option value="Telugu">Telugu</option>
-					</select></td>
-				</tr>
-
-				<tr>
-					<td align="right"><label for="name">Fee Type*: </label></td>
-                    <td><select name="feeType">
-							<option value="admissionFee">Admission Fee</option>
-							<option value="tutionFee">Tution Fee</option>
-							<option value="examFee">Exam Fee</option>
-							<option value="transportFee">Transport Fee</option>
-							<option value="iiTFee">IIT Fee</option>
-							<option value="otherFee">Other Fee</option>
-					</select></td>
-
-				</tr>
-				<tr>
-					<td align="right"><label for="feePaid">Fee Paid*: </label></td>
-					<td><input id="feePaid" name="feePaid" type="text"  value = "<%=feeDetails.getOtherFee() %>"/></td>
-				</tr>
-				<tr>
-					<td align="right"><label for="feepaidDate">Fee Paid Date*: </label></td>
-					<td><input id="datepicker" name="feepaidDate" type="text"  value = "<%=feeDetails.getFeePayDate1() %>"/></td>
-				</tr>
-				<tr>
-					<td align="right"><input name="Submit" type="submit"
-						value="Submit" /></td>
-					<td><input name="clear" type="reset" value="Clear" /></td>
-				</tr>
-			</table>
-		</form>
-	</fieldset>
-<div class="wrapper col4">
-  <div id="copyright">
-    <p class="fl_left">Copyright &copy; 2015 - All Rights Reserved - Sri Narayana Olympiod School</p>
-  </div>
-</div>
-<script type="text/javascript" src="resources/scripts/jquery-1.4.1.min.js"></script>
-<script type="text/javascript" src="resources/scripts/jquery.slidepanel.setup.js"></script>
-<script type="text/javascript" src="resources/scripts/jquery.cycle.min.js"></script>
-<script type="text/javascript" src="resources/scripts/jquery.cycle.setup.js"></script>
-<script type="text/javascript" src="resources/scripts/jquery-1.7.1.min.js"></script> 
-<script type="text/javascript" src="resources/scripts/jquery.validate.js"></script>
-<script type="text/javascript" src="resources/scripts/bootstrap-datepicker.min.js"></script>  
-<script type="text/javascript" src="resources/scripts/schoolscript.js"></script> 
 </body>
 </html>
-
-
 

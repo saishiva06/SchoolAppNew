@@ -21,7 +21,7 @@
                 <a href="#" class="navbar-brand"><img  width="90px" height="80px"  src="resources/img/logo.jpg" class="logo" alt="Logo" ></img></a>
             </div>
             <div>
-           <h2 class="well" > SRI NARAYANA OLYPIAD SCHOOL </h2>
+           <h2 class="well" > SRI NARAYANA OLYMPIAD SCHOOL </h2>
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
@@ -84,6 +84,7 @@
     <script src="resources/js/bootstrap.js"></script>
     <script src="resources/js/dataTables/jquery.dataTables.js"></script>
     <script src="resources/js/dataTables/dataTables.bootstrap.js"></script>
+    <script src="resources/js/dataTables/contentHover.js"></script>
         <script>
             $(document).ready(function () {
                 $('#dataTables-example').dataTable();

@@ -112,10 +112,14 @@
 						<td><%=teacher.getExp()%></td>
 						<td><%=teacher.getPhoneNumber()%></td>
 						<td><%=teacher.getVillage()%></td>
-		        		<td><button class="btn btn-primary btn-sm" onclick="editTeacher('<%=teacher.getTeacherId()%>')" ><i class="fa fa-edit "></i> Edit</button></td>
-				        <td><button class="btn btn-danger btn-sm" onclick="deleteTeacher('<%=teacher.getTeacherId()%>')"  ><i class="fa fa-pencil"></i> Delete</button></td>		
 						
-					</tr>
+							 <td><input type="button"
+												name="edit" value="Edit" class="btn btn-primary"
+												onclick="editTeacher('<%=teacher.getTeacherId()%>')"/></td>
+										<td><input type="button"
+												name="delete" value="Delete" class="btn btn-danger"
+												onclick="deleteTeacher('<%=teacher.getTeacherId()%>')"/></td>
+  					</tr>
 				</tbody>
 				<%
 					}

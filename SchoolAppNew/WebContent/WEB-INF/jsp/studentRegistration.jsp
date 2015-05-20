@@ -10,7 +10,7 @@
     <link type="text/css" rel="stylesheet" href="resources/css/formValidation.css"/>
   </head>
 <body>
-    
+
     <!-- Fixes Navigation Bar with drop down menu
     ======================================================-->
        <div class="navbar navbar-inner ">
@@ -24,7 +24,7 @@
                 <a href="#" class="navbar-brand"><img  width="90px" height="80px"  src="resources/img/logo.jpg" class="logo" alt="Logo" ></img></a>
             </div>
             <div>
-           <h2 class="well" > SRI NARAYANA OLYPIAD SCHOOL </h2>
+           <h2 class="well" > SRI NARAYANA OLYMPIAD SCHOOL </h2>
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
@@ -38,16 +38,15 @@
                     <li role="presentation"><a role="menuitem" tabindex="-1" href="logout.do">Logout</a></li>
                 </ul>
             </div>
-            
+
         </div>
     </div>
      <div class="container">
                     <p>
                      <b>   <a href="student.do" class="btn btn-default">Back</a></b>
                     </p>
-     </div>               
-    <!--  Jquery Table Start Here
-    ++++++++++++++++++++++++++++++-->
+     </div>
+
     <div class="container">
     <div class="panel panel-primary">
     <div class="panel-heading">Student New Registration </div>
@@ -67,7 +66,7 @@
 											placeholder="Last name" />
 									</div>
 								</div>
-								
+
 								<div class="form-group">
 									<label class="col-sm-3 control-label">Father Name</label>
 									<div class="col-sm-5">
@@ -102,7 +101,7 @@
 									<div class="col-xs-5 date">
 										<div class="input-group input-append date"
 											id="datePicker">
-											<input type="text" class="form-control" name="studentDob" 
+											<input type="text" class="form-control" name="studentDob"
 											 placeholder="05/19/2015"  /> <span
 												class="input-group-addon add-on"><span
 												class="glyphicon glyphicon-calendar"></span></span>
@@ -131,12 +130,12 @@
 								</div>
 								<div class="form-group">
 									<label class="col-sm-3 control-label">Medium</label>
-									<div class="col-sm-5">	
+									<div class="col-sm-5">
 									  <select name="medium" class="form-control">
 										<option value="English">English</option>
 										<option value="Telugu">Telugu</option>
 									</select>
-								</div>	
+								</div>
 								</div>
 								<div class="form-group">
 									<label class="col-sm-3 control-label">Section</label>
@@ -151,7 +150,7 @@
 									<label class="col-sm-3 control-label" >Religion</label>
 									<div class="col-sm-5">
 										<input id="religion" name="religion" class="form-control"  type="text" />
-										</div>	
+										</div>
 								</div>
 								<div class="form-group">
 									<label class="col-sm-3 control-label">Caste</label>
@@ -163,7 +162,7 @@
 									<label class="col-sm-3 control-label" >Mobile No</label>
 									<div class="col-sm-5">
 										<input id="mobileNo" name="mobileNo"  class="form-control" type="number" />
-										</div>	
+										</div>
 								</div>
 								<div class="form-group">
 									<label  class="col-sm-3 control-label" >Address</label>
@@ -197,13 +196,13 @@
         <div class="row">
             <div class="col-md-12">
                 <hr/>
-                <p>Copyright &copy; Sri Narayana Olypiad School.
+                <p>Copyright &copy; Sri Narayana Olympiad School.
                     <a data-toggle="modal" href="#myModal">Terms and Conditions</a>
                 </p>
             </div>
         </div>
     </div>
-    
+
     <script src="resources/js/jquery.js"></script>
     <script src="resources/js/bootstrap.js"></script>
     <script src="resources/js/dataTables/jquery.dataTables.js"></script>

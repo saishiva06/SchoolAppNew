@@ -16,23 +16,23 @@
     <link type="text/css" href="resources/css/font-awesome.css" rel="stylesheet">
     <link type="text/css" rel="stylesheet" href="resources/css/style.css" />
     <link href="resources/js/dataTables/dataTables.bootstrap.css" rel="stylesheet" />
-    
+
     <script type="text/javascript">
-	
-	function editStudent(rollno){   	        	
+
+	function editStudent(rollno){
 		var f=document.form2;
 		f.rollno.value = rollno;
 	    f.method="post";
 	    f.action='editStudent.do';
-	    f.submit();	
+	    f.submit();
     }
-	
-	function deleteStudent(rollno){   	        	
+
+	function deleteStudent(rollno){
 		var f=document.form2;
 		f.rollno.value = rollno;
     	f.method="post";
     	f.action='deleteStudent.do';
-    	f.submit();	
+    	f.submit();
     }
 
 
@@ -40,7 +40,7 @@
 </head>
 
 <body>
-    
+
     <!-- Fixes Navigation Bar with drop down menu
     ======================================================-->
        <div class="navbar navbar-inner ">
@@ -68,17 +68,17 @@
                     <li role="presentation"><a role="menuitem" tabindex="-1" href="logout.do">Logout</a></li>
                 </ul>
             </div>
-            
+
         </div>
     </div>
-    
-   
+
+
     <!--  Jquery Table Start Here
     ++++++++++++++++++++++++++++++-->
 <div class="container">
   	<div class="panel panel-primary">
       <div class="panel-heading">
-    			Student 
+    			Student
       </div>
       <div class="panel-body">
         <div class="container">
@@ -107,7 +107,7 @@
 											for (int i = 0; i < mydata.size(); i++) {
 												Student student = mydata.get(i);
 									%>
-                                
+
                                 <tbody>
 			                        <tr>
 										<td><%=student.getRollno()%></td>
@@ -118,15 +118,15 @@
 										<td><%=student.getFees()%></td>
 										<td><%=calculation.getDueFee(student)%></td>
 										<td><%=calculation.getFeePaid(student)%></td>
-										<%-- <td><input type="button"
+									 <td><input type="button"
 												name="edit" value="Edit" class="btn btn-primary"
 												onclick="editStudent('<%=student.getRollno()%>')"/></td>
 										<td><input type="button"
 												name="delete" value="Delete" class="btn btn-danger"
-												onclick="deleteStudent('<%=student.getRollno()%>')"/></td> --%>
-										<td><button class="btn btn-primary btn-sm" onclick="editStudent('<%=student.getRollno()%>')" ><i class="fa fa-edit "></i> Edit</button></td>
-				                        <td><button class="btn btn-danger btn-sm" onclick="deleteStudent('<%=student.getRollno()%>')"  ><i class="fa fa-pencil"></i> Delete</button></td>		
-								</tr>
+												onclick="deleteStudent('<%=student.getRollno()%>')"/></td>
+  										 <%-- <td><button class="btn btn-primary btn-sm" onclick="editStudent('<%=student.getRollno()%>')" ><i class="fa fa-edit "></i> Edit</button></td>
+				                        <td><button class="btn btn-danger btn-sm" onclick="deleteStudent('<%=student.getRollno()%>')"  ><i class="fa fa-pencil"></i> Delete</button></td>		 
+							 --%>	</tr>
 							</tbody>
 							<%
 								}
@@ -156,7 +156,7 @@
             </div>
         </div>
     </div>
-    
+
     <script src="resources/js/jquery.js"></script>
     <script src="resources/js/bootstrap.js"></script>
     <script src="resources/js/dataTables/jquery.dataTables.js"></script>
