@@ -71,7 +71,7 @@ public class FeeDetailsDaoImpl extends SqlMapClientDaoSupport implements
 				paramsMap.put("roll_no", rollNum);
 				paramsMap.put("student_name", studentName);
 				paramsMap.put("student_class", studentClass);
-				feeDetailsList = (List<FeeDetails>) template.queryForObject("getAllFeeDetailsBySearch", paramsMap);
+				feeDetailsList = (List<FeeDetails>) template.queryForList("getAllFeeDetailsBySearch", paramsMap);
 	        } catch (Exception e) {
 				e.printStackTrace();
 			} finally {

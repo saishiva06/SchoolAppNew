@@ -226,7 +226,7 @@
 	</delete>
 	
 	<select id="getAllFeeDetailsBySearch" parameterClass="java.util.Map" resultMap="FeeDetails">
-		select f.* from fee_details f where f.student_name=#student_name# or OR f.student_class=#student_class# OR f.roll_no=#roll_no#
+		select f.* from fee_details f where (f.student_name=#student_name#) OR  (f.student_class=#student_class#) OR (f.roll_no=#roll_no#)
 	</select>
 	
 	<!-- ExamResultsDao -->
