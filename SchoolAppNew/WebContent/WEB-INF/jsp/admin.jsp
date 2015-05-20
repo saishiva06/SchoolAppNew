@@ -26,9 +26,8 @@
                 <ul class="nav navbar-nav">
                     <li ><a href="index.do">Home</a></li>
                     <li class="active"><a href="#">Admin</a></li>
-                    <li ><a href="">Notice Board</a></li>
+                    <li ><a href="noticeboard.do">Notice Board</a></li>
                     <li ><a href="">Contact Us</a></li>
-                    <li><a href="">Examination</a></li>
                 </ul>
                
             </div>

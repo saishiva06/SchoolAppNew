@@ -11,5 +11,4 @@ public class DashboardController {
 	public ModelAndView loadDashboard() throws Exception {
 		return new ModelAndView("dashboard");
 	}
-
 }

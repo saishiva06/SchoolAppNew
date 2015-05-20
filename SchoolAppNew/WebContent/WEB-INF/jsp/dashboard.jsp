@@ -32,7 +32,7 @@
                     <li><a href="examResults.do">Examination</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
-                    <li role="presentation"><a role="menuitem" tabindex="-1" href="admin.html">Logout</a></li>
+                    <li role="presentation"><a role="menuitem" tabindex="-1" href="logout.do">Logout</a></li>
                 </ul>
             </div>
             
@@ -84,6 +84,7 @@
     <script src="resources/js/bootstrap.js"></script>
     <script src="resources/js/dataTables/jquery.dataTables.js"></script>
     <script src="resources/js/dataTables/dataTables.bootstrap.js"></script>
+    <script src="resources/js/contentHover.js"></script>
         <script>
             $(document).ready(function () {
                 $('#dataTables-example').dataTable();
@@ -104,6 +105,6 @@
             });
             });
     </script>
-     <script src="js/contentHover.js"></script>
+     
    </body>
 </html>

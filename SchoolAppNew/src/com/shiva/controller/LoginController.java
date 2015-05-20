@@ -11,9 +11,9 @@ import com.shiva.service.UserService;
 
 @Controller
 public class LoginController {
-	
+
 	HttpSession session;
-	
+
 	private UserService userService;
 
 	public UserService getUserService() {
@@ -24,22 +24,6 @@ public class LoginController {
 		this.userService = userService;
 	}
 
-	@RequestMapping("/index")
-	public ModelAndView loadIndex() throws Exception {
-		return new ModelAndView("index");
-	}
-
-	@RequestMapping("/admin")
-	public ModelAndView loadAdmin() throws Exception {
-		return new ModelAndView("admin");
-	}
-	
-	//for page display temporary @venu     
-	@RequestMapping("/noticeboard")
-	public ModelAndView loadNoticeboard() throws Exception {
-		return new ModelAndView("noticeboard");
-	}
-	
 	@RequestMapping("/login.do")
 	public ModelAndView checkLogin(HttpServletRequest request) throws Exception {
 		String userName = request.getParameter("teachername");
@@ -51,7 +35,7 @@ public class LoginController {
 			if (loginStatus) {
 				System.out.println("@@@ Login success...........");
 				session = request.getSession(true);
-	      		session.setAttribute("user_name", userName);
+				session.setAttribute("user_name", userName);
 				return new ModelAndView("dashboard");
 			} else {
 				System.out.println("@@@ Login failure...........");
@@ -61,12 +45,5 @@ public class LoginController {
 			return new ModelAndView("redirect:index.do");
 		}
 	}
-	
-	@RequestMapping("/logout.do")
-	public ModelAndView logout(HttpServletRequest request) throws Exception {
-				session = request.getSession(true);
-	      		session.invalidate();
-	      		System.out.println("@@@ Logout success...........");
-				return new ModelAndView("redirect:index.do");
-			} 
+
 }
