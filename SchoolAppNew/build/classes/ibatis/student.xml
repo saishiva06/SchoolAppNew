@@ -5,6 +5,7 @@
 
 	<resultMap id="Student" class="com.shiva.entity.Student">
 		<result property="rollno" column="roll_num" />
+		<result property="admissionNo" column="admission_num" />
 		<result property="studentFirstName" column="student_fisrt_name" />
 		<result property="studentLastName" column="student_last_name" />
 		<result property="studentClass" column="student_class" />
@@ -129,7 +130,7 @@
 	</select>
 
 	<insert id="createStudent" parameterClass="java.util.Map">
-		insert into student(student_fisrt_name,student_last_name,student_class, section, medium, student_father_name,student_mother_name,student_dob,student_caste,student_religion,student_phone_num,student_village,student_gender,fees,student_doj,student_status) values (#student_fisrt_name#,#student_last_name#,#student_class#,#section#,#medium#,#student_father_name#,#student_mother_name#,#student_dob#,#student_caste#,#student_religion#,#student_phone_num#,#student_village#,#student_gender#,#fees#,#student_doj#,#student_status#)
+		insert into student(admission_num,student_fisrt_name,student_last_name,student_class, section, medium, student_father_name,student_mother_name,student_dob,student_caste,student_religion,student_phone_num,student_village,student_gender,fees,student_doj,student_status) values (#admission_num#,#student_fisrt_name#,#student_last_name#,#student_class#,#section#,#medium#,#student_father_name#,#student_mother_name#,#student_dob#,#student_caste#,#student_religion#,#student_phone_num#,#student_village#,#student_gender#,#fees#,#student_doj#,#student_status#)
 		<selectKey resultClass="int" keyProperty="id">
 			select
 			last_insert_id() as id
@@ -156,23 +157,10 @@
 		select s.* from student s where roll_num=#roll_num#
 	</select>
   
-  <select id="getStudentId" parameterClass="string" resultClass="int">
-		select u_id from Student where u_login=#u_login#
+   <select id="getLastRecordRollNum" parameterClass="string" resultClass="string">
+	        select admission_num from student where student_class=#student_class# ORDER BY roll_num DESC LIMIT 1;
 	</select>
-
-	<select id="getStudentname" parameterClass="int" resultClass="string">
-		select u_login from Student where u_id=#u_id#
-	</select>
-
-	<select id="getMgrIdByStudentId" parameterClass="int"
-		resultClass="int">
-		select u_mgr_id from Student where u_id=#u_id#
-	</select>
-
-	<select id="getMgrIdByStudentname" parameterClass="string"
-		resultClass="int">
-		select u_mgr_id from Student where u_login=#u_login#
-	</select>
+	
 
 	<select id="getStudentsMap" resultClass="java.util.HashMap">
 		select *,
@@ -181,13 +169,6 @@
 		u_mgr_id not in (10, 1000)
 	</select>
 
-	<select id="getStudentnameByTaskId_ProcessId" parameterClass="java.util.Map"
-		resultClass="string">
-		select u.u_login from step_instance si join
-		process_instance pi join Student u where si.si_task_id=#si_task_id#
-		and pi.pi_id=#pi_id# and si.pi_id = pi.pi_id and
-		pi.pi_subject_id=u.u_id
-	</select>
 
 	<select id="getStudentMap" parameterClass="String" resultClass="java.util.HashMap">
 		select *, aes_decrypt(u_password, u_login) as u_pwd,
@@ -222,7 +203,7 @@
 		update fee_details f set f.student_name=#student_name#, f.student_class=#student_class#, f.fee_type=#fee_type#, f.fee_paid=#fee_paid#,f.fee_pay_date_1=#fee_pay_date_1# where recipt_no =#recipt_no#
 	</update>
 	<delete id="deleteFeeDetails">
-		delete from fee_details where where recipt_no =#recieptId#
+		delete from fee_details where recipt_no =#recieptId#
 	</delete>
 	
 	<select id="getAllFeeDetailsBySearch" parameterClass="java.util.Map" resultMap="FeeDetails">

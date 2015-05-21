@@ -57,7 +57,7 @@ public class FeeDetailsController {
 			String feeType = request.getParameter("feeType");
 			String otherFee = request.getParameter("feePaid");
 			String feepaidDate = request.getParameter("feepaidDate");
-			SimpleDateFormat sdf = new SimpleDateFormat("MM/dd/yyyy");
+			SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 			SimpleDateFormat output = new SimpleDateFormat("yyyy-MM-dd");
 			Date feepaidDate1 = null;
 			try {
@@ -89,7 +89,7 @@ public class FeeDetailsController {
 		if (feeDetailsId != null && feeDetailsId.length() > 0) {
 			FeeDetails feeDetails = feeDetailsService
 					.getFeeDetailsById(feeDetailsId);
-			SimpleDateFormat output = new SimpleDateFormat("MM/dd/yyyy");
+			SimpleDateFormat output = new SimpleDateFormat("dd/MM/yyyy");
 			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 			Date d = null, doj1 = null;
 			try {
@@ -108,7 +108,7 @@ public class FeeDetailsController {
 	@RequestMapping("/deleteFeeDetails.do")
 	public ModelAndView loadFeeDetailsDashboard(HttpServletRequest request,
 			HttpServletResponse response) throws Exception {
-		String feeDetailsId = request.getParameter("rollno");
+		String feeDetailsId = request.getParameter("recieptNo");
 		System.out.println("@@@ delete feeDetailsId.........." + feeDetailsId);
 		if (feeDetailsId != null && feeDetailsId.length() > 0) {
 			boolean status = feeDetailsService.deleteFeeDetails(feeDetailsId);
@@ -129,17 +129,14 @@ public class FeeDetailsController {
 			String feeType = request.getParameter("feeType");
 			String otherFee = request.getParameter("feePaid");
 			String feepaidDate = request.getParameter("feepaidDate");
-			SimpleDateFormat sdf = new SimpleDateFormat("MM/dd/yyyy");
+			SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 			SimpleDateFormat output = new SimpleDateFormat("yyyy-MM-dd");
 			Date feepaidDate1 = null;
 			try {
 				feepaidDate1 = sdf.parse(feepaidDate);
 			} catch (ParseException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
 			}
-			String formattedDob = output.format(feepaidDate1);
-			String today = output.format(new Date());
+			String formattedPaidDate = output.format(feepaidDate1);
 			Map<String, Object> paramsMap = new HashMap<String, Object>();
 			paramsMap.put("recipt_no", recieptNo);
 			paramsMap.put("roll_no", rollNo);
@@ -147,9 +144,9 @@ public class FeeDetailsController {
 			paramsMap.put("student_class", studentClass);
 			paramsMap.put("fee_type", feeType);
 			paramsMap.put("fee_paid", otherFee);
-			paramsMap.put("fee_pay_date_1", formattedDob);
+			paramsMap.put("fee_pay_date_1", formattedPaidDate);
 			int result = feeDetailsService.updateFeeDetails(paramsMap);
-			System.out.println("@@@ FeeDetails updated..........");
+			System.out.println("@@@ FeeDetails updated.........." +result);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

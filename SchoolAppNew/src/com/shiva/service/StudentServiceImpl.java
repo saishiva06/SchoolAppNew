@@ -21,11 +21,11 @@ public class StudentServiceImpl implements StudentService {
 	}
 
 	@Override
-	public int createStudent(String studentFirstName,String studentLastName, String studentClass, String section, String medium,
+	public int createStudent( String admissionNo,String studentFirstName,String studentLastName, String studentClass, String section, String medium,
 			String studentFatherName,String studentMotherName, String dob, String caste, String religion,String phoneNumber,
 			String village,String gender, String fees, String doj,int status){
 		// TODO Auto-generated method stub
-		return studentDao.createStudent(studentFirstName, studentLastName,  studentClass,  section,  medium, studentFatherName, studentMotherName,  dob,  caste,  religion, phoneNumber, village, gender, fees,  doj,status);
+		return studentDao.createStudent(admissionNo,studentFirstName, studentLastName,  studentClass,  section,  medium, studentFatherName, studentMotherName,  dob,  caste,  religion, phoneNumber, village, gender, fees,  doj,status);
 	}
 
 	@Override
@@ -85,6 +85,12 @@ public class StudentServiceImpl implements StudentService {
 	public boolean deleteStudent(String StudentId) {
 		// TODO Auto-generated method stub
 		return studentDao.deleteStudent(StudentId);
+	}
+
+	@Override
+	public String getLastRecordRollNum(String studentClass) {
+		// TODO Auto-generated method stub
+		return studentDao.getLastRecordRollNum(studentClass);
 	}
 	
 }

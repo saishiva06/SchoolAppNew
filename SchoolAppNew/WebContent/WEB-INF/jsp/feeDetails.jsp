@@ -111,10 +111,10 @@
 						<td><%=feeDetails.getOtherFee()%></td>
 						<td><%=feeDetails.getFeePayDate1()%></td>
 						<td><input type="button"
-								name="edit" value="Edit" 
+								name="edit" value="Edit"  class="btn btn-primary"
 								onclick="editFeeDetails('<%=feeDetails.getRecieptNo()%>')"/></td>
 						<td><input type="button"
-								name="delete" value="Delete" 
+								name="delete" value="Delete"  class="btn btn-danger"
 								onclick="deleteFeeDetails('<%=feeDetails.getRecieptNo()%>')"/></td>
 					</tr>
 				</tbody>

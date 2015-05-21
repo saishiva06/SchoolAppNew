@@ -73,6 +73,8 @@
 								class="form-horizontal">
 								<input type="hidden" name="rollno"
 									value="<%=student.getRollno()%>">
+									<input type="hidden" name="admissionNo"
+									value="<%=student.getAdmissionNo()%>">
 								<div class="form-group">
 									<label class="col-sm-3 control-label">Full name</label>
 									<div class="col-sm-4">
@@ -133,6 +135,7 @@
 									<label class="col-sm-3 control-label">Class</label>
 									<div class="col-sm-5">
 										<select name="studentClass" class="form-control">
+											<option value = "<%=student.getStudentClass() %>" selected = "selected"><%=student.getStudentClass() %></option>
 											<option value="lkg">lkg</option>
 											<option value="ukg">ukg</option>
 											<option value="1st class">1st class</option>
@@ -152,6 +155,7 @@
 									<label class="col-sm-3 control-label">Medium</label>
 									<div class="col-sm-5">
 										<select name="medium" class="form-control">
+										<option value = "<%=student.getMedium() %>" selected = "selected"><%=student.getMedium() %></option>
 											<option value="English">English</option>
 											<option value="Telugu">Telugu</option>
 										</select>
@@ -161,7 +165,8 @@
 									<label class="col-sm-3 control-label">Section</label>
 									<div class="col-sm-5">
 										<select name="section" class="form-control">
-											<option value="A">A</option>
+										<option value = "<%=student.getSection()%>" selected = "selected"><%=student.getSection() %></option>
+										<option value="A">A</option>
 											<option value="B">B</option>
 										</select>
 									</div>

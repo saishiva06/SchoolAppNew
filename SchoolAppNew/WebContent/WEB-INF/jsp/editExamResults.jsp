@@ -74,7 +74,7 @@ ExamResults examResults = (ExamResults)request.getAttribute("examResults");
 									<label class="col-sm-3 control-label">Full name</label>
 									<div class="col-sm-4">
 										<input type="text" class="form-control" id="studentName" value = "<%=examResults.getStudentName() %>"
-											name="studentName" placeholder="Student full name" />
+											name="studentName" placeholder="Student full name" readonly="readonly"/>
 									</div>
 								</div>
 
@@ -82,15 +82,15 @@ ExamResults examResults = (ExamResults)request.getAttribute("examResults");
 									<label class="col-sm-3 control-label">Roll No</label>
 									<div class="col-sm-5">
 										<input type="number" class="form-control" id="rollno"  value = "<%=examResults.getRollNum() %>"
-											name="rollno" placeholder="Roll No:" />
+											name="rollno" placeholder="Roll No:" readonly="readonly"/>
 									</div>
 								</div>
 								<div class="form-group">
 									<label class="col-sm-3 control-label">Class</label>
 									<div class="col-sm-5">
-										<select name="studentClass"  class="form-control" >
-										 <option value = "<%=examResults.getStudentClass() %>" selected = "selected"></option>
-											<option value="lkg">lkg</option>
+										<select name="StudentClass"  class="form-control" >
+										 <option value = "<%=examResults.getStudentClass() %>" selected = "selected"><%=examResults.getStudentClass() %></option>
+												<option value="lkg">lkg</option>
 											<option value="ukg">ukg</option>
 											<option value="1st class">1st class</option>
 											<option value="2nd class">2nd class</option>
@@ -239,7 +239,7 @@ ExamResults examResults = (ExamResults)request.getAttribute("examResults");
 									<label class="col-sm-3 control-label">Grade</label>
 									<div class="col-sm-5">
 										<select name="grade" class="form-control" >
-										<option value = "<%=examResults.getGrade() %>" selected = "selected"></option>
+										<option value = "<%=examResults.getGrade() %>" selected = "selected"><%=examResults.getGrade() %></option>
 											<option value="A">A</option>
 											<option value="B">B</option>
 											<option value="C">C</option>

@@ -64,7 +64,7 @@ public class TeacherController {
 			String village = request.getParameter("village");
 			String gender = request.getParameter("gender");
 			String doj = request.getParameter("doj");
-			SimpleDateFormat sdf = new SimpleDateFormat("MM/dd/yyyy");
+			SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 			SimpleDateFormat output = new SimpleDateFormat("yyyy-MM-dd");
 			Date dob1 = null,doj1 = null;
 			try {
@@ -99,7 +99,7 @@ public class TeacherController {
 		if (teacherId != null && teacherId.length() > 0) {
 			Teacher teacher = teacherService.getTeacherById(teacherId);
 			teacher.setReligion("");
-			SimpleDateFormat output = new SimpleDateFormat("MM/dd/yyyy");
+			SimpleDateFormat output = new SimpleDateFormat("dd/MM/yyyy");
 			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 			Date dob = null,doj = null;
 			try {
@@ -150,7 +150,7 @@ public class TeacherController {
 			String doj = request.getParameter("doj");
 			
 
-			SimpleDateFormat sdf = new SimpleDateFormat("MM/dd/yyyy");
+			SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 			SimpleDateFormat output = new SimpleDateFormat("yyyy-MM-dd");
 			Date dob1 = null,doj1 = null;
 			try {

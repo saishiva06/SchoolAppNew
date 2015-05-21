@@ -7,7 +7,7 @@ import com.shiva.entity.Student;
 
 public interface StudentService {
 	boolean isStudentExists(String u_login);
-	int createStudent(String studentFirstName,String studentLastName, String studentClass, String section, String medium,
+	int createStudent( String admissionNo,String studentFirstName,String studentLastName, String studentClass, String section, String medium,
 			String studentFatherName,String studentMotherName, String dob, String caste, String religion,String phoneNumber,
 			String village,String gender, String fees, String doj,int status);
 	boolean deleteAllStudents();
@@ -20,5 +20,6 @@ public interface StudentService {
 	Map<String, Object> getStudentMap(String u_login);
 	int updateStudent(Map<String, Object> StudentMap);
 	boolean deleteStudent(String StudentId);
+	String getLastRecordRollNum( String studentClass);
 	
 }

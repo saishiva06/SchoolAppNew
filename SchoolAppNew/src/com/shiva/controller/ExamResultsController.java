@@ -95,7 +95,7 @@ public class ExamResultsController {
 							.getParameter("rank") : "0");
 			String grade = request.getParameter("grade");
 
-			SimpleDateFormat sdf = new SimpleDateFormat("MM/dd/yyyy");
+			SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 			SimpleDateFormat output = new SimpleDateFormat("yyyy-MM-dd");
 			Date examDate1 = null;
 			try {
@@ -128,7 +128,7 @@ public class ExamResultsController {
 		if (examResultsId != null && examResultsId.length() > 0) {
 			ExamResults examResults = examResultsService
 					.getExamResultsById(examResultsId);
-			SimpleDateFormat output = new SimpleDateFormat("MM/dd/yyyy");
+			SimpleDateFormat output = new SimpleDateFormat("dd/MM/yyyy");
 			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 			Date examDate = null;
 			try {
@@ -208,7 +208,7 @@ public class ExamResultsController {
 							.getParameter("rank") : "0");
 			String grade = request.getParameter("grade");
 
-			SimpleDateFormat sdf = new SimpleDateFormat("MM/dd/yyyy");
+			SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 			SimpleDateFormat output = new SimpleDateFormat("yyyy-MM-dd");
 			Date examDate1 = null;
 			try {

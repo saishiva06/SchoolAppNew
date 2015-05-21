@@ -44,17 +44,26 @@ public class RandomGenerator {
 		return randStr.toString();
 	}
 	
-	public static String getStudentId() {
-		StringBuffer randStr = new StringBuffer();
-		for (int i = 0; i < 4; i++) {
-			int number = new Random().nextInt(NUM_LIST.length());
-			number = (number - 1 == -1) ? number : number - 1;
-			char ch = NUM_LIST.charAt(number);
-			randStr.append(ch);
+	public static String getAdmissionNum(String studentClass,String lastId) {
+		String admisionConst = "SN";
+		String admissionNum = "";
+		
+		if(lastId==null || lastId.length()==0) {
+			admissionNum = admisionConst + studentClass.charAt(0) + "001";
+		} else {
+			if(studentClass.equalsIgnoreCase("lkg") || studentClass.equalsIgnoreCase("ukg") || studentClass.equalsIgnoreCase("nursery")) {
+				int num = Integer.valueOf(lastId.substring(3, 6));
+				admissionNum = admisionConst +  "" + (num+1);
+		  } else if(studentClass.equalsIgnoreCase("SSC")) {
+			  int num = Integer.valueOf(lastId.substring(3, 7));
+			  admissionNum = admisionConst +  "" + (num+1);
+		   } else {
+			int num = Integer.valueOf(lastId.substring(2, 6));
+			 admissionNum = admisionConst +  "" + (num+1);
 		}
-		return randStr.toString();
 	}
-
+		return admissionNum;
+	}
 	public static String getReciptNo() {
 		StringBuffer randStr = new StringBuffer();
 		for (int i = 0; i < 4; i++) {

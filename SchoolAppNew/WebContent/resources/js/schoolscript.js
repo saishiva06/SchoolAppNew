@@ -115,7 +115,7 @@ $(document).ready(function() {
                         },
                         date: {
                             format: 'DD/MM/YYYY',
-                            min: '01/01/2001',
+                            min: '01/01/1970',
                             max: '30/03/2050',
                             message: 'The date is not a valid'
                         }
@@ -129,7 +129,7 @@ $(document).ready(function() {
                 },
                 date: {
                     format: 'DD/MM/YYYY',
-                    min: '01/01/2001',
+                    min: '01/01/1970',
                     max: '30/03/2050',
                     message: 'The date is not a valid'
                 }

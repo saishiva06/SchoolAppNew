@@ -58,7 +58,7 @@ FeeDetails feeDetails = (FeeDetails)request.getAttribute("feeDetails");
 	
 	<div class="container">
 		<div class="panel panel-primary">
-			<div class="panel-heading">Fee New Registration</div>
+			<div class="panel-heading">Edit Fee Details</div>
 			<div class="panel-body">
 				<div class="container">
 					<div class="row">
@@ -71,7 +71,7 @@ FeeDetails feeDetails = (FeeDetails)request.getAttribute("feeDetails");
 									<label class="col-sm-3 control-label">Full name</label>
 									<div class="col-sm-4">
 										<input type="text" class="form-control" id="studentName" value = "<%=feeDetails.getStudentName() %>"
-											name="studentName" placeholder="Student full name" />
+											name="studentName"  readonly="readonly" />
 									</div>
 								</div>
 
@@ -79,14 +79,14 @@ FeeDetails feeDetails = (FeeDetails)request.getAttribute("feeDetails");
 									<label class="col-sm-3 control-label">Roll No</label>
 									<div class="col-sm-5">
 										<input type="number" class="form-control" id="rollno" value = "<%=feeDetails.getRollNo() %>"
-											name="rollno" placeholder="Roll No:" />
+											name="rollno"  readonly="readonly" />
 									</div>
 								</div>
 								<div class="form-group">
 									<label class="col-sm-3 control-label">Class</label>
 									<div class="col-sm-5">
-										<select name="studentClass" class="form-control">
-										  <option value = "<%=feeDetails.getStudentClass() %>" selected = "selected"></option>
+										<select name="StudentClass" class="form-control">
+										  <option value = "<%=feeDetails.getStudentClass() %>" selected = "selected"><%=feeDetails.getStudentClass() %></option>
 											<option value="lkg">lkg</option>
 											<option value="ukg">ukg</option>
 											<option value="1st class">1st class</option>
@@ -102,41 +102,18 @@ FeeDetails feeDetails = (FeeDetails)request.getAttribute("feeDetails");
 										</select>
 									</div>
 								</div>
-								<div class="form-group">
-									<label class="col-sm-3 control-label">Section</label>
-									<div class="col-sm-5">
-										<select name="section" class="form-control">
-											<option value="A">A</option>
-											<option value="B">B</option>
-										</select>
-									</div>
-								</div>
-								<div class="form-group">
-									<label class="col-sm-3 control-label">Medium</label>
-									<div class="col-sm-5">
-										<select name="medium" class="form-control">
-											<option value="English">English</option>
-											<option value="Telugu">Telugu</option>
-										</select>
-									</div>
-								</div>
-								<div class="form-group">
-									<label class="col-sm-3 control-label">Mobile No</label>
-									<div class="col-sm-5">
-										<input id="mobileNo" name="mobileNo" class="form-control"
-											type="number" />
-									</div>
-								</div>
+								
 								<div class="form-group">
 									<label class="col-sm-3 control-label">Fee Type</label>
 									<div class="col-sm-5">
 										<select name="feeType">
-											<option value="admissionFee">Admission Fee</option>
-											<option value="tutionFee">Tution Fee</option>
-											<option value="examFee">Exam Fee</option>
-											<option value="transportFee">Transport Fee</option>
-											<option value="iiTFee">IIT Fee</option>
-											<option value="otherFee">Other Fee</option>
+										<option value = "<%=feeDetails.getFeeType() %>" selected = "selected"><%=feeDetails.getFeeType() %></option>
+										    <option value="Admission Fee">Admission Fee</option>
+											<option value="Tution Fee">Tution Fee</option>
+											<option value="Exam Fee">Exam Fee</option>
+											<option value="Transport Fee">Transport Fee</option>
+											<option value="IIT Fee">IIT Fee</option>
+											<option value="Other Fee">Other Fee</option>
 										</select>
 									</div>
 								</div>

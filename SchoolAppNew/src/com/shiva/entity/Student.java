@@ -3,6 +3,7 @@ package com.shiva.entity;
 public class Student {
 
 	private String rollno;
+	private String admissionNo;
 	private String studentFirstName;
 	private String studentLastName;
 	private String studentClass;
@@ -20,12 +21,20 @@ public class Student {
 	private String doj;
 	private int status;
 
-	public Student(String rollno, String studentFirstName,
+	public Student(String rollno, String admissionNo, String studentFirstName,
 			String studentLastName, String studentClass, String section,
 			String medium, String studentFatherName, String studentMotherName,
 			String dob, String caste, String religion, String phoneNumber,
 			String village, String gender, String fees, String doj, int status) {
 		// TODO Auto-generated constructor stub
+	}
+
+	public String getAdmissionNo() {
+		return admissionNo;
+	}
+
+	public void setAdmissionNo(String admissionNo) {
+		this.admissionNo = admissionNo;
 	}
 
 	public Student() {

@@ -16,6 +16,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.shiva.entity.Student;
 import com.shiva.service.StudentService;
+import com.shiva.util.RandomGenerator;
 
 @Controller
 public class StudentController {
@@ -49,8 +50,7 @@ public class StudentController {
 	@RequestMapping("/addStudent.do")
 	public ModelAndView addStudent(HttpServletRequest request,
 			HttpServletResponse response) throws Exception {
-
-		try {
+        try {
 
 			String studentFirstName = request.getParameter("studentFirstName");
 			String studentLastName = request.getParameter("studentLastName");
@@ -70,7 +70,7 @@ public class StudentController {
 			String fees = request.getParameter("fee");
 			String dateOfJoinee = request.getParameter("studentDoj");
 
-			SimpleDateFormat sdf = new SimpleDateFormat("MM/dd/yyyy");
+			SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 			SimpleDateFormat output = new SimpleDateFormat("yyyy-MM-dd");
 			Date studentDob1 = null, studentDoj = null;
 			try {
@@ -81,12 +81,14 @@ public class StudentController {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
+			String LastId = studentService.getLastRecordRollNum(studentClass);
+			String admissionNo = RandomGenerator.getAdmissionNum(studentClass, LastId);
 			String formattedDob = output.format(studentDob1);
 			String dateOfJoinee1 = output.format(studentDoj);
-			int result = studentService.createStudent(studentFirstName,
-					studentLastName, studentClass, section, medium,
-					studentFatherName, studentMotherName, formattedDob, caste,
-					religion, phoneNumber, village, gender, fees,
+			int result = studentService.createStudent(admissionNo,
+					studentFirstName, studentLastName, studentClass, section,
+					medium, studentFatherName, studentMotherName, formattedDob,
+					caste, religion, phoneNumber, village, gender, fees,
 					dateOfJoinee1, 0);
 			System.out.println("@@@ Student added.........." + result);
 			return new ModelAndView("redirect:student.do");
@@ -105,7 +107,7 @@ public class StudentController {
 		mav.setViewName("editStudent");
 		if (studentId != null && studentId.length() > 0) {
 			Student student = studentService.getStudentById(studentId);
-			SimpleDateFormat output = new SimpleDateFormat("MM/dd/yyyy");
+			SimpleDateFormat output = new SimpleDateFormat("dd/MM/yyyy");
 			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 			Date d = null, doj1 = null;
 			try {
@@ -133,7 +135,7 @@ public class StudentController {
 		mav.setViewName("viewStudent");
 		if (studentId != null && studentId.length() > 0) {
 			Student student = studentService.getStudentById(studentId);
-			SimpleDateFormat output = new SimpleDateFormat("MM/dd/yyyy");
+			SimpleDateFormat output = new SimpleDateFormat("dd/MM/yyyy");
 			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 			Date d = null, doj1 = null;
 			try {
@@ -151,6 +153,7 @@ public class StudentController {
 		}
 		return mav;
 	}
+
 	@RequestMapping("/deleteStudent.do")
 	public ModelAndView loadStudentDashboard(HttpServletRequest request,
 			HttpServletResponse response) throws Exception {
@@ -168,6 +171,7 @@ public class StudentController {
 			HttpServletResponse response) throws Exception {
 
 		try {
+			String admissionNum = request.getParameter("admissionNo");
 			String rollnum = request.getParameter("rollno");
 			String studentFirstName = request.getParameter("studentFirstName");
 			String studentLastName = request.getParameter("studentLastName");
@@ -186,7 +190,7 @@ public class StudentController {
 			String gender = request.getParameter("gender");
 			String fees = request.getParameter("fee");
 			String dateOfJoinee = request.getParameter("studentDoj");
-			SimpleDateFormat sdf = new SimpleDateFormat("MM/dd/yyyy");
+			SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 			SimpleDateFormat output = new SimpleDateFormat("yyyy-MM-dd");
 			Date studentDob1 = null, studentDoj = null;
 			try {
@@ -197,10 +201,12 @@ public class StudentController {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
+			
 			String formattedDob = output.format(studentDob1);
 			String dateOfJoinee1 = output.format(studentDoj);
 			Map<String, Object> paramsMap = new HashMap<String, Object>();
 			paramsMap.put("roll_num", rollnum);
+			paramsMap.put("admission_num", admissionNum);
 			paramsMap.put("student_fisrt_name", studentFirstName);
 			paramsMap.put("student_last_name", studentLastName);
 			paramsMap.put("student_class", studentClass);
