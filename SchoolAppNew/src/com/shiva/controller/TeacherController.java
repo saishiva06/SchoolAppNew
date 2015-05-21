@@ -63,21 +63,24 @@ public class TeacherController {
 			String mobileNo = request.getParameter("mobileNo");
 			String village = request.getParameter("village");
 			String gender = request.getParameter("gender");
+			String doj = request.getParameter("doj");
 			SimpleDateFormat sdf = new SimpleDateFormat("MM/dd/yyyy");
 			SimpleDateFormat output = new SimpleDateFormat("yyyy-MM-dd");
-			Date d = null;
+			Date dob1 = null,doj1 = null;
 			try {
-				d = sdf.parse(dob);
+				dob1 = sdf.parse(dob);
+				doj1 = sdf.parse(doj);
 			} catch (ParseException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-			String formattedDob = output.format(d);
+			String formattedDob = output.format(dob1);
+			String formattedDoj = output.format(doj1);
 
 			int result = teacherService.createTeacher(
 					RandomGenerator.getTeacherId(), firstName, lastName,
 					qualification, experience, subject, formattedDob, caste,
-					mobileNo, village, gender, new Date(), 1);
+					mobileNo, village, gender, formattedDoj, 1);
 			System.out.println("@@@ Teacher added.........." + result);
 			return new ModelAndView("redirect:teacher.do");
 		} catch (Exception e) {
@@ -98,15 +101,18 @@ public class TeacherController {
 			teacher.setReligion("");
 			SimpleDateFormat output = new SimpleDateFormat("MM/dd/yyyy");
 			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-			Date d = null;
+			Date dob = null,doj = null;
 			try {
-				d = sdf.parse(teacher.getDob());
+				dob = sdf.parse(teacher.getDob());
+				doj = sdf.parse(teacher.getDoj());
 			} catch (ParseException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-			String formattedDob = output.format(d);
+			String formattedDob = output.format(dob);
+			String formattedDoj = output.format(doj);
 			teacher.setDob(formattedDob);
+			teacher.setDoj(formattedDoj);
 			System.out.println("@@@ id..." + teacher.getTeacherId());
 			mav.addObject("teacher", teacher);
 		}
@@ -141,17 +147,20 @@ public class TeacherController {
 			String mobileNo = request.getParameter("mobileNo");
 			String village = request.getParameter("village");
 			String gender = request.getParameter("gender");
+			String doj = request.getParameter("doj");
+			
 
 			SimpleDateFormat sdf = new SimpleDateFormat("MM/dd/yyyy");
 			SimpleDateFormat output = new SimpleDateFormat("yyyy-MM-dd");
-			Date d = null;
+			Date dob1 = null,doj1 = null;
 			try {
-				d = sdf.parse(dob);
+				dob1 = sdf.parse(dob);
+				doj1 = sdf.parse(dob);
 			} catch (ParseException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-			String formattedDob = output.format(d);
+			String formattedDob = output.format(dob1);
+			String formattedDoj = output.format(doj1);
 
 			Map<String, Object> paramsMap = new HashMap<String, Object>();
 			paramsMap.put("teacher_id", teacherId);
@@ -165,7 +174,7 @@ public class TeacherController {
 			paramsMap.put("teacher_phone_num", mobileNo);
 			paramsMap.put("teacher_village", village);
 			paramsMap.put("teacher_gender", gender);
-			paramsMap.put("teacher_doj", new Date());
+			paramsMap.put("teacher_doj", formattedDoj);
 			paramsMap.put("teacher_status", 1);
 
 			int result = teacherService.updateTeacher(paramsMap);

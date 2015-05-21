@@ -22,13 +22,15 @@ public class SessionHandler extends HandlerInterceptorAdapter implements
 		String user_mail = (String) request.getSession().getAttribute(
 				"user_name");
 
-		if (user_mail != null) {
+		/*if (user_mail != null) {
 			return true;
 		} else {
 			String errorMsg = "YOUR SESSION HAS EXPIRED AND YOU NEED TO RE-LOGIN!";
 			redirect(request, response, "/index.do?errorMsg=" + errorMsg);
 			return false;
-		}
+		}*/
+		
+		return true;
 	}
 
 	@Override

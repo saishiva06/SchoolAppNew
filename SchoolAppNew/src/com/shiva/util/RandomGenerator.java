@@ -35,7 +35,7 @@ public class RandomGenerator {
 
 	public static String getTeacherId() {
 		StringBuffer randStr = new StringBuffer();
-		for (int i = 0; i < 8; i++) {
+		for (int i = 0; i < 4; i++) {
 			int number = new Random().nextInt(NUM_LIST.length());
 			number = (number - 1 == -1) ? number : number - 1;
 			char ch = NUM_LIST.charAt(number);

@@ -36,7 +36,7 @@ public class TeacherDaoImpl extends SqlMapClientDaoSupport implements
 	public int createTeacher(String teacherId, String teacherFirstName,
 			String teacherLastName, String qualification, String exp,
 			String subject, String dob, String caste, String phoneNumber,
-			String village, String gender, Date doj, int status) {
+			String village, String gender, String doj, int status) {
 		// TODO Auto-generated method stub
 		Map<String, Object> paramsMap = new HashMap<String, Object>();
 		paramsMap.put("teacher_id", teacherId);

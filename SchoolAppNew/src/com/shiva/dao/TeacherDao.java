@@ -8,7 +8,7 @@ import com.shiva.entity.Teacher;
 
 public interface TeacherDao {
 	boolean isTeacherExists(String u_login);
-	int createTeacher(String teacherId, String teacherFirstName,String teacherLastName, String qualification, String exp, String subject, String dob, String caste, String phoneNumber,String village,String gender, Date doj,int status);
+	int createTeacher(String teacherId, String teacherFirstName,String teacherLastName, String qualification, String exp, String subject, String dob, String caste, String phoneNumber,String village,String gender, String doj,int status);
     boolean deleteAllTeachers();
 	List<Teacher> getTeachers();
 	Teacher getTeacherByTeachername(String u_login);

@@ -30,6 +30,7 @@ xsi:schemaLocation="http://www.springframework.org/schema/beans
      		<mvc:mapping path="/admin.do" />
      		<mvc:mapping path="/noticeboard.do" />
      		<mvc:mapping path="/examResultsRegistration.do" />
+     		<mvc:mapping path="/viewStudent.do" />
      		<bean class="com.shiva.util.SessionHandler" />
    		</mvc:interceptor>
 	</mvc:interceptors>

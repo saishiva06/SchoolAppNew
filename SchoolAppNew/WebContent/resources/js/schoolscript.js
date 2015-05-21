@@ -3,7 +3,7 @@ $(document).ready(function() {
 	$('#datePicker')
     .datepicker({
         format: 'dd/mm/yyyy',
-        startDate: '01/01/2010',
+        startDate: '01/01/1980',
         endDate: '12/03/2050'
     })
     .on('changeDate', function(e) {
@@ -121,7 +121,21 @@ $(document).ready(function() {
                         }
                     }
                 }
+        },
+        studentDoj: {
+            validators: {
+                notEmpty: {
+                    message: 'The Student Date Of Joinee  is required'
+                },
+                date: {
+                    format: 'DD/MM/YYYY',
+                    min: '01/01/2001',
+                    max: '30/03/2050',
+                    message: 'The date is not a valid'
+                }
+            }
         }
+
     });
     
     $('#addTeacher').formValidation({
@@ -199,7 +213,20 @@ $(document).ready(function() {
             dob: {
                     validators: {
                         notEmpty: {
-                            message: 'The Student Date Of Birth  is required'
+                            message: 'The Teacher Date Of Birth  is required'
+                        },
+                        date: {
+                            format: 'DD/MM/YYYY',
+                            min: '01/01/1970',
+                            max: '30/03/2000',
+                            message: 'The date is not a valid'
+                        }
+                    }
+                },
+                doj: {
+                    validators: {
+                        notEmpty: {
+                            message: 'The Teacher Date Of Joinee  is required'
                         },
                         date: {
                             format: 'DD/MM/YYYY',

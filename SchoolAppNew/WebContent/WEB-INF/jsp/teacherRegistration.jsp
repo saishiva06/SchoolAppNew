@@ -96,7 +96,7 @@
 									<div class="col-xs-5 date">
 										<div class="input-group input-append date" id="datePicker">
 											<input type="text" class="form-control" name="dob"
-												placeholder="05/19/2015" /> <span
+												placeholder="01/01/2000" /> <span
 												class="input-group-addon add-on"><span
 												class="glyphicon glyphicon-calendar"></span></span>
 										</div>
@@ -137,6 +137,17 @@
 											<label> <input type="radio" name="gender"
 												value="female" /> Female
 											</label>
+										</div>
+									</div>
+								</div>
+								<div class="form-group">
+									<label class="col-xs-3 control-label">Date Of Joinee</label>
+									<div class="col-xs-5 date">
+										<div class="input-group input-append date" id="datePicker">
+											<input type="text" class="form-control" name="doj"
+												placeholder="01/01/2000" /> <span
+												class="input-group-addon add-on"><span
+												class="glyphicon glyphicon-calendar"></span></span>
 										</div>
 									</div>
 								</div>

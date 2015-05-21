@@ -102,7 +102,7 @@
 										<div class="input-group input-append date"
 											id="datePicker">
 											<input type="text" class="form-control" name="studentDob"
-											 placeholder="05/19/2015"  /> <span
+											 placeholder="01/01/2000"  /> <span
 												class="input-group-addon add-on"><span
 												class="glyphicon glyphicon-calendar"></span></span>
 										</div>
@@ -176,6 +176,17 @@
 									<div class="col-sm-5">
 										<input id="fee" class="form-control"  name="fee" type="text" />
 										</div>
+								</div>
+								<div class="form-group">
+									<label class="col-xs-3 control-label">Date Of Joinee</label>
+									<div class="col-xs-5 date">
+										<div class="input-group input-append date" id="datePicker">
+											<input type="text" class="form-control" name="studentDoj"
+												placeholder="01/01/2000" /> <span
+												class="input-group-addon add-on"><span
+												class="glyphicon glyphicon-calendar"></span></span>
+										</div>
+									</div>
 								</div>
 							<div class="form-group">
 									<div class="col-sm-9 col-sm-offset-3">

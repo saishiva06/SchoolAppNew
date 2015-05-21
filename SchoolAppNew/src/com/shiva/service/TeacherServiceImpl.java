@@ -28,7 +28,7 @@ public class TeacherServiceImpl implements TeacherService {
 	public int createTeacher(String teacherId, String teacherFirstName,
 			String teacherLastName, String qualification, String exp,
 			String subject, String dob, String caste, String phoneNumber,
-			String village, String gender, Date doj, int status) {
+			String village, String gender, String doj, int status) {
 		// TODO Auto-generated method stub
 		return teacherDao.createTeacher(teacherId, teacherFirstName,
 				teacherLastName, qualification, exp, subject, dob, caste,

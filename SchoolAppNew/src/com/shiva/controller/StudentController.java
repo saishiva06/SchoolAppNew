@@ -68,7 +68,7 @@ public class StudentController {
 			String village = request.getParameter("village");
 			String gender = request.getParameter("gender");
 			String fees = request.getParameter("fee");
-			String dateOfJoinee = request.getParameter("dateOfJoinee");
+			String dateOfJoinee = request.getParameter("studentDoj");
 
 			SimpleDateFormat sdf = new SimpleDateFormat("MM/dd/yyyy");
 			SimpleDateFormat output = new SimpleDateFormat("yyyy-MM-dd");
@@ -124,6 +124,33 @@ public class StudentController {
 		return mav;
 	}
 
+	@RequestMapping("/viewStudent.do")
+	public ModelAndView viewStudent(HttpServletRequest request,
+			HttpServletResponse response) throws Exception {
+		String studentId = request.getParameter("rollno");
+		System.out.println("@@@ view studentId.........." + studentId);
+		ModelAndView mav = new ModelAndView();
+		mav.setViewName("viewStudent");
+		if (studentId != null && studentId.length() > 0) {
+			Student student = studentService.getStudentById(studentId);
+			SimpleDateFormat output = new SimpleDateFormat("MM/dd/yyyy");
+			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+			Date d = null, doj1 = null;
+			try {
+				d = sdf.parse(student.getDob());
+				doj1 = sdf.parse(student.getDoj());
+			} catch (ParseException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			String formattedDob = output.format(d);
+			String formattedDoj = output.format(doj1);
+			student.setDob(formattedDob);
+			student.setDoj(formattedDoj);
+			mav.addObject("student", student);
+		}
+		return mav;
+	}
 	@RequestMapping("/deleteStudent.do")
 	public ModelAndView loadStudentDashboard(HttpServletRequest request,
 			HttpServletResponse response) throws Exception {
@@ -151,14 +178,14 @@ public class StudentController {
 					.getParameter("studentFatherName");
 			String studentMotherName = request
 					.getParameter("studentMotherName");
-			String studentDob = request.getParameter("dob");
+			String studentDob = request.getParameter("studentDob");
 			String caste = request.getParameter("caste");
 			String religion = request.getParameter("religion");
 			String phoneNumber = request.getParameter("mobileNo");
 			String village = request.getParameter("village");
 			String gender = request.getParameter("gender");
 			String fees = request.getParameter("fee");
-			String dateOfJoinee = request.getParameter("dateOfJoinee");
+			String dateOfJoinee = request.getParameter("studentDoj");
 			SimpleDateFormat sdf = new SimpleDateFormat("MM/dd/yyyy");
 			SimpleDateFormat output = new SimpleDateFormat("yyyy-MM-dd");
 			Date studentDob1 = null, studentDoj = null;
