@@ -19,7 +19,7 @@ import com.shiva.service.StudentService;
 
 @Controller
 public class StudentController {
-	
+
 	private StudentService studentService;
 
 	public StudentService getStudentService() {
@@ -40,12 +40,12 @@ public class StudentController {
 		}
 		return mav;
 	}
-	
 
 	@RequestMapping("/studentRegistration")
 	public ModelAndView loadFeeRegistrationDashboard() throws Exception {
 		return new ModelAndView("studentRegistration");
 	}
+
 	@RequestMapping("/addStudent.do")
 	public ModelAndView addStudent(HttpServletRequest request,
 			HttpServletResponse response) throws Exception {
@@ -57,8 +57,10 @@ public class StudentController {
 			String studentClass = request.getParameter("studentClass");
 			String section = request.getParameter("section");
 			String medium = request.getParameter("medium");
-			String studentFatherName = request.getParameter("studentFatherName");
-			String studentMotherName = request.getParameter("studentMotherName");
+			String studentFatherName = request
+					.getParameter("studentFatherName");
+			String studentMotherName = request
+					.getParameter("studentMotherName");
 			String studentDob = request.getParameter("studentDob");
 			String caste = request.getParameter("caste");
 			String religion = request.getParameter("religion");
@@ -68,39 +70,44 @@ public class StudentController {
 			String fees = request.getParameter("fee");
 			String dateOfJoinee = request.getParameter("dateOfJoinee");
 
-
 			SimpleDateFormat sdf = new SimpleDateFormat("MM/dd/yyyy");
 			SimpleDateFormat output = new SimpleDateFormat("yyyy-MM-dd");
-			Date studentDob1 = null,studentDoj = null;
+			Date studentDob1 = null, studentDoj = null;
 			try {
 				studentDob1 = sdf.parse(studentDob);
 				studentDoj = sdf.parse(dateOfJoinee);
-				
+
 			} catch (ParseException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 			String formattedDob = output.format(studentDob1);
 			String dateOfJoinee1 = output.format(studentDoj);
-			int result = studentService.createStudent( studentFirstName, studentLastName,  studentClass,  section,  medium, studentFatherName, studentMotherName,  formattedDob,  caste,  religion, phoneNumber, village, gender, fees,  dateOfJoinee1,0);
-			System.out.println("@@@ Student added.........."+result);
+			int result = studentService.createStudent(studentFirstName,
+					studentLastName, studentClass, section, medium,
+					studentFatherName, studentMotherName, formattedDob, caste,
+					religion, phoneNumber, village, gender, fees,
+					dateOfJoinee1, 0);
+			System.out.println("@@@ Student added.........." + result);
 			return new ModelAndView("redirect:student.do");
 		} catch (Exception e) {
 			e.printStackTrace();
 			return new ModelAndView("studentRegistration");
 		}
 	}
+
 	@RequestMapping("/editStudent.do")
-	public ModelAndView editStudent(HttpServletRequest request, HttpServletResponse response) throws Exception {
+	public ModelAndView editStudent(HttpServletRequest request,
+			HttpServletResponse response) throws Exception {
 		String studentId = request.getParameter("rollno");
-		System.out.println("@@@ edit studentId.........."+studentId);
+		System.out.println("@@@ edit studentId.........." + studentId);
 		ModelAndView mav = new ModelAndView();
 		mav.setViewName("editStudent");
-		if (studentId != null && studentId.length()>0) {
+		if (studentId != null && studentId.length() > 0) {
 			Student student = studentService.getStudentById(studentId);
 			SimpleDateFormat output = new SimpleDateFormat("MM/dd/yyyy");
 			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-			Date d = null,doj1 = null;
+			Date d = null, doj1 = null;
 			try {
 				d = sdf.parse(student.getDob());
 				doj1 = sdf.parse(student.getDoj());
@@ -116,14 +123,15 @@ public class StudentController {
 		}
 		return mav;
 	}
-	
+
 	@RequestMapping("/deleteStudent.do")
-	public ModelAndView loadStudentDashboard(HttpServletRequest request, HttpServletResponse response) throws Exception {
+	public ModelAndView loadStudentDashboard(HttpServletRequest request,
+			HttpServletResponse response) throws Exception {
 		String studentId = request.getParameter("rollno");
-		System.out.println("@@@ delete studentId.........."+studentId);
-		if (studentId != null && studentId.length()>0) {
+		System.out.println("@@@ delete studentId.........." + studentId);
+		if (studentId != null && studentId.length() > 0) {
 			boolean status = studentService.deleteStudent(studentId);
-			System.out.println("@@@ status...."+status);
+			System.out.println("@@@ status...." + status);
 		}
 		return new ModelAndView("redirect:student.do");
 	}
@@ -139,8 +147,10 @@ public class StudentController {
 			String studentClass = request.getParameter("studentClass");
 			String section = request.getParameter("section");
 			String medium = request.getParameter("medium");
-			String studentFatherName = request.getParameter("studentFatherName");
-			String studentMotherName = request.getParameter("studentMotherName");
+			String studentFatherName = request
+					.getParameter("studentFatherName");
+			String studentMotherName = request
+					.getParameter("studentMotherName");
 			String studentDob = request.getParameter("dob");
 			String caste = request.getParameter("caste");
 			String religion = request.getParameter("religion");
@@ -149,13 +159,13 @@ public class StudentController {
 			String gender = request.getParameter("gender");
 			String fees = request.getParameter("fee");
 			String dateOfJoinee = request.getParameter("dateOfJoinee");
-            SimpleDateFormat sdf = new SimpleDateFormat("MM/dd/yyyy");
+			SimpleDateFormat sdf = new SimpleDateFormat("MM/dd/yyyy");
 			SimpleDateFormat output = new SimpleDateFormat("yyyy-MM-dd");
-			Date studentDob1 = null,studentDoj = null;
+			Date studentDob1 = null, studentDoj = null;
 			try {
 				studentDob1 = sdf.parse(studentDob);
 				studentDoj = sdf.parse(dateOfJoinee);
-				
+
 			} catch (ParseException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -180,8 +190,8 @@ public class StudentController {
 			paramsMap.put("student_doj", dateOfJoinee1);
 			paramsMap.put("fees", fees);
 			paramsMap.put("student_status", 0);
-		    int result = studentService.updateStudent(paramsMap);
-			System.out.println("@@@ Student updated.........."+result);
+			int result = studentService.updateStudent(paramsMap);
+			System.out.println("@@@ Student updated.........." + result);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

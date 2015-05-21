@@ -61,7 +61,7 @@
                     <li><a href="examResults.do">Examination</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
-                    <li role="presentation"><a role="menuitem" tabindex="-1" href="admin.html">Logout</a></li>
+                    <li role="presentation"><a role="menuitem" tabindex="-1" href="logout.do">Logout</a></li>
                 </ul>
             </div>
             

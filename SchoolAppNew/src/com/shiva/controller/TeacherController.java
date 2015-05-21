@@ -63,7 +63,7 @@ public class TeacherController {
 			String mobileNo = request.getParameter("mobileNo");
 			String village = request.getParameter("village");
 			String gender = request.getParameter("gender");
-            SimpleDateFormat sdf = new SimpleDateFormat("MM/dd/yyyy");
+			SimpleDateFormat sdf = new SimpleDateFormat("MM/dd/yyyy");
 			SimpleDateFormat output = new SimpleDateFormat("yyyy-MM-dd");
 			Date d = null;
 			try {
@@ -85,13 +85,15 @@ public class TeacherController {
 			return new ModelAndView("teacherRegistration");
 		}
 	}
+
 	@RequestMapping("/editTeacher.do")
-	public ModelAndView editTeacher(HttpServletRequest request, HttpServletResponse response) throws Exception {
+	public ModelAndView editTeacher(HttpServletRequest request,
+			HttpServletResponse response) throws Exception {
 		String teacherId = request.getParameter("teacher_id");
-		System.out.println("@@@ edit teacherId.........."+teacherId);
+		System.out.println("@@@ edit teacherId.........." + teacherId);
 		ModelAndView mav = new ModelAndView();
 		mav.setViewName("editTeacher");
-		if (teacherId != null && teacherId.length()>0) {
+		if (teacherId != null && teacherId.length() > 0) {
 			Teacher teacher = teacherService.getTeacherById(teacherId);
 			teacher.setReligion("");
 			SimpleDateFormat output = new SimpleDateFormat("MM/dd/yyyy");
@@ -105,19 +107,20 @@ public class TeacherController {
 			}
 			String formattedDob = output.format(d);
 			teacher.setDob(formattedDob);
-			System.out.println("@@@ id..."+teacher.getTeacherId());
+			System.out.println("@@@ id..." + teacher.getTeacherId());
 			mav.addObject("teacher", teacher);
 		}
 		return mav;
 	}
-	
+
 	@RequestMapping("/deleteTeacher.do")
-	public ModelAndView loadStudentDashboard(HttpServletRequest request, HttpServletResponse response) throws Exception {
+	public ModelAndView loadStudentDashboard(HttpServletRequest request,
+			HttpServletResponse response) throws Exception {
 		String teacherId = request.getParameter("teacher_id");
-		System.out.println("@@@ delete teacherId.........."+teacherId);
-		if (teacherId != null && teacherId.length()>0) {
+		System.out.println("@@@ delete teacherId.........." + teacherId);
+		if (teacherId != null && teacherId.length() > 0) {
 			boolean status = teacherService.deleteTeacher(teacherId);
-			System.out.println("@@@ status...."+status);
+			System.out.println("@@@ status...." + status);
 		}
 		return new ModelAndView("redirect:teacher.do");
 	}
@@ -149,7 +152,7 @@ public class TeacherController {
 				e.printStackTrace();
 			}
 			String formattedDob = output.format(d);
-			
+
 			Map<String, Object> paramsMap = new HashMap<String, Object>();
 			paramsMap.put("teacher_id", teacherId);
 			paramsMap.put("teacher_fisrt_name", firstName);
@@ -164,7 +167,7 @@ public class TeacherController {
 			paramsMap.put("teacher_gender", gender);
 			paramsMap.put("teacher_doj", new Date());
 			paramsMap.put("teacher_status", 1);
-		
+
 			int result = teacherService.updateTeacher(paramsMap);
 			System.out.println("@@@ Teacher updated.........." + result);
 		} catch (Exception e) {

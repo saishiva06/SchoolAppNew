@@ -1,93 +1,124 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="EN" lang="EN" dir="ltr">
-<head profile="http://gmpg.org/xfn/11">
-<title>School Education</title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-<meta http-equiv="imagetoolbar" content="no" />
-<link rel="stylesheet" href="resources/styles/layout.css" type="text/css" />
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SRI NARAYANA OLYPIAD SCHOOL</title>
+    <link type="text/css" rel="stylesheet" href="resources/css/bootstrap.css" />
+    <link type="text/css" href="resources/css/font-awesome.css" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="resources/css/style.css" />
+    <link href="resources/js/dataTables/dataTables.bootstrap.css" rel="stylesheet" />
 </head>
 <body>
-<!-- Header -->
-<div class="wrapper col1">
-  <div id="header">
-    <div id="logo">
-      <p><img src="resources/images/logo.jpg" alt="" />Sri Narayana Olympiod School</p>
+    <!-- Fixes Navigation Bar with drop down menu
+    ======================================================-->
+    <div class="navbar navbar-inner ">
+        <div class="container">
+             <div class="navbar-header">
+                <button type="buttton" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="#" class="navbar-brand"><img  width="90px" height="80px"  src="resources/img/logo.jpg" class="logo" alt="Logo" ></img></a>
+            </div>
+            <div>
+           <h2 class="well" > SRI NARAYANA OLYMPIAD SCHOOL </h2>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                   <li ><a href="index.do">Home</a></li>
+                    <li ><a href="admin.do">Admin</a></li>
+                    <li class="active"><a href="#">Notice Board</a></li>
+                    <li ><a href="">Contact Us</a></li>
+                 </ul>
+            </div>
+            
+        </div>
     </div>
-    <div id="topnav">
-      <ul>
-        <li><a href="index.do">Home</a></li>
-        <li><a href="admin.do">Admin</a></li>
-        <li class="active"><a href="#">NoticeBoard</a></li>
-      </ul>
+ 
+  <div class="container">
+    <div class="panel panel-primary">
+    <div class="panel-heading">Student Marks </div>
+    <div class="panel-body">
+    <div class="container">
+         <div class="row">
+            <div class="col-md-8">
+       					<form action="examResults.do"  id="examResults" method="post" class="form-horizontal" >
+								<div class="form-group">
+									<label class="col-sm-3 control-label">Student Roll Number*</label>
+									<div class="col-sm-5">
+										<input type="text" class="form-control" id="studentRollNumber" name="rollNo"
+											placeholder="Student Roll Number" />
+									</div>
+								</div>
+									<div class="form-group">
+									<label class="col-sm-3 control-label">Class</label>
+									<div class="col-sm-5">
+										<select
+										name="studentClass" class="form-control">
+										<option value="lkg">lkg</option>
+										<option value="ukg">ukg</option>
+										<option value="1st class">1st class</option>
+										<option value="2nd class">2nd class</option>
+										<option value="3rd class">3rd class</option>
+										<option value="4th class">4th class</option>
+										<option value="5th class">5th class</option>
+										<option value="6th class">6th class</option>
+										<option value="7th class">7th class</option>
+										<option value="8th class">8th class</option>
+										<option value="9th class">9th class</option>
+										<option value="SSC">SSC</option>
+									</select>
+									</div>
+								</div>
+								</div>
+									<div class="form-group">
+									<div class="col-sm-9 col-sm-offset-3">
+										<button type="submit" class="btn btn-primary" name="signup"
+											value="Sign up">Submit</button>
+									</div>
+								</div>
+							</form>
+						</div>
+         </div>
     </div>
-    <br class="clear" />
-  </div>
-</div>
-<div class="wrapper col2">
-  <div id="topbar">
-    <div id="">
-      <div class="topbox">
-       <div class="imgholder"><img src="resources/images/images.jpg" alt="" /></div>
-      </div>
-      <div class="topbox">
-        <h2>Latest News</h2>
-        <p><a href="admin.do">Jan 26 Details</a></p>
-        <p><a href="admin.do">Aniversary Program Details</a></p>
-        <p class="readmore">Content will be Coming Soon!</p>
-      </div>
-      <div class="topbox last">
-        <h2>Examinations Results</h2>
-        <form action="#" method="post">
-          <fieldset>
-            <legend>Administration Login Form</legend>
-           <label for="teachername">Class:
-              <select name="classs">
-							<option value="lkg">lkg</option>
-							<option value="ukg">ukg</option>
-							<option value="1st class">1st class</option>
-							<option value="2nd class">2nd class</option>
-							<option value="3rd class">3rd class</option>
-							<option value="4th class">4th class</option>
-							<option value="5th class">5th class</option>
-							<option value="6th class">6th class</option>
-							<option value="7th class">7th class</option>
-							<option value="8th class">8th class</option>
-							<option value="9th class">9th class</option>
-							<option value="SSC">SSC</option>
-			</select>
-            </label>
-            <label for="teacherpass">Hall Ticket No:
-              <input type="text" name="studentno" id="teacherpass" value="" />
-            </label>
-            <p>
-              <input type="submit" name="teacherlogin" id="teacherlogin" value="Submit" />
-              &nbsp;
-              <input type="reset" name="adminreset" id="adminreset" value="Reset" />
-         
-            </p>
-          </fieldset>
-        </form>
-      </div>
-      <br class="clear" />
+   </div>
+   </div>
+<!-- Footer and Modal
+    ==========================-->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <hr/>
+                <p>Copyright &copy; Sri Narayana Olypiad School.
+                    <a data-toggle="modal" href="#myModal">Terms and Conditions</a>
+                </p>
+            </div>
+        </div>
     </div>
-    
-    <br class="clear" />
-  </div>
-</div>
+    <script src="resources/js/jquery.js"></script>
+    <script src="resources/js/bootstrap.js"></script>
+    <script src="resources/js/dataTables/jquery.dataTables.js"></script>
+    <script src="resources/js/dataTables/dataTables.bootstrap.js"></script>
+    <script src="resources/js/contentHover.js"></script>
+        <script>
+            $(document).ready(function () {
+                $('#dataTables-example').dataTable();
+                 $('#myToolTip').tooltip();
+            
+            $('#myPopOver').popover();
 
+            $('#d1').contenthover({
+                overlay_background:'#000',
+                overlay_opacity:0.8
+            });
 
-<div class="wrapper col4">
-  <div id="copyright">
-    <p class="fl_left">Copyright &copy; 2015 - All Rights Reserved - Sri Narayana Olympiod School</p>
-  </div>
-</div>
-<script type="text/javascript" src="resources/scripts/jquery-1.4.1.min.js"></script>
-<script type="text/javascript" src="resources/scripts/jquery.slidepanel.setup.js"></script>
-<script type="text/javascript" src="resources/scripts/jquery.cycle.min.js"></script>
-<script type="text/javascript" src="resources/scripts/jquery.cycle.setup.js"></script>
-<script type="text/javascript" src="resources/scripts/jquery-1.7.1.min.js"></script> 
-<script type="text/javascript" src="resources/scripts/jquery.validate.js"></script>
-<script type="text/javascript" src="resources/scripts/bootstrap-datepicker.min.js"></script>  
-<script type="text/javascript" src="resources/scripts/schoolscript.js"></script> 
-</body>
+            $('#d2').contenthover({
+                effect:'slide',
+                slide_speed:300,
+                overlay_background:'#000',
+                overlay_opacity:0.8
+            });
+            });
+    </script>
+   </body>
 </html>

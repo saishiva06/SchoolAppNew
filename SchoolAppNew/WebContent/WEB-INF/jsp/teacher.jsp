@@ -6,6 +6,16 @@
 <%
 	List<Teacher> mydata = (List<Teacher>) request
 			.getAttribute("teachersData");
+			
+		/* 	String user_mail = (String) request.getSession().getAttribute(
+				"user_name");
+
+		if (user_mail != null) {
+			
+		} else {
+			String errorMsg = "YOUR SESSION HAS EXPIRED AND YOU NEED TO RE-LOGIN!";
+			response.sendRedirect(getServletContext().getRealPath("/")+"/index.do?errorMsg=" + errorMsg);
+		} */
 %>
 
 <!DOCTYPE html>
@@ -52,7 +62,7 @@
                 <a href="#" class="navbar-brand"><img  width="90px" height="80px"  src="resources/img/logo.jpg" class="logo" alt="Logo" ></img></a>
             </div>
             <div>
-           <h2 class="well" > SRI NARAYANA OLYPIAD SCHOOL </h2>
+           <h2 class="well" > SRI NARAYANA OLYMPIAD SCHOOL </h2>
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
@@ -63,7 +73,7 @@
                     <li><a href="examResults.do">Examination</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
-                    <li role="presentation"><a role="menuitem" tabindex="-1" href="admin.html">Logout</a></li>
+                    <li role="presentation"><a role="menuitem" tabindex="-1" href="logout.do">Logout</a></li>
                 </ul>
             </div>
             

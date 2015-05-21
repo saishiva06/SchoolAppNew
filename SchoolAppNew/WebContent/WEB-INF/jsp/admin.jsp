@@ -28,7 +28,6 @@
                     <li class="active"><a href="#">Admin</a></li>
                     <li ><a href="noticeboard.do">Notice Board</a></li>
                     <li ><a href="">Contact Us</a></li>
-                    <li><a href="">Examination</a></li>
                 </ul>
                
             </div>
