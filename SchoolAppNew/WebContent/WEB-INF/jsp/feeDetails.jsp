@@ -50,7 +50,7 @@
                 <a href="#" class="navbar-brand"><img  width="90px" height="80px"  src="resources/img/logo.jpg" class="logo" alt="Logo" ></img></a>
             </div>
             <div>
-           <h2 class="well" > SRI NARAYANA OLYPIAD SCHOOL </h2>
+           <h2 class="well" > SRI NARAYANA OLYMPIAD SCHOOL </h2>
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
@@ -72,7 +72,7 @@
 <div class="container">
   	<div class="panel panel-primary">
       <div class="panel-heading">
-    			Student 
+    			FEE DETAILS 
       </div>
       <div class="panel-body">
         <div class="container">
@@ -87,7 +87,7 @@
                                 <thead>
                                     <tr>
                                         <th>Reciept No</th>
-										<th>Roll No</th>
+										<th>Admission No</th>
 										<th>Name</th>
 										<th>Class</th>
 										<th>Fee Type</th>

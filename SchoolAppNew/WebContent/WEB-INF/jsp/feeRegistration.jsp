@@ -67,7 +67,7 @@
 								</div>
 
 								<div class="form-group">
-									<label class="col-sm-3 control-label">Roll No</label>
+									<label class="col-sm-3 control-label">Admission No</label>
 									<div class="col-sm-5">
 										<input type="number" class="form-control" id="rollno"
 											name="rollno" placeholder="012345" />

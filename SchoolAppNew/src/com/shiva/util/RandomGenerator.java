@@ -49,16 +49,20 @@ public class RandomGenerator {
 		String admissionNum = "";
 		
 		if(lastId==null || lastId.length()==0) {
-			admissionNum = admisionConst + studentClass.charAt(0) + "001";
+		String id =	studentClass.equalsIgnoreCase("SSC") ? "10" : String.valueOf(studentClass.charAt(0)).toUpperCase();
+			admissionNum = admisionConst + id + "001";
 		} else {
+			System.out.println(lastId.substring(4,7));
+			System.out.println(lastId.substring(3,7));
+			System.out.println(lastId.substring(2,7));
 			if(studentClass.equalsIgnoreCase("lkg") || studentClass.equalsIgnoreCase("ukg") || studentClass.equalsIgnoreCase("nursery")) {
-				int num = Integer.valueOf(lastId.substring(3, 6));
+				int num = Integer.valueOf(lastId.substring(3,7));
 				admissionNum = admisionConst +  "" + (num+1);
 		  } else if(studentClass.equalsIgnoreCase("SSC")) {
-			  int num = Integer.valueOf(lastId.substring(3, 7));
+			  int num = Integer.valueOf(lastId.substring(2,7));
 			  admissionNum = admisionConst +  "" + (num+1);
 		   } else {
-			int num = Integer.valueOf(lastId.substring(2, 6));
+			int num = Integer.valueOf(lastId.substring(2,6));
 			 admissionNum = admisionConst +  "" + (num+1);
 		}
 	}

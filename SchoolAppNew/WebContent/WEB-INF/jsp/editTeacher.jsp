@@ -78,7 +78,7 @@
 									<label class="col-sm-3 control-label">Full name</label>
 									<div class="col-sm-4">
 										<input type="text" class="form-control" id="firstName"
-											name="firstName" value="<%=teacher.getFirstName()%>" readonly="readonly"/>
+											name="firstName" value="<%=teacher.getFirstName()%>"/>
 									</div>
 									<div class="col-sm-4">
 										<input type="text" class="form-control" id="lastName"

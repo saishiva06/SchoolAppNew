@@ -84,7 +84,7 @@ function viewStudent(rollno){
 <div class="container">
   	<div class="panel panel-primary">
       <div class="panel-heading">
-    			Student
+    			STUDENT DETAILS
       </div>
       <div class="panel-body">
         <div class="container">
@@ -98,7 +98,7 @@ function viewStudent(rollno){
                             <table class="table table-striped table-bordered table-hover" id="dataTables-example">
                                 <thead>
                                     <tr>
-                                        <th>Roll No</th>
+                                        <th>Admission No</th>
 										<th>Name</th>
 										<th>Class</th>
 										<th>Section</th>
@@ -117,7 +117,7 @@ function viewStudent(rollno){
 
                                 <tbody>
 			                        <tr>
-										<td><%=student.getRollno()%></td>
+										<td><%=student.getAdmissionNo()%></td>
 										<td><%=student.getStudentFirstName() + " "
 											+ student.getStudentLastName()%></td>
 										<td><%=student.getStudentClass()%></td>

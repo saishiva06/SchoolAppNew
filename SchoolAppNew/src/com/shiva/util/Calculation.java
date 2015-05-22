@@ -35,7 +35,7 @@ private FeeDetailsService feeDetailsService;
 	
 	public  int getDueFee(Student student) { 
 		int total = 0;
-		List<FeeDetails> feeDetailsList =  feeDetailsService.getAllFeeDetailsBySearch("", "",student.getRollno());
+		List<FeeDetails> feeDetailsList =  feeDetailsService.getAllFeeDetailsBySearch("", "",student.getAdmissionNo());
      if(feeDetailsList.size()!=0) {
 		for(FeeDetails feeDetails :feeDetailsList) {
     	 if(feeDetails.getFeeType().equalsIgnoreCase("tutionFee")) {
@@ -49,7 +49,7 @@ private FeeDetailsService feeDetailsService;
 	
 	public  int getFeePaid(Student student) { 
 		int total = 0;
-		List<FeeDetails> feeDetailsList =  feeDetailsService.getAllFeeDetailsBySearch("", "", student.getRollno());
+		List<FeeDetails> feeDetailsList =  feeDetailsService.getAllFeeDetailsBySearch("", "", student.getAdmissionNo());
 		if(feeDetailsList.size()!=0) {
 		for(FeeDetails feeDetails :feeDetailsList) {
     	 if(feeDetails.getFeeType().equalsIgnoreCase("tutionFee")) {

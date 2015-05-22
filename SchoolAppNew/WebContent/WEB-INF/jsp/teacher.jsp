@@ -84,7 +84,7 @@
 <div class="container">
   	<div class="panel panel-primary">
       <div class="panel-heading">
-    			Student 
+    			TEACHER DETAILS 
       </div>
       <div class="panel-body">
         <div class="container">

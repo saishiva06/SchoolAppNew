@@ -75,7 +75,7 @@
 
 	<div class="container">
 		<div class="panel panel-primary">
-			<div class="panel-heading">Student</div>
+			<div class="panel-heading">EXAMINATION RESULTS</div>
 			<div class="panel-body">
 				<div class="container">
 					<div class="row">

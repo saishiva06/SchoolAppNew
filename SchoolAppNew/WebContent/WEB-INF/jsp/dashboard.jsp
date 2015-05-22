@@ -84,11 +84,8 @@
     <script src="resources/js/bootstrap.js"></script>
     <script src="resources/js/dataTables/jquery.dataTables.js"></script>
     <script src="resources/js/dataTables/dataTables.bootstrap.js"></script>
-<<<<<<< HEAD
     <script src="resources/js/dataTables/contentHover.js"></script>
-=======
     <script src="resources/js/contentHover.js"></script>
->>>>>>> origin/shiva_be_changes
         <script>
             $(document).ready(function () {
                 $('#dataTables-example').dataTable();

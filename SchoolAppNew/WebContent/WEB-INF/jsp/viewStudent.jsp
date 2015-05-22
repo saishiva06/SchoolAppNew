@@ -52,10 +52,10 @@
 					<div class="col-md-8">
 						<form action="" id="" method="" class="form-horizontal">
 							<div class="form-group">
-								<label class="col-sm-3 control-label">Roll Number</label>
+								<label class="col-sm-3 control-label">Admission Number</label>
 								<div class="col-sm-4">
 									<input type="text" class="form-control" id="rollNo"
-										name="Roll Number" value="<%=student.getRollno()%>"
+										name="Roll Number" value="<%=student.getAdmissionNo()%>"
 										readonly="readonly" />
 								</div>
 							</div>
