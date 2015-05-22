@@ -13,6 +13,7 @@ FeeDetails feeDetails = (FeeDetails)request.getAttribute("feeDetails");
     <link type="text/css" rel="stylesheet" href="resources/css/bootstrap.css" />
     <link type="text/css" rel="stylesheet" href="resources/css/font-awesome.css" >
     <link type="text/css" rel="stylesheet" href="resources/css/style.css" />
+    <link rel="icon" type="image/png" sizes="16x16" href="resources/img/favicon.ico">
     <link type="text/css" rel="stylesheet" href="resources/css/datepicker.min.css" />
     <link type="text/css" rel="stylesheet" href="resources/css/datepicker3.min.css" />
     <link type="text/css" rel="stylesheet" href="resources/css/formValidation.css"/>
@@ -69,7 +70,7 @@ FeeDetails feeDetails = (FeeDetails)request.getAttribute("feeDetails");
 								 <input type="hidden" name="recieptNo" value="<%= feeDetails.getRecieptNo()%>">
 								<div class="form-group">
 									<label class="col-sm-3 control-label">Full name</label>
-									<div class="col-sm-4">
+									<div class="col-sm-5">
 										<input type="text" class="form-control" id="studentName" value = "<%=feeDetails.getStudentName() %>"
 											name="studentName"  readonly="readonly" />
 									</div>
@@ -78,7 +79,7 @@ FeeDetails feeDetails = (FeeDetails)request.getAttribute("feeDetails");
 								<div class="form-group">
 									<label class="col-sm-3 control-label">Admission No</label>
 									<div class="col-sm-5">
-										<input type="number" class="form-control" id="rollno" value = "<%=feeDetails.getRollNo() %>"
+										<input type="text" class="form-control" id="rollno" value = "<%=feeDetails.getRollNo() %>"
 											name="rollno"  readonly="readonly" />
 									</div>
 								</div>
@@ -106,7 +107,7 @@ FeeDetails feeDetails = (FeeDetails)request.getAttribute("feeDetails");
 								<div class="form-group">
 									<label class="col-sm-3 control-label">Fee Type</label>
 									<div class="col-sm-5">
-										<select name="feeType">
+										<select name="feeType" class="form-control" >
 										<option value = "<%=feeDetails.getFeeType() %>" selected = "selected"><%=feeDetails.getFeeType() %></option>
 										    <option value="Admission Fee">Admission Fee</option>
 											<option value="Tution Fee">Tution Fee</option>
@@ -128,10 +129,9 @@ FeeDetails feeDetails = (FeeDetails)request.getAttribute("feeDetails");
 								<div class="form-group">
 									<label class="col-xs-3 control-label">Fee Paid Date</label>
 									<div class="col-xs-5 date">
-										<div class="input-group input-append date"
-											id="datePicker">
-											<input type="text" class="form-control"  name="feepaidDate"  value = "<%=feeDetails.getFeePayDate1()%> "
-											 placeholder="05/19/2015"  /> <span
+										<div class="input-group input-append date" 	id="datePicker">
+											<input type="text" class="form-control"  id="feepaidDate"   name="feepaidDate"  value = "<%=feeDetails.getFeePayDate1()%> "
+											 placeholder="" /> <span
 												class="input-group-addon add-on"><span
 												class="glyphicon glyphicon-calendar"></span></span>
 										</div>

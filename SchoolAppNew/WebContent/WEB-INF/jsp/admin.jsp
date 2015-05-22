@@ -6,6 +6,7 @@
 
     <link type="text/css" href="resources/css/font-awesome.css" rel="stylesheet"/>
     <link type="text/css" rel="stylesheet" href="resources/css/style.css" />
+        <link rel="icon" type="image/png" sizes="16x16" href="resources/img/favicon.ico">
 </head>
 <body>
 <!-- Header -->

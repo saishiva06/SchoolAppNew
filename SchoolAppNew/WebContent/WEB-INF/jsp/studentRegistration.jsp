@@ -8,6 +8,7 @@
     <link type="text/css" rel="stylesheet" href="resources/css/datepicker.min.css" />
     <link type="text/css" rel="stylesheet" href="resources/css/datepicker3.min.css" />
     <link type="text/css" rel="stylesheet" href="resources/css/formValidation.css"/>
+        <link rel="icon" type="image/png" sizes="16x16" href="resources/img/favicon.ico">
   </head>
 <body>
 
@@ -180,7 +181,7 @@
 								<div class="form-group">
 									<label class="col-xs-3 control-label">Date Of Joinee</label>
 									<div class="col-xs-5 date">
-										<div class="input-group input-append date" id="datePicker">
+										<div class="input-group input-append date" id="datePicker1">
 											<input type="text" class="form-control" name="studentDoj"
 												placeholder="01/01/2000" /> <span
 												class="input-group-addon add-on"><span

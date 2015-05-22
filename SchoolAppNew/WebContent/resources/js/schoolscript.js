@@ -3,13 +3,25 @@ $(document).ready(function() {
 	$('#datePicker')
     .datepicker({
         format: 'dd/mm/yyyy',
-        startDate: '01/01/1980',
-        endDate: '12/03/2050'
+        autoclose:true
     })
     .on('changeDate', function(e) {
         // Revalidate the date field
         $('#addStudent').formValidation('revalidateField', 'date');
+        
     });
+	
+	$('#datePicker1')
+    .datepicker({
+        format: 'dd/mm/yyyy',
+        autoclose:true
+    })
+    .on('changeDate', function(e) {
+        // Revalidate the date field
+        $('#addStudent').formValidation('revalidateField', 'date');
+        
+    });
+	
   /*   // Generate a simple captcha
     function randomNumber(min, max) {
         return Math.floor(Math.random() * (max - min + 1) + min);
@@ -269,20 +281,8 @@ $(document).ready(function() {
                         message: 'The feed Paid is required'
                     }
                 }
-            },
-            feepaidDate: {
-                    validators: {
-                        notEmpty: {
-                            message: 'The Feepaid Date is required'
-                        },
-                        date: {
-                            format: 'DD/MM/YYYY',
-                            min: '01/01/2001',
-                            max: '30/03/2050',
-                            message: 'The date is not a valid'
-                        }
-                    }
-                }
+            }
+            
         }
     });
     $('#addResult').formValidation({

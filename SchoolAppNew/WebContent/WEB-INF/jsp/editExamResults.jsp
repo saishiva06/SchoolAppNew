@@ -12,6 +12,7 @@ ExamResults examResults = (ExamResults)request.getAttribute("examResults");
     <title>Sri Narayana Olympiad School</title>
     <link type="text/css" rel="stylesheet" href="resources/css/bootstrap.css" />
     <link type="text/css" rel="stylesheet" href="resources/css/font-awesome.css" >
+    <link rel="icon" type="image/png" sizes="16x16" href="resources/img/favicon.ico">
     <link type="text/css" rel="stylesheet" href="resources/css/style.css" />
     <link type="text/css" rel="stylesheet" href="resources/css/datepicker.min.css" />
     <link type="text/css" rel="stylesheet" href="resources/css/datepicker3.min.css" />
@@ -81,7 +82,7 @@ ExamResults examResults = (ExamResults)request.getAttribute("examResults");
 								<div class="form-group">
 									<label class="col-sm-3 control-label">Roll No</label>
 									<div class="col-sm-5">
-										<input type="number" class="form-control" id="rollno"  value = "<%=examResults.getRollNum() %>"
+										<input type="text" class="form-control" id="rollno"  value = "<%=examResults.getRollNum() %>"
 											name="rollno" placeholder="Roll No:" readonly="readonly"/>
 									</div>
 								</div>

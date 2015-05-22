@@ -14,6 +14,7 @@
     <title>Sri Narayana Olympiad School</title>
     <link type="text/css" rel="stylesheet" href="resources/css/bootstrap.css" />
     <link type="text/css" href="resources/css/font-awesome.css" rel="stylesheet">
+    <link rel="icon" type="image/png" sizes="16x16" href="resources/img/favicon.ico">
     <link type="text/css" rel="stylesheet" href="resources/css/style.css" />
     <link href="resources/js/dataTables/dataTables.bootstrap.css" rel="stylesheet" />
 

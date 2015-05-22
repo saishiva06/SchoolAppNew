@@ -15,6 +15,7 @@
 <link type="text/css" rel="stylesheet"
 	href="resources/css/font-awesome.css">
 <link type="text/css" rel="stylesheet" href="resources/css/style.css" />
+    <link rel="icon" type="image/png" sizes="16x16" href="resources/img/favicon.ico">
 <link type="text/css" rel="stylesheet"
 	href="resources/css/datepicker.min.css" />
 <link type="text/css" rel="stylesheet"

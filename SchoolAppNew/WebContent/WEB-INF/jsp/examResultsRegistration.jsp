@@ -11,6 +11,7 @@
 	href="resources/css/datepicker.min.css" />
 <link type="text/css" rel="stylesheet"
 	href="resources/css/datepicker3.min.css" />
+	    <link rel="icon" type="image/png" sizes="16x16" href="resources/img/favicon.ico">
 <link type="text/css" rel="stylesheet"
 	href="resources/css/formValidation.css" />
 </head>
@@ -78,7 +79,7 @@
 								<div class="form-group">
 									<label class="col-sm-3 control-label">Roll No</label>
 									<div class="col-sm-5">
-										<input type="number" class="form-control" id="rollno"
+										<input type="text" class="form-control" id="rollno"
 											name="rollno" placeholder="012345" />
 									</div>
 								</div>

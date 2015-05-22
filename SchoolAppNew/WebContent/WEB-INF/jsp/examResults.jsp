@@ -19,6 +19,7 @@
 <link type="text/css" href="resources/css/font-awesome.css"
 	rel="stylesheet">
 <link type="text/css" rel="stylesheet" href="resources/css/style.css" />
+    <link rel="icon" type="image/png" sizes="16x16" href="resources/img/favicon.ico">
 <link href="resources/js/dataTables/dataTables.bootstrap.css"
 	rel="stylesheet" />
 <script type="text/javascript">
@@ -120,7 +121,7 @@
 												<td><%=examResults.getRank()%></td>
 												<td><%=examResults.getGrade()%></td>
 												<%-- <td><button class="btn btn-primary btn-sm" onclick="editExamResults('<%=examResults.getExamResultsId()%>')" ><i class="fa fa-edit "></i> Edit</button></td>
-				        <td><button class="btn btn-danger btn-sm" onclick="deleteExamResults('<%=examResults.getExamResultsId()%>')"  ><i class="fa fa-pencil"></i> Delete</button></td>		
+				        <td><button 			class="btn btn-danger btn-sm" onclick="deleteExamResults('<%=examResults.getExamResultsId()%>')"  ><i class="fa fa-pencil"></i> Delete</button></td>		
 						 --%>
 												<td><input type="button" name="edit" value="Edit"
 													class="btn btn-primary"
