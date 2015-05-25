@@ -211,7 +211,7 @@
 								<div class="form-group">
 									<label class="col-xs-3 control-label">Date Of Joinee</label>
 									<div class="col-xs-5 date">
-										<div class="input-group input-append date" id="datePicker">
+										<div class="input-group input-append date" id="datePicker1">
 											<input type="text" class="form-control" name="studentDoj"
 												value="<%=student.getDoj()%>" /> <span
 												class="input-group-addon add-on"><span

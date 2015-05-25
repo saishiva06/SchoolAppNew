@@ -17,11 +17,21 @@ import org.springframework.web.servlet.ModelAndView;
 import com.shiva.entity.FeeDetails;
 import com.shiva.service.FeeDetailsService;
 import com.shiva.util.RandomGenerator;
+import com.shiva.service.StudentService;
 
 @Controller
 public class FeeDetailsController {
 
 	private FeeDetailsService feeDetailsService;
+	private StudentService studentService;
+
+	public StudentService getStudentService() {
+		return studentService;
+	}
+
+	public void setStudentService(StudentService studentService) {
+		this.studentService = studentService;
+	}
 
 	public FeeDetailsService getFeeDetailsService() {
 		return feeDetailsService;
@@ -51,8 +61,9 @@ public class FeeDetailsController {
 	public ModelAndView addFeeDetails(HttpServletRequest request,
 			HttpServletResponse response) throws Exception {
 		try {
-			String studentName = request.getParameter("studentName");
 			String rollNo = request.getParameter("rollno");
+			if(studentService.isStudentExists(rollNo)) {
+			String studentName = request.getParameter("studentName");
 			String studentClass = request.getParameter("StudentClass");
 			String feeType = request.getParameter("feeType");
 			String otherFee = request.getParameter("feePaid");
@@ -68,15 +79,19 @@ public class FeeDetailsController {
 			}
 			String recieptNo = RandomGenerator.getReciptNo();
 			String formattedDob = output.format(feepaidDate1);
-			String today = output.format(new Date());
 			int result = feeDetailsService.createFeeDetails(recieptNo, rollNo,
 					studentName, studentClass, feeType, otherFee, formattedDob);
-			System.out.println("@@@ FeeDetails added..........");
+			System.out.println("@@@ FeeDetails added.........." + result);
 			return new ModelAndView("redirect:feeDetails.do");
-		} catch (Exception e) {
+			} else {
+				return new ModelAndView("redirect:feeRegistration.do");
+			}
+			}
+			catch (Exception e) {
 			e.printStackTrace();
 			return new ModelAndView("feeDetailsRegistration");
 		}
+		
 	}
 
 	@RequestMapping("/editFeeDetails.do")

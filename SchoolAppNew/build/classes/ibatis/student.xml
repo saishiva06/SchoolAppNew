@@ -126,7 +126,7 @@
 
 	<select id="isStudentExists" parameterClass="string"
 		resultClass="int">
-		select u_id from Student where u_login=#u_login#
+		select roll_num from Student where admission_num=#admission_num#
 	</select>
 
 	<insert id="createStudent" parameterClass="java.util.Map">

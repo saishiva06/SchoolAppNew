@@ -38,7 +38,7 @@ private FeeDetailsService feeDetailsService;
 		List<FeeDetails> feeDetailsList =  feeDetailsService.getAllFeeDetailsBySearch("", "",student.getAdmissionNo());
      if(feeDetailsList.size()!=0) {
 		for(FeeDetails feeDetails :feeDetailsList) {
-    	 if(feeDetails.getFeeType().equalsIgnoreCase("tutionFee")) {
+    	 if(feeDetails.getFeeType().equalsIgnoreCase("Tution Fee")) {
     		 total = total + Integer.valueOf(feeDetails.getOtherFee());
     	 }
      }
@@ -52,7 +52,7 @@ private FeeDetailsService feeDetailsService;
 		List<FeeDetails> feeDetailsList =  feeDetailsService.getAllFeeDetailsBySearch("", "", student.getAdmissionNo());
 		if(feeDetailsList.size()!=0) {
 		for(FeeDetails feeDetails :feeDetailsList) {
-    	 if(feeDetails.getFeeType().equalsIgnoreCase("tutionFee")) {
+    	 if(feeDetails.getFeeType().equalsIgnoreCase("Tution Fee")) {
     		 total = total + Integer.valueOf(feeDetails.getOtherFee());
     	 }
      }

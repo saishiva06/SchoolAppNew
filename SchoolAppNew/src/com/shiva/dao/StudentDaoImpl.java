@@ -18,13 +18,15 @@ public class StudentDaoImpl extends SqlMapClientDaoSupport implements StudentDao
 	
 	public StudentDaoImpl() { }
 
-	public boolean isStudentExists(String student_name) {
+	public boolean isStudentExists(String admission_num) {
 		try {
-			@SuppressWarnings("unused")
-			int result = (Integer) template.queryForObject("isStudentExists", student_name);
+			int result = (Integer) template.queryForObject("isStudentExists", admission_num);
+			if(result>0) {
 			return true;
+			} else {
+				return false;
+			}
 		} catch (Exception ex) {
-			//log.error("StudentDao:isStudentExists::" + ex.getMessage());
 			return false;
 		}
 	}

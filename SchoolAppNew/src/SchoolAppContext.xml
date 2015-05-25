@@ -58,7 +58,7 @@ xsi:schemaLocation="http://www.springframework.org/schema/beans
 	<bean name="loginController" class="com.shiva.controller.LoginController" scope="request"><property name="userService" ref="userServiceImpl" /></bean>
 	<bean name="teacherController" class="com.shiva.controller.TeacherController" scope="request"><property name="teacherService" ref="teacherServiceImpl" /></bean>
 	<bean name="studentController" class="com.shiva.controller.StudentController" scope="request"><property name="studentService" ref="studentServiceImpl" /></bean>
-	<bean name="feeDetailsController" class="com.shiva.controller.FeeDetailsController" scope="request"><property name="feeDetailsService" ref="feeDetailsServiceImpl" /></bean>
+	<bean name="feeDetailsController" class="com.shiva.controller.FeeDetailsController" scope="request"><property name="feeDetailsService" ref="feeDetailsServiceImpl" /><property name="studentService" ref="studentServiceImpl" /></bean>
 	<bean name="examResultsController" class="com.shiva.controller.ExamResultsController" scope="request"><property name="examResultsService" ref="examResultsServiceImpl" /></bean>
 	
 

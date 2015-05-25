@@ -39,13 +39,13 @@
   <div id="topbar">
     <div id="">
       <div class="topbox">
-       <div class="imgholder"><img src="resources/img/images.jpg" alt="" /></div>
+       <div class="imgholder"><img src="resources/img/image.jpg" alt="" /></div>
       </div>
       <div class="topbox">
-        <h2>Sri Narayana Educational System</h2>
+        <!-- <h2>Sri Narayana Educational System</h2>
         <p>Established in 2003 in Khammam.</p>
         <p class="readmore">Content will be Coming Soon!</p>
-      </div>
+       --></div> 
       <div class="topbox last">
         <h2>Administration Login Here</h2>
         <form action="login.do" method="post">
