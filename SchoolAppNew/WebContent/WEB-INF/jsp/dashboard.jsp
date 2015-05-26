@@ -44,7 +44,7 @@
     <div class="row">
         <div class="col-md-3">
 
-            <img id="d1" src="resources/img/school-image.jpg" />
+            <img id="d1" src="resources/img/school-image1.jpg" />
 
             <div class="contenthover">
                 <h3>Toper Student1</h3>
@@ -56,7 +56,7 @@
 
         <div class="col-md-3 col-md-offset-1">
 
-            <img id="d2" src="resources/img/image.jpg" />
+            <img id="d2" src="resources/img/school-image.jpg" />
 
             <div class="contenthover">
                 <h3>Awards</h3>

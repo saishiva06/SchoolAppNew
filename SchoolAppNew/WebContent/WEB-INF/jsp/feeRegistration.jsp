@@ -1,7 +1,15 @@
-<!DOCTYPE html>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	session="true" pageEncoding="ISO-8859-1"%>
+<%
+				
+String errorMessage = (String)session.getAttribute("errorMessage");
+%>
+	
+	
+	<!DOCTYPE html>
 <html>
 <head>
-    <title>Sri Narayana Olypiad School</title>
+    <title>Sri Narayana Olympiad School</title>
     <link type="text/css" rel="stylesheet" href="resources/css/bootstrap.css" />
     <link type="text/css" rel="stylesheet" href="resources/css/font-awesome.css" >
     <link type="text/css" rel="stylesheet" href="resources/css/style.css" />
@@ -9,6 +17,8 @@
     <link type="text/css" rel="stylesheet" href="resources/css/datepicker3.min.css" />
     <link type="text/css" rel="stylesheet" href="resources/css/formValidation.css"/>
         <link rel="icon" type="image/png" sizes="16x16" href="resources/img/favicon.ico">
+        
+
 </head>
 <body>
 
@@ -48,6 +58,15 @@
 			<b> <a href="feeDetails.do" class="btn btn-default">Back</a></b>
 		</p>
 	</div>
+	
+	<div class="container">
+	<center> <h2 class="btn btn-warning"><%
+    if(null!=errorMessage)
+    {
+        out.println(errorMessage);
+    }
+%></h2></center>
+	</div>
 
 	<div class="container">
 		<div class="panel panel-primary">
@@ -57,7 +76,7 @@
 					<div class="row">
 						<div class="col-md-8">
 
-							<form action="addFeeDetails.do" id="addFee" method="post"
+							<form action="addFeeDetails.do" id="addFee" method="post" name = "myform"
 								class="form-horizontal">
 								<div class="form-group">
 									<label class="col-sm-3 control-label">Full name</label>
@@ -71,7 +90,7 @@
 									<label class="col-sm-3 control-label">Admission No</label>
 									<div class="col-sm-5">
 										<input type="text" class="form-control" id="rollno"
-											name="rollno" placeholder="012345" />
+											name="rollno" placeholder="012345"/>
 									</div>
 								</div>
 								<div class="form-group">

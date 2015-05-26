@@ -9,6 +9,7 @@ import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -84,12 +85,14 @@ public class FeeDetailsController {
 			System.out.println("@@@ FeeDetails added.........." + result);
 			return new ModelAndView("redirect:feeDetails.do");
 			} else {
-				return new ModelAndView("redirect:feeRegistration.do");
+				HttpSession session = request.getSession(true);
+				session.setAttribute("errorMessage", "Please enter a valid Admission Number");
+				return new ModelAndView("feeRegistration");
 			}
 			}
 			catch (Exception e) {
 			e.printStackTrace();
-			return new ModelAndView("feeDetailsRegistration");
+			return new ModelAndView("feeRegistration");
 		}
 		
 	}
