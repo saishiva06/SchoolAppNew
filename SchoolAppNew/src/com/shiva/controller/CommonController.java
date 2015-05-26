@@ -37,5 +37,8 @@ public class CommonController {
 		System.out.println("@@@ Logout success...........");
 		return new ModelAndView("redirect:index.do");
 	}
-
+	@RequestMapping("/errorPage")
+	public ModelAndView loadErrorPage() throws Exception {
+		return new ModelAndView("errorPage");
+	}
 }

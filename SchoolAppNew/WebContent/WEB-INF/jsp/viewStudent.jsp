@@ -38,8 +38,11 @@
 				<a href="#" class="navbar-brand"><img width="90px" height="80px"
 					src="resources/img/logo.jpg" class="logo" alt="Logo"></img></a>
 			</div>
-			<div>
-				<h2 class="well">SRI NARAYANA OLYMPIAD SCHOOL</h2>
+			<div class="well">
+			
+			  <h2>SRI NARAYANA OLYMPIAD SCHOOL</h2>
+			  <h3>Recognised By Govt of Telangana</h3>
+				<h4>Mustafa Nagar Khammam 507001</h4>
 			</div>
 			<div class="navbar-collapse collapse"></div>
 

@@ -5,21 +5,20 @@ xmlns:aop="http://www.springframework.org/schema/aop"
 xmlns:mvc="http://www.springframework.org/schema/mvc" 
 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 xsi:schemaLocation="http://www.springframework.org/schema/beans     
-    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+    http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
     http://www.springframework.org/schema/context 
-    http://www.springframework.org/schema/context/spring-context-3.0.xsd
+    http://www.springframework.org/schema/context/spring-context-3.2.xsd
     http://www.springframework.org/schema/aop
-    http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
+    http://www.springframework.org/schema/aop/spring-aop-3.2.xsd
     http://www.springframework.org/schema/mvc
-    http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd">
+    http://www.springframework.org/schema/mvc/spring-mvc-3.2.xsd">
         
-   <mvc:resources mapping="resources/**" location="/resources/" />
+ <mvc:resources mapping="resources/**" location="/resources/" />
    <mvc:annotation-driven />
    
     <mvc:interceptors>
    		<mvc:interceptor>
-   			
-     		<mvc:mapping path="/dashboard.do" />
+   			<mvc:mapping path="/dashboard.do" />
      		<mvc:mapping path="/examResults.do" />
      		<mvc:mapping path="/feeDetails.do" />
      		<mvc:mapping path="/student.do" />
@@ -27,13 +26,18 @@ xsi:schemaLocation="http://www.springframework.org/schema/beans
      		<mvc:mapping path="/feeRegistration.do" />
      		<mvc:mapping path="/studentRegistration.do" />
      		<mvc:mapping path="/teacherRegistration.do" />
-     		<mvc:mapping path="/admin.do" />
-     		<mvc:mapping path="/noticeboard.do" />
      		<mvc:mapping path="/examResultsRegistration.do" />
      		<mvc:mapping path="/viewStudent.do" />
+     		<mvc:mapping path="/editStudent.do" />
+     		<mvc:mapping path="/editExamResults.do" />
+     		<mvc:mapping path="/editTeacher.do" />
+     		<mvc:mapping path="/editFeeDetails.do" />
+     		
+     		
      		<bean class="com.shiva.util.SessionHandler" />
    		</mvc:interceptor>
-	</mvc:interceptors>
+	</mvc:interceptors> 
+	
 
    <context:component-scan base-package="com.shiva.controller" />
    <context:annotation-config />
