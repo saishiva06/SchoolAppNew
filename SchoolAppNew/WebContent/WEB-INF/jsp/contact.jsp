@@ -102,7 +102,7 @@
                     <div class="row">
                         <article class="contact-form col-md-8 col-sm-7  page-row">                            
                             <h3 class="title">Get in touch</h3>
-                            <p>We’d love to hear from you. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ut erat magna. Aliquam porta sem a lacus imperdiet posuere. Integer semper eget ligula id eleifend. </p>
+                            <p>We would love to hear from you. Please fill Your comments and feedback here. </p>
                             <form>
                                 <div class="form-group name">
                                     <label for="name">Name</label>
@@ -134,7 +134,7 @@
                                 <h3 class="title">Postal Address</h3>
                                 <p class="adr">
                                     <span class="adr-group">
-                                    	<span><b>Narayana Olympiad Schools</b></span><br>       
+                                    	<span><b>Sri Narayana Olympiad Schools</b></span><br>       
                                         <span class="street-address">Saradha High School</span><br>
                                         <span class="region">Mustafa Nagar Khammam(District)</span><br>
                                         <span class="postal-code">Telangana-507208</span><br>

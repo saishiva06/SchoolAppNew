@@ -106,8 +106,8 @@
                                     <img class="img-responsive" src="assets/images/news/news-thumb-1.jpg" alt="" />
                                 </figure>
                                 <div class="details col-md-10 col-sm-9 col-xs-8">
-                                    <h3 class="title"><a href="news-single.do">Morbi bibendum consectetuer vulputate sollicitudin</a></h3>
-                                    <p>Morbi bibendum consectetuer, vulputate, sollicitudin, primis ullamcorper vulputate sed risus dis feugiat vel gravida, class enim Mus aliquam ut donec sodales bibendum rutrum dis sit rutrum id eleifend. Dapibus potenti.</p>
+                                    <h3 class="title"><a href="news-single.do">Web Site Launched</a></h3>
+                                    <p>Our new School Website launched and published.</p>
                                     <a class="btn btn-theme read-more" href="news-single.do">Read more<i class="fa fa-chevron-right"></i></a>
                                 </div>
                             </article><!--//news-item-->
@@ -116,8 +116,8 @@
                                     <img class="img-responsive" src="assets/images/news/news-thumb-2.jpg" alt="" />
                                 </figure>
                                 <div class="details col-md-10 col-sm-9 col-xs-8">
-                                    <h3 class="title"><a href="news-single.do">Aenean eleifend ornare nisi id molestie</a></h3>
-                                    <p>Donec feugiat enim sit amet nisl scelerisque, at sodales eros ullamcorper. Vestibulum nisi nisi, mattis sit amet elementum tincidunt, auctor vel metus. Morbi posuere elit mauris, eu cursus velit faucibus varius. Vestibulum dapibus massa arcu, sed vulputate enim suscipit eget. Mauris euismod orci magna. Nullam et lacinia dui. Sed massa neque, auctor sed nibh vel, congue adipiscing justo.</p>
+                                    <h3 class="title"><a href="news-single.do">Admissions Open</a></h3>
+                                    <p>Admisiions are open for all clasess and mediums in our school</p>
                                     <a class="btn btn-theme read-more" href="news-single.do">Read more<i class="fa fa-chevron-right"></i></a>
                                 </div>
                             </article><!--//news-item-->
@@ -126,8 +126,8 @@
                                     <img class="img-responsive" src="assets/images/news/news-thumb-3.jpg" alt="" />
                                 </figure>
                                 <div class="details col-md-10 col-sm-9 col-xs-8">
-                                    <h3 class="title"><a href="news-single.do">Quisque venenatis consequat commodo</a></h3>
-                                    <p>Curabitur bibendum gravida odio, nec tempus libero varius ut. Nullam augue nibh, posuere nec pretium in, sagittis id magna. Aenean tellus augue, fermentum a purus vitae, adipiscing accumsan enim. Curabitur in leo vel sapien egestas laoreet vitae quis est. Fusce malesuada nulla et elit dictum, et porttitor turpis blandit.</p>
+                                    <h3 class="title"><a href="news-single.do">New Building For School</a></h3>
+                                    <p>This acadamic Year our new building is opening with full furintued class rooms near beracha chaurch Mustafa Nagar</p>
                                     <a class="btn btn-theme read-more" href="news-single.do">Read more<i class="fa fa-chevron-right"></i></a>
                                 </div>
                             </article><!--//news-item-->
@@ -136,8 +136,8 @@
                                     <img class="img-responsive" src="assets/images/news/news-thumb-4.jpg" alt="" />
                                 </figure>
                                 <div class="details col-md-10 col-sm-9 col-xs-8">
-                                    <h3 class="title"><a href="news-single.do">Donec feugiat enim sit amet nisl scelerisque</a></h3>
-                                    <p>Vivamus faucibus ullamcorper nunc, non vulputate neque vulputate nec. Vivamus ut ante a diam scelerisque consequat. Maecenas nisl urna, condimentum ac justo a, adipiscing hendrerit magna. Fusce pharetra laoreet accumsan. Phasellus elit sapien, consequat vel sapien sit amet, condimentum vulputate odio.</p>
+                                    <h3 class="title"><a href="news-single.do">SSC Results Announced</a></h3>
+                                    <p>SSC results came out for Academic year 2014-15. And our School got great %'s and marks all over.</p>
                                     <a class="btn btn-theme read-more" href="news-single.do">Read more<i class="fa fa-chevron-right"></i></a>
                                 </div>
                             </article><!--//news-item-->

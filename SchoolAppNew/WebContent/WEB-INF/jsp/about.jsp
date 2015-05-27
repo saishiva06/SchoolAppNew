@@ -103,15 +103,23 @@
                         <article class="welcome col-md-8 col-sm-7">                         
                             <h3 class="title">Welcome to Narayana Olympiad Schools</h3>
                             <p><img class="img-responsive" src="assets/images/about.jpg" alt="" /></p>
-                            <p>narayanaolympiadschools was founded with the intention of providing training for the future leaders of our country which needs to have a prosperous tomorrow. Today, applications and results of our model of competence education places us among the country's most prestigious institutions in our area of training. Our purpose is to form useful society leaders for our country. We are part of the Network of National Institutions and we are certified in quality education.
-Our philosophy provides the school with unique qualities of which we are tremendously proud. We are dedicated to academic excellence and believe that it is our responsibility to provide every student with effective teaching and quality education. In addition, we also encourage respect for the individuality of each student and recognition of his or her talents, interests and potential. It is our goal to provide all of our students with high quality personal care.
-Get advice about our academic offerings.</p>
+                            <p>narayanaolympiadschools was establsihed in 2003 as Saradha High School in Mustafa nagar Khammam.after successfull 12 years in education system now name changed to Sri narayana Olampiad Schools.
+                            <br>
+                            <h4>Our Programms:</h4>
+<br>We have designed the following programs to train the students in our school.
+<br>Two huge campuses with good ventilation as well as environment.
+<br>Nursery  to 5th class CBSE syllabus.
+<br>6 to 10th class STATE/CBSE/ICSE/NCERT/IIT Integrated syllabus.
+<br>For kids(Nursery/LKG/UKG) teaching through play way methods .
+<br>Audio & visual for better understanding for critical concepts.
+<br>Bus facility to all routes for day scholar students.
+</p>
 <br>
 
                             
                             <blockquote class="custom-quote">
                                 <p><i class="fa fa-quote-left"></i>We strongly believe that the future of India needs professionals who are not only exceptionally talented and successful but also should have strong Indian values system built into them.</p>
-                                <p class="people"><span class="name">Adam Windsor</span><br><span class="title">Principle, Narayana Olympiad Schools</span></p>
+                                <p class="people"><span class="name"></span><br><span class="title">Principle, Narayana Olympiad Schools</span></p>
                             </blockquote>
                         </article><!--//page-content-->
                         

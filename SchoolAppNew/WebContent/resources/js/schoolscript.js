@@ -18,6 +18,28 @@ $(document).ready(function() {
     })
     .on('changeDate', function(e) {
         // Revalidate the date field
+        $('#addTeacher').formValidation('revalidateField', 'date');
+        
+    });
+	
+	$('#datePicker')
+    .datepicker({
+        format: 'dd/mm/yyyy',
+        autoclose:true
+    })
+    .on('changeDate', function(e) {
+        // Revalidate the date field
+        $('#addTeacher').formValidation('revalidateField', 'date');
+        
+    });
+	
+	$('#datePicker1')
+    .datepicker({
+        format: 'dd/mm/yyyy',
+        autoclose:true
+    })
+    .on('changeDate', function(e) {
+        // Revalidate the date field
         $('#addStudent').formValidation('revalidateField', 'date');
         
     });

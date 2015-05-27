@@ -91,33 +91,33 @@
                     <li>
                         <img src="assets/images/slides/slide-1.jpg"  alt="" />
                         <p class="flex-caption">
-                            <span class="main" >Heading One</span>
+                            <span class="main" ></span>
                             <br />
-                            <span class="secondary clearfix" >Lorem ipsum dolor sit amet, consectetur adipiscing elit</span>
+                            <span class="secondary clearfix" ></span>
                         </p>
                     </li>
                     <li>
                         <img src="assets/images/slides/slide-2.jpg"  alt="" />
                         <p class="flex-caption">
-                            <span class="main" >Heading Two</span>
+                            <span class="main" ></span>
                             <br />
-                            <span class="secondary clearfix" >Lorem ipsum dolor sit amet, consectetur adipiscing elit</span>
+                            <span class="secondary clearfix" ></span>
                         </p>
                     </li>
                     <li>
                         <img src="assets/images/slides/slide-3.jpg"  alt="" />
                         <p class="flex-caption">
-                            <span class="main" >Heading Three</span>
+                            <span class="main" ></span>
                             <br />
-                            <span class="secondary clearfix" >Lorem ipsum dolor sit amet, consectetur adipiscing elit</span>
+                            <span class="secondary clearfix" ></span>
                         </p>
                     </li>
                     <li>
                         <img src="assets/images/slides/slide-4.jpg"  alt="" />
                         <p class="flex-caption">
-                            <span class="main" >Heading Four</span>
+                            <span class="main" ></span>
                             <br />
-                            <span class="secondary clearfix" >Lorem ipsum dolor sit amet, consectetur adipiscing elit</span>
+                            <span class="secondary clearfix" ></span>
                         </p>
                     </li>
                 </ul><!--//slides-->
@@ -218,20 +218,20 @@
                         <div class="carousel-inner">
                             <div class="item active"> 
                                 <div class="col-md-4 news-item">
-                                    <h2 class="title"><a href="news-single.do">Latest News 1</a></h2>
+                                    <h2 class="title"><a href="news-single.do">Admissions Are Open</a></h2>
                                     <img class="thumb" src="assets/images/news/news-thumb-1.jpg"  alt="" />
-                                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam bibendum mauris eget sapien consectetur pellentesque.</p>
+                                  <p></p>
                                     <a class="read-more" href="news-single.do">Read more<i class="fa fa-chevron-right"></i></a>                
                                 </div><!--//news-item-->
                                 <div class="col-md-4 news-item">
-                                    <h2 class="title"><a href="news-single.do">Latest News 2</a></h2>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam bibendum mauris eget sapien consectetur pellentesque.</p>
+                                    <h2 class="title"><a href="news-single.do">Website launched</a></h2>
+                                    <p>Our new website has been launched today Tell your visitors why you have started a new presentation and how it benefits them. Mention your goals and project advantages. Try to briefly give your visitors reasons why they should return to your page.</p>
                                     <a class="read-more" href="news-single.do">Read more<i class="fa fa-chevron-right"></i></a>
                                     <img class="thumb" src="assets/images/news/news-thumb-2.jpg"  alt="" />                                </div>
                                 <!--//news-item-->
                                 <div class="col-md-4 news-item">
-                                    <h2 class="title"><a href="news-single.do">Latest News 3</a></h2>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam bibendum mauris eget sapien consectetur pellentesque.</p>
+                                    <h2 class="title"><a href="news-single.do">New Name New Location</a></h2>
+                                    <p>Saradha High School now name changed to Sri Narayana Olympaid Schools...</p>
                                     <a class="read-more" href="news-single.do">Read more<i class="fa fa-chevron-right"></i></a>
                                     <img class="thumb" src="assets/images/news/news-thumb-3.jpg"  alt="" />                                </div>
                                 <!--//news-item-->

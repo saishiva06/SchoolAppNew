@@ -42,7 +42,7 @@
 <header class="header">  
             <div class="header-main container">
                 <h1 class="logo col-md-4 col-sm-4">
-                    <a href="index.html"><img id="logo" class="img-responsive img-inblock" src="assets/images/logo.png" alt="Logo"></a>
+                    <a href="index.do"><img id="logo" class="img-responsive img-inblock" src="assets/images/logo.png" alt="Logo"></a>
                 </h1><!--//logo-->
 
 
@@ -66,7 +66,7 @@
                 
             </div><!--//header-main-->
         </header><!--//header-->
-           
+           </div>
         <!-- ******NAV****** -->
         <nav class="main-nav" role="navigation">
             <div class="container">
@@ -122,13 +122,13 @@
 										<th>Edit</th>
 										<th>Delete</th>
                                     </tr>
-					           </thead><%
+					           </thead>
+				<tbody>
+					<tr><%
 					if (mydata != null && mydata.size() > 0) {
 						for (int i = 0; i < mydata.size(); i++) {
 							FeeDetails feeDetails = mydata.get(i);
 				%>
-				<tbody>
-					<tr>
 					   <td><%=feeDetails.getRecieptNo()%></td>
 						<td><%=feeDetails.getRollNo()%></td>
 						<td><%=feeDetails.getStudentName()%></td>
@@ -142,12 +142,12 @@
 						<td><input type="button"
 								name="delete" value="Delete"  class="btn btn-danger"
 								onclick="deleteFeeDetails('<%=feeDetails.getRecieptNo()%>')"/></td>
-					</tr>
-				</tbody>
-				<%
+					</tr><%
 					}
 					}
 				%>
+				</tbody>
+				
 			</table>
 			</div>
 			</form>

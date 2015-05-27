@@ -18,7 +18,6 @@
     <link type="text/css" rel="stylesheet" href="resources/css/style.css" />
     <link href="resources/js/dataTables/dataTables.bootstrap.css" rel="stylesheet" />
     <script type="text/javascript">
-
 	function editStudent(rollno){
 		var f=document.form2;
 		f.rollno.value = rollno;
@@ -26,7 +25,6 @@
 	    f.action='editStudent.do';
 	    f.submit();
     }
-
 	function deleteStudent(rollno){
 		var f=document.form2;
 		f.rollno.value = rollno;
@@ -34,7 +32,6 @@
     	f.action='deleteStudent.do';
     	f.submit();
     }
-
 function viewStudent(rollno){
 		var f=document.form2;
 		f.rollno.value = rollno;
@@ -133,15 +130,14 @@ function viewStudent(rollno){
 										<th>Delete</th>
 										<th>View</th>
                                     </tr>
-					           </thead><%
+					           </thead><tbody>
+			                        <tr>
+			                        <%
 										if (mydata != null && mydata.size() > 0) {
 											for (int i = 0; i < mydata.size(); i++) {
 												Student student = mydata.get(i);
 									%>
-
-                                <tbody>
-			                        <tr>
-										<td><%=student.getAdmissionNo()%></td>
+                                        <td><%=student.getAdmissionNo()%></td>
 										<td><%=student.getStudentFirstName() + " "
 											+ student.getStudentLastName()%></td>
 										<td><%=student.getStudentClass()%></td>
@@ -162,12 +158,12 @@ function viewStudent(rollno){
 													class="btn btn-primary"
 													onclick="viewStudent('<%=student.getRollno()%>')" /></td>
   										 
-								</tr>
-							</tbody>
-							<%
+								</tr><%
 								}
 								}
 							%>
+							</tbody>
+							
                             </table>
                         </div>
            </form>

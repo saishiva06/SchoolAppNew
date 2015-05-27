@@ -197,7 +197,7 @@
 										<div class="col-xs-5 date">
 											<div class="input-group input-append date" id="datePicker1">
 												<input type="text" class="form-control" name="doj"
-													placeholder="01/01/2000" /> <span
+													placeholder="DD/MM/YYYY" /> <span
 													class="input-group-addon add-on"><span
 													class="glyphicon glyphicon-calendar"></span></span>
 											</div>

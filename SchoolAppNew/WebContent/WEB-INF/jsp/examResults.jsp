@@ -45,7 +45,7 @@
 <header class="header">  
             <div class="header-main container">
                 <h1 class="logo col-md-4 col-sm-4">
-                    <a href="index.html"><img id="logo" class="img-responsive img-inblock" src="assets/images/logo.png" alt="Logo"></a>
+                    <a href="index.do"><img id="logo" class="img-responsive img-inblock" src="assets/images/logo.png" alt="Logo"></a>
                 </h1><!--//logo-->
 
 
@@ -128,13 +128,14 @@
 												<th>Delete</th>
 											</tr>
 										</thead>
-										<%
+										
+										<tbody>
+											<tr>
+											<%
 											if (mydata != null && mydata.size() > 0) {
 												for (int i = 0; i < mydata.size(); i++) {
 													ExamResults examResults = mydata.get(i);
 										%>
-										<tbody>
-											<tr>
 												<td><%=examResults.getRollNum()%></td>
 												<td><%=examResults.getStudentName()%></td>
 												<td><%=examResults.getStudentClass()%></td>
@@ -154,12 +155,12 @@
 													class="btn btn-danger"
 													onclick="deleteExamResults('<%=examResults.getExamResultsId()%>')" /></td>
 
-											</tr>
-										</tbody>
-										<%
+											</tr><%
 											}
 											}
 										%>
+										</tbody>
+										
 									</table>
 								</div>
 							</form>
