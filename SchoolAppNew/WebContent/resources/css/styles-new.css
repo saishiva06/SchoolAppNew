@@ -8,7 +8,7 @@
 /* ======= Base ======= */
 
 body{
- background: url("../images/pattern-bg.png") repeat scroll center top;
+ background: url("../img/pattern-bg.png") repeat scroll center top;
  }
 
 
@@ -474,7 +474,7 @@ ul.custom-list-style li {
 }
 
 #footer-sec {
-    background-image: url("../images/footer-img1.png") !important;
+    background-image: url("../img/footer-img1.png") !important;
     background-position: center 85px;
     background-repeat: no-repeat;
     float: left;

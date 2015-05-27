@@ -1,3 +1,4 @@
+@import url(styles-new.css);
 .largeIcon{
     font-size: 50px;
     padding-left: 35px;
@@ -45,24 +46,4 @@ a:hover{
 	color:#fff;
 	text-shadow : none;
 }
-/* @import url('resources/css/bootstrap.css');
-@import url('resources/css/bootstrap-responsive.min.css');
-New styles
 
-label.valid {
-	width: 24px;
-	height: 24px;
-	background: url(resources/img/valid.png) center center no-repeat;
-	display: inline-block;
-	text-indent: -9999px;
-}
-label.error {
-	font-weight: bold;
-	color: red;
-	padding: 2px 8px;
-	margin-top: 2px;
-} */
- #addStudent .form-control-feedback {
-    top: 0;
-    right: -15px;
-   }

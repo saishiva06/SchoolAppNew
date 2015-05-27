@@ -15,29 +15,35 @@
 </head>
 <body>
 
-	<!-- Header -->
-	<div class="navbar navbar-inner ">
-		<div class="container">
-			<div class="navbar-header">
-				<button type="buttton" class="navbar-toggle" data-toggle="collapse"
-					data-target=".navbar-collapse">
-					<span class="icon-bar"></span> <span class="icon-bar"></span> <span
-						class="icon-bar"></span>
-				</button>
-				<a href="#" class="navbar-brand"><img width="90px" height="80px"
-					src="resources/img/logo.jpg" class="logo" alt="Logo"></img></a>
-			</div>
-			<div>
-				<h2 class="well">SRI NARAYANA OLYMPIAD SCHOOL</h2>
-			</div>
-			<div class="navbar-collapse collapse">
-				<ul class="nav navbar-nav">
-					</ul>
-			</div>
+	<div class="wrapper">
+<header class="header">  
+            <div class="header-main container">
+                <h1 class="logo col-md-4 col-sm-4">
+                    <a href="index.do"><img id="logo" class="img-responsive img-inblock" src="assets/images/logo.png" alt="Logo"></a>
+                </h1><!--//logo-->
 
-		</div>
-	</div>
-	<!-- Header -- End>
+
+                
+                <div class="info col-md-8 col-sm-8 marginTop30">
+                	<div class="col-md-12 col-sm-12  text-center">
+                        <ul class="menu-top ">
+                            <li class="divider"><a href="index.do">Home</a></li>
+                            <li class="divider"><a href="admin.do">Admin Login</a></li>
+                            <li><a href="contact.do">Contact</a></li>
+                        </ul><!--//menu-top-->
+                    </div>
+                    <div class="clearfix text-center"></div>
+                    <div class="contact col-md-12 col-sm-12">
+                    	<div class=" pull-right">
+                            <p class="phone"><i class="fa fa-phone"></i>Call us | +91 - 9666644801 | +91 - 8686172057</p> 
+                          <p class="email"><i class="fa fa-envelope"></i><a href="#">narayanaolympiadschools@gmail.com</a></p>
+                      </div>
+                    </div><!--//contact-->
+                </div><!--//info-->
+                
+            </div><!--//header-main-->
+        </header><!--//header-->
+        </div>
 
 <!-- Slide -->
 	<div class="wrapper col2">
@@ -56,22 +62,28 @@
 	</div>
 	<!-- Slide End -->
 
+<!-- Footer and Modal
+    ==========================-->
+  <footer id="footer-sec" class="footer">
+    <div class="bottom-bar">
+    	<div class="container">
+    		<div class="row">
+    			<a class="copyright col-md-12 col-sm-12 col-xs-12">
+                   Sri Narayana Olympiad Schools © 2015 All rights reserved.
+    			</a>
+		    </div>
+	    </div>
+    </div>
+</footer> 
 
+    <script src="resources/js/jquery.js"></script>
+    <script src="resources/js/bootstrap.js"></script>
+    <script src="resources/js/dataTables/jquery.dataTables.js"></script>
+    <script src="resources/js/dataTables/dataTables.bootstrap.js"></script>
+    <script src="resources/js/bootstrap-datepicker.min.js"></script>
+    <script src="resources/js/formValidation.js"></script>
+    <script src="resources/js/framework/bootstrap.js"></script>
+    <script src="resources/js/schoolscript.js"></script>
 
-	<div class="wrapper col4">
-		<div id="copyright">
-			<p class="fl_left">Copyright &copy; 2015 - All Rights Reserved -
-				Sri Narayana Olympiod School</p>
-		</div>
-	</div>
-	<script type="text/javascript" src="resources/js/jquery.js"></script>
-	<script type="text/javascript"
-		src="resources/js/jquery.slidepanel.setup.js"></script>
-	<script type="text/javascript" src="resources/js/jquery.cycle.min.js"></script>
-	<script type="text/javascript" src="resources/js/jquery.cycle.setup.js"></script>
-	<script type="text/javascript" src="resources/js/jquery.validate.js"></script>
-	<script type="text/javascript"
-		src="resources/js/bootstrap-datepicker.min.js"></script>
-	<script type="text/javascript" src="resources/js/schoolscript.js"></script>
 </body>
 </html>

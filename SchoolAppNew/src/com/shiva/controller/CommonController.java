@@ -41,4 +41,33 @@ public class CommonController {
 	public ModelAndView loadErrorPage() throws Exception {
 		return new ModelAndView("errorPage");
 	}
+	@RequestMapping("/about")
+	public ModelAndView loadAboutPage() throws Exception {
+		return new ModelAndView("about");
+	}
+	@RequestMapping("/contact")
+	public ModelAndView loadContactPage() throws Exception {
+		return new ModelAndView("contact");
+	}
+	@RequestMapping("/news")
+	public ModelAndView loadNewsPage() throws Exception {
+		return new ModelAndView("news");
+	}
+	@RequestMapping("/gallery")
+	public ModelAndView loadGallery() throws Exception {
+		return new ModelAndView("gallery");
+	}
+	@RequestMapping("/gallery-album")
+	public ModelAndView loadGalleryAlbum() throws Exception {
+		return new ModelAndView("gallery-album");
+	}
+	@RequestMapping("/news-single")
+	public ModelAndView loadNewsSingle() throws Exception {
+		return new ModelAndView("news-single");
+	}
+	@RequestMapping("/team")
+	public ModelAndView loadTeamPage() throws Exception {
+		return new ModelAndView("team");
+	}
+	
 }

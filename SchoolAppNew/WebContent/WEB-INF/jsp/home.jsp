@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->  
+<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->  
+<!--[if !IE]><!--> <html lang="en"> <!--<![endif]-->  
+<head>
+    <title>Narayana Olympiad Schools</title>
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">    
+    <link rel="shortcut icon" href="favicon.ico">  
+    <link href='../../fonts.googleapis.com/css/index.do' rel='stylesheet' type='text/css'>   
+    <!-- Global CSS -->
+    <link rel="stylesheet" href="assets/plugins/bootstrap/css/bootstrap.min.css">   
+    <!-- Plugins CSS -->    
+    <link rel="stylesheet" href="assets/plugins/font-awesome/css/font-awesome.css">
+    <link rel="stylesheet" href="assets/plugins/flexslider/flexslider.css">
+    <link rel="stylesheet" href="assets/plugins/pretty-photo/css/prettyPhoto.css"> 
+    <!-- Theme CSS -->  
+    <link id="theme-style" rel="stylesheet" href="assets/css/styles.css">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head> 
+
+<body class="home-page">
+    <div class="wrapper">
+        <!-- ******HEADER****** --> 
+        <header class="header">  
+            <div class="header-main container">
+                <h1 class="logo col-md-4 col-sm-4">
+                    <a href="index.do"><img id="logo" class="img-responsive img-inblock" src="assets/images/logo.png" alt="Logo"></a>
+                </h1><!--//logo-->
+
+
+                
+                <div class="info col-md-8 col-sm-8 marginTop30">
+                	<div class="col-md-12 col-sm-12  text-center">
+                        <ul class="menu-top ">
+                            <li class="divider"><a href="index.do">Home</a></li>
+                            <li class="divider"><a href="#">FAQ</a></li>
+                            <li><a href="contact.do">Contact</a></li>
+                        </ul><!--//menu-top-->
+                    </div>
+                    <div class="clearfix text-center"></div>
+                    <div class="contact col-md-12 col-sm-12">
+                    	<div class=" pull-right">
+                            <p class="phone"><i class="fa fa-phone"></i>Call us | +91 - 9666644801 | +91 - 8686172057</p> 
+                          <p class="email"><i class="fa fa-envelope"></i><a href="#">narayanaolympiadschools@gmail.com</a></p>
+                      </div>
+                    </div><!--//contact-->
+                </div><!--//info-->
+                
+            </div><!--//header-main-->
+        </header><!--//header-->
+        
+        <!-- ******NAV****** -->
+        <nav class="main-nav" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button><!--//nav-toggle-->
+                </div><!--//navbar-header-->            
+                <div class="navbar-collapse collapse" id="navbar-collapse">
+                    <ul class="nav navbar-nav">
+                        <li class="active nav-item"><a href="index.do">Home</a></li>
+                        <li class="nav-item dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="0" data-close-others="false" href="#">About Us <i class="fa fa-angle-down"></i></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="about.do">About</a></li>
+                                <li><a href="team.do">Our Staff</a></li>
+                                <li><a href="gallery.do">School Gallery</a></li>              
+                            </ul>
+                        </li>
+                        <li class="nav-item"><a href="news.do">News</a></li>
+                        <li class="nav-item"><a href="contact.do">Contact</a></li>
+                     </ul><!--//nav-->
+                </div><!--//navabr-collapse-->
+            </div><!--//container-->
+        </nav><!--//main-nav-->
+        
+        <!-- ******CONTENT****** --> 
+        <div class="content container">
+            <div id="promo-slider" class="slider flexslider">
+                <ul class="slides">
+                    <li>
+                        <img src="assets/images/slides/slide-1.jpg"  alt="" />
+                        <p class="flex-caption">
+                            <span class="main" >Heading One</span>
+                            <br />
+                            <span class="secondary clearfix" >Lorem ipsum dolor sit amet, consectetur adipiscing elit</span>
+                        </p>
+                    </li>
+                    <li>
+                        <img src="assets/images/slides/slide-2.jpg"  alt="" />
+                        <p class="flex-caption">
+                            <span class="main" >Heading Two</span>
+                            <br />
+                            <span class="secondary clearfix" >Lorem ipsum dolor sit amet, consectetur adipiscing elit</span>
+                        </p>
+                    </li>
+                    <li>
+                        <img src="assets/images/slides/slide-3.jpg"  alt="" />
+                        <p class="flex-caption">
+                            <span class="main" >Heading Three</span>
+                            <br />
+                            <span class="secondary clearfix" >Lorem ipsum dolor sit amet, consectetur adipiscing elit</span>
+                        </p>
+                    </li>
+                    <li>
+                        <img src="assets/images/slides/slide-4.jpg"  alt="" />
+                        <p class="flex-caption">
+                            <span class="main" >Heading Four</span>
+                            <br />
+                            <span class="secondary clearfix" >Lorem ipsum dolor sit amet, consectetur adipiscing elit</span>
+                        </p>
+                    </li>
+                </ul><!--//slides-->
+            </div><!--//flexslider-->
+            
+
+            
+            <!--////////   MISSION - VISION - SCHOOL - GALLERY  ////////-->
+            
+            <div class="row cols-wrapper">
+				<!--//col-md-4 ONE-->
+                <div class="col-md-4">
+                   <section class="Green-box one-edge-shadow">
+                        <h1 class="section-heading text-highlight"><span class="line-green">Our Vision</span></h1>
+                        <div class="green-section-content">
+                        	<p class="greentext">Education is a mighty tree. The student is like a seed, who needs the right environment and proper inputs to grow rapidly in all aspects to achieve this full potential growth ,students require a balanced, comprehensive and success oriented system to provide all above.Our school designed a unique learning atmosphere for your child to get excellent success in the modern educational system.</p>
+                        </div>
+                    </section><!--//Green-->
+                </div>
+                <!--//col-md-4 ONE-->
+                
+				<!--//col-md-4 Two-->
+                <div class="col-md-4">
+                   <section class="Yellow-box one-edge-shadow">
+                        <h1 class="section-heading text-highlight"><span class="line-yellow">Our Mission</span></h1>
+                        <div class="yellow-section-content">
+                        	<p class="yellowtext">We strongly believe that the future of India needs professionals who are not only exceptionally talented and successful but also should have strong Indian values system built into them.</p>
+                        </div>
+                    </section><!--//Yellow-->
+                </div>
+                <!--//col-md-4 Two-->
+                
+                
+				<!--//col-md-4 THREE -->
+	                <div class="col-md-4">
+                   <section class="testimonials gallery  one-edge-shadow">
+                        <h1 class="section-heading text-highlight"><span class="line-grey"> School Gallery</span></h1>
+                        <div class="carousel-controls">
+                            <a class="prev" href="#testimonials-carousel" data-slide="prev"><i class="fa fa-caret-left"></i></a>
+                            <a class="next" href="#testimonials-carousel" data-slide="next"><i class="fa fa-caret-right"></i></a> 
+                       </div>
+                  <!--//carousel-controls-->
+                        <div class="section-content">
+                            <div id="testimonials-carousel" class="testimonials-carousel carousel slide">
+                                <div class="carousel-inner">
+                                    <div class="item active">
+                                        <p class="greytext"> 
+                                            <a class=""><img  class="img-responsive" src="assets/images/gallery.png" align="middle" alt="school gallery"></a>
+                                            <br>
+                                            <a href="gallery.do" class="all-gallery">View all School Gallery</a>
+                                        </p>
+                                    </div><!--//item-->
+                                    <div class="item">
+                                        <p class="greytext"> 
+                                            <a class=""><img  class="img-responsive" src="assets/images/gallery.png" align="middle" alt="school gallery"></a>
+                                            <br>
+                                            <a class="all-gallery">View all School Gallery</a>
+                                        </p>
+                                    </div><!--//item-->
+                                    <div class="item">
+                                        <p class="greytext"> 
+                                            <a class=""><img  class="img-responsive" src="assets/images/gallery.png" align="middle" alt="school gallery"></a>
+                                            <br>
+                                            <a class="all-gallery">View all School Gallery</a>
+                                        </p>
+                                    </div><!--//item-->
+                                    <div class="item">
+                                        <p class="greytext"> 
+                                            <a class=""><img  class="img-responsive" src="assets/images/gallery.png" align="middle" alt="school gallery"></a>
+                                            <br>
+                                            <a class="all-gallery">View all School Gallery</a>
+                                        </p>
+                                    </div><!--//item-->
+                                    
+                                    
+                                </div><!--//carousel-inner-->
+                            </div><!--//testimonials-carousel-->
+                        </div><!--//section-content-->
+                    </section><!--//testimonials-->
+                </div>
+				<!--//col-md-4 THREE -->
+
+            </div><!--//cols-wrapper-->
+            
+            <!--////////   MISSION - VISION - SCHOOL - GALLERY  ////////-->
+            
+            
+            <!--////////   LAEST NEWS  ////////-->
+            
+            <section class="news greyBG">
+                <h1 class="section-heading text-highlight"><span class="line-defaultGreen HeadingGreen">Latest News</span></h1>     
+                <div class="carousel-controls">
+                    <a class="prev" href="#news-carousel" data-slide="prev"><i class="fa fa-caret-left"></i></a>
+                    <a class="next" href="#news-carousel" data-slide="next"><i class="fa fa-caret-right"></i></a>                </div>
+            <!--//carousel-controls--> 
+                <div class="section-content clearfix">
+                    <div id="news-carousel" class="news-carousel carousel slide">
+                        <div class="carousel-inner">
+                            <div class="item active"> 
+                                <div class="col-md-4 news-item">
+                                    <h2 class="title"><a href="news-single.do">Latest News 1</a></h2>
+                                    <img class="thumb" src="assets/images/news/news-thumb-1.jpg"  alt="" />
+                                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam bibendum mauris eget sapien consectetur pellentesque.</p>
+                                    <a class="read-more" href="news-single.do">Read more<i class="fa fa-chevron-right"></i></a>                
+                                </div><!--//news-item-->
+                                <div class="col-md-4 news-item">
+                                    <h2 class="title"><a href="news-single.do">Latest News 2</a></h2>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam bibendum mauris eget sapien consectetur pellentesque.</p>
+                                    <a class="read-more" href="news-single.do">Read more<i class="fa fa-chevron-right"></i></a>
+                                    <img class="thumb" src="assets/images/news/news-thumb-2.jpg"  alt="" />                                </div>
+                                <!--//news-item-->
+                                <div class="col-md-4 news-item">
+                                    <h2 class="title"><a href="news-single.do">Latest News 3</a></h2>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam bibendum mauris eget sapien consectetur pellentesque.</p>
+                                    <a class="read-more" href="news-single.do">Read more<i class="fa fa-chevron-right"></i></a>
+                                    <img class="thumb" src="assets/images/news/news-thumb-3.jpg"  alt="" />                                </div>
+                                <!--//news-item-->
+                            </div><!--//item-->
+                            <div class="item"> 
+                                <div class="col-md-4 news-item">
+                                    <h2 class="title"><a href="news-single.do">Latest News 4</a></h2>
+                                    <img class="thumb" src="assets/images/news/news-thumb-4.jpg"  alt="" />
+                                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam bibendum mauris eget sapien consectetur pellentesque.</p>
+                                    <a class="read-more" href="news-single.do">Read more<i class="fa fa-chevron-right"></i></a>                
+                                </div><!--//news-item-->
+                                <div class="col-md-4 news-item">
+                                    <h2 class="title"><a href="news-single.do">Latest News 5</a></h2>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam bibendum mauris eget sapien consectetur pellentesque.</p>
+                                    <a class="read-more" href="news-single.do">Read more<i class="fa fa-chevron-right"></i></a>
+                                    <img class="thumb" src="assets/images/news/news-thumb-5.jpg"  alt="" />                                </div>
+                                <!--//news-item-->
+                                <div class="col-md-4 news-item">
+                                    <h2 class="title"><a href="news-single.do">Latest News 6</a></h2>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam bibendum mauris eget sapien consectetur pellentesque.</p>
+                                    <a class="read-more" href="news-single.do">Read more<i class="fa fa-chevron-right"></i></a>
+                                    <img class="thumb" src="assets/images/news/news-thumb-6.jpg"  alt="" />                                </div>
+                                <!--//news-item-->
+                            </div><!--//item-->
+                        </div><!--//carousel-inner-->
+                    </div><!--//news-carousel-->  
+                </div><!--//section-content-->     
+            </section>
+            <!--//news-->
+            
+            <!--////////   LAEST NEWS  ////////-->
+            
+        </div><!--//content-->
+    </div><!--//wrapper-->
+    
+    <!-- ******FOOTER****** -->
+    
+<footer id="footer-sec" class="footer">
+    <div class="bottom-bar">
+    	<div class="container">
+    		<div class="row">
+    			<a class="copyright col-md-12 col-sm-12 col-xs-12">
+                    Narayana Olympiad Schools © 2015 All rights reserved.
+    			</a>
+		    </div>
+	    </div>
+    </div>
+</footer> 
+
+ 
+    <!-- Javascript -->          
+    <script type= "text/javascript"SRC="assets/plugins/jquery-1.10.2.min.js"></script>
+    <script type= "text/javascript"SRC="assets/plugins/jquery-migrate-1.2.1.min.js"></script>
+    <script type= "text/javascript"SRC="assets/plugins/bootstrap/js/bootstrap.min.js"></script> 
+    <script type= "text/javascript"SRC="assets/plugins/bootstrap-hover-dropdown.min.js"></script> 
+    <script type= "text/javascript"SRC="assets/plugins/back-to-top.js"></script>
+    <script type= "text/javascript"SRC="assets/plugins/jquery-placeholder/jquery.placeholder.js"></script>
+    <script type= "text/javascript"SRC="assets/plugins/pretty-photo/js/jquery.prettyPhoto.js"></script>
+    <script type= "text/javascript"SRC="assets/plugins/flexslider/jquery.flexslider-min.js"></script>
+    <script type= "text/javascript"SRC="assets/js/main.js"></script>                      
+</body>
+</html> 
+

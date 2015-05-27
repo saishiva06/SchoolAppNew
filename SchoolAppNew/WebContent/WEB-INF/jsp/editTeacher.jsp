@@ -25,38 +25,62 @@
 </head>
 <body>
 
-	<!-- Fixes Navigation Bar with drop down menu
-    ======================================================-->
-	<div class="navbar navbar-inner ">
-		<div class="container">
-			<div class="navbar-header">
-				<button type="buttton" class="navbar-toggle" data-toggle="collapse"
-					data-target=".navbar-collapse">
-					<span class="icon-bar"></span> <span class="icon-bar"></span> <span
-						class="icon-bar"></span>
-				</button>
-				<a href="#" class="navbar-brand"><img width="90px" height="80px"
-					src="resources/img/logo.jpg" class="logo" alt="Logo"></img></a>
-			</div>
-			<div>
-				<h2 class="well">SRI NARAYANA OLYMPIAD SCHOOL</h2>
-			</div>
-			<div class="navbar-collapse collapse">
-				<ul class="nav navbar-nav">
-					<li><a href="dashboard.do">Home</a></li>
-					<li class="active"><a href="#">Teacher</a></li>
-					<li><a href="student.do">Student</a></li>
-					<li><a href="feeDetails.do">Fee</a></li>
-					<li><a href="examResults.do">Examination</a></li>
-				</ul>
-				<ul class="nav navbar-nav navbar-right">
-					<li role="presentation"><a role="menuitem" tabindex="-1"
-						href="logout.do">Logout</a></li>
-				</ul>
-			</div>
+	<div class="wrapper">
+<header class="header">  
+            <div class="header-main container">
+                <h1 class="logo col-md-4 col-sm-4">
+                    <a href="index.do"><img id="logo" class="img-responsive img-inblock" src="assets/images/logo.png" alt="Logo"></a>
+                </h1><!--//logo-->
 
-		</div>
-	</div>
+
+                
+                <div class="info col-md-8 col-sm-8 marginTop30">
+                	<div class="col-md-12 col-sm-12  text-center">
+                        <ul class="menu-top ">
+                            <li class="divider"><a href="index.do">Home</a></li>
+                            <li class="divider"><a href="admin.do">Admin Login</a></li>
+                            <li><a href="contact.do">Contact</a></li>
+                        </ul><!--//menu-top-->
+                    </div>
+                    <div class="clearfix text-center"></div>
+                    <div class="contact col-md-12 col-sm-12">
+                    	<div class=" pull-right">
+                            <p class="phone"><i class="fa fa-phone"></i>Call us | +91 - 9666644801 | +91 - 8686172057</p> 
+                          <p class="email"><i class="fa fa-envelope"></i><a href="#">narayanaolympiadschools@gmail.com</a></p>
+                      </div>
+                    </div><!--//contact-->
+                </div><!--//info-->
+                
+            </div><!--//header-main-->
+        </header><!--//header-->
+        </div>   
+        <!-- ******NAV****** -->
+        <nav class="main-nav" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button><!--//nav-toggle-->
+                </div><!--//navbar-header-->            
+                <div class="navbar-collapse collapse" id="navbar-collapse">
+                    <ul class="nav navbar-nav">
+                         <li class="nav-item" ><a href="dashboard.do">Home</a></li>
+                         <li  class="nav-item"><a href="teacher.do">Teacher</a></li>
+                         <li class="nav-item active" ><a href="#">Student</a></li>
+                         <li class="nav-item"><a href="feeDetails.do">Fee</a></li>
+                         <li class="nav-item"><a href="examResults.do">Examination</a></li>
+                        
+                     </ul><!--//nav-->
+                     <!--  <ul class="nav navbar-nav navbar-right">
+                      <li role="presentation"><a role="menuitem" tabindex="-1" href="logout.do">Logout</a></li>
+                      </ul> -->
+                     
+                </div><!--//navabr-collapse-->
+            </div><!--//container-->
+        </nav><!--//main-nav-->   
 	<div class="container">
 		<p>
 			<b> <a href="teacher.do" class="btn btn-default">Back</a></b>
@@ -258,17 +282,17 @@
 
 	<!-- Footer and Modal
     ==========================-->
-	<div class="container">
-		<div class="row">
-			<div class="col-md-12">
-				<hr />
-				<p>
-					Copyright &copy; Sri Narayana Olympiad School. <a
-						data-toggle="modal" href="#myModal">Terms and Conditions</a>
-				</p>
-			</div>
-		</div>
-	</div>
+	<footer id="footer-sec" class="footer">
+    <div class="bottom-bar">
+    	<div class="container">
+    		<div class="row">
+    			<a class="copyright col-md-12 col-sm-12 col-xs-12">
+                   Sri Narayana Olympiad Schools © 2015 All rights reserved.
+    			</a>
+		    </div>
+	    </div>
+    </div>
+</footer> 
 
 	<script src="resources/js/jquery.js"></script>
 	<script src="resources/js/bootstrap.js"></script>
