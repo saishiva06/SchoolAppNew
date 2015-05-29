@@ -1,16 +1,30 @@
 package com.shiva.controller;
 
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.shiva.entity.ExamResults;
+import com.shiva.service.ExamResultsService;
+
 @Controller
 public class CommonController {
 	HttpSession session;
+	private ExamResultsService examResultsService;
 
+	public ExamResultsService getExamResultsService() {
+		return examResultsService;
+	}
+
+	public void setExamResultsService(ExamResultsService examResultsService) {
+		this.examResultsService = examResultsService;
+	}
 	@RequestMapping("/index")
 	public ModelAndView loadIndex() throws Exception {
 		return new ModelAndView("index");
@@ -23,8 +37,17 @@ public class CommonController {
 
 	// for page display temporary @venu
 	@RequestMapping("/noticeboard")
-	public ModelAndView loadNoticeboard() throws Exception {
-		return new ModelAndView("noticeboard");
+	public ModelAndView loadNoticeboard(HttpServletRequest request,
+			HttpServletResponse response) throws Exception {
+		 String rollNo = request.getParameter("rollno");
+		String studentClass = request.getParameter("StudentClass");
+		List<ExamResults> examResultsList = examResultsService.getAllResultsBySearch(studentClass, rollNo, "");
+		ModelAndView mav = new ModelAndView();
+		mav.setViewName("noticeboard");
+		if (examResultsList != null && examResultsList.size()!=0) {
+			mav.addObject("examResultsData", examResultsList.get(0));
+		}
+		return mav;
 	}
 
 	@RequestMapping("/logout.do")

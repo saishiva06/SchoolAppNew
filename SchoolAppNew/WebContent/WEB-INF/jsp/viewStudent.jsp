@@ -1,11 +1,9 @@
 <%@page import="com.shiva.entity.Student"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	session="true" pageEncoding="ISO-8859-1"%>
-
 <%
 	Student student = (Student) request.getAttribute("student");
 %>
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -15,7 +13,8 @@
 <link type="text/css" rel="stylesheet"
 	href="resources/css/font-awesome.css">
 <link type="text/css" rel="stylesheet" href="resources/css/style.css" />
-    <link rel="icon" type="image/png" sizes="16x16" href="resources/img/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16"
+	href="resources/img/favicon.ico">
 <link type="text/css" rel="stylesheet"
 	href="resources/css/datepicker.min.css" />
 <link type="text/css" rel="stylesheet"
@@ -23,184 +22,127 @@
 <link type="text/css" rel="stylesheet"
 	href="resources/css/formValidation.css" />
 </head>
+<script type="text/javascript">
+	function printpage() {
+		var printButton = document.getElementById("printpagebutton");
+		printButton.style.visibility = 'hidden';
+		window.print()
+	}
+</script>
 <body>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12 text-center">
 
-	<!-- Fixes Navigation Bar with drop down menu
-    ======================================================-->
-	<div class="navbar navbar-inner ">
-		<div class="container">
-			<div class="navbar-header">
-				<button type="buttton" class="navbar-toggle" data-toggle="collapse"
-					data-target=".navbar-collapse">
-					<span class="icon-bar"></span> <span class="icon-bar"></span> <span
-						class="icon-bar"></span>
-				</button>
-				<a href="#" class="navbar-brand"><img width="90px" height="80px"
-					src="resources/img/logo.jpg" class="logo" alt="Logo"></img></a>
-			</div>
-			<div class="well">
-			
-			  <h2>SRI NARAYANA OLYMPIAD SCHOOL</h2>
-			  <h3>Recognised By Govt of Telangana</h3>
-				<h4>Mustafa Nagar Khammam 507001</h4>
-			</div>
-			<div class="navbar-collapse collapse"></div>
+				<img id="logo" class="img-responsive img-inblock"
+					src="resources/img/logon.png" alt="Logo" align="left" />
 
+				<h3>
+					<b>SRI NARAYANA OLYMPIAD SCHOOLS</b>
+				</h3>
+				<h4>Recognised By Govt of Telangana</h4>
+				<h5>
+					<b>Mustafa Nagar, Khammam- 507001</b>
+				</h5>
+				<hr />
+				<!-- 	<h5>
+					
+				</h5> -->
+			</div>
 		</div>
+
 	</div>
 	<div class="container">
-		<div class="panel panel-primary">
-			<div class="panel-heading">Student Information</div>
-			<div class="panel-body">
-				<div class="container">
-					<div class="col-md-8">
-						<form action="" id="" method="" class="form-horizontal">
-							<div class="form-group">
-								<label class="col-sm-3 control-label">Admission Number</label>
-								<div class="col-sm-4">
-									<input type="text" class="form-control" id="rollNo"
-										name="Roll Number" value="<%=student.getAdmissionNo()%>"
-										readonly="readonly" />
-								</div>
-							</div>
-							<div class="form-group">
-								<label class="col-sm-3 control-label">Full name</label>
-								<div class="col-sm-4">
-									<input type="text" class="form-control" id="studentFirstName"
-										name="studentFirstName"
-										value="<%=student.getStudentFirstName()%> <%=student.getStudentLastName()%>"
-										readonly="readonly" />
-								</div>
-							</div>
-
-							<div class="form-group">
-								<label class="col-sm-3 control-label">Father Name</label>
-								<div class="col-sm-5">
-									<input type="text" class="form-control" id="studentFatherName"
-										name="studentFatherName" placeholder="Father Name"
-										value="<%=student.getStudentFatherName()%>"
-										readonly="readonly" />
-								</div>
-							</div>
-							<div class="form-group">
-								<label class="col-sm-3 control-label">Mother Name</label>
-								<div class="col-sm-5">
-									<input type="text" class="form-control" id="studentMotherName"
-										name="studentMotherName" placeholder="Mother name"
-										value="<%=student.getStudentMotherName()%>"
-										readonly="readonly" />
-								</div>
-							</div>
-							<div class="form-group">
-								<label class="col-sm-3 control-label">Gender</label>
-								<div class="col-sm-5">
-									<input type="text" class="form-control" id="gender"
-										name="gender" value="<%=student.getGender()%>"
-										readonly="readonly" />
-								</div>
-							</div>
-							<div class="form-group">
-								<label class="col-xs-3 control-label">Date Of Birth</label>
-								<div class="col-xs-5 date">
-									<input type="text" class="form-control" name="studentDob"
-										value="<%=student.getDob()%>" readonly="readonly" />
-
-								</div>
-							</div>
-							<div class="form-group">
-								<label class="col-sm-3 control-label">Class</label>
-								<div class="col-sm-5">
-									<input type="text" class="form-control" name="class"
-										value="<%=student.getStudentClass()%>" readonly="readonly" />
-								</div>
-							</div>
-							<div class="form-group">
-								<label class="col-sm-3 control-label">Medium</label>
-								<div class="col-sm-5">
-									<input type="text" class="form-control" name="medium"
-										value="<%=student.getMedium()%>" readonly="readonly" />
-								</div>
-							</div>
-							<div class="form-group">
-								<label class="col-sm-3 control-label">Section</label>
-								<div class="col-sm-5">
-									<input type="text" class="form-control" name="section"
-										value="<%=student.getSection()%>" readonly="readonly" />
-								</div>
-							</div>
-							<div class="form-group">
-								<label class="col-sm-3 control-label">Religion</label>
-								<div class="col-sm-5">
-									<input id="religion" name="religion" class="form-control"
-										type="text" value="<%=student.getReligion()%>"
-										readonly="readonly" />
-								</div>
-							</div>
-							<div class="form-group">
-								<label class="col-sm-3 control-label">Caste</label>
-								<div class="col-sm-5">
-									<input id="caste" name="caste" class="form-control" type="text"
-										value="<%=student.getCaste()%>" readonly="readonly" />
-								</div>
-							</div>
-							<div class="form-group">
-								<label class="col-sm-3 control-label">Mobile No</label>
-								<div class="col-sm-5">
-									<input id="mobileNo" name="mobileNo"
-										value="<%=student.getPhoneNumber()%>" class="form-control"
-										type="number" readonly="readonly" />
-								</div>
-							</div>
-							<div class="form-group">
-								<label class="col-sm-3 control-label">Address</label>
-								<div class="col-sm-5">
-									<textarea class=" input-xlarge form-control" id="village"
-										name="village" rows="3" readonly="readonly"><%=student.getVillage()%></textarea>
-								</div>
-							</div>
-							<div class="form-group">
-								<label class="col-sm-3 control-label">Fee Pay</label>
-								<div class="col-sm-5">
-									<input id="fee" class="form-control" name="fee" type="text"
-										value="<%=student.getFees()%>" readonly="readonly" />
-								</div>
-							</div>
-							<div class="form-group">
-								<label class="col-xs-3 control-label">Date Of Joinee</label>
-								<div class="col-xs-5 date">
-									<input type="text" class="form-control" name="studentDoj"
-										value="<%=student.getDoj()%>" readonly="readonly" />
-								</div>
-							</div>
-							<div class="form-group">
-									<div class="col-sm-9 col-sm-offset-3">
-							<a href="student.do" class="btn btn-default">Back</a>
-							<button type="submit" class="btn btn-primary" name="print"
-								onClick="window.print()" value="Print">Print</button>
-</div></div>
-
-						</form>
+		<div class="row">
+			<div class="col-md-12">
+				<div align="right"></div>
+				<!--   Basic Table  -->
+				<div class="panel panel-default">
+					<div class="panel-heading text-center">
+						<b>ADMISSION FORM</b>
 					</div>
+					<div class="panel-body">
+						<div class="table-responsive">
+							<table class="table">
+								<thead>
+									<tr>
+										<th>Admission No</th>
+										<th><%=student.getAdmissionNo()%></th>
+										<th>Date of Issue</th>
+										<th><%=student.getDoj()%></th>
+									</tr>
+									<tr>
+										<th>Student Name</th>
+										<th><%=student.getStudentFirstName()%> <%=student.getStudentLastName()%>
+										</th>
+										<th>Father Name</th>
+										<th><%=student.getStudentFatherName()%></th>
+									</tr>
+									<tr>
+										<th>Mother Name</th>
+										<th><%=student.getStudentMotherName()%></th>
+										<th>Date Of Birth</th>
+										<th><%=student.getDob()%></th>
+									</tr>
+									<tr>
+										<th>Phone No</th>
+										<th><%=student.getPhoneNumber()%></th>
+										<th>Religion</th>
+										<th><%=student.getReligion()%></th>
+									</tr>
+									<tr>
+										<th>Address</th>
+										<th><%=student.getVillage()%></th>
+										<th>Section</th>
+										<th><%=student.getSection()%></th>
+									</tr>
+									<tr>
+										<th>Medium</th>
+										<th><%=student.getMedium()%></th>
+										<th>Class</th>
+										<th><%=student.getStudentClass()%></th>
+									</tr>
+									<tr>
+										<th>Fee</th>
+										<th><%=student.getFees()%></th>
+										<th></th>
+										<th></th>
+									</tr>
+								</thead>
+							</table>
+						</div>
+					</div>
+				</div>
+				<br>
+				<br>
+				<div class="row">
+					<div class="col-md-12 ">
+					 <table class="table"  ><tr><th align="left">Parent Signature</th><th></th><th align="center"><input id="printpagebutton" type="button" class="" value="Print this page" onclick="printpage()" /></th><th></th><th align="right">Principal Signature</th></tr></table>
+					 
+					<!--   <h4 align="left"><b>Parent Signature</b></h4>
+						<h4 align="center"><input id="printpagebutton" type="button" value="Print this page" onclick="printpage()" /></h4>
+		                <h4 align="right">
+							<b>Principal Signature</b>
+						</h4>
+			 -->		</div>
+
 				</div>
 			</div>
 		</div>
 	</div>
-
-
-	<!-- Footer and Modal
-    ==========================-->
 	<div class="container">
-		<div class="row">
+		<!-- <input id="printpagebutton" type="button" value="Print this page" 
+			onclick="printpage()" />
+		 --><div class="row">
 			<div class="col-md-12">
 				<hr />
 				<p>
-					Copyright &copy; Sri Narayana Olypiad School. <a
-						data-toggle="modal" href="#myModal">Terms and Conditions</a>
+					Copyright &copy; Sri Narayana Olympiad School. <a
+						data-toggle="modal" href="">Terms and Conditions</a>
 				</p>
 			</div>
 		</div>
 	</div>
-
 	<script src="resources/js/jquery.js"></script>
 	<script src="resources/js/bootstrap.js"></script>
 	<script src="resources/js/dataTables/jquery.dataTables.js"></script>
@@ -209,6 +151,5 @@
 	<script src="resources/js/formValidation.js"></script>
 	<script src="resources/js/framework/bootstrap.js"></script>
 	<script src="resources/js/schoolscript.js"></script>
-
 </body>
 </html>

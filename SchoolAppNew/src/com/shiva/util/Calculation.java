@@ -14,14 +14,6 @@ public class Calculation {
 
 private FeeDetailsService feeDetailsService;
 
-	/*public FeeDetailsService getFeeDetailsService() {
-		return feeDetailsService;
-	}
-
-	public void setFeeDetailsService(FeeDetailsService feeDetailsService) {
-		this.feeDetailsService = feeDetailsService;
-	}
-	*/
 	public Calculation() {
     	super();
     	feeDetailsService = (FeeDetailsService) SpringService.getInstance().getBean("feeDetailsServiceImpl");

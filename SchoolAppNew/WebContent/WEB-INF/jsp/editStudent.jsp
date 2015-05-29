@@ -15,7 +15,8 @@
 <link type="text/css" rel="stylesheet"
 	href="resources/css/font-awesome.css">
 <link type="text/css" rel="stylesheet" href="resources/css/style.css" />
-    <link rel="icon" type="image/png" sizes="16x16" href="resources/img/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16"
+	href="resources/img/favicon.ico">
 <link type="text/css" rel="stylesheet"
 	href="resources/css/datepicker.min.css" />
 <link type="text/css" rel="stylesheet"
@@ -26,61 +27,77 @@
 <body>
 
 	<div class="wrapper">
-<header class="header">  
-            <div class="header-main container">
-                <h1 class="logo col-md-4 col-sm-4">
-                    <a href="index.do"><img id="logo" class="img-responsive img-inblock" src="assets/images/logo.png" alt="Logo"></a>
-                </h1><!--//logo-->
+		<header class="header">
+			<div class="header-main container">
+				<h1 class="logo col-md-4 col-sm-4">
+					<a href="index.do"><img id="logo"
+						class="img-responsive img-inblock" src="assets/images/logo.png"
+						alt="Logo"></a>
+				</h1>
+				<!--//logo-->
 
 
-                
-                <div class="info col-md-8 col-sm-8 marginTop30">
-                	<div class="col-md-12 col-sm-12  text-center">
-                        <ul class="menu-top ">
-                            <li class="divider"><a href="index.do">Home</a></li>
-                            <li class="divider"><a href="admin.do">Admin Login</a></li>
-                            <li><a href="contact.do">Contact</a></li>
-                        </ul><!--//menu-top-->
-                    </div>
-                    <div class="clearfix text-center"></div>
-                    <div class="contact col-md-12 col-sm-12">
-                    	<div class=" pull-right">
-                            <p class="phone"><i class="fa fa-phone"></i>Call us | +91 - 9666644801 | +91 - 8686172057</p> 
-                          <p class="email"><i class="fa fa-envelope"></i><a href="#">narayanaolympiadschools@gmail.com</a></p>
-                      </div>
-                    </div><!--//contact-->
-                </div><!--//info-->
-                
-            </div><!--//header-main-->
-        </header><!--//header-->
-        </div>   
-        <!-- ******NAV****** -->
-        <nav class="main-nav" role="navigation">
-            <div class="container">
-                <div class="navbar-header">
-                    <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-collapse">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button><!--//nav-toggle-->
-                </div><!--//navbar-header-->            
-                <div class="navbar-collapse collapse" id="navbar-collapse">
-                    <ul class="nav navbar-nav">
-                         <li class="nav-item" ><a href="dashboard.do">Home</a></li>
-                         <li  class="nav-item"><a href="teacher.do">Teacher</a></li>
-                         <li class="nav-item active" ><a href="#">Student</a></li>
-                         <li class="nav-item"><a href="feeDetails.do">Fee</a></li>
-                         <li class="nav-item"><a href="examResults.do">Examination</a></li>
-                        
-                     </ul><!--//nav-->
-                     <!--  <ul class="nav navbar-nav navbar-right">
-                      <li role="presentation"><a role="menuitem" tabindex="-1" href="logout.do">Logout</a></li>
-                      </ul> -->
-                     
-                </div><!--//navabr-collapse-->
-            </div><!--//container-->
-        </nav><!--//main-nav-->   
+
+				<div class="info col-md-8 col-sm-8 marginTop30">
+					<div class="col-md-12 col-sm-12  text-center">
+						<ul class="menu-top ">
+							<li class="divider"><a href="dashboard.do">Dashboard</a></li>
+							<li><a href="logout.do">&nbsp Logout<i
+									class="fa fa-power-off fa-lg"></i></a></li>
+						</ul>
+						<!--//menu-top-->
+					</div>
+					<div class="clearfix text-center"></div>
+					<div class="contact col-md-12 col-sm-12">
+						<div class=" pull-right">
+							<p class="phone">
+								<i class="fa fa-phone"></i>Call us | +91 - 9666644801 | +91 -
+								8686172057
+							</p>
+							<p class="email">
+								<i class="fa fa-envelope"></i><a href="#">narayanaolympiadschools@gmail.com</a>
+							</p>
+						</div>
+					</div>
+					<!--//contact-->
+				</div>
+				<!--//info-->
+
+			</div>
+			<!--//header-main-->
+		</header>
+		<!--//header-->
+	</div>
+	<!-- ******NAV****** -->
+	<nav class="main-nav" role="navigation">
+		<div class="container">
+			<div class="navbar-header">
+				<button class="navbar-toggle" type="button" data-toggle="collapse"
+					data-target="#navbar-collapse">
+					<span class="sr-only">Toggle navigation</span> <span
+						class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+				</button>
+				<!--//nav-toggle-->
+			</div>
+			<!--//navbar-header-->
+			<div class="navbar-collapse collapse" id="navbar-collapse">
+				<ul class="nav navbar-nav">
+					<li class="nav-item"><a href="dashboard.do">Home</a></li>
+					<li class="nav-item"><a href="teacher.do">Teacher</a></li>
+					<li class="nav-item active"><a href="#">Student</a></li>
+					<li class="nav-item"><a href="feeDetails.do">Fee</a></li>
+					<li class="nav-item"><a href="examResults.do">Examination</a></li>
+
+				</ul>
+				<!--//nav-->
+
+			</div>
+			<!--//navabr-collapse-->
+		</div>
+		<!--//container-->
+	</nav>
+	<!--//main-nav-->
 	<div class="container">
 		<p>
 			<b> <a href="student.do" class="btn btn-default">Back</a></b>
@@ -97,15 +114,14 @@
 							<form action="updateStudent.do" id="updateStudent" method="post"
 								class="form-horizontal">
 								<input type="hidden" name="rollno"
-									value="<%=student.getRollno()%>">
-									<input type="hidden" name="admissionNo"
-									value="<%=student.getAdmissionNo()%>">
+									value="<%=student.getRollno()%>"> <input type="hidden"
+									name="admissionNo" value="<%=student.getAdmissionNo()%>">
 								<div class="form-group">
 									<label class="col-sm-3 control-label">Full name</label>
 									<div class="col-sm-4">
 										<input type="text" class="form-control" id="studentFirstName"
 											name="studentFirstName" placeholder="First name"
-											value="<%=student.getStudentFirstName()%>"/>
+											value="<%=student.getStudentFirstName()%>" />
 									</div>
 									<div class="col-sm-4">
 										<input type="text" class="form-control" id="studentLastName"
@@ -134,13 +150,13 @@
 									<label class="col-sm-3 control-label">Gender</label>
 									<div class="col-sm-6">
 										<div class="radio">
-											<label> <input type="radio" name="gender"
-												value="male" /> Male
-											</label>
+											<label><input type="radio" name="gender"
+												value="<%=student.getGender().equalsIgnoreCase("male") ? 'checked="checked"' : ''%> "/>Male
+						</label>
 										</div>
 										<div class="radio">
 											<label> <input type="radio" name="gender"
-												value="female" /> Female
+												value="<%=student.getGender().equalsIgnoreCase("female") ? 'checked="checked"' : ''%> "/> Female
 											</label>
 										</div>
 									</div>
@@ -160,7 +176,8 @@
 									<label class="col-sm-3 control-label">Class</label>
 									<div class="col-sm-5">
 										<select name="studentClass" class="form-control">
-											<option value = "<%=student.getStudentClass() %>" selected = "selected"><%=student.getStudentClass() %></option>
+											<option value="<%=student.getStudentClass()%>"
+												selected="selected"><%=student.getStudentClass()%></option>
 											<option value="lkg">lkg</option>
 											<option value="ukg">ukg</option>
 											<option value="1st class">1st class</option>
@@ -180,7 +197,7 @@
 									<label class="col-sm-3 control-label">Medium</label>
 									<div class="col-sm-5">
 										<select name="medium" class="form-control">
-										<option value = "<%=student.getMedium() %>" selected = "selected"><%=student.getMedium() %></option>
+											<option value="<%=student.getMedium()%>" selected="selected"><%=student.getMedium()%></option>
 											<option value="English">English</option>
 											<option value="Telugu">Telugu</option>
 										</select>
@@ -190,8 +207,8 @@
 									<label class="col-sm-3 control-label">Section</label>
 									<div class="col-sm-5">
 										<select name="section" class="form-control">
-										<option value = "<%=student.getSection()%>" selected = "selected"><%=student.getSection() %></option>
-										<option value="A">A</option>
+											<option value="<%=student.getSection()%>" selected="selected"><%=student.getSection()%></option>
+											<option value="A">A</option>
 											<option value="B">B</option>
 										</select>
 									</div>
@@ -262,16 +279,15 @@
 	<!-- Footer and Modal
     ==========================-->
 	<footer id="footer-sec" class="footer">
-    <div class="bottom-bar">
-    	<div class="container">
-    		<div class="row">
-    			<a class="copyright col-md-12 col-sm-12 col-xs-12">
-                   Sri Narayana Olympiad Schools © 2015 All rights reserved.
-    			</a>
-		    </div>
-	    </div>
-    </div>
-</footer> 
+		<div class="bottom-bar">
+			<div class="container">
+				<div class="row">
+					<a class="copyright col-md-12 col-sm-12 col-xs-12"> Sri
+						Narayana Olympiad Schools © 2015 All rights reserved. </a>
+				</div>
+			</div>
+		</div>
+	</footer>
 
 
 	<script src="resources/js/jquery.js"></script>

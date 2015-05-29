@@ -79,6 +79,11 @@
 		<result property="rank" column="rank" />
 	</resultMap>
 	
+	<resultMap id="StudentByClass" class="com.shiva.entity.StudentByClass">
+		<result property="studentClass" column="student_class" />
+		<result property="count" column="count"/>
+		</resultMap>
+		
 	<!-- UserDao -->
     
 	<select id="authenticateUser" parameterClass="java.util.Map"
@@ -161,6 +166,9 @@
 	        select admission_num from student where student_class=#student_class# ORDER BY roll_num DESC LIMIT 1;
 	</select>
 	
+	<select id="getStudentCountByClass" resultMap="StudentByClass">
+		SELECT student_class,COUNT(*) as count FROM student GROUP BY student_class;
+     </select>
 
 	<select id="getStudentsMap" resultClass="java.util.HashMap">
 		select *,
@@ -238,4 +246,7 @@
 		delete from exam_results where exam_results_id =#examResultsId#
 	</delete>
 
+   <select id="getAllResultsBySearch" parameterClass="java.util.Map" resultMap="ExamResults">
+		select e.* from exam_results e where (e.student_name=#student_name#) OR  (e.student_class=#student_class#) OR (e.roll_num=#roll_no#)
+	</select>
 </sqlMap>

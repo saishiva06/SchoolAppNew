@@ -1,6 +1,5 @@
 package com.shiva.dao;
 
-import java.util.Date;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
@@ -13,8 +12,6 @@ import com.shiva.entity.Teacher;
 
 public class TeacherDaoImpl extends SqlMapClientDaoSupport implements
 		TeacherDao {
-	// private static final Logger log =
-	// Logger.getLogger(TeacherDaoImpl.class.getName());
 	private SqlMapClientTemplate template = getSqlMapClientTemplate();
 
 	public TeacherDaoImpl() {
@@ -27,7 +24,6 @@ public class TeacherDaoImpl extends SqlMapClientDaoSupport implements
 					teacher_name);
 			return true;
 		} catch (Exception ex) {
-			// log.error("TeacherDao:isTeacherExists::" + ex.getMessage());
 			return false;
 		}
 	}
@@ -37,7 +33,6 @@ public class TeacherDaoImpl extends SqlMapClientDaoSupport implements
 			String teacherLastName, String qualification, String exp,
 			String subject, String dob, String caste, String phoneNumber,
 			String village, String gender, String doj, int status) {
-		// TODO Auto-generated method stub
 		Map<String, Object> paramsMap = new HashMap<String, Object>();
 		paramsMap.put("teacher_id", teacherId);
 		paramsMap.put("teacher_fisrt_name", teacherFirstName);
@@ -66,7 +61,6 @@ public class TeacherDaoImpl extends SqlMapClientDaoSupport implements
 			int result = template.delete("deleteAllTeachers");
 			return result != -1 ? true : false;
 		} catch (Exception ex) {
-			// log.error("TeacherDao:deleteAllTeachers::" + ex.getMessage());
 			return false;
 		}
 	}
@@ -77,8 +71,7 @@ public class TeacherDaoImpl extends SqlMapClientDaoSupport implements
 		try {
 			resultList = template.queryForList("getTeachers");
 		} catch (Exception ex) {
-			// log.error("TeacherDao:getTeachers::" + ex.getMessage());
-		} finally {
+				} finally {
 			return resultList;
 		}
 	}
@@ -124,7 +117,6 @@ public class TeacherDaoImpl extends SqlMapClientDaoSupport implements
 		try {
 			return (String) template.queryForObject("getTeachername", u_id);
 		} catch (Exception ex) {
-			// log.error("TeacherDao:getTeachername::" + ex.getMessage());
 			return null;
 		}
 	}
@@ -136,8 +128,7 @@ public class TeacherDaoImpl extends SqlMapClientDaoSupport implements
 			resultList = (List<Map<String, Object>>) template
 					.queryForList("getTeachersMap");
 		} catch (Exception ex) {
-			// log.error("TeacherDao:getTeachersMap::" + ex.getMessage());
-		} finally {
+			} finally {
 			return resultList;
 		}
 	}
@@ -150,7 +141,6 @@ public class TeacherDaoImpl extends SqlMapClientDaoSupport implements
 					.queryForList("getTeacherMap", u_login);
 			resultMap = resultMapList.get(0);
 		} catch (Exception ex) {
-			// log.error("TeacherDao:getTeacherMap::" + ex.getMessage());
 		} finally {
 			return resultMap;
 		}
@@ -161,7 +151,6 @@ public class TeacherDaoImpl extends SqlMapClientDaoSupport implements
 			int result = template.update("updateTeacherMap", TeacherMap);
 			return result;
 		} catch (Exception ex) {
-			// log.error("TeacherDao:updateTeacher::" + ex.getMessage());
 			return -1;
 		}
 	}
@@ -172,7 +161,6 @@ public class TeacherDaoImpl extends SqlMapClientDaoSupport implements
 			int result = template.delete("deleteTeacher",teacher_id);
 			return result != -1 ? true : false;
 		} catch (Exception ex) {
-			// log.error("TeacherDao:deleteAllTeachers::" + ex.getMessage());
 			return false;
 		}
 	}

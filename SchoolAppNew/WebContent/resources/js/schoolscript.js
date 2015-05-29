@@ -405,4 +405,23 @@ $(document).ready(function() {
         }
     });
     
+    $('#noticeboard').formValidation({
+        message: 'This value is not valid',
+        icon: {
+           // valid: 'glyphicon glyphicon-ok',
+            invalid: 'glyphicon glyphicon-remove',
+            validating: 'glyphicon glyphicon-refresh'
+        },
+        fields: {
+        	rollno: {
+                row: '.col-sm-5',
+                validators: {
+                    notEmpty: {
+                        message: 'The roll no is required'
+                    }
+                }
+            },
+        }
+ });
 });
+    

@@ -9,6 +9,7 @@ import org.springframework.orm.ibatis.SqlMapClientTemplate;
 import org.springframework.orm.ibatis.support.SqlMapClientDaoSupport;
 
 import com.shiva.entity.ExamResults;
+import com.shiva.entity.FeeDetails;
 
 
 public class ExamResultsDaoImpl extends SqlMapClientDaoSupport implements
@@ -84,12 +85,23 @@ ExamResultsDao {
 		}
 	}
 
+	@SuppressWarnings({ "unchecked", "finally" })
 	@Override
-	public List<ExamResults> getAllResultsBySearch(String studentsClass,
+	public List<ExamResults> getAllResultsBySearch(String studentClass,
 			String rollNum, String studentName) {
-		// TODO Auto-generated method stub
-		return null;
+	List<ExamResults> examResultsList = new LinkedList<ExamResults>();
+	try {
+		Map<String, Object> paramsMap = new HashMap<String, Object>();
+		paramsMap.put("roll_no", rollNum);
+		paramsMap.put("student_name", studentName);
+		paramsMap.put("student_class", studentClass);
+		examResultsList = (List<ExamResults>) template.queryForList("getAllResultsBySearch", paramsMap);
+    } catch (Exception e) {
+		e.printStackTrace();
+	} finally {
+		return examResultsList;
 	}
+}
 
 	@Override
 	public boolean deleteExamResults(String examResultsId) {

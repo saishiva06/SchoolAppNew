@@ -32,9 +32,8 @@ ExamResults examResults = (ExamResults)request.getAttribute("examResults");
                 <div class="info col-md-8 col-sm-8 marginTop30">
                 	<div class="col-md-12 col-sm-12  text-center">
                         <ul class="menu-top ">
-                            <li class="divider"><a href="index.do">Home</a></li>
-                            <li class="divider"><a href="admin.do">Admin Login</a></li>
-                            <li><a href="contact.do">Contact</a></li>
+                            <li class="divider"><a href="dashboard.do">Dashboard</a></li>
+                             <li ><a href="logout.do">&nbsp Logout<i class="fa fa-power-off fa-lg"></i></a> </li>
                         </ul><!--//menu-top-->
                     </div>
                     <div class="clearfix text-center"></div>

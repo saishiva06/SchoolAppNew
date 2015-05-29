@@ -31,38 +31,32 @@ public class ExamResultsServiceImpl implements ExamResultsService {
     		int hindi2, int english1, int english2,int maths1,int maths2,int science1, 
     		int science2,int social1,int social2,int computers,int arts,int others,
     		int total,String grade,int rank) {
-		// TODO Auto-generated method stub
 		return examResultsDao.createResult(rollno, studentName, studentClass, examTtile, examDate, telugu1, telugu2, hindi1, hindi2, english1, english2, maths1, maths2, science1, science2, social1, social2, computers, arts, others, total, grade, rank);
 	}
 
 	@Override
 	public int updateResults(Map<String, Object> ExamResultsMap) {
-		// TODO Auto-generated method stub
 		return examResultsDao.updateResults(ExamResultsMap);
 	}
 
 	@Override
 	public List<ExamResults> getExamResultsMap() {
-		// TODO Auto-generated method stub
 		return examResultsDao.getExamResultsMap();
 	}
 
 	@Override
 	public List<ExamResults> getAllResultsBySearch(String studentsClass,
 			String rollNum, String studentName) {
-		// TODO Auto-generated method stub
 		return examResultsDao.getAllResultsBySearch(studentsClass, rollNum, studentName);
 	}
 
 	@Override
 	public boolean deleteExamResults(String recieptId) {
-		// TODO Auto-generated method stub
 		return examResultsDao.deleteExamResults(recieptId);
 	}
 
 	@Override
 	public ExamResults getExamResultsById(String reciptId) {
-		// TODO Auto-generated method stub
 		return examResultsDao.getExamResultsById(reciptId);
 	}
 

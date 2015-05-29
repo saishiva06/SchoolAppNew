@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Map;
 
 import com.shiva.entity.Student;
+import com.shiva.entity.StudentByClass;
 
 public interface StudentDao {
 	boolean isStudentExists(String u_login);
@@ -21,4 +22,5 @@ public interface StudentDao {
 	int updateStudent(Map<String, Object> StudentMap);   
 	boolean deleteStudent(String StudentId);
 	String getLastRecordRollNum( String studentClass);
+	List<StudentByClass> getStudentCountByClass();
 }

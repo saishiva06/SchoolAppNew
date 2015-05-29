@@ -1,3 +1,13 @@
+<%@page import="com.shiva.entity.StudentByClass"%>
+<%@page import="java.util.List"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	session="true" pageEncoding="ISO-8859-1"%>
+
+ <%
+	List<StudentByClass> mydata = (List<StudentByClass>) request.getAttribute("studentsData");
+	int teacherCount = (Integer)session.getAttribute("teacherCount");
+	int studentsCount = (Integer)session.getAttribute("studentsCount");
+%> 
 <!DOCTYPE html>
 <html>
 <head>
@@ -21,9 +31,8 @@
                 <div class="info col-md-8 col-sm-8 marginTop30">
                 	<div class="col-md-12 col-sm-12  text-center">
                         <ul class="menu-top ">
-                            <li class="divider"><a href="index.do">Home</a></li>
-                            <li class="divider"><a href="admin.do">Admin Login</a></li>
-                            <li><a href="contact.do">Contact</a></li>
+                            <li><a href="logout.do">&nbsp Logout<i class="fa fa-power-off fa-lg"></i></a></li>
+                        
                         </ul><!--//menu-top-->
                     </div>
                     <div class="clearfix text-center"></div>
@@ -67,34 +76,95 @@
         </nav><!--//main-nav-->   
 
 <div class="container">
-    <div class="row">
-        <div class="col-md-3">
-
-            <img id="d1" src="resources/img/school-image1.jpg" />
-
-            <div class="contenthover">
-                <h3>Toper Student1</h3>
-                <p>Shiva Kumar: Marks 599. </p>
-                <p><a href="#" class="mybutton">More Details</a></p>
-            </div>
-
-        </div>
-
-        <div class="col-md-3 col-md-offset-1">
-
-            <img id="d2" src="resources/img/school-image.jpg" />
-
-            <div class="contenthover">
-                <h3>Awards</h3>
-                <p>Best School Award </p>
-                <p><a href="#" class="mybutton">More Details</a></p>
-            </div>
-
-        </div>
-        
+  	<div class="panel panel-primary">
+      <div class="panel-heading">
+    			STUDENT DETAILS
+      </div>
+      <div class="panel-body">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12">
+                    <div class="table-responsive">
+                            <table class="table table-striped table-bordered table-hover">
+                                <thead>
+                                <tr>
+                                  <th>Total Number Of Students in School</th>
+										<th><%=studentsCount%></th>
+										</tr>
+                                <tr>
+                                        <th>Class</th>
+										<th>Total Number Of Students</th>
+										 <th>Class</th>
+										<th>Total Number Of Students</th>
+									</tr>
+					           </thead><tbody>
+					            <%
+										if (mydata != null && mydata.size() > 0) {
+										   int i =0;
+											while(i < mydata.size()) {
+											StudentByClass studentByClass = mydata.get(i);
+									%> 
+                                    <tr>
+			                         <td><%=studentByClass.getStudentClass()%></td>
+								 		<td><%=studentByClass.getCount()%></td>
+										 <%
+								          i++;
+								          if (i < mydata.size()) {
+								          studentByClass = mydata.get(i);
+							               %> 
+										<td><%=studentByClass.getStudentClass()%></td>
+										<td><%=studentByClass.getCount()%></td>
+								</tr> 
+								<%
+								} else {
+								 %> 
+										<td></td>
+										<td></td></tr>
+								<% 
+								}
+								i++;
+								}
+								}
+							%> 
+							</tbody>
+							
+                            </table>
+                            
+                        </div>
+           </div>
+          </div>
+       </div>
+      </div>
     </div>
    </div>
-
+   
+   <div class="container">
+  	<div class="panel panel-primary">
+      <div class="panel-heading">
+    			STAFF DETAILS
+      </div>
+      <div class="panel-body">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12">
+                    <div class="table-responsive">
+                    <table class="table table-striped table-bordered table-hover">
+                                <thead>
+                                <tr>
+                                        <th>Total Number Of Staff</th>
+                                        <td><%=teacherCount %></td>
+										 </tr>
+					           </thead><tbody>
+					        </tbody>
+							</table>
+                        </div>
+           </div>
+          </div>
+       </div>
+      </div>
+    </div>
+   </div>
+   
    <footer id="footer-sec" class="footer">
     <div class="bottom-bar">
     	<div class="container">
