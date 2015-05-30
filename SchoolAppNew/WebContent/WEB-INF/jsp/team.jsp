@@ -49,9 +49,8 @@
 					<div class="col-md-12 col-sm-12  text-center">
 						<ul class="menu-top ">
 							<li class="divider"><a href="index.do">Home</a></li>
-							<li class="divider"><a href="#">FAQ</a></li>
-							<li><a href="contact.do">Contact</a></li>
-						</ul>
+							<li class="divider"><a href="admin.do">Admin Login</a></li>
+							</ul>
 						<!--//menu-top-->
 					</div>
 					<div class="clearfix text-center"></div>

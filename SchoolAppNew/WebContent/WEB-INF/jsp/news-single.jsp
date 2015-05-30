@@ -49,9 +49,8 @@
 					<div class="col-md-12 col-sm-12  text-center">
 						<ul class="menu-top ">
 							<li class="divider"><a href="index.do">Home</a></li>
-							<li class="divider"><a href="#">FAQ</a></li>
-							<li><a href="contact.do">Contact</a></li>
-						</ul>
+							<li class="divider"><a href="admin.do">Admin Login</a></li>
+							</ul>
 						<!--//menu-top-->
 					</div>
 					<div class="clearfix text-center"></div>
@@ -115,7 +114,7 @@
 		<div class="content container">
 			<div class="page-wrapper">
 				<header class="page-heading clearfix">
-					<h1 class="heading-title pull-left">News Heading</h1>
+					<h1 class="heading-title pull-left">Latest News</h1>
 					<div class="breadcrumbs pull-right">
 						<ul class="breadcrumbs-list">
 							<li class="breadcrumbs-label">You are here:</li>
@@ -130,44 +129,38 @@
 					<div class="row page-row">
 						<div class="news-wrapper col-md-8">
 							<article class="news-item">
-								<p class="meta text-muted">Posted on: 26 Jan 2014</p>
+								<p class="meta text-muted">Posted on: 05 June 2015</p>
 								<p class="featured-image">
 									<img class="img-responsive" src="assets/images/news/news-1.jpg"
 										alt="" />
 								</p>
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-									Vivamus vestibulum pellentesque urna. Phasellus adipiscing et
-									massa et aliquam. Ut odio magna, interdum quis dolor non,
-									tristique vestibulum nisi. Nam accumsan convallis venenatis.
-									Nullam posuere risus odio, in interdum felis venenatis
-									sagittis. Integer malesuada porta fermentum. Sed luctus nibh
-									sed mi auctor imperdiet. Cras et sapien rhoncus, pulvinar dolor
-									sed, tincidunt massa. Nullam fringilla mauris non risus
-									ultricies viverra. Donec a turpis non lorem pulvinar posuere.</p>
-
-								<p>Nulla facilisi. Aenean interdum iaculis odio, et suscipit
-									lorem euismod et. Sed nec orci suscipit, accumsan mauris nec,
-									vestibulum felis. Nam eu felis sem. Fusce ut odio ipsum. Duis
-									orci ipsum, feugiat ac dignissim in, convallis quis tortor.
-									Mauris semper tortor nec justo adipiscing volutpat. Donec
-									suscipit rhoncus est, vitae pretium purus laoreet et. Cum
-									sociis natoque penatibus et magnis dis parturient montes,
-									nascetur ridiculus mus. Sed iaculis risus felis, sit amet porta
-									urna volutpat vel. Integer vestibulum, neque a condimentum
-									fermentum, est nunc tincidunt nunc, eget sagittis turpis elit
-									nec arcu. Curabitur tempus mauris vitae dignissim vehicula.
-									Fusce vehicula malesuada aliquam.</p>
-
-								<p>Nullam consequat lectus eget fringilla ultricies.
-									Suspendisse potenti. Morbi in malesuada nibh. Morbi vel tellus
-									eu magna tempor mattis. Praesent ut turpis feugiat, dignissim
-									ipsum et, pharetra orci. Nullam in congue felis. Donec commodo
-									metus metus, at faucibus purus convallis ac. Nullam quis tortor
-									urna. In commodo metus sed tempus venenatis. Integer euismod
-									consectetur lobortis. Mauris blandit in massa in rhoncus.
-									Aliquam sit amet sollicitudin nulla. Ut nec mauris facilisis,
-									pretium enim et, tristique risus. Fusce a ligula in velit
-									congue hendrerit eu eget tortor.</p>
+								<p>
+<h4><b>Website launched::</b></h4>
+05/06/2015<br>
+Our new website has been launched today. Tell your visitors why you have started a new presentation and how it benefits them. Mention your goals and project advantages. 
+Try to briefly give your visitors reasons why they should return to your pages.<br>
+<h4><b>New Bus</b></h4>
+01/07/2014 10:57<br>
+we brought 36 seats of new school bus for transport of school children<br>
+<h4><b>250 Admissions</b></h4>
+01/07/2014 10:46<br>
+we cross the 250 new students join in our school in this academic year 2014-2015.<br>
+<h4><b>school reopens</b></h4>
+12/06/2014 00:17<br>
+DEAR PARENT OUR SHARADHA HIGH SCHOOL REOPEN ON 09.06.2014.<br>
+<h4><b>half day schools</b></h4>
+22/03/2014 01:41<br>
+Half-day schools will be started from date: 24.03.2014.School runs from 8.00 am to 1.00 pm.So I request all parents and students follow the time table.<br>
+<h4><b>Upcoming Events</b></h4>
+14/03/2014 06:00<br>
+Celebrating Our School Anniversary Day on March 14th 2014 at our School.(Saradha Public School, Mustafa Nagar Khammam).   <br>
+Science Fair at Saradha School<br>
+05/03/2014 21:27<br>
+								
+								
+								
+								
+								</p>
 
 							</article>
 							<!--//news-item-->
@@ -192,7 +185,7 @@
 			<div class="container">
 				<div class="row">
 					<a class="copyright col-md-12 col-sm-12 col-xs-12"> Narayana
-						Olympiad Schools Â© 2015 All rights reserved. </a>
+						Olympiad Schools © 2015 All rights reserved. </a>
 				</div>
 			</div>
 		</div>
@@ -221,4 +214,3 @@
 
 </body>
 </html>
-

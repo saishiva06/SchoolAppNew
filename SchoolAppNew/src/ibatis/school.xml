@@ -247,6 +247,6 @@
 	</delete>
 
    <select id="getAllResultsBySearch" parameterClass="java.util.Map" resultMap="ExamResults">
-		select e.* from exam_results e where (e.student_name=#student_name#) OR  (e.student_class=#student_class#) OR (e.roll_num=#roll_no#)
+		select e.* from exam_results e where (e.student_name=#student_name#) OR ( (e.student_class=#student_class#) and (e.roll_num=#roll_no#) )
 	</select>
 </sqlMap>

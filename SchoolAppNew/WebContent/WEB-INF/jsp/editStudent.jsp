@@ -3,7 +3,15 @@
 	session="true" pageEncoding="ISO-8859-1"%>
 
 <%
+    String maleChecked ="", femaleChecked = "";
 	Student student = (Student) request.getAttribute("student");
+	if(student.getGender()!=null && student.getGender().length()!=0) {
+	if(student.getGender().equalsIgnoreCase("male")) {
+	 maleChecked  = "checked = 'checked'";
+	} else {
+	 femaleChecked  = "checked = 'checked'";
+	}
+	}
 %>
 
 <!DOCTYPE html>
@@ -151,12 +159,12 @@
 									<div class="col-sm-6">
 										<div class="radio">
 											<label><input type="radio" name="gender"
-												value="<%=student.getGender().equalsIgnoreCase("male") ? 'checked="checked"' : ''%> "/>Male
+												value = "male"  <%=maleChecked%> />Male
 						</label>
 										</div>
 										<div class="radio">
 											<label> <input type="radio" name="gender"
-												value="<%=student.getGender().equalsIgnoreCase("female") ? 'checked="checked"' : ''%> "/> Female
+												value = "female"  <%=femaleChecked%> /> Female
 											</label>
 										</div>
 									</div>
@@ -254,7 +262,7 @@
 									<div class="col-xs-5 date">
 										<div class="input-group input-append date" id="datePicker1">
 											<input type="text" class="form-control" name="studentDoj"
-												value="<%=student.getDoj()%>" /> <span
+												value="<%=student.getDoj()%>"/> <span
 												class="input-group-addon add-on"><span
 												class="glyphicon glyphicon-calendar"></span></span>
 										</div>

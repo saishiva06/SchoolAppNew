@@ -3,7 +3,15 @@
 	session="true" pageEncoding="ISO-8859-1"%>
 
 <%
+   String maleChecked ="", femaleChecked = "";
 	Teacher teacher = (Teacher) request.getAttribute("teacher");
+	if(teacher.getGender()!=null && teacher.getGender().length()!=0) {
+	if(teacher.getGender().equalsIgnoreCase("male")) {
+	 maleChecked  = "checked = 'checked'";
+	} else {
+	 femaleChecked  = "checked = 'checked'";
+	}
+	}
 %>
 
 <!DOCTYPE html>
@@ -189,12 +197,12 @@
 									<div class="col-sm-6">
 										<div class="radio">
 											<label> <input type="radio" name="gender"
-												value="male" /> Male
+												value="male" <%=maleChecked%>/> Male
 											</label>
 										</div>
 										<div class="radio">
 											<label> <input type="radio" name="gender"
-												value="female" /> Female
+												value="female" <%=femaleChecked%>/> Female
 											</label>
 										</div>
 									</div>

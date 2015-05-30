@@ -45,7 +45,6 @@
 						<ul class="menu-top ">
 							<li class="divider"><a href="index.do">Home</a></li>
 							<li class="divider"><a href="admin.do">Admin Login</a></li>
-							<li><a href="contact.do">Contact</a></li>
 						</ul>
 						<!--//menu-top-->
 					</div>

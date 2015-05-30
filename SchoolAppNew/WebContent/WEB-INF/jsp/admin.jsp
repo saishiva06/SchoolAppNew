@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>SRI NARAYANA OLYPIAD SCHOOL</title>
+<title>SRI NARAYANA OLYMPIAD SCHOOL</title>
 <link rel="stylesheet" href="resources/css/layout.css" type="text/css" />
 
 <link type="text/css" href="resources/css/font-awesome.css"
@@ -137,7 +137,7 @@
 								<i class="fa fa-phone"></i>9666644801 (or) 8686172057
 							</p>
 							<p class="email">
-								<i class="fa fa-envelope"></i> <a href="#">saradhahighschool@gmail.com</a>
+								<i class="fa fa-envelope"></i> <a href="#">narayanaolympiadschools@gmail.com</a>
 							</p>
 						</section>
 					</aside>
