@@ -23,5 +23,5 @@ public interface StudentService {
 	boolean deleteStudent(String StudentId);
 	String getLastRecordRollNum( String studentClass);
 	List<StudentByClass> getStudentCountByClass();
-	
+	Student getStudentByAdmissionNum(String admNo);
 }

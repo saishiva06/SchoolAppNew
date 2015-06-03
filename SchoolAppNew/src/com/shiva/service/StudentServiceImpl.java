@@ -85,5 +85,10 @@ public class StudentServiceImpl implements StudentService {
 	public List<StudentByClass> getStudentCountByClass() {
 		return studentDao.getStudentCountByClass();
 	}
+
+	@Override
+	public Student getStudentByAdmissionNum(String admNo) {
+		return studentDao.getStudentByAdmissionNum(admNo);
+	}
 	
 }

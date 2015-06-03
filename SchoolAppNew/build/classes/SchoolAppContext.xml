@@ -33,6 +33,7 @@ xsi:schemaLocation="http://www.springframework.org/schema/beans
      		<mvc:mapping path="/editExamResults.do" />
      		<mvc:mapping path="/editTeacher.do" />
      		<mvc:mapping path="/editFeeDetails.do" />
+     		<mvc:mapping path="/viewFeeDetails.do" />
      		
      		
      		<bean class="com.shiva.util.SessionHandler" />

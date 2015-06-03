@@ -107,7 +107,7 @@ FeeDetails feeDetails = (FeeDetails)request.getAttribute("feeDetails");
 								<div class="form-group">
 									<label class="col-sm-3 control-label">Class</label>
 									<div class="col-sm-5">
-										<select name="StudentClass" class="form-control">
+										<select name="StudentClass" class="form-control" readonly="readonly">
 										  <option value = "<%=feeDetails.getStudentClass() %>" selected = "selected"><%=feeDetails.getStudentClass() %></option>
 											<option value="lkg">lkg</option>
 											<option value="ukg">ukg</option>

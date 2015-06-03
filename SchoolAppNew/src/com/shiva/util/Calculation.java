@@ -26,7 +26,7 @@ private FeeDetailsService feeDetailsService;
 	}
 	
 	public  int getDueFee(Student student) { 
-		int total = 0;
+		int total = 0 , dueFee = 0;
 		List<FeeDetails> feeDetailsList =  feeDetailsService.getAllFeeDetailsBySearch("", "",student.getAdmissionNo());
      if(feeDetailsList.size()!=0) {
 		for(FeeDetails feeDetails :feeDetailsList) {
@@ -34,8 +34,10 @@ private FeeDetailsService feeDetailsService;
     		 total = total + Integer.valueOf(feeDetails.getOtherFee());
     	 }
      }
+		  dueFee = Integer.valueOf(student.getFees()) - total;
+     } else {
+    	 dueFee = Integer.parseInt(student.getFees());
      }
-     int dueFee = Integer.valueOf(student.getFees()) - total;
      return dueFee;
 	}
 	

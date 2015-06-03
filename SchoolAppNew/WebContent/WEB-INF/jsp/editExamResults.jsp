@@ -250,7 +250,7 @@ ExamResults examResults = (ExamResults)request.getAttribute("examResults");
 									<label class="col-sm-3 control-label">Others</label>
 									<div class="col-sm-5">
 										<input id="others" name="others" class="form-control"  type="text" 
-										value = "<%=examResults.getOthers() %>"/>
+										value = "<%=examResults.getOthers() %> " onClick="fnSum();"/>
 									</div>
 								</div>
 								<div class="form-group">
@@ -283,7 +283,7 @@ ExamResults examResults = (ExamResults)request.getAttribute("examResults");
                                 <div class="form-group">
 									<div class="col-sm-9 col-sm-offset-3">
 										<button type="submit" class="btn btn-primary" name="signup"
-											value="Sign up">Submit</button>
+											value="Sign up" onClick="fnSum();">Submit</button>
 									</div>
 								</div>
 
@@ -316,6 +316,63 @@ ExamResults examResults = (ExamResults)request.getAttribute("examResults");
     <script src="resources/js/formValidation.js"></script>
     <script src="resources/js/framework/bootstrap.js"></script>
     <script src="resources/js/schoolscript.js"></script>
-
+<script type = "text/javascript">
+	
+	$("#rollno").blur(function(){
+        var rollno = $("#rollno").val();
+	   
+       $.ajax({
+			type : "GET",
+			url : "getStudentDetailsForRollNum.do",
+			data : {
+					"rollno" : rollno
+				},
+			success : function(result) {
+						if(result) {
+						 $("#studentName").val(result.studentFirstName +" " +result.studentLastName);
+                         $("#StudentClass").val(result.studentClass);
+                         } else {
+                       $("#studentName").val("");
+                        $("#StudentClass").val("");
+                       }
+                      },
+			error : function(result) {
+			         	$("#studentName").val("");
+                        $("#StudentClass").val("");
+                      }
+		});
+	});
+	
+	</script>
+	
+	<script type="text/javascript">
+    function fnSum()
+    {
+     var num = [];
+         num[0] = parseInt(document.getElementById("telugu_1").value);
+         num[1] = parseInt(document.getElementById("telugu_2").value);
+         num[2] = parseInt(document.getElementById("hindi_1").value);
+         num[3]  = parseInt(document.getElementById("hindi_2").value);
+         num[4]  = parseInt(document.getElementById("english_1").value);
+         num[5]  = parseInt(document.getElementById("english_2").value);
+         num[6] = parseInt(document.getElementById("maths_1").value);
+         num[7]  = parseInt(document.getElementById("maths_2").value);
+         num[8]  = parseInt(document.getElementById("science_1").value);
+         num[9] = parseInt(document.getElementById("science_2").value);
+         num[10] = parseInt(document.getElementById("social_1").value);
+         num[11] = parseInt(document.getElementById("social_2").value);
+         num[12] = parseInt(document.getElementById("computers").value);
+         num[13] = parseInt(document.getElementById("arts").value);
+         
+         var total = 0;
+         for (i = 0; i <= 13; i++) { 
+         var check = isNaN(num[i]);
+         if(!check) {
+          total = total +  num[i];
+           } 
+         }
+         document.getElementById("others").value = total;
+    }
+    </script>
 </body>
 </html>

@@ -191,6 +191,11 @@
      <delete id="deleteStudent">
 		delete from student where roll_num=#roll_num#
 	 </delete>
+	 
+	 <select id="getStudentByAdmissionNum" parameterClass="string" resultMap="Student">
+		select s.* from student s where admission_num=#admNo#
+	</select>
+	
 	 <!-- FeeDao -->
 	 <insert id="createFeeDetails" parameterClass="java.util.Map">
 		insert into fee_details(recipt_no,roll_no,student_name, student_class, fee_type, fee_paid,fee_pay_date_1) values (#recipt_no#,#roll_no#,#student_name#, #student_class#, #fee_type#, #fee_paid#,#fee_pay_date_1#)

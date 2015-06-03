@@ -8,6 +8,7 @@
 	List<Student> mydata = (List<Student>) request
 			.getAttribute("studentsData");
 	Calculation calculation = new Calculation();
+	
 %>
 <!DOCTYPE html>
 <html>

@@ -11,7 +11,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.shiva.entity.Student;
@@ -229,5 +233,19 @@ public class StudentController {
 			e.printStackTrace();
 		}
 		return new ModelAndView("redirect:student.do");
+	}
+	
+	@RequestMapping(value = "/getStudentDetailsForAdmNum.do", method = RequestMethod.GET)
+	@ResponseBody
+	public Student getStudentDetailsForAdmNum(@RequestParam("rollno") String  rollno)throws Exception {
+		Student student = studentService.getStudentByAdmissionNum(rollno);
+		return student!=null ? student : null;
+	}
+
+	@RequestMapping(value = "/getStudentDetailsForRollNum.do", method = RequestMethod.GET)
+	@ResponseBody
+	public Student getStudentDetailsForRollNum(@RequestParam("rollno") String  rollno)throws Exception {
+		Student student = studentService.getStudentById(rollno);
+		return student!=null ? student : null;
 	}
 }

@@ -1,5 +1,6 @@
 $(document).ready(function() {
 	
+	
 	$('#datePicker')
     .datepicker({
         format: 'dd/mm/yyyy',
@@ -44,13 +45,16 @@ $(document).ready(function() {
         
     });
 	
-  /*   // Generate a simple captcha
-    function randomNumber(min, max) {
-        return Math.floor(Math.random() * (max - min + 1) + min);
-    };
-    $('#captchaOperation').html([randomNumber(1, 100), '+', randomNumber(1, 200), '='].join(' '));
- */
-	
+	$('#examDatePicker')
+    .datepicker({
+        format: 'dd/mm/yyyy',
+        autoclose:true
+    })
+    .on('changeDate', function(e) {
+        // Revalidate the date field
+        $('#addResult').formValidation('revalidateField', 'date');
+        
+    });
 	
     $('#addStudent').formValidation({
         message: 'This value is not valid',
@@ -252,7 +256,7 @@ $(document).ready(function() {
                         date: {
                             format: 'DD/MM/YYYY',
                             min: '01/01/1970',
-                            max: '30/03/2000',
+                            max: '30/03/2050',
                             message: 'The date is not a valid'
                         }
                     }
@@ -264,7 +268,7 @@ $(document).ready(function() {
                         },
                         date: {
                             format: 'DD/MM/YYYY',
-                            min: '01/01/2001',
+                            min: '01/01/1950',
                             max: '30/03/2050',
                             message: 'The date is not a valid'
                         }
@@ -316,10 +320,10 @@ $(document).ready(function() {
         },
         fields: {
         	studentName: {
-                row: '.col-sm-4',
+                row: '.col-sm-5',
                 validators: {
                     notEmpty: {
-                        message: 'The first name is required'
+                        message: 'The full name is required'
                     }
                 }
             },
@@ -385,19 +389,19 @@ $(document).ready(function() {
             others: {
                 validators: {
                     notEmpty: {
-                        message: 'The Others 1 is required'
+                        message: 'The Marks Obtained is required'
                     }
                 }
             },
-             examDate: {
+            examDate: {
                     validators: {
                         notEmpty: {
-                            message: 'The Student Date Of Birth  is required'
+                            message: 'The Exam Date  is required'
                         },
                         date: {
                             format: 'DD/MM/YYYY',
-                            min: '01/01/2001',
-                            max: '30/03/2050',
+                            min: '01/01/2010',
+                            max: '30/03/2020',
                             message: 'The date is not a valid'
                         }
                     }
@@ -405,23 +409,7 @@ $(document).ready(function() {
         }
     });
     
-    $('#noticeboard').formValidation({
-        message: 'This value is not valid',
-        icon: {
-           // valid: 'glyphicon glyphicon-ok',
-            invalid: 'glyphicon glyphicon-remove',
-            validating: 'glyphicon glyphicon-refresh'
-        },
-        fields: {
-        	rollno: {
-                row: '.col-sm-5',
-                validators: {
-                    notEmpty: {
-                        message: 'The roll no is required'
-                    }
-                }
-            },
-        }
- });
 });
+
+
     

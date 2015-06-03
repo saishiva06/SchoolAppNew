@@ -170,5 +170,31 @@ public class FeeDetailsController {
 		}
 		return new ModelAndView("redirect:feeDetails.do");
 	}
+	@RequestMapping("/viewFeeDetails.do")
+	public ModelAndView viewFeeDetails(HttpServletRequest request,
+			HttpServletResponse response) throws Exception {
+		String feeDetailsId = request.getParameter("recieptNo");
+		System.out.println("@@@ view feeDetailsId.........." + feeDetailsId);
+		ModelAndView mav = new ModelAndView();
+		mav.setViewName("viewFeeDetails");
+		if (feeDetailsId != null && feeDetailsId.length() > 0) {
+			FeeDetails feeDetails = feeDetailsService
+					.getFeeDetailsById(feeDetailsId);
+			SimpleDateFormat output = new SimpleDateFormat("dd/MM/yyyy");
+			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+			Date d = null, doj1 = null;
+			try {
+				doj1 = sdf.parse(feeDetails.getFeePayDate1());
+			} catch (ParseException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			String formattedDoj = output.format(doj1);
+			feeDetails.setFeePayDate1(formattedDoj);
+			mav.addObject("feeDetails", feeDetails);
+		}
+		return mav;
+	}
 
+	
 }

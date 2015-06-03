@@ -93,14 +93,6 @@
 							<form action="addExamResults.do" id="addResult" method="post"
 								class="form-horizontal">
 								<div class="form-group">
-									<label class="col-sm-3 control-label">Full name</label>
-									<div class="col-sm-4">
-										<input type="text" class="form-control" id="studentName"
-											name="studentName" placeholder="First Middle Last" />
-									</div>
-								</div>
-
-								<div class="form-group">
 									<label class="col-sm-3 control-label">Roll No</label>
 									<div class="col-sm-5">
 										<input type="text" class="form-control" id="rollno"
@@ -108,9 +100,16 @@
 									</div>
 								</div>
 								<div class="form-group">
+									<label class="col-sm-3 control-label">Full name</label>
+									<div class="col-sm-5">
+										<input type="text" class="form-control" id="studentName"
+											name="studentName" placeholder="First Middle Last"  readonly = "readonly"/>
+									</div>
+								</div>
+                                   <div class="form-group">
 									<label class="col-sm-3 control-label">Class</label>
 									<div class="col-sm-5">
-										<select name="StudentClass" class="form-control">
+										<select name="StudentClass" class="form-control" id ="StudentClass" readonly = "readonly">
 											<option value="Choose One">Choose One</option>
 											<option value="lkg">lkg</option>
 											<option value="ukg">ukg</option>
@@ -139,7 +138,7 @@
 								<div class="form-group">
 									<label class="col-xs-3 control-label">Exam Date</label>
 									<div class="col-xs-5 date">
-										<div class="input-group input-append date" id="datePicker">
+										<div class="input-group input-append date" id="examDatePicker">
 											<input type="text" class="form-control" name="examDate"
 												placeholder="DD/MM/YYYY" /> <span
 												class="input-group-addon add-on"><span
@@ -253,7 +252,7 @@
 									<label class="col-sm-3 control-label">Marks Obtained</label>
 									<div class="col-sm-5">
 										<input id="others" name="others" class="form-control"
-											type="text" />
+											type="text" onClick="fnSum();"/>
 									</div>
 								</div>
 								<div class="form-group">
@@ -285,7 +284,7 @@
 								<div class="form-group">
 									<div class="col-sm-9 col-sm-offset-3">
 										<button type="submit" class="btn btn-primary" name="signup"
-											value="Sign up">Submit</button>
+											value="Sign up" onClick="fnSum();">Submit</button>
 									</div>
 								</div>
 
@@ -319,6 +318,63 @@
 	<script src="resources/js/formValidation.js"></script>
 	<script src="resources/js/framework/bootstrap.js"></script>
 	<script src="resources/js/schoolscript.js"></script>
-
+<script type = "text/javascript">
+	
+	$("#rollno").blur(function(){
+        var rollno = $("#rollno").val();
+	   
+       $.ajax({
+			type : "GET",
+			url : "getStudentDetailsForRollNum.do",
+			data : {
+					"rollno" : rollno
+				},
+			success : function(result) {
+						if(result) {
+						 $("#studentName").val(result.studentFirstName +" " +result.studentLastName);
+                         $("#StudentClass").val(result.studentClass);
+                         } else {
+                       $("#studentName").val("");
+                        $("#StudentClass").val("");
+                       }
+                      },
+			error : function(result) {
+			         	$("#studentName").val("");
+                        $("#StudentClass").val("");
+                      }
+		});
+	});
+	
+	</script>
+	
+	<script type="text/javascript">
+    function fnSum()
+    {
+     var num = [];
+         num[0] = parseInt(document.getElementById("telugu_1").value);
+         num[1] = parseInt(document.getElementById("telugu_2").value);
+         num[2] = parseInt(document.getElementById("hindi_1").value);
+         num[3]  = parseInt(document.getElementById("hindi_2").value);
+         num[4]  = parseInt(document.getElementById("english_1").value);
+         num[5]  = parseInt(document.getElementById("english_2").value);
+         num[6] = parseInt(document.getElementById("maths_1").value);
+         num[7]  = parseInt(document.getElementById("maths_2").value);
+         num[8]  = parseInt(document.getElementById("science_1").value);
+         num[9] = parseInt(document.getElementById("science_2").value);
+         num[10] = parseInt(document.getElementById("social_1").value);
+         num[11] = parseInt(document.getElementById("social_2").value);
+         num[12] = parseInt(document.getElementById("computers").value);
+         num[13] = parseInt(document.getElementById("arts").value);
+         
+         var total = 0;
+         for (i = 0; i <= 13; i++) { 
+         var check = isNaN(num[i]);
+         if(!check) {
+          total = total +  num[i];
+           } 
+         }
+         document.getElementById("others").value = total;
+    }
+    </script>
 </body>
 </html>

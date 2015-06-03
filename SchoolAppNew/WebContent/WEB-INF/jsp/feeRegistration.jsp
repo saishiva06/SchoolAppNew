@@ -1,9 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	session="true" pageEncoding="ISO-8859-1"%>
-<%
-	String errorMessage = (String) session.getAttribute("errorMessage");
-%>
-
 
 <!DOCTYPE html>
 <html>
@@ -106,19 +102,6 @@
 			<b> <a href="feeDetails.do" class="btn btn-default">Back</a></b>
 		</p>
 	</div>
-
-	<div class="container">
-		<center>
-			<h2 class="btn btn-warning">
-				<%
-					if (null != errorMessage) {
-						out.println(errorMessage);
-					}
-				%>
-			</h2>
-		</center>
-	</div>
-
 	<div class="container">
 		<div class="panel panel-primary">
 			<div class="panel-heading">Fee New Registration</div>
@@ -129,25 +112,27 @@
 
 							<form action="addFeeDetails.do" id="addFee" method="post"
 								name="myform" class="form-horizontal">
-								<div class="form-group">
-									<label class="col-sm-3 control-label">Full name</label>
-									<div class="col-sm-5">
-										<input type="text" class="form-control" id="studentName"
-											name="studentName" placeholder="First Middle Last" />
-									</div>
-								</div>
-
+								
 								<div class="form-group">
 									<label class="col-sm-3 control-label">Admission No</label>
 									<div class="col-sm-5">
 										<input type="text" class="form-control" id="rollno"
-											name="rollno" placeholder="012345" />
+											name="rollno" placeholder="012345"/>
 									</div>
 								</div>
 								<div class="form-group">
+									<label class="col-sm-3 control-label">Full name</label>
+									<div class="col-sm-5">
+										<input type="text" class="form-control" id="studentName"
+											name="studentName"  readonly = "readonly"/>
+									</div>
+								</div>
+
+								
+								<div class="form-group">
 									<label class="col-sm-3 control-label">Class</label>
 									<div class="col-sm-5">
-										<select name="StudentClass" class="form-control">
+										<select name="StudentClass" class="form-control" id ="StudentClass" readonly = "readonly">
 											<option value="Choose One">Choose One</option>
 											<option value="lkg">lkg</option>
 											<option value="ukg">ukg</option>
@@ -167,7 +152,7 @@
 								<div class="form-group">
 									<label class="col-sm-3 control-label">Section</label>
 									<div class="col-sm-5">
-										<select name="section" class="form-control">
+										<select name="section" class="form-control" id ="section" readonly = "readonly">
 											<option value="Choose One">Choose One</option>
 											<option value="A">A</option>
 											<option value="B">B</option>
@@ -177,7 +162,7 @@
 								<div class="form-group">
 									<label class="col-sm-3 control-label">Medium</label>
 									<div class="col-sm-5">
-										<select name="medium" class="form-control">
+										<select name="medium" class="form-control" id ="medium" readonly = "readonly">
 											<option value="Choose One">Choose One</option>
 											<option value="English">English</option>
 											<option value="Telugu">Telugu</option>
@@ -188,13 +173,13 @@
 									<label class="col-sm-3 control-label">Mobile No</label>
 									<div class="col-sm-5">
 										<input id="mobileNo" name="mobileNo" class="form-control"
-											type="number" placeholder="9948012345" />
+											type="number"  readonly = "readonly"/>
 									</div>
 								</div>
 								<div class="form-group">
 									<label class="col-sm-3 control-label">Fee Type</label>
 									<div class="col-sm-5">
-										<select name="feeType" class="form-control">
+										<select name="feeType" class="form-control" required = "required">
 											<option value="Choose One">Choose One</option>
 											<option value="Admission Fee">Admission Fee</option>
 											<option value="Tution Fee">Tution Fee</option>
@@ -210,7 +195,7 @@
 									<label class="col-sm-3 control-label">Fee Paid</label>
 									<div class="col-sm-5">
 										<input id="feePaid" name="feePaid" class="form-control"
-											type="text" placeholder="1000" />
+											type="text" placeholder="1000"/>
 									</div>
 								</div>
 
@@ -260,6 +245,46 @@
 	<script src="resources/js/formValidation.js"></script>
 	<script src="resources/js/framework/bootstrap.js"></script>
 	<script src="resources/js/schoolscript.js"></script>
+	<script type = "text/javascript">
+	
+	$("#rollno").blur(function(){
+        var rollno = $("#rollno").val();
+	   
+       $.ajax({
+			type : "GET",
+			url : "getStudentDetailsForAdmNum.do",
+			data : {
+					"rollno" : rollno
+				},
+			success : function(result) {
+						if(result) {
+						console.log("3535345" + result);
+						 $("#studentName").val(result.studentFirstName +" " +result.studentLastName);
+                         $("#StudentClass").val(result.studentClass);
+                         $("#section").val(result.section);
+                         $("#medium").val(result.medium);
+                         $("#mobileNo").val(result.phoneNumber);
+                       } else {
+                        console.log("38888888535345" + result);
+						$("#studentName").val("");
+                        $("#StudentClass").val("");
+                        $("#section").val("");
+                        $("#medium").val("");
+                        $("#mobileNo").val("");
+                    }
+                      },
+			error : function(result) {
+			          console.log("38888888535345" + result);
+						$("#studentName").val("");
+                        $("#StudentClass").val("");
+                        $("#section").val("");
+                        $("#medium").val("");
+                        $("#mobileNo").val("");
+                    }
+		});
+	});
+	
+	</script>
 
 </body>
 </html>

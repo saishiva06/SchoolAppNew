@@ -202,5 +202,15 @@ public class StudentDaoImpl extends SqlMapClientDaoSupport implements StudentDao
 			return resultList;
 		}
 	}
+
+	@Override
+	public Student getStudentByAdmissionNum(String admNo) {
+		try {
+			Student Student = (Student) template.queryForObject("getStudentByAdmissionNum",admNo);
+			return Student;
+ 		} catch (Exception ex) {
+ 			return null;
+ 		}
+	}
 	
 }

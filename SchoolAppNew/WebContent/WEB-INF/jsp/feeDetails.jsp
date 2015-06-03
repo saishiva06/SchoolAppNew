@@ -37,6 +37,14 @@
 		f.action = 'deleteFeeDetails.do';
 		f.submit();
 	}
+	
+	function viewFeeDetails(recieptNo) {
+		var f = document.form2;
+		f.recieptNo.value = recieptNo;
+		f.method = "post";
+		f.action = 'viewFeeDetails.do';
+		f.submit();
+	}
 </script>
 </head>
 <body>
@@ -142,6 +150,7 @@
 												<th>Paid Date</th>
 												<th>Edit</th>
 												<th>Delete</th>
+												<th>View</th>
 											</tr>
 										</thead>
 										<tbody>
@@ -164,6 +173,10 @@
 												<td><input type="button" name="delete" value="Delete"
 													class="btn btn-danger"
 													onclick="deleteFeeDetails('<%=feeDetails.getRecieptNo()%>')" /></td>
+											<td><input type="button" name="view" value="View"
+														class="btn btn-primary"
+														onclick="viewFeeDetails('<%=feeDetails.getRecieptNo()%>')" /></td>
+											
 											</tr>
 											<%
 												}
