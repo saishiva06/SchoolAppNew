@@ -173,17 +173,18 @@
 							rel="prettyPhoto[gallery]"
 							href="assets/images/gallery/gallery-8.jpg" target="_blank"><img
 							class="img-responsive img-thumbnail"
-							src="assets/images/gallery/gallery-8.jpg" alt="" /></a> <a
+							src="assets/images/gallery/gallery-8.jpg" alt="" /></a>
+							 <a
 							class="prettyphoto col-md-3 col-sm-3 col-xs-6"
 							rel="prettyPhoto[gallery]"
-							href="assets/images/gallery/gallery-11.jpg" target="_blank"><img
+							 href="assets/images/gallery/gallery-11.jpg" target="_blank"><img
 							class="img-responsive img-thumbnail"
-							src="assets/images/gallery/gallery-11.jpg" alt="" /></a> <a
+							src="assets/images/gallery/gallery-11.jpg" alt="" /></a>   <a
 							class="prettyphoto col-md-3 col-sm-3 col-xs-6"
 							rel="prettyPhoto[gallery]"
-							href="assets/images/gallery/gallery-12.jpg" target="_blank"><img
+							 href="assets/images/gallery/gallery-12.jpg" target="_blank"><img
 							class="img-responsive img-thumbnail"
-							src="assets/images/gallery/gallery-12.jpg" alt="" /></a> <a
+							src="assets/images/gallery/gallery-12.jpg" alt="" /></a>  <a
 							class="prettyphoto col-md-3 col-sm-3 col-xs-6"
 							rel="prettyPhoto[gallery]"
 							href="assets/images/gallery/gallery-13.jpg" target="_blank"><img
@@ -214,6 +215,14 @@
 							href="assets/images/gallery/gallery-17.jpg" target="_blank"><img
 							class="img-responsive img-thumbnail"
 							src="assets/images/gallery/gallery-17.jpg" alt="" /></a>
+							<a
+							class="prettyphoto col-md-3 col-sm-3 col-xs-6"
+							rel="prettyPhoto[gallery]"
+							href="assets/images/gallery/gallery-thumb-18.jpg" target="_blank"><img
+							class="img-responsive img-thumbnail"
+							src="assets/images/gallery/gallery-thumb-18.jpg" alt="" /></a>
+							
+							
 					</div>
 					<!--//page-row-->
 				</div>

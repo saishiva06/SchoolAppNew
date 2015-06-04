@@ -131,7 +131,7 @@
 							<article class="news-item page-row has-divider clearfix row">
 								<figure class="thumb col-md-2 col-sm-3 col-xs-4">
 									<img class="img-responsive"
-										src="assets/images/news/news-thumb-1.jpg" alt="" />
+										src="assets/images/news/news-thumb-2.jpg" alt="" />
 								</figure>
 								<div class="details col-md-10 col-sm-9 col-xs-8">
 									<h3 class="title">
@@ -147,7 +147,7 @@
 							<article class="news-item page-row has-divider clearfix row">
 								<figure class="thumb col-md-2 col-sm-3 col-xs-4">
 									<img class="img-responsive"
-										src="assets/images/news/news-thumb-2.jpg" alt="" />
+										src="assets/images/news/news-thumb-1.jpg" alt="" />
 								</figure>
 								<div class="details col-md-10 col-sm-9 col-xs-8">
 									<h3 class="title">
@@ -181,7 +181,7 @@
 							<article class="news-item page-row has-divider clearfix row">
 								<figure class="thumb col-md-2 col-sm-3 col-xs-4">
 									<img class="img-responsive"
-										src="assets/images/news/news-thumb-4.jpg" alt="" />
+										src="assets/images/news/news-thumb-5.jpg" alt="" />
 								</figure>
 								<div class="details col-md-10 col-sm-9 col-xs-8">
 									<h3 class="title">
@@ -195,8 +195,40 @@
 								</div>
 							</article>
 							<!--//news-item-->
-
-							<ul class="pagination">
+                     <article class="news-item page-row has-divider clearfix row">
+								<figure class="thumb col-md-2 col-sm-3 col-xs-4">
+									<img class="img-responsive"
+										src="assets/images/news/news-thumb-6.jpg" alt="" />
+								</figure>
+								<div class="details col-md-10 col-sm-9 col-xs-8">
+									<h3 class="title">
+										<a href="news-single.do">Honey Bees for Nursery LKG,UKG children</a>
+									</h3>
+									<p>Honey Bees International Play School for nursery,lkg,ukg
+										children.</p>
+									<a class="btn btn-theme read-more" href="news-single.do">Read
+										more<i class="fa fa-chevron-right"></i>
+									</a>
+								</div>
+							</article>
+							
+							<article class="news-item page-row has-divider clearfix row">
+								<figure class="thumb col-md-2 col-sm-3 col-xs-4">
+									<img class="img-responsive"
+										src="assets/images/news/news-thumb-4.jpg" alt="" />
+								</figure>
+								<div class="details col-md-10 col-sm-9 col-xs-8">
+									<h3 class="title">
+										<a href="news-single.do">Annual Day Celebrations</a>
+									</h3>
+									<p>Celebrated our school annual day for the acadamic year
+										2014-15 in a grand way</p>
+									<a class="btn btn-theme read-more" href="news-single.do">Read
+										more<i class="fa fa-chevron-right"></i>
+									</a>
+								</div>
+							</article>
+							<!-- <ul class="pagination">
 								<li class="disabled"><a href="#">&laquo;</a></li>
 								<li class="active"><a href="#">1<span class="sr-only">(current)</span></a></li>
 								<li><a href="#">2</a></li>
@@ -204,7 +236,7 @@
 								<li><a href="#">4</a></li>
 								<li><a href="#">5</a></li>
 								<li><a href="#">&raquo;</a></li>
-							</ul>
+							</ul> -->
 
 						</div>
 						<!--//news-wrapper-->

@@ -62,7 +62,7 @@ public class FeeDetailsController {
 	public ModelAndView addFeeDetails(HttpServletRequest request,
 			HttpServletResponse response) throws Exception {
 		try {
-			String rollNo = request.getParameter("rollno");
+			String rollNo = request.getParameter("rollno").toUpperCase();
 			if(studentService.isStudentExists(rollNo)) {
 			String studentName = request.getParameter("studentName");
 			String studentClass = request.getParameter("StudentClass");

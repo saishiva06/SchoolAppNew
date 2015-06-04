@@ -47,18 +47,25 @@ public class RandomGenerator {
 	public static String getAdmissionNum(String studentClass,String lastId) {
 		String admisionConst = "SN";
 		String admissionNum = "";
+		String id ="";
 		
 		if(lastId==null || lastId.length()==0) {
-		String id =	studentClass.equalsIgnoreCase("SSC") ? "10" : String.valueOf(studentClass.charAt(0)).toUpperCase();
-			admissionNum = admisionConst + id + "001";
+			
+			if(studentClass.equalsIgnoreCase("SSC") ) {
+				id= "10";
+			} else if(studentClass.equalsIgnoreCase("lkg") || studentClass.equalsIgnoreCase("ukg") || studentClass.equalsIgnoreCase("nursery")) {
+				admisionConst = "SN" + String.valueOf(studentClass.charAt(0)).toUpperCase() + "1";
+			} else {
+				id = String.valueOf(studentClass.charAt(0)).toUpperCase();
+			}
+			
+		    admissionNum = admisionConst + id + "001";
 		} else {
-			/*System.out.println(lastId.substring(4,7));
-			System.out.println(lastId.substring(3,7));
-			System.out.println(lastId.substring(2,7));
-			*/if(studentClass.equalsIgnoreCase("lkg") || studentClass.equalsIgnoreCase("ukg") || studentClass.equalsIgnoreCase("nursery")) {
+			if(studentClass.equalsIgnoreCase("lkg") || studentClass.equalsIgnoreCase("ukg") || studentClass.equalsIgnoreCase("nursery")) {
 				int num = Integer.valueOf(lastId.substring(3,7));
-				admissionNum = admisionConst +  "" + (num+1);
-		  } else if(studentClass.equalsIgnoreCase("SSC")) {
+				admissionNum = "SN" + String.valueOf(studentClass.charAt(0)).toUpperCase() +  "" + (num+1);
+		  
+			} else if(studentClass.equalsIgnoreCase("SSC")) {
 			  int num = Integer.valueOf(lastId.substring(2,7));
 			  admissionNum = admisionConst +  "" + (num+1);
 		   } else {

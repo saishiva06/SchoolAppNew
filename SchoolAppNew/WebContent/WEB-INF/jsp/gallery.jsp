@@ -131,12 +131,12 @@
 						<div class="col-md-4 col-sm-4 col-xs-12 text-center">
 							<div class="album-cover">
 								<a href="gallery-album.do"><img class="img-responsive"
-									src="assets/images/gallery/gallery-1.jpg" alt="" /></a>
+									src="assets/images/gallery/gallery-6.jpg" alt="" /></a>
 								<div class="desc">
 									<h4>
-										<small><a href="#">Annual Day-2015</a></small>
+										<small><a href="#">Muggula competition-2015</a></small>
 									</h4>
-									<p>LKG children dance.</p>
+									<p>Muggula compettion-School staff with guest Khammmam MP.</p>
 								</div>
 							</div>
 						</div>
@@ -144,12 +144,12 @@
 						<div class="col-md-4 col-sm-4 col-xs-12 text-center">
 							<div class="album-cover">
 								<a href="gallery-album.do"><img class="img-responsive"
-									src="assets/images/gallery/gallery-2.jpg" alt="" /></a>
+									src="assets/images/gallery/gallery-8.jpg" alt="" /></a>
 								<div class="desc">
 									<h4>
 										<small><a href="#">Annual Day-2015</a></small>
 									</h4>
-									<p>Parents came to celebrate school anual day function.</p>
+									<p>School Administration Staff</p>
 								</div>
 							</div>
 						</div>
@@ -160,10 +160,9 @@
 									src="assets/images/gallery/gallery-thumb-22.jpg" alt="" /></a>
 								<div class="desc">
 									<h4>
-										<small><a href="#">Album Title</a></small>
+										<small><a href="#">Annual Day-2015</a></small>
 									</h4>
-									<p>Suspendisse at purus ac neque auctor viverra vel in
-										arcu. Quisque commodo augue nisi.</p>
+									<p>Dance perforamnce By Senior students.</p>
 								</div>
 							</div>
 						</div>
@@ -174,10 +173,9 @@
 									src="assets/images/gallery/gallery-thumb-23.jpg" alt="" /></a>
 								<div class="desc">
 									<h4>
-										<small><a href="#">Album Title</a></small>
+										<small><a href="#">Annual Day-2015</a></small>
 									</h4>
-									<p>Suspendisse at purus ac neque auctor viverra vel in
-										arcu.</p>
+									<p>Beautifull Dance Perofrmance by girls.</p>
 								</div>
 							</div>
 						</div>

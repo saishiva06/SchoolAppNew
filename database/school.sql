@@ -48,7 +48,7 @@ CREATE TABLE `exam_results` (
   `grade` varchar(64) NOT NULL DEFAULT '0',
   `rank` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`exam_results_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -57,7 +57,7 @@ CREATE TABLE `exam_results` (
 
 LOCK TABLES `exam_results` WRITE;
 /*!40000 ALTER TABLE `exam_results` DISABLE KEYS */;
-INSERT INTO `exam_results` VALUES (14,'380324','Shiva Kumar Aavula','SSC','Half yearly','2015-05-21',90,0,90,0,99,0,99,0,90,0,99,0,0,0,540,600,'A',2),(15,'003','srujana kurakula','lkg','self test','2015-05-12',80,0,80,0,80,0,80,0,80,0,80,0,0,0,500,600,'A',7);
+INSERT INTO `exam_results` VALUES (14,'380324','Shiva Kumar Aavula','SSC','Half yearly','2015-05-21',90,0,90,0,99,0,99,0,90,0,99,0,0,0,540,600,'A',2),(15,'003','srujana kurakula','lkg','self test','2015-05-12',80,0,80,0,80,0,80,0,80,0,80,0,0,0,500,600,'A',7),(16,'1005','shiva Kumar','3rd class','Half yearly','2015-06-16',90,0,90,0,90,0,99,0,90,0,99,0,0,0,558,600,'B',1),(17,'1005','shiva Kumar','3rd class','Half yearly','2015-06-02',90,0,90,0,90,0,99,0,90,0,99,0,0,0,558,600,'A',0);
 /*!40000 ALTER TABLE `exam_results` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -86,7 +86,7 @@ CREATE TABLE `fee_details` (
 
 LOCK TABLES `fee_details` WRITE;
 /*!40000 ALTER TABLE `fee_details` DISABLE KEYS */;
-INSERT INTO `fee_details` VALUES ('1214','SN10001','Shiva Kumar Aavula','SSC','Admission Fee','3000','2015-05-26'),('2421','SN10001','Shiva Kumar Aavula','SSC','Admission Fee','5000','2015-05-26'),('2928','367','Venu Chary ','SSC','Admission Fee','5000','2015-05-20'),('3138','SN10001','Shiva Kumar Aavula','SSC','Admission Fee','5000','2015-05-23'),('5954','SN10001','Shiva Kumar Aavula','SSC','Tution Fee','7000','2015-05-24'),('8111','380324','Shiva Kumar Aavula','SSC','Admission Fee','5000','2015-05-22');
+INSERT INTO `fee_details` VALUES ('1214','SN10001','Shiva Kumar Aavula','SSC','Admission Fee','3000','2015-05-26'),('2421','SN10001','Shiva Kumar Aavula','SSC','Admission Fee','5000','2015-05-26'),('2948','SN2001','Rishitha gone','2nd class','Choose One','5000','2015-06-03'),('3138','SN10001','Shiva Kumar Aavula','SSC','Admission Fee','5000','2015-05-23'),('5954','SN10001','Shiva Kumar Aavula','SSC','Tution Fee','7000','2015-05-24'),('6295','sn7001','venu kumar','7th class','Tution Fee','5000','2015-06-04'),('9639','SN10002','Ramesh Paladugu','SSC','Admission Fee','5000','2015-06-02'),('9985','SNU1001','Sravanthi N','ukg','Tution Fee','8000','2015-06-10');
 /*!40000 ALTER TABLE `fee_details` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -117,7 +117,7 @@ CREATE TABLE `student` (
   `student_doj` date NOT NULL DEFAULT '2012-01-01',
   `student_status` int(10) DEFAULT NULL,
   PRIMARY KEY (`roll_num`)
-) ENGINE=InnoDB AUTO_INCREMENT=1009 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=1016 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -126,7 +126,7 @@ CREATE TABLE `student` (
 
 LOCK TABLES `student` WRITE;
 /*!40000 ALTER TABLE `student` DISABLE KEYS */;
-INSERT INTO `student` VALUES (1001,'SNl001','Bharath Kumar','Aavula','lkg','B','English','Narasimha Rao','Dhanalakshmi','1991-06-01','BC-D','Hindu','8341902010','Mustafa Nagar,Khammam','male','9000','2015-05-22',0),(1002,'SN10001','Shiva Kumar','Aavula','SSC','B','Telugu','Narasimha Rao','Dhanalakshmi','1989-03-06','BC-D','Hindu','9010936467','Mustafa Nagar','male','12000','2015-05-22',0),(1003,'SN6001','Bharath','kumar','6th class','B','Telugu','Narasimha Rao','Dhanalkshmi','1990-06-01','BC-D','Hindu','9010936467','Khamam','male','5000','2015-05-28',0),(1004,'SN10002','Ramesh','Paladugu','SSC','B','Telugu','Ramesh Father','Ramesh mother','1990-07-17','Bc','Hindu','9010936467','HYD','male','9000','2015-05-27',0),(1005,'SN3001','shiva','Kumar','3rd class','A','English','ss','ss','1989-03-05','BC-D','Hindu','9010936467','HYD','male','12000','2015-05-26',0),(1006,'SN5001','srujana','kurakula','5th class','B','Telugu','Srinivasa Rao','Nagasudha','1991-06-26','OC','Christ','9948556718','NVC','female','3000','2015-05-27',0),(1007,'SN2001','Rishitha','gone','2nd class','A','English','Saidha Rao','Supriya','2005-11-05','BC-D','Hindu','9010936467','hyd','female','9000','2015-05-19',0),(1008,'SN3002','Bhavitha','GOne','3rd class','A','English','Saidha Rao','Supriya','2007-10-04','BC-D','Hindu','9010936467','KMM','female','12000','2015-05-13',0);
+INSERT INTO `student` VALUES (1002,'SN10001','Shiva Kumar','Aavula','SSC','B','Telugu','Narasimha Rao','Dhanalakshmi','1989-03-06','BC-D','Hindu','9010936467','Mustafa Nagar','male','12000','2015-05-22',0),(1003,'SN6001','Bharath','kumar','6th class','B','Telugu','Narasimha Rao','Dhanalkshmi','1990-06-01','BC-D','Hindu','9010936467','Khamam','male','5000','2015-05-28',0),(1004,'SN10002','Ramesh','Paladugu','SSC','B','Telugu','Ramesh Father','Ramesh mother','1990-07-17','Bc','Hindu','9010936467','HYD','male','9000','2015-05-27',0),(1005,'SN3001','Sai','Kumar','3rd class','A','English','Srinivas','Laxmi','1989-03-05','BC-D','Hindu','9010936467','HYD','male','12000','2015-05-26',0),(1006,'SN5001','srujana','kurakula','5th class','B','Telugu','Srinivasa Rao','Nagasudha','1991-06-26','OC','Christ','9948556718','NVC','female','3000','2015-05-27',0),(1007,'SN2001','Rishitha','gone','2nd class','A','English','Saidha Rao','Supriya','2005-11-05','BC-D','Hindu','9010936467','hyd','female','9000','2015-05-19',0),(1008,'SN3002','Bhavitha','Gone','3rd class','A','English','Saidha Rao','Supriya','2007-10-04','BC-D','Hindu','9010936467','KMM','female','12000','2015-05-13',0),(1010,'SNU1001','Sravanthi','N','ukg','A','English','Pullarao','siromani','1991-11-12','BC-D','Hindu','9010936467','HYD','female','12000','2015-06-04',0),(1013,'SNU1002','ram','mohan','ukg','A','English','radha krishna','mani','2015-06-09','BC-D','Hindu','9010936467','HYD','male','12000','2015-06-04',0),(1014,'SN10003','Bharath','kumar','SSC','A','English','Narasimha','Dhanalkshmi','2015-06-02','BC-D','Hindu','9010936467','DDD','male','20000','2015-06-04',0),(1015,'SN7001','venu','kumar','7th class','B','English','Saidha Rao','Ramani','1998-10-14','BC-D','Hindu','9010936467','HYD','male','15000','2015-06-04',0);
 /*!40000 ALTER TABLE `student` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -161,7 +161,7 @@ CREATE TABLE `teacher` (
 
 LOCK TABLES `teacher` WRITE;
 /*!40000 ALTER TABLE `teacher` DISABLE KEYS */;
-INSERT INTO `teacher` VALUES (1912,'shiva kumar','Aavula','B.tech(CSE)','5','Computers','1989-02-05','BC-D','9010936467','kHAMMAM','male','1989-02-05',1),(7624,'Bharath Kumar','Aavula','BSc','4','Dance Master','1990-06-01','BC-D','8341902010','MustafaNagar,KMM','male','1990-06-01',1),(8431,'sandeep','kumar','Msc','10','chemistry','1990-06-01','BC-D','9666644801','HYD','male','2010-06-15',1);
+INSERT INTO `teacher` VALUES (1912,'shiva kumar','Aavula','B.tech(CSE)','5','Computers','1989-02-05','BC-D','9010936467','kHAMMAM','male','1989-02-05',1),(3627,'Ramesh','Paladugu','B.tech(CSE)','5','Computers','1988-05-04','BC-D','9010936467','HYD','male','1988-05-04',1),(7413,'Chakradar','B','Msc','10','Maths','1990-07-16','Bc','9010936467','KMM','male','1990-07-16',1),(7624,'Bharath Kumar','Aavula','BSc','4','Dance Master','1990-06-01','BC-D','8341902010','MustafaNagar,KMM','male','1990-06-01',1),(8431,'sandeep','kumar','Msc','10','chemistry','1990-06-01','BC-D','9666644801','HYD','male','2010-06-15',1);
 /*!40000 ALTER TABLE `teacher` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -217,4 +217,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2015-05-30 14:22:30
+-- Dump completed on 2015-06-04 15:18:46

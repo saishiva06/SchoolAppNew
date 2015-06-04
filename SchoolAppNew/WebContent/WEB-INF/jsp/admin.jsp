@@ -114,7 +114,7 @@
 						</form>
 					</article>
 					<!--//contact-form-->
-					<aside
+					<!-- <aside
 						class="page-sidebar  col-md-3 col-md-offset-1 col-sm-4 col-sm-offset-1">
 
 						<section class="widget has-divider">
@@ -129,7 +129,7 @@
 								</span>
 							</p>
 						</section>
-						<!--//widget-->
+						//widget
 
 						<section class="widget">
 							<h3 class="title">All Enquiries</h3>
@@ -140,7 +140,7 @@
 								<i class="fa fa-envelope"></i> <a href="#">narayanaolympiadschools@gmail.com</a>
 							</p>
 						</section>
-					</aside>
+					</aside> -->
 					<!--//page-sidebar-->
 				</div>
 				<!--//page-row-->
