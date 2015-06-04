@@ -82,7 +82,7 @@
 					<li class="nav-item"><a href="dashboard.do">Home</a></li>
 					<li class="nav-item"><a href="teacher.do">Teacher</a></li>
 					<li class="nav-item"><a href="student.do">Student</a></li>
-					<li class="nav-item"><a href="feeDetails.do">Fee</a></li>
+					<li class="nav-item active"><a href="feeDetails.do">Fee</a></li>
 					<li class="nav-item"><a href="examResults.do">Examination</a></li>
 
 				</ul>
@@ -117,14 +117,14 @@
 									<label class="col-sm-3 control-label">Admission No</label>
 									<div class="col-sm-5">
 										<input type="text" class="form-control" id="rollno"
-											name="rollno" placeholder="012345"/>
+											name="rollno" placeholder="012345"/><span style = "color:red"  id = "errorMessage"></span>
 									</div>
 								</div>
 								<div class="form-group">
 									<label class="col-sm-3 control-label">Full name</label>
 									<div class="col-sm-5">
 										<input type="text" class="form-control" id="studentName"
-											name="studentName"  readonly = "readonly"/>
+											name="studentName" readonly = "readonly"/>
 									</div>
 								</div>
 
@@ -180,7 +180,7 @@
 									<label class="col-sm-3 control-label">Fee Type</label>
 									<div class="col-sm-5">
 										<select name="feeType" class="form-control" required = "required">
-											<option value="Choose One">Choose One</option>
+											<option value="">Choose One</option>
 											<option value="Admission Fee">Admission Fee</option>
 											<option value="Tution Fee">Tution Fee</option>
 											<option value="Exam Fee">Exam Fee</option>
@@ -271,6 +271,7 @@
                         $("#section").val("");
                         $("#medium").val("");
                         $("#mobileNo").val("");
+                        $("#errorMessage").text("Please enter a valid Admission number");
                     }
                       },
 			error : function(result) {

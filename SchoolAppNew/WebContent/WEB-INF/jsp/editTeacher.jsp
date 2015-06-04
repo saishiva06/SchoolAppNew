@@ -94,7 +94,7 @@
 					<li class="nav-item"><a href="dashboard.do">Home</a></li>
 					<li class="nav-item active"><a href="#">Teacher</a></li>
 					<li class="nav-item "><a href="student.do">Student</a></li>
-					<li class="nav-item"><a href="feeDetails.do">Fee</a></li>
+					<li class="nav-item active"><a href="feeDetails.do">Fee</a></li>
 					<li class="nav-item"><a href="examResults.do">Examination</a></li>
 
 				</ul>

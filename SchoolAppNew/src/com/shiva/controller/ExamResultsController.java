@@ -9,6 +9,7 @@ import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -51,8 +52,8 @@ public class ExamResultsController {
 	public ModelAndView addExamResults(HttpServletRequest request,
 			HttpServletResponse response) throws Exception {
 		try {
-			String studentName = request.getParameter("studentName");
 			String rollNo = request.getParameter("rollno");
+			String studentName = request.getParameter("studentName");
 			String studentClass = request.getParameter("StudentClass");
 			String examTitle = request.getParameter("examTitle");
 			String examDate = request.getParameter("examDate");

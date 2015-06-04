@@ -63,7 +63,7 @@
                          <li  class="nav-item"><a href="teacher.do">Teacher</a></li>
                          <li class="nav-item" ><a href="student.do">Student</a></li>
                          <li class="nav-item"><a href="feeDetails.do">Fee</a></li>
-                         <li class="nav-item"><a href="examResults.do">Examination</a></li>
+                         <li class="nav-item active"><a href="examResults.do">Examination</a></li>
                         
                      </ul><!--//nav-->
                      <!--  <ul class="nav navbar-nav navbar-right">
@@ -96,7 +96,9 @@
 									<label class="col-sm-3 control-label">Roll No</label>
 									<div class="col-sm-5">
 										<input type="text" class="form-control" id="rollno"
-											name="rollno" placeholder="012345" />
+											name="rollno" placeholder="012345" /><span style = "color:red"  id = "errorMessage"></span>
+											
+											
 									</div>
 								</div>
 								<div class="form-group">
@@ -336,11 +338,13 @@
                          } else {
                        $("#studentName").val("");
                         $("#StudentClass").val("");
+                        $("#errorMessage").text("Please enter a valid roll number");
                        }
                       },
 			error : function(result) {
 			         	$("#studentName").val("");
                         $("#StudentClass").val("");
+                        
                       }
 		});
 	});

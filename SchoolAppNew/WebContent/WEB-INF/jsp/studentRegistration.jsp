@@ -77,7 +77,7 @@
 				<ul class="nav navbar-nav">
 					<li class="nav-item"><a href="dashboard.do">Home</a></li>
 					<li class="nav-item"><a href="teacher.do">Teacher</a></li>
-					<li class="nav-item"><a href="student.do">Student</a></li>
+					<li class="nav-item active"><a href="student.do">Student</a></li>
 					<li class="nav-item"><a href="feeDetails.do">Fee</a></li>
 					<li class="nav-item"><a href="examResults.do">Examination</a></li>
 
@@ -162,8 +162,9 @@
 									<div class="col-sm-5">
 										<select name="studentClass" class="form-control" required = "required">
 											<option value="">choose one</option>
-											<option value="lkg">lkg</option>
-											<option value="ukg">ukg</option>
+											<option value="Nursery">Nursery</option>
+											<option value="LKG">Lkg</option>
+											<option value="UKG">Ukg</option>
 											<option value="1st class">1st class</option>
 											<option value="2nd class">2nd class</option>
 											<option value="3rd class">3rd class</option>

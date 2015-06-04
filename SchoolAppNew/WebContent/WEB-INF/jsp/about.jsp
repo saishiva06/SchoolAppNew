@@ -100,6 +100,8 @@
 							</ul></li>
 						<li class="nav-item"><a href="news.do">News</a></li>
 						<li class="nav-item"><a href="contact.do">Contact</a></li>
+						<li class="nav-item"><a href="noticeboard.do">Results</a></li>
+						
 					</ul>
 					<!--//nav-->
 				</div>

@@ -284,14 +284,14 @@ $(document).ready(function() {
             validating: 'glyphicon glyphicon-refresh'
         },
         fields: {
-        	studentName: {
+        	/*studentName: {
                 row: '.col-sm-5',
                 validators: {
                     notEmpty: {
                         message: 'The Student name is required'
                     }
                 }
-            },
+            },*/
             rollno: {
                 row: '.col-sm-5',
                 validators: {
@@ -309,6 +309,7 @@ $(document).ready(function() {
                 }
             }
             
+            
         }
     });
     $('#addResult').formValidation({
@@ -319,14 +320,14 @@ $(document).ready(function() {
             validating: 'glyphicon glyphicon-refresh'
         },
         fields: {
-        	studentName: {
+        	/*studentName: {
                 row: '.col-sm-5',
                 validators: {
                     notEmpty: {
                         message: 'The full name is required'
                     }
                 }
-            },
+            },*/
             rollno: {
                 row: '.col-sm-5',
                 validators: {

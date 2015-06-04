@@ -65,7 +65,7 @@ ExamResults examResults = (ExamResults)request.getAttribute("examResults");
                          <li  class="nav-item"><a href="teacher.do">Teacher</a></li>
                          <li class="nav-item" ><a href="student.do">Student</a></li>
                          <li class="nav-item"><a href="feeDetails.do">Fee</a></li>
-                         <li class="nav-item"><a href="examResults.do">Examination</a></li>
+                         <li class="nav-item active"><a href="examResults.do">Examination</a></li>
                         
                      </ul><!--//nav-->
                      <!--  <ul class="nav navbar-nav navbar-right">
@@ -114,9 +114,9 @@ ExamResults examResults = (ExamResults)request.getAttribute("examResults");
 								<div class="form-group">
 									<label class="col-sm-3 control-label">Class</label>
 									<div class="col-sm-5">
-										<select name="StudentClass"  class="form-control" >
+										<select name="StudentClass"  class="form-control" readonly="readonly">
 										 <option value = "<%=examResults.getStudentClass() %>" selected = "selected"><%=examResults.getStudentClass() %></option>
-												<option value="lkg">lkg</option>
+												<!-- <option value="lkg">lkg</option>
 											<option value="ukg">ukg</option>
 											<option value="1st class">1st class</option>
 											<option value="2nd class">2nd class</option>
@@ -127,7 +127,7 @@ ExamResults examResults = (ExamResults)request.getAttribute("examResults");
 											<option value="7th class">7th class</option>
 											<option value="8th class">8th class</option>
 											<option value="9th class">9th class</option>
-											<option value="SSC">SSC</option>
+											<option value="SSC">SSC</option> -->
 										</select>
 									</div>
 								</div>

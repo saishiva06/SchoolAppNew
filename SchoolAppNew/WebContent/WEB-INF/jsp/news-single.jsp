@@ -99,8 +99,9 @@
 								<li><a href="team.do">Our Staff</a></li>
 								<li><a href="gallery.do">School Gallery</a></li>
 							</ul></li>
-						<li class="nav-item"><a href="news.do">News</a></li>
+						<li class="nav-item active"><a href="news.do">News</a></li>
 						<li class="nav-item"><a href="contact.do">Contact</a></li>
+						<li class="nav-item"><a href="noticeboard.do">Results</a></li>
 					</ul>
 					<!--//nav-->
 				</div>

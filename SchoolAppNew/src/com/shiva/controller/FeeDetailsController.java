@@ -63,7 +63,6 @@ public class FeeDetailsController {
 			HttpServletResponse response) throws Exception {
 		try {
 			String rollNo = request.getParameter("rollno").toUpperCase();
-			if(studentService.isStudentExists(rollNo)) {
 			String studentName = request.getParameter("studentName");
 			String studentClass = request.getParameter("StudentClass");
 			String feeType = request.getParameter("feeType");
@@ -84,11 +83,6 @@ public class FeeDetailsController {
 					studentName, studentClass, feeType, otherFee, formattedDob);
 			System.out.println("@@@ FeeDetails added.........." + result);
 			return new ModelAndView("redirect:feeDetails.do");
-			} else {
-				HttpSession session = request.getSession(true);
-				session.setAttribute("errorMessage", "Please enter a valid Admission Number");
-				return new ModelAndView("feeRegistration");
-			}
 			}
 			catch (Exception e) {
 			e.printStackTrace();

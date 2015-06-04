@@ -170,8 +170,8 @@
 													<td><%=student.getStudentClass()%></td>
 													<td><%=student.getSection()%></td>
 													<td><%=student.getFees()%></td>
-													<td><%=calculation.getDueFee(student)%></td>
 													<td><%=calculation.getFeePaid(student)%></td>
+													<td><%=calculation.getDueFee(student)%></td>
 													<td><input type="button" name="edit" value="Edit"
 														class="btn btn-primary"
 														onclick="editStudent('<%=student.getRollno()%>')" /></td>

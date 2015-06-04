@@ -34,9 +34,9 @@ private FeeDetailsService feeDetailsService;
     		 total = total + Integer.valueOf(feeDetails.getOtherFee());
     	 }
      }
-		  dueFee = Integer.valueOf(student.getFees()) - total;
+		 dueFee = Integer.valueOf(student.getFees()) - total;
      } else {
-    	 dueFee = Integer.parseInt(student.getFees());
+    	 dueFee = Integer.valueOf(student.getFees());
      }
      return dueFee;
 	}
@@ -48,10 +48,10 @@ private FeeDetailsService feeDetailsService;
 		for(FeeDetails feeDetails :feeDetailsList) {
     	 if(feeDetails.getFeeType().equalsIgnoreCase("Tution Fee")) {
     		 total = total + Integer.valueOf(feeDetails.getOtherFee());
-    	 }
-     }
-		}
-     int dueFee = Integer.valueOf(student.getFees()) - total;
-     return total;
+    	 } 
+       }
 	}
+		return total;
+   }
+	
 }
