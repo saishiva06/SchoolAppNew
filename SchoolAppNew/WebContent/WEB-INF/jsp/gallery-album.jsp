@@ -12,6 +12,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="">
 <meta name="author" content="">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="0" />
 <link rel="shortcut icon" href="favicon.ico">
 <link href='../../fonts.googleapis.com/css/index.do' rel='stylesheet'
 	type='text/css'>
@@ -135,82 +138,82 @@
 							rel="prettyPhoto[gallery]" title="Lorem ipsum dolor sit amet"
 							href="assets/images/gallery/gallery-1.jpg" target="_blank"><img
 							class="img-responsive img-thumbnail"
-							src="assets/images/gallery/gallery-thumb-1.jpg" alt="" /></a> <a
+							src="assets/images/gallery/gallery-1.jpg" alt="" /></a> <a
 							class="prettyphoto col-md-3 col-sm-3 col-xs-6"
 							rel="prettyPhoto[gallery]"
-							href="assets/images/gallery/gallery-24.jpg" target="_blank"><img
+							href="assets/images/gallery/gallery-2.jpg" target="_blank"><img
 							class="img-responsive img-thumbnail"
-							src="assets/images/gallery/gallery-thumb-24.jpg" alt="" /></a> <a
+							src="assets/images/gallery/gallery-2.jpg" alt="" /></a> <a
 							class="prettyphoto col-md-3 col-sm-3 col-xs-6"
 							rel="prettyPhoto[gallery]"
-							href="assets/images/gallery/gallery-23.jpg" target="_blank"><img
+							href="assets/images/gallery/gallery-3.jpg" target="_blank"><img
 							class="img-responsive img-thumbnail"
-							src="assets/images/gallery/gallery-thumb-23.jpg" alt="" /></a> <a
+							src="assets/images/gallery/gallery-3.jpg" alt="" /></a> <a
 							class="prettyphoto col-md-3 col-sm-3 col-xs-6"
 							rel="prettyPhoto[gallery]"
-							href="assets/images/gallery/gallery-22.jpg" target="_blank"><img
+							href="assets/images/gallery/gallery-4.jpg" target="_blank"><img
 							class="img-responsive img-thumbnail"
-							src="assets/images/gallery/gallery-thumb-22.jpg" alt="" /></a> <a
+							src="assets/images/gallery/gallery-4.jpg" alt="" /></a> <a
 							class="prettyphoto col-md-3 col-sm-3 col-xs-6"
 							rel="prettyPhoto[gallery]"
-							href="assets/images/gallery/gallery-21.jpg" target="_blank"><img
+							href="assets/images/gallery/gallery-5.jpg" target="_blank"><img
 							class="img-responsive img-thumbnail"
-							src="assets/images/gallery/gallery-thumb-21.jpg" alt="" /></a> <a
+							src="assets/images/gallery/gallery-5.jpg" alt="" /></a> <a
 							class="prettyphoto col-md-3 col-sm-3 col-xs-6"
 							rel="prettyPhoto[gallery]"
-							href="assets/images/gallery/gallery-20.jpg" target="_blank"><img
+							href="assets/images/gallery/gallery-6.jpg" target="_blank"><img
 							class="img-responsive img-thumbnail"
-							src="assets/images/gallery/gallery-thumb-20.jpg" alt="" /></a> <a
+							src="assets/images/gallery/gallery-6.jpg" alt="" /></a> <a
 							class="prettyphoto col-md-3 col-sm-3 col-xs-6"
 							rel="prettyPhoto[gallery]"
-							href="assets/images/gallery/gallery-19.jpg" target="_blank"><img
+							href="assets/images/gallery/gallery-7.jpg" target="_blank"><img
 							class="img-responsive img-thumbnail"
-							src="assets/images/gallery/gallery-thumb-19.jpg" alt="" /></a> <a
+							src="assets/images/gallery/gallery-7.jpg" alt="" /></a> <a
+							class="prettyphoto col-md-3 col-sm-3 col-xs-6"
+							rel="prettyPhoto[gallery]"
+							href="assets/images/gallery/gallery-8.jpg" target="_blank"><img
+							class="img-responsive img-thumbnail"
+							src="assets/images/gallery/gallery-8.jpg" alt="" /></a> <a
+							class="prettyphoto col-md-3 col-sm-3 col-xs-6"
+							rel="prettyPhoto[gallery]"
+							href="assets/images/gallery/gallery-11.jpg" target="_blank"><img
+							class="img-responsive img-thumbnail"
+							src="assets/images/gallery/gallery-11.jpg" alt="" /></a> <a
+							class="prettyphoto col-md-3 col-sm-3 col-xs-6"
+							rel="prettyPhoto[gallery]"
+							href="assets/images/gallery/gallery-12.jpg" target="_blank"><img
+							class="img-responsive img-thumbnail"
+							src="assets/images/gallery/gallery-12.jpg" alt="" /></a> <a
+							class="prettyphoto col-md-3 col-sm-3 col-xs-6"
+							rel="prettyPhoto[gallery]"
+							href="assets/images/gallery/gallery-13.jpg" target="_blank"><img
+							class="img-responsive img-thumbnail"
+							src="assets/images/gallery/gallery-13.jpg" alt="" /></a> <a
 							class="prettyphoto col-md-3 col-sm-3 col-xs-6"
 							rel="prettyPhoto[gallery]"
 							href="assets/images/gallery/gallery-18.jpg" target="_blank"><img
 							class="img-responsive img-thumbnail"
-							src="assets/images/gallery/gallery-thumb-18.jpg" alt="" /></a> <a
-							class="prettyphoto col-md-3 col-sm-3 col-xs-6"
-							rel="prettyPhoto[gallery]"
-							href="assets/images/gallery/gallery-17.jpg" target="_blank"><img
-							class="img-responsive img-thumbnail"
-							src="assets/images/gallery/gallery-thumb-17.jpg" alt="" /></a> <a
-							class="prettyphoto col-md-3 col-sm-3 col-xs-6"
-							rel="prettyPhoto[gallery]"
-							href="assets/images/gallery/gallery-16.jpg" target="_blank"><img
-							class="img-responsive img-thumbnail"
-							src="assets/images/gallery/gallery-thumb-16.jpg" alt="" /></a> <a
-							class="prettyphoto col-md-3 col-sm-3 col-xs-6"
-							rel="prettyPhoto[gallery]"
-							href="assets/images/gallery/gallery-15.jpg" target="_blank"><img
-							class="img-responsive img-thumbnail"
-							src="assets/images/gallery/gallery-thumb-15.jpg" alt="" /></a> <a
+							src="assets/images/gallery/gallery-18.jpg" alt="" /></a> <a
 							class="prettyphoto col-md-3 col-sm-3 col-xs-6"
 							rel="prettyPhoto[gallery]"
 							href="assets/images/gallery/gallery-14.jpg" target="_blank"><img
 							class="img-responsive img-thumbnail"
-							src="assets/images/gallery/gallery-thumb-14.jpg" alt="" /></a> <a
-							class="prettyphoto col-md-3 col-sm-3 col-xs-6"
-							rel="prettyPhoto[gallery]"
-							href="assets/images/gallery/gallery-17.jpg" target="_blank"><img
-							class="img-responsive img-thumbnail"
-							src="assets/images/gallery/gallery-thumb-13.jpg" alt="" /></a> <a
-							class="prettyphoto col-md-3 col-sm-3 col-xs-6"
-							rel="prettyPhoto[gallery]"
-							href="assets/images/gallery/gallery-16.jpg" target="_blank"><img
-							class="img-responsive img-thumbnail"
-							src="assets/images/gallery/gallery-thumb-12.jpg" alt="" /></a> <a
+							src="assets/images/gallery/gallery-14.jpg" alt="" /></a> <a
 							class="prettyphoto col-md-3 col-sm-3 col-xs-6"
 							rel="prettyPhoto[gallery]"
 							href="assets/images/gallery/gallery-15.jpg" target="_blank"><img
 							class="img-responsive img-thumbnail"
-							src="assets/images/gallery/gallery-thumb-11.jpg" alt="" /></a> <a
+							src="assets/images/gallery/gallery-15.jpg" alt="" /></a> <a
 							class="prettyphoto col-md-3 col-sm-3 col-xs-6"
 							rel="prettyPhoto[gallery]"
-							href="assets/images/gallery/gallery-14.jpg" target="_blank"><img
+							href="assets/images/gallery/gallery-16.jpg" target="_blank"><img
 							class="img-responsive img-thumbnail"
-							src="assets/images/gallery/gallery-thumb-10.jpg" alt="" /></a>
+							src="assets/images/gallery/gallery-16.jpg" alt="" /></a> <a
+							class="prettyphoto col-md-3 col-sm-3 col-xs-6"
+							rel="prettyPhoto[gallery]"
+							href="assets/images/gallery/gallery-17.jpg" target="_blank"><img
+							class="img-responsive img-thumbnail"
+							src="assets/images/gallery/gallery-17.jpg" alt="" /></a>
 					</div>
 					<!--//page-row-->
 				</div>
