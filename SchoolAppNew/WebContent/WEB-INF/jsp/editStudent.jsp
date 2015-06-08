@@ -172,7 +172,7 @@
 								<div class="form-group">
 									<label class="col-xs-3 control-label">Date Of Birth</label>
 									<div class="col-xs-5 date">
-										<div class="input-group input-append date" id="datePicker">
+										<div class="input-group input-append date" id="StudentDOB">
 											<input type="text" class="form-control" name="studentDob"
 												value="<%=student.getDob()%>" /> <span
 												class="input-group-addon add-on"><span
@@ -260,7 +260,7 @@
 								<div class="form-group">
 									<label class="col-xs-3 control-label">Date Of Joinee</label>
 									<div class="col-xs-5 date">
-										<div class="input-group input-append date" id="datePicker1">
+										<div class="input-group input-append date" id="StudentDOJ">
 											<input type="text" class="form-control" name="studentDoj"
 												value="<%=student.getDoj()%>"/> <span
 												class="input-group-addon add-on"><span

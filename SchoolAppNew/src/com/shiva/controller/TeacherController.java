@@ -50,10 +50,8 @@ public class TeacherController {
 	@RequestMapping("/addTeacher.do")
 	public ModelAndView addTeacher(HttpServletRequest request,
 			HttpServletResponse response) throws Exception {
-
-		try {
-
-			String firstName = request.getParameter("firstName");
+        try {
+	  String firstName = request.getParameter("firstName");
 			String lastName = request.getParameter("lastName");
 			String qualification = request.getParameter("qualification");
 			String subject = request.getParameter("subject");
@@ -155,7 +153,7 @@ public class TeacherController {
 			Date dob1 = null,doj1 = null;
 			try {
 				dob1 = sdf.parse(dob);
-				doj1 = sdf.parse(dob);
+				doj1 = sdf.parse(doj);
 			} catch (ParseException e) {
 				e.printStackTrace();
 			}

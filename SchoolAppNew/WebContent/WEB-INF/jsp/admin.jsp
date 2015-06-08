@@ -110,7 +110,8 @@
 							</div>
 							<!--//form-group-->
 
-							<input type="submit" class="btn btn-theme">
+							<input type="submit" value = "Submit" class="btn btn-theme">
+							<input type="reset" value = "Clear" class="btn btn-theme">
 						</form>
 					</article>
 					<!--//contact-form-->

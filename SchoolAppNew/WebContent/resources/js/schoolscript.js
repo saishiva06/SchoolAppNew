@@ -1,60 +1,72 @@
 $(document).ready(function() {
 	
-	
-	$('#datePicker')
+	$('#TeacherDOB')
     .datepicker({
         format: 'dd/mm/yyyy',
         autoclose:true
     })
     .on('changeDate', function(e) {
         // Revalidate the date field
-        $('#addStudent').formValidation('revalidateField', 'date');
+        $('#addTeacher').formValidation('revalidateField', 'dob');
         
     });
-	
-	$('#datePicker1')
+ 
+ $('#TeacherDOJ')
     .datepicker({
         format: 'dd/mm/yyyy',
         autoclose:true
     })
     .on('changeDate', function(e) {
         // Revalidate the date field
-        $('#addTeacher').formValidation('revalidateField', 'date');
+        $('#addTeacher').formValidation('revalidateField', 'doj');
         
     });
+ 
+ $('#StudentDOB')
+ .datepicker({
+     format: 'dd/mm/yyyy',
+     autoclose:true
+ })
+ .on('changeDate', function(e) {
+     // Revalidate the date field
+     $('#addStudent').formValidation('revalidateField', 'studentDob');
+     
+ });
+
+$('#StudentDOJ')
+ .datepicker({
+     format: 'dd/mm/yyyy',
+     autoclose:true
+ })
+ .on('changeDate', function(e) {
+     // Revalidate the date field
+     $('#addStudent').formValidation('revalidateField', 'studentDoj');
+     
+ });
 	
-	$('#datePicker')
-    .datepicker({
-        format: 'dd/mm/yyyy',
-        autoclose:true
-    })
-    .on('changeDate', function(e) {
-        // Revalidate the date field
-        $('#addTeacher').formValidation('revalidateField', 'date');
-        
-    });
-	
-	$('#datePicker1')
-    .datepicker({
-        format: 'dd/mm/yyyy',
-        autoclose:true
-    })
-    .on('changeDate', function(e) {
-        // Revalidate the date field
-        $('#addStudent').formValidation('revalidateField', 'date');
-        
-    });
-	
-	$('#examDatePicker')
-    .datepicker({
-        format: 'dd/mm/yyyy',
-        autoclose:true
-    })
-    .on('changeDate', function(e) {
-        // Revalidate the date field
-        $('#addResult').formValidation('revalidateField', 'date');
-        
-    });
+$('#FeePaidDatePicker')
+.datepicker({
+    format: 'dd/mm/yyyy',
+    autoclose:true
+})
+.on('changeDate', function(e) {
+    // Revalidate the date field
+    $('#addFee').formValidation('revalidateField', 'feepaidDate');
+    
+});
+
+$('#ExamDatePicker')
+.datepicker({
+    format: 'dd/mm/yyyy',
+    autoclose:true
+})
+.on('changeDate', function(e) {
+    // Revalidate the date field
+    $('#addResult').formValidation('revalidateField', 'examDate');
+    
+});
+
+
 	
     $('#addStudent').formValidation({
         message: 'This value is not valid',
@@ -146,33 +158,33 @@ $(document).ready(function() {
                     }
                 }
             },
+            
+        
             studentDob: {
-                    validators: {
-                        notEmpty: {
-                            message: 'The Student Date Of Birth  is required'
-                        },
-                        date: {
-                            format: 'DD/MM/YYYY',
-                            min: '01/01/1970',
-                            max: '30/03/2050',
-                            message: 'The date is not a valid'
-                        }
-                    }
-                }
-        },
+                selector: '.sDob',
+                   validators: {
+                       notEmpty: {
+                           message: 'The  Date Of Birth  is required'
+                       },
+                       date: {
+                           format: 'DD/MM/YYYY',
+                           message: 'The date is not a valid'
+                       }
+                   }
+               },
         studentDoj: {
-            validators: {
-                notEmpty: {
-                    message: 'The Student Date Of Joinee  is required'
-                },
-                date: {
-                    format: 'DD/MM/YYYY',
-                    min: '01/01/1970',
-                    max: '30/03/2050',
-                    message: 'The date is not a valid'
-                }
-            }
-        }
+            selector: '.sDoj',
+               validators: {
+                   notEmpty: {
+                       message: 'The  Date Of Joing  is required'
+                   },
+                   date: {
+                       format: 'DD/MM/YYYY',
+                       message: 'The date is not a valid'
+                   }
+               }
+           }
+    }
 
     });
     
@@ -248,32 +260,32 @@ $(document).ready(function() {
                     }
                 }
             },
+            
             dob: {
-                    validators: {
-                        notEmpty: {
-                            message: 'The Teacher Date Of Birth  is required'
-                        },
-                        date: {
-                            format: 'DD/MM/YYYY',
-                            min: '01/01/1970',
-                            max: '30/03/2050',
-                            message: 'The date is not a valid'
-                        }
-                    }
-                },
-                doj: {
-                    validators: {
-                        notEmpty: {
-                            message: 'The Teacher Date Of Joinee  is required'
-                        },
-                        date: {
-                            format: 'DD/MM/YYYY',
-                            min: '01/01/1950',
-                            max: '30/03/2050',
-                            message: 'The date is not a valid'
-                        }
-                    }
-                }
+                selector: '.tDob',
+                   validators: {
+                       notEmpty: {
+                           message: 'The  Date Of Birth  is required'
+                       },
+                       date: {
+                           format: 'DD/MM/YYYY',
+                           message: 'The date is not a valid'
+                       }
+                   }
+               },
+               doj: {
+            selector: '.tDoj',
+               validators: {
+                   notEmpty: {
+                       message: 'The  Date Of Joing  is required'
+                   },
+                   date: {
+                       format: 'DD/MM/YYYY',
+                       message: 'The date is not a valid'
+                   }
+               }
+           }
+       
         }
     });
     $('#addFee').formValidation({
@@ -307,9 +319,20 @@ $(document).ready(function() {
                         message: 'The feed Paid is required'
                     }
                 }
-            }
+            },
             
-            
+            feepaidDate: {
+                selector: '.fDop',
+                   validators: {
+                       notEmpty: {
+                           message: 'The  Date Of Fee paid  is required'
+                       },
+                       date: {
+                           format: 'DD/MM/YYYY',
+                           message: 'The date is not a valid'
+                       }
+                   }
+               }     
         }
     });
     $('#addResult').formValidation({
@@ -395,18 +418,18 @@ $(document).ready(function() {
                 }
             },
             examDate: {
-                    validators: {
-                        notEmpty: {
-                            message: 'The Exam Date  is required'
-                        },
-                        date: {
-                            format: 'DD/MM/YYYY',
-                            min: '01/01/2010',
-                            max: '30/03/2020',
-                            message: 'The date is not a valid'
-                        }
-                    }
-                }
+                selector: '.EDoe',
+                   validators: {
+                       notEmpty: {
+                           message: 'The  Date Of Exam is required'
+                       },
+                       date: {
+                           format: 'DD/MM/YYYY',
+                           message: 'The date is not a valid'
+                       }
+                   }
+               }
+        
         }
     });
     

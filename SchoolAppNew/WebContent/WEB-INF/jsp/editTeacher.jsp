@@ -94,7 +94,7 @@
 					<li class="nav-item"><a href="dashboard.do">Home</a></li>
 					<li class="nav-item active"><a href="#">Teacher</a></li>
 					<li class="nav-item "><a href="student.do">Student</a></li>
-					<li class="nav-item active"><a href="feeDetails.do">Fee</a></li>
+					<li class="nav-item"><a href="feeDetails.do">Fee</a></li>
 					<li class="nav-item"><a href="examResults.do">Examination</a></li>
 
 				</ul>
@@ -161,7 +161,7 @@
 								<div class="form-group">
 									<label class="col-xs-3 control-label">Date Of Birth</label>
 									<div class="col-xs-5 date">
-										<div class="input-group input-append date" id="datePicker">
+										<div class="input-group input-append date" id="TeacherDOB">
 											<input type="text" class="form-control" name="dob"
 												value="<%=teacher.getDob()%>" /> <span
 												class="input-group-addon add-on"><span
@@ -210,7 +210,7 @@
 								<div class="form-group">
 									<label class="col-xs-3 control-label">Date Of Joinee</label>
 									<div class="col-xs-5 date">
-										<div class="input-group input-append date" id="datePicker1">
+										<div class="input-group input-append date" id="TeacherDOJ">
 											<input type="text" class="form-control" name="doj"
 												value="<%=teacher.getDoj()%>" /> <span
 												class="input-group-addon add-on"><span

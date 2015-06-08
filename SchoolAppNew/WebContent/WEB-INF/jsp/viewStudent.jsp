@@ -7,7 +7,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Sri Narayana Olympiad School</title>
+<title><%=student.getAdmissionNo()%></title>
 <link type="text/css" rel="stylesheet"
 	href="resources/css/bootstrap.css" />
 <link type="text/css" rel="stylesheet"
@@ -137,8 +137,7 @@
 			<div class="col-md-12">
 				<hr />
 				<p>
-					Copyright &copy; Sri Narayana Olympiad School. <a
-						data-toggle="modal" href="">Terms and Conditions</a>
+					Copyright &copy; Sri Narayana Olympiad School.
 				</p>
 			</div>
 		</div>

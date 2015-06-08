@@ -167,7 +167,7 @@
 	</select>
 	
 	<select id="getStudentCountByClass" resultMap="StudentByClass">
-		SELECT student_class,COUNT(*) as count FROM student GROUP BY student_class;
+		SELECT student_class,COUNT(*) as count FROM student GROUP BY student_class order by student_class;
      </select>
 
 	<select id="getStudentsMap" resultClass="java.util.HashMap">

@@ -109,18 +109,7 @@ FeeDetails feeDetails = (FeeDetails)request.getAttribute("feeDetails");
 									<div class="col-sm-5">
 										<select name="StudentClass" class="form-control" readonly="readonly">
 										  <option value = "<%=feeDetails.getStudentClass() %>" selected = "selected"><%=feeDetails.getStudentClass() %></option>
-											<option value="lkg">lkg</option>
-											<option value="ukg">ukg</option>
-											<option value="1st class">1st class</option>
-											<option value="2nd class">2nd class</option>
-											<option value="3rd class">3rd class</option>
-											<option value="4th class">4th class</option>
-											<option value="5th class">5th class</option>
-											<option value="6th class">6th class</option>
-											<option value="7th class">7th class</option>
-											<option value="8th class">8th class</option>
-											<option value="9th class">9th class</option>
-											<option value="SSC">SSC</option>
+											
 										</select>
 									</div>
 								</div>
@@ -150,8 +139,8 @@ FeeDetails feeDetails = (FeeDetails)request.getAttribute("feeDetails");
 								<div class="form-group">
 									<label class="col-xs-3 control-label">Fee Paid Date</label>
 									<div class="col-xs-5 date">
-										<div class="input-group input-append date" 	id="datePicker">
-											<input type="text" class="form-control"  id="feepaidDate"   name="feepaidDate"  value = "<%=feeDetails.getFeePayDate1()%> "
+										<div class="input-group input-append date" 	id="FeePaidDatePicker">
+											<input type="text" class="form-control"  name="feepaidDate"  value = "<%=feeDetails.getFeePayDate1()%> "
 											 placeholder="" /> <span
 												class="input-group-addon add-on"><span
 												class="glyphicon glyphicon-calendar"></span></span>

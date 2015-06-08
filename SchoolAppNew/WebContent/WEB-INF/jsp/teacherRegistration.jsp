@@ -142,8 +142,8 @@
 								<div class="form-group">
 									<label class="col-xs-3 control-label">Date Of Birth</label>
 									<div class="col-xs-5 date">
-										<div class="input-group input-append date" id="datePicker">
-											<input type="text" class="form-control" name="dob"
+										<div class="input-group input-append date" id="TeacherDOB">
+											<input type="text" class="form-control tDob" name="dob" 
 												placeholder="01/01/2000" /> <span
 												class="input-group-addon add-on"><span
 												class="glyphicon glyphicon-calendar"></span></span>
@@ -191,8 +191,8 @@
 								<div class="form-group">
 									<label class="col-xs-3 control-label">Date Of Joinee</label>
 									<div class="col-xs-5 date">
-										<div class="input-group input-append date" id="datePicker1">
-											<input type="text" class="form-control" name="doj"
+										<div class="input-group input-append date" id="TeacherDOJ">
+											<input type="text" class="form-control tDoj" name="doj"
 												placeholder="DD/MM/YYYY" /> <span
 												class="input-group-addon add-on"><span
 												class="glyphicon glyphicon-calendar"></span></span>
@@ -203,6 +203,8 @@
 									<div class="col-sm-9 col-sm-offset-3">
 										<button type="submit" class="btn btn-primary" name="signup"
 											value="Sign up">Submit</button>
+											<button type="reset" class="btn btn-primary" name="reset"
+											value="RESET">Clear</button>
 									</div>
 								</div>
 							</form>

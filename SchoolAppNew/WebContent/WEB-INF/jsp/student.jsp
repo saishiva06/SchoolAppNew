@@ -145,10 +145,10 @@
 											id="dataTables-example">
 											<thead>
 												<tr>
+												   <th>Roll No</th>
 													<th>Admission No</th>
 													<th>Name</th>
 													<th>Class</th>
-													<th>Section</th>
 													<th>Total Fee</th>
 													<th>Paid Fee</th>
 													<th>Due Fee</th>
@@ -164,11 +164,11 @@
 															for (int i = 0; i < mydata.size(); i++) {
 																Student student = mydata.get(i);
 													%>
+													<td><%=student.getRollno()%></td>
 													<td><%=student.getAdmissionNo()%></td>
 													<td><%=student.getStudentFirstName() + " "
 							+ student.getStudentLastName()%></td>
 													<td><%=student.getStudentClass()%></td>
-													<td><%=student.getSection()%></td>
 													<td><%=student.getFees()%></td>
 													<td><%=calculation.getFeePaid(student)%></td>
 													<td><%=calculation.getDueFee(student)%></td>

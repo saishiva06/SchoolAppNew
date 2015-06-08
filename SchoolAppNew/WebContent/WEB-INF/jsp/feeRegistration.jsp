@@ -202,8 +202,8 @@
 								<div class="form-group">
 									<label class="col-xs-3 control-label">Fee Paid Date</label>
 									<div class="col-xs-5 date">
-										<div class="input-group input-append date" id="datePicker">
-											<input type="text" class="form-control" name="feepaidDate"
+										<div class="input-group input-append date" id="FeePaidDatePicker">
+											<input type="text" class="form-control fDop" name="feepaidDate"
 												placeholder="01/01/2000" /> <span
 												class="input-group-addon add-on"><span
 												class="glyphicon glyphicon-calendar"></span></span>
@@ -215,6 +215,8 @@
 									<div class="col-sm-9 col-sm-offset-3">
 										<button type="submit" class="btn btn-primary" name="signup"
 											value="Sign up">Submit</button>
+											<button type="reset" class="btn btn-primary" name="reset"
+											value="RESET">Clear</button>
 									</div>
 								</div>
 							</form>
@@ -258,15 +260,14 @@
 				},
 			success : function(result) {
 						if(result) {
-						console.log("3535345" + result);
 						 $("#studentName").val(result.studentFirstName +" " +result.studentLastName);
                          $("#StudentClass").val(result.studentClass);
                          $("#section").val(result.section);
                          $("#medium").val(result.medium);
                          $("#mobileNo").val(result.phoneNumber);
+                          $("#errorMessage").text("");
                        } else {
-                        console.log("38888888535345" + result);
-						$("#studentName").val("");
+                       $("#studentName").val("");
                         $("#StudentClass").val("");
                         $("#section").val("");
                         $("#medium").val("");
@@ -275,12 +276,12 @@
                     }
                       },
 			error : function(result) {
-			          console.log("38888888535345" + result);
-						$("#studentName").val("");
+			          	$("#studentName").val("");
                         $("#StudentClass").val("");
                         $("#section").val("");
                         $("#medium").val("");
                         $("#mobileNo").val("");
+                         $("#errorMessage").text("Please enter a valid Admission number");
                     }
 		});
 	});

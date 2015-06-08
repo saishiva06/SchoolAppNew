@@ -149,6 +149,8 @@
 									<div class="col-sm-9 col-sm-offset-3">
 										<button type="submit" class="btn btn-primary" name="signup"
 											value="Sign up">Submit</button>
+											<button type="reset" class="btn btn-primary" name="reset"
+											value="RESET">Clear</button>
 									</div>
 								</div>
 							</form>
