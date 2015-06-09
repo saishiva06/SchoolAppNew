@@ -111,6 +111,7 @@
 						<li class="nav-item active"><a href="#">Student</a></li>
 						<li class="nav-item"><a href="feeDetails.do">Fee</a></li>
 						<li class="nav-item"><a href="examResults.do">Examination</a></li>
+						<li class="nav-item"><a href="budgetDashboard.do">Budget</a></li>
 
 					</ul>
 					<!--//nav-->

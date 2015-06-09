@@ -9,7 +9,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.shiva.entity.BudgetDetails;
 import com.shiva.entity.StudentByClass;
+import com.shiva.service.BudgetDetailsService;
 import com.shiva.service.StudentService;
 import com.shiva.service.TeacherService;
 import com.shiva.service.UserService;
@@ -22,6 +24,15 @@ public class DashboardController {
 	private UserService userService;
 	private StudentService studentService;
 	private TeacherService teacherService;
+	public BudgetDetailsService getBudgetDetailsService() {
+		return budgetDetailsService;
+	}
+
+	public void setBudgetDetailsService(BudgetDetailsService budgetDetailsService) {
+		this.budgetDetailsService = budgetDetailsService;
+	}
+	private BudgetDetailsService budgetDetailsService;
+	
 
 
 	public UserService getUserService() {
@@ -80,6 +91,25 @@ public class DashboardController {
 		mav.setViewName("dashboard");
 		if(studentByClassList!=null && studentByClassList.size()!=0) {
 			mav.addObject("studentsData", studentByClassList);
+		}
+		return mav;
+
+}
+	@RequestMapping("/budgetDashboard.do")
+	public ModelAndView loadBudgetDashboard(HttpServletRequest request) throws Exception {
+		List<StudentByClass> studentByClassList= studentService.getStudentCountByClass();
+		int teacherCount = teacherService.getTeachers().size();
+		int studentsCount = studentService.getStudents().size();
+		session.setAttribute("teacherCount", teacherCount);
+		session.setAttribute("studentsCount", studentsCount);
+		List<BudgetDetails> budgetDetailsList = budgetDetailsService.getBudgetDetailsMap();
+		ModelAndView mav = new ModelAndView();
+		mav.setViewName("budgetDashboard");
+		if(studentByClassList!=null && studentByClassList.size()!=0) {
+			mav.addObject("studentsData", studentByClassList);
+		}
+		if(budgetDetailsList!=null && budgetDetailsList.size()!=0) {
+			mav.addObject("budgetDetailsData", budgetDetailsList);
 		}
 		return mav;
 

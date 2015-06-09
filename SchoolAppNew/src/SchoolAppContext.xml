@@ -34,6 +34,7 @@ xsi:schemaLocation="http://www.springframework.org/schema/beans
      		<mvc:mapping path="/editTeacher.do" />
      		<mvc:mapping path="/editFeeDetails.do" />
      		<mvc:mapping path="/viewFeeDetails.do" />
+     		 <mvc:mapping path="/budgetDashboard.do" />
      		
      		
      		<bean class="com.shiva.util.SessionHandler" />
@@ -64,7 +65,7 @@ xsi:schemaLocation="http://www.springframework.org/schema/beans
 	<bean name="studentController" class="com.shiva.controller.StudentController" scope="request"><property name="studentService" ref="studentServiceImpl" /></bean>
 	<bean name="feeDetailsController" class="com.shiva.controller.FeeDetailsController" scope="request"><property name="feeDetailsService" ref="feeDetailsServiceImpl" /><property name="studentService" ref="studentServiceImpl" /></bean>
 	<bean name="examResultsController" class="com.shiva.controller.ExamResultsController" scope="request"><property name="examResultsService" ref="examResultsServiceImpl" /></bean>
-	 <bean name="dashboardController" class="com.shiva.controller.DashboardController"><property name="studentService" ref="studentServiceImpl" /><property name="teacherService" ref="teacherServiceImpl" /></bean>
+	 <bean name="dashboardController" class="com.shiva.controller.DashboardController"><property name="studentService" ref="studentServiceImpl" /><property name="teacherService" ref="teacherServiceImpl" /><property name="budgetDetailsService" ref="budgetDetailsServiceImpl" /></bean>
 	
 
 	<bean id="userServiceImpl" class="com.shiva.service.UserServiceImpl" scope="request"><property name="userDao" ref="userDaoImpl" /></bean>
@@ -72,6 +73,7 @@ xsi:schemaLocation="http://www.springframework.org/schema/beans
 	<bean id="studentServiceImpl" class="com.shiva.service.StudentServiceImpl" scope="request"><property name="studentDao" ref="studentDaoImpl" /></bean>
 	<bean id="feeDetailsServiceImpl" class="com.shiva.service.FeeDetailsServiceImpl" scope="request"><property name="feeDetailsDao" ref="feeDetailsDaoImpl" /></bean>
 	<bean id="examResultsServiceImpl" class="com.shiva.service.ExamResultsServiceImpl" scope="request"><property name="examResultsDao" ref="examResultsDaoImpl" /></bean>
+	<bean id="budgetDetailsServiceImpl" class="com.shiva.service.BudgetDetailsServiceImpl" scope="request"><property name="budgetDetailsDao" ref="budgetDetailsDaoImpl" /></bean>
 	
 	
 	
@@ -80,6 +82,7 @@ xsi:schemaLocation="http://www.springframework.org/schema/beans
     <bean id="studentDaoImpl" class="com.shiva.dao.StudentDaoImpl" scope="request"><property name="sqlMapClient" ref="sqlMapClient" /></bean>
     <bean id="feeDetailsDaoImpl" class="com.shiva.dao.FeeDetailsDaoImpl" scope="request"><property name="sqlMapClient" ref="sqlMapClient" /></bean>
     <bean id="examResultsDaoImpl" class="com.shiva.dao.ExamResultsDaoImpl" scope="request"><property name="sqlMapClient" ref="sqlMapClient" /></bean>
+   <bean id="budgetDetailsDaoImpl" class="com.shiva.dao.BudgetDetailsDaoImpl" scope="request"><property name="sqlMapClient" ref="sqlMapClient" /></bean>
 
 
 	<bean id="sqlMapClient" class="org.springframework.orm.ibatis.SqlMapClientFactoryBean">

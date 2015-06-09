@@ -1,15 +1,15 @@
-<%@page import="com.shiva.entity.StudentByClass"%>
+<%@page import="com.shiva.entity.BudgetDetails"%>
 <%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	session="true" pageEncoding="ISO-8859-1"%>
 
 <%
-	List<StudentByClass> mydata = (List<StudentByClass>) request
-			.getAttribute("studentsData");
 	int teacherCount = (Integer) session.getAttribute("teacherCount");
 	int studentsCount = (Integer) session.getAttribute("studentsCount");
 	int dueFee = (Integer) session.getAttribute("dueFee");
 	int collectedFee = (Integer) session.getAttribute("collectedFee");
+	List<BudgetDetails> BudgetDetailsData = (List<BudgetDetails>) request
+			.getAttribute("budgetDetailsData");
 %>
 <!DOCTYPE html>
 <html>
@@ -83,12 +83,12 @@
 			<!--//navbar-header-->
 			<div class="navbar-collapse collapse" id="navbar-collapse">
 				<ul class="nav navbar-nav">
-					<li class="nav-item active"><a href="#">DashBoard</a></li>
+					<li class="nav-item"><a href="dashboard.do">DashBoard</a></li>
 					<li class="nav-item"><a href="teacher.do">Teacher</a></li>
 					<li class="nav-item"><a href="student.do">Student</a></li>
 					<li class="nav-item"><a href="feeDetails.do">Fee</a></li>
 					<li class="nav-item"><a href="examResults.do">Examination</a></li>
-					<li class="nav-item"><a href="budgetDashboard.do">Budget</a></li>
+					<li class="nav-item active"><a href="#">Budget</a></li>
 
 				</ul>
 				<!--//nav-->
@@ -113,8 +113,7 @@
 							<i class="fa fa-bar-chart-o fa-5x"></i>
 							<h3><%=studentsCount%></h3>
 						</div>
-						<div class="panel-footer back-footer-green">Total No of
-							Students</div>
+						<div class="panel-footer back-footer-green">Total School Funds</div>
 					</div>
 				</div>
 				<div class="col-md-3 col-sm-12 col-xs-12">
@@ -123,8 +122,7 @@
 							<i class="fa fa-shopping-cart fa-5x"></i>
 							<h3><%=teacherCount%></h3>
 						</div>
-						<div class="panel-footer back-footer-blue">Total No of
-							Teachers</div>
+						<div class="panel-footer back-footer-blue">Available Limit</div>
 					</div>
 				</div>
 				<div class="col-md-3 col-sm-12 col-xs-12">
@@ -133,8 +131,7 @@
 							<i class="fa fa fa-comments fa-5x"></i>
 							<h3>15000</h3>
 						</div>
-						<div class="panel-footer back-footer-red">Total Fee
-							Collected</div>
+						<div class="panel-footer back-footer-red">Total Expenses</div>
 					</div>
 				</div>
 				<div class="col-md-3 col-sm-12 col-xs-12">
@@ -144,7 +141,7 @@
 							<i class="fa fa-users fa-5x"></i>
 							<h3>36,752</h3>
 						</div>
-						<div class="panel-footer back-footer-brown">Total Due Fee</div>
+						<div class="panel-footer back-footer-brown">Total Amount Of Loans</div>
 					</div>
 				</div>
 			</div>
@@ -152,70 +149,65 @@
 	</div>
 	<div class="container">
 		<div class="panel panel-primary">
-			<div class="panel-heading">STUDENT DETAILS</div>
+			<div class="panel-heading">TOP 5 EXPENSES</div>
 			<div class="panel-body">
 				<div class="container">
 					<div class="row">
 						<div class="col-md-12">
-							<div class="table-responsive">
-								<table class="table table-striped table-bordered table-hover">
-									<thead>
-										<tr>
-											<th>Total Number Of Students in School</th>
-											<th><%=studentsCount%></th>
-										</tr>
-										<tr>
-											<th>Class</th>
-											<th>Total Number Of Students</th>
-											<th>Class</th>
-											<th>Total Number Of Students</th>
-										</tr>
-									</thead>
-									<tbody>
-										<%
-											if (mydata != null && mydata.size() > 0) {
-												int i = 0;
-												while (i < mydata.size()) {
-													StudentByClass studentByClass = mydata.get(i);
-										%>
-										<tr>
-											<td><%=studentByClass.getStudentClass()%></td>
-											<td><%=studentByClass.getCount()%></td>
+						<div class="table-responsive">
+									<table class="table table-striped table-bordered table-hover"
+										id="dataTables-example">
+										<thead>
+											<tr>
+											     <th>SNo</th>
+												<th>Budget Name</th>
+												<th>Cost</th>
+												<th>Done By</th>
+												<th>Budget Type</th>
+												<th>Budget Date</th>
+												<th>Modified By</th>
+												<th>Edit</th>
+												<th>Delete</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<%
+													if (BudgetDetailsData != null && BudgetDetailsData.size() > 0) {
+														for (int i = 0; i < BudgetDetailsData.size(); i++) {
+															BudgetDetails budgetDetails = BudgetDetailsData.get(i);
+												%>
+												<td><%=i + 1%></td>
+												<td><%=budgetDetails.getBudgetName()%></td>
+												<td><%=budgetDetails.getBudgetCost()%></td>
+												<td><%=budgetDetails.getBudgetBy()%></td>
+												<td><%=budgetDetails.getBudgetType()%></td>
+												<td><%=budgetDetails.getBudgetDate()%></td>
+												<td><%=budgetDetails.getOther()%></td>
+												<td><input type="button" name="edit" value="Edit"
+													class="btn btn-primary"
+													onclick="editbudgetDetails('<%=budgetDetails.getBudgetId()%>')" /></td>
+												<td><input type="button" name="delete" value="Delete"
+													class="btn btn-danger"
+													onclick="deletebudgetDetails('<%=budgetDetails.getBudgetId()%>')" /></td>
+											</tr>
 											<%
-												i++;
-														if (i < mydata.size()) {
-															studentByClass = mydata.get(i);
-											%>
-											<td><%=studentByClass.getStudentClass()%></td>
-											<td><%=studentByClass.getCount()%></td>
-										</tr>
-										<%
-											} else {
-										%>
-										<td></td>
-										<td></td>
-										</tr>
-										<%
-											}
-													i++;
 												}
-											}
-										%>
-									</tbody>
+												}
+											%>
+										</tbody>
 
-								</table>
-
-							</div>
-						</div>
+									</table>
+								</div>	
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-
+</div>
 	<div class="container">
 		<div class="panel panel-primary">
-			<div class="panel-heading">STAFF DETAILS</div>
+			<div class="panel-heading">RECENT 5 TRANSACTIONS</div>
 			<div class="panel-body">
 				<div class="container">
 					<div class="row">
@@ -224,7 +216,7 @@
 								<table class="table table-striped table-bordered table-hover">
 									<thead>
 										<tr>
-											<th>Total Number Of Staff</th>
+											<th>Annual Day Celebrations Budget</th>
 											<td><%=teacherCount%></td>
 										</tr>
 									</thead>

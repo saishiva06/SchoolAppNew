@@ -84,6 +84,16 @@
 		<result property="count" column="count"/>
 		</resultMap>
 		
+		<resultMap id="BudgetDetails" class="com.shiva.entity.BudgetDetails">
+	    <result property="budgetId" column="budget_id" />
+		<result property="budgetName" column="budget_name" />
+		<result property="budgetCost" column="budget_cost" />
+		<result property="budgetBy" column="budget_by" />
+		<result property="budgetDate" column="budget_date" />
+		<result property="budgetType" column="budget_type" />
+		<result property="other" column="other" />
+	</resultMap>
+		
 	<!-- UserDao -->
     
 	<select id="authenticateUser" parameterClass="java.util.Map"
@@ -254,4 +264,32 @@
    <select id="getAllResultsBySearch" parameterClass="java.util.Map" resultMap="ExamResults">
 		select e.* from exam_results e where (e.student_name=#student_name#) OR ( (e.student_class=#student_class#) and (e.roll_num=#roll_no#) )
 	</select>
+	
+	 <!-- BudgetDao -->
+	 <insert id="createBudgetDetails" parameterClass="java.util.Map">
+		insert into budget_details(budget_name,budget_cost, budget_by, budget_date, budget_type,other) values (#budget_name#,#budget_cost#, #budget_by#, #budget_date#, #budget_type#,#other#)
+		<selectKey resultClass="int" keyProperty="id">
+			select
+			last_insert_id() as id
+		</selectKey>
+	</insert>
+	
+	<select id="getBudgetDetailsMap" resultMap="BudgetDetails">
+		select b.* from budget_details b;
+	</select>
+	<select id="getBudgetDetailsById" parameterClass="integer" resultMap="BudgetDetails">
+		select b.* from budget_details b where b.budget_id=#budget_id#;
+	</select>
+	
+    <update id="updateBudgetDetails" parameterClass="java.util.Map">
+		update budget_details b set b.budget_name=#budget_name#, b.budget_cost=#budget_cost#, b.budget_by=#budget_by#, b.budget_date=#budget_date#,b.budget_type=#budget_type# b.other= #other# where budget_id =#budget_id#
+	</update>
+	<delete id="deleteBudgetDetails">
+		delete from budget_details where budget_id =#budget_id#
+	</delete>
+	
+	<select id="getAllBudgetDetailsBySearch" parameterClass="java.util.Map" resultMap="BudgetDetails">
+		select f.* from budget_details f where (f.budget_name=#budget_name#) OR  (f.student_class=#student_class#) OR (f.roll_no=#roll_no#)
+	</select>
+	
 </sqlMap>
