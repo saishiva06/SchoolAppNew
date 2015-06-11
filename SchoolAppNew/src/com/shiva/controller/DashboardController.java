@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.shiva.entity.BudgetDetails;
+import com.shiva.entity.Student;
 import com.shiva.entity.StudentByClass;
 import com.shiva.service.BudgetDetailsService;
 import com.shiva.service.StudentService;
@@ -97,21 +98,32 @@ public class DashboardController {
 }
 	@RequestMapping("/budgetDashboard.do")
 	public ModelAndView loadBudgetDashboard(HttpServletRequest request) throws Exception {
-		List<StudentByClass> studentByClassList= studentService.getStudentCountByClass();
-		int teacherCount = teacherService.getTeachers().size();
-		int studentsCount = studentService.getStudents().size();
-		session.setAttribute("teacherCount", teacherCount);
-		session.setAttribute("studentsCount", studentsCount);
 		List<BudgetDetails> budgetDetailsList = budgetDetailsService.getBudgetDetailsMap();
+		BudgetDetails FundsDetails = budgetDetailsList.get(0);
+		BudgetDetails limitDetails = budgetDetailsList.get(1);
+		BudgetDetails expensesDetails = budgetDetailsList.get(2);
+		BudgetDetails loanDetails = budgetDetailsList.get(3);
 		ModelAndView mav = new ModelAndView();
 		mav.setViewName("budgetDashboard");
-		if(studentByClassList!=null && studentByClassList.size()!=0) {
-			mav.addObject("studentsData", studentByClassList);
-		}
+		mav.addObject("totalFunds", FundsDetails.getBudgetCost());
+		mav.addObject("availableLimit", limitDetails.getBudgetCost());
+		mav.addObject("totalExpenses", expensesDetails.getBudgetCost());
+		mav.addObject("totalLoans", loanDetails.getBudgetCost());
+		
+		List<BudgetDetails> recentDetailsList = budgetDetailsService.getRecentExpensesDetailsMap();
+		List<BudgetDetails> topDetailsList = budgetDetailsService.getTopExpensesDetailsMap();
+		
 		if(budgetDetailsList!=null && budgetDetailsList.size()!=0) {
-			mav.addObject("budgetDetailsData", budgetDetailsList);
+			mav.addObject("topExpensesData", budgetDetailsList);
+			mav.addObject("latestExpensesData", budgetDetailsList);
+		}
+		if(recentDetailsList!=null && recentDetailsList.size()!=0) {
+			mav.addObject("recentDetailsList", recentDetailsList);
+		}
+		if(topDetailsList!=null && topDetailsList.size()!=0) {
+			mav.addObject("topDetailsList", topDetailsList);
 		}
 		return mav;
-
+     
 }
 }

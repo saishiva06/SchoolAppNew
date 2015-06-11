@@ -4,12 +4,13 @@
 	session="true" pageEncoding="ISO-8859-1"%>
 
 <%
-	int teacherCount = (Integer) session.getAttribute("teacherCount");
-	int studentsCount = (Integer) session.getAttribute("studentsCount");
-	int dueFee = (Integer) session.getAttribute("dueFee");
-	int collectedFee = (Integer) session.getAttribute("collectedFee");
-	List<BudgetDetails> BudgetDetailsData = (List<BudgetDetails>) request
-			.getAttribute("budgetDetailsData");
+	
+	String totalFunds = (String) request.getAttribute("totalFunds");
+	String availableLimit = (String) request.getAttribute("availableLimit");
+	String totalLoans = (String) request.getAttribute("totalLoans");
+	String totalExpenses = (String) request.getAttribute("totalExpenses");
+	List<BudgetDetails> latestExpensesData = (List<BudgetDetails>) request.getAttribute("recentDetailsList");
+	List<BudgetDetails> topExpensesData = (List<BudgetDetails>) request.getAttribute("topDetailsList");
 %>
 <!DOCTYPE html>
 <html>
@@ -111,7 +112,7 @@
 						class="panel panel-primary text-center no-boder bg-color-green">
 						<div class="panel-body">
 							<i class="fa fa-bar-chart-o fa-5x"></i>
-							<h3><%=studentsCount%></h3>
+							<h3><%=totalFunds%></h3>
 						</div>
 						<div class="panel-footer back-footer-green">Total School Funds</div>
 					</div>
@@ -120,7 +121,7 @@
 					<div class="panel panel-primary text-center no-boder bg-color-blue">
 						<div class="panel-body">
 							<i class="fa fa-shopping-cart fa-5x"></i>
-							<h3><%=teacherCount%></h3>
+							<h3><%=availableLimit%></h3>
 						</div>
 						<div class="panel-footer back-footer-blue">Available Limit</div>
 					</div>
@@ -129,7 +130,7 @@
 					<div class="panel panel-primary text-center no-boder bg-color-red">
 						<div class="panel-body">
 							<i class="fa fa fa-comments fa-5x"></i>
-							<h3>15000</h3>
+							<h3><%=totalExpenses%></h3>
 						</div>
 						<div class="panel-footer back-footer-red">Total Expenses</div>
 					</div>
@@ -139,7 +140,7 @@
 						class="panel panel-primary text-center no-boder bg-color-brown">
 						<div class="panel-body">
 							<i class="fa fa-users fa-5x"></i>
-							<h3>36,752</h3>
+							<h3><%=totalLoans%></h3>
 						</div>
 						<div class="panel-footer back-footer-brown">Total Amount Of Loans</div>
 					</div>
@@ -149,14 +150,14 @@
 	</div>
 	<div class="container">
 		<div class="panel panel-primary">
-			<div class="panel-heading">TOP 5 EXPENSES</div>
+			<div class="panel-heading">LATEST 5 EXPENSES</div>
 			<div class="panel-body">
 				<div class="container">
 					<div class="row">
 						<div class="col-md-12">
 						<div class="table-responsive">
 									<table class="table table-striped table-bordered table-hover"
-										id="dataTables-example">
+										>
 										<thead>
 											<tr>
 											     <th>SNo</th>
@@ -165,28 +166,74 @@
 												<th>Done By</th>
 												<th>Budget Type</th>
 												<th>Budget Date</th>
-												<th>Modified By</th>
-												<th>Edit</th>
 												<th>Delete</th>
 											</tr>
 										</thead>
 										<tbody>
 											<tr>
 												<%
-													if (BudgetDetailsData != null && BudgetDetailsData.size() > 0) {
-														for (int i = 0; i < BudgetDetailsData.size(); i++) {
-															BudgetDetails budgetDetails = BudgetDetailsData.get(i);
+													if (latestExpensesData != null && latestExpensesData.size() > 0) {
+														for (int i = 0; i < latestExpensesData.size(); i++) {
+															BudgetDetails budgetDetails = latestExpensesData.get(i);
 												%>
 												<td><%=i + 1%></td>
-												<td><%=budgetDetails.getBudgetName()%></td>
+												<td><%=budgetDetails.getBudgetName().toUpperCase()%></td>
 												<td><%=budgetDetails.getBudgetCost()%></td>
-												<td><%=budgetDetails.getBudgetBy()%></td>
-												<td><%=budgetDetails.getBudgetType()%></td>
+												<td><%=budgetDetails.getBudgetBy().toUpperCase()%></td>
+												<td><%=budgetDetails.getBudgetType().toUpperCase()%></td>
 												<td><%=budgetDetails.getBudgetDate()%></td>
-												<td><%=budgetDetails.getOther()%></td>
-												<td><input type="button" name="edit" value="Edit"
-													class="btn btn-primary"
-													onclick="editbudgetDetails('<%=budgetDetails.getBudgetId()%>')" /></td>
+												<td><input type="button" name="delete" value="Delete"
+													class="btn btn-danger"
+													onclick="deletebudgetDetails('<%=budgetDetails.getBudgetId()%>')" /></td>
+											</tr>
+											<%
+												}
+												}
+											%>
+										</tbody>
+
+									</table>
+								</div>	
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	</div>
+<div class="container">
+		<div class="panel panel-primary">
+			<div class="panel-heading">TOP 5 EXPENSES</div>
+			<div class="panel-body">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-12">
+						<div class="table-responsive">
+									<table class="table table-striped table-bordered table-hover"
+										>
+										<thead>
+											<tr>
+											     <th>SNo</th>
+												<th>Budget Name</th>
+												<th>Cost</th>
+												<th>Done By</th>
+												<th>Budget Type</th>
+												<th>Budget Date</th>
+												<th>Delete</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<%
+													if (topExpensesData != null && topExpensesData.size() > 0) {
+														for (int i = 0; i < topExpensesData.size(); i++) {
+															BudgetDetails budgetDetails = topExpensesData.get(i);
+												%>
+												<td><%=i + 1%></td>
+												<td><%=budgetDetails.getBudgetName().toUpperCase()%></td>
+												<td><%=budgetDetails.getBudgetCost()%></td>
+												<td><%=budgetDetails.getBudgetBy().toUpperCase()%></td>
+												<td><%=budgetDetails.getBudgetType().toUpperCase()%></td>
+												<td><%=budgetDetails.getBudgetDate()%></td>
 												<td><input type="button" name="delete" value="Delete"
 													class="btn btn-danger"
 													onclick="deletebudgetDetails('<%=budgetDetails.getBudgetId()%>')" /></td>
@@ -205,32 +252,6 @@
 		</div>
 	</div>
 </div>
-	<div class="container">
-		<div class="panel panel-primary">
-			<div class="panel-heading">RECENT 5 TRANSACTIONS</div>
-			<div class="panel-body">
-				<div class="container">
-					<div class="row">
-						<div class="col-md-12">
-							<div class="table-responsive">
-								<table class="table table-striped table-bordered table-hover">
-									<thead>
-										<tr>
-											<th>Annual Day Celebrations Budget</th>
-											<td><%=teacherCount%></td>
-										</tr>
-									</thead>
-									<tbody>
-									</tbody>
-								</table>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-
 	<footer id="footer-sec" class="footer">
 		<div class="bottom-bar">
 			<div class="container">

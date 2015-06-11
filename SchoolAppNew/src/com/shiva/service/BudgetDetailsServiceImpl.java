@@ -29,8 +29,8 @@ public class BudgetDetailsServiceImpl implements BudgetDetailsService {
 	}
 
 	@Override
-	public int updateBudgetDetails(Map<String, Object> budgetDeailsMap) {
-		return budgetDetailsDao.updateBudgetDetails(budgetDeailsMap);
+	public int updateBudgetDetails(BudgetDetails budgetDetails) {
+		return budgetDetailsDao.updateBudgetDetails(budgetDetails);
 	}
 
 	@Override
@@ -50,8 +50,18 @@ public class BudgetDetailsServiceImpl implements BudgetDetailsService {
 	}
 
 	@Override
-	public BudgetDetails getBudgetDetailsById(String reciptId) {
+	public BudgetDetails getBudgetDetailsById(int reciptId) {
 		return budgetDetailsDao.getBudgetDetailsById(reciptId);
+	}
+
+	@Override
+	public List<BudgetDetails> getTopExpensesDetailsMap() {
+		return budgetDetailsDao.getTopExpensesDetailsMap();
+	}
+
+	@Override
+	public List<BudgetDetails> getRecentExpensesDetailsMap() {
+		return budgetDetailsDao.getRecentExpensesDetailsMap();
 	}
 
 }

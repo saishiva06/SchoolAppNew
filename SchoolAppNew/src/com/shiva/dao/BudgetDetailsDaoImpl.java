@@ -38,9 +38,18 @@ BudgetDetailsDao {
 	}
 
 	@Override
-	public int updateBudgetDetails(Map<String, Object> feeDeailsMap) {
+	public int updateBudgetDetails(BudgetDetails budgetDetails) {
 		try {
-			int result = template.update("updateBudgetDetails", feeDeailsMap);
+			Map<String, Object> paramsMap = new HashMap<String, Object>();
+			paramsMap.put("budget_id", budgetDetails.getBudgetId());
+			paramsMap.put("budget_name", budgetDetails.getBudgetName());
+			paramsMap.put("budget_cost", budgetDetails.getBudgetCost());
+			paramsMap.put("budget_by", budgetDetails.getBudgetBy());
+			paramsMap.put("budget_date", budgetDetails.getBudgetDate());
+			paramsMap.put("budget_type", budgetDetails.getBudgetType());
+			paramsMap.put("other", budgetDetails.getOther());
+			
+			int result = template.update("updateBudgetDetails", paramsMap);
 			return result;
 		} catch (Exception ex) {
 			// log.error("TeacherDao:updateTeacher::" + ex.getMessage());
@@ -92,15 +101,40 @@ BudgetDetailsDao {
 	}
 
 	@Override
-	public BudgetDetails getBudgetDetailsById(String reciptId) {
+	public BudgetDetails getBudgetDetailsById(int reciptId) {
 		try {
-			BudgetDetails feeDetails = (BudgetDetails) template.queryForObject("getBudgetDetailsById", reciptId);
-            return feeDetails;
+			BudgetDetails budgetDetails = (BudgetDetails) template.queryForObject("getBudgetDetailsById", reciptId);
+            return budgetDetails;
 		} catch (Exception e) {
 			e.printStackTrace();
 			return null;
 		}
 	}
 
+	@SuppressWarnings({ "finally", "unchecked" })
+	@Override
+	public List<BudgetDetails> getTopExpensesDetailsMap() {
+		List<BudgetDetails> resultList = new LinkedList<BudgetDetails>();
+		try {
+			resultList = template.queryForList("getTopExpensesDetailsMap");
+		} catch (Exception ex) {
+			System.out.println(ex.getMessage());
+		} finally {
+			return resultList;
+		}
+	}
+
+	@SuppressWarnings({ "unchecked", "finally" })
+	@Override
+	public List<BudgetDetails> getRecentExpensesDetailsMap() {
+		List<BudgetDetails> resultList = new LinkedList<BudgetDetails>();
+		try {
+			resultList = template.queryForList("getRecentExpensesDetailsMap");
+		} catch (Exception ex) {
+			System.out.println(ex.getMessage());
+			} finally {
+			return resultList;
+		}
+	}
 	
 }

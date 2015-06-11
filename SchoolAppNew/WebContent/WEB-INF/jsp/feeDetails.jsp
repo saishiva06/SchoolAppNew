@@ -30,9 +30,10 @@
 		f.submit();
 	}
 
-	function deleteFeeDetails(recieptNo) {
+	function deleteFeeDetails(recieptNo,feePaid) {
 		var f = document.form2;
 		f.recieptNo.value = recieptNo;
+		f.feePaid.value = feePaid;
 		f.method = "post";
 		f.action = 'deleteFeeDetails.do';
 		f.submit();
@@ -173,7 +174,7 @@
 													onclick="editFeeDetails('<%=feeDetails.getRecieptNo()%>')" /></td>
 												<td><input type="button" name="delete" value="Delete"
 													class="btn btn-danger"
-													onclick="deleteFeeDetails('<%=feeDetails.getRecieptNo()%>')" /></td>
+													onclick="deleteFeeDetails('<%=feeDetails.getRecieptNo()%>', '<%=feeDetails.getOtherFee()%>')" /></td>
 											<td><input type="button" name="view" value="View"
 														class="btn btn-primary"
 														onclick="viewFeeDetails('<%=feeDetails.getRecieptNo()%>')" /></td>
