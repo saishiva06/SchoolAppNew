@@ -58,7 +58,7 @@ FeeDetails feeDetails = (FeeDetails)request.getAttribute("feeDetails");
                 </div><!--//navbar-header-->            
                 <div class="navbar-collapse collapse" id="navbar-collapse">
                     <ul class="nav navbar-nav">
-                         <li class="nav-item" ><a href="dashboard.do">Home</a></li>
+                         <li class="nav-item" ><a href="dashboard.do">Dashboard</a></li>
                          <li  class="nav-item"><a href="teacher.do">Teacher</a></li>
                          <li class="nav-item" ><a href="student.do">Student</a></li>
                          <li class="nav-item active"><a href="feeDetails.do">Fee</a></li>

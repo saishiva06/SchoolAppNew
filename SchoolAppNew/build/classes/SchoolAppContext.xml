@@ -34,8 +34,12 @@ xsi:schemaLocation="http://www.springframework.org/schema/beans
      		<mvc:mapping path="/editTeacher.do" />
      		<mvc:mapping path="/editFeeDetails.do" />
      		<mvc:mapping path="/viewFeeDetails.do" />
-     		 <mvc:mapping path="/budgetDashboard.do" />
-     		
+     		<mvc:mapping path="/budgetDashboard.do" />
+     		<mvc:mapping path="/addNewExpense.do" />
+     		<mvc:mapping path="/loadNewExpense.do" />
+     		<mvc:mapping path="/updateLoanAmount.do" />
+     		<mvc:mapping path="/updateSchoolFunds.do" />
+     		<mvc:mapping path="/updateAvailableLimit.do" />
      		
      		<bean class="com.shiva.util.SessionHandler" />
    		</mvc:interceptor>

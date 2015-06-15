@@ -7,7 +7,7 @@ import com.shiva.entity.BudgetDetails;
 import com.shiva.entity.FeeDetails;
 
 public interface BudgetDetailsDao {
-	int createBudgetDetails(int budgetId, String budgetName,String budgetCost, String budgetBy, String budgetDate, String budgetType,
+	int createBudgetDetails(String budgetName,String budgetCost, String budgetBy, String budgetDate, String budgetType,
 	 		   String other);
 	         int updateBudgetDetails(BudgetDetails budgetDetails);
 	         List<BudgetDetails>  getBudgetDetailsMap();

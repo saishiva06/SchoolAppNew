@@ -18,11 +18,10 @@ BudgetDetailsDao {
 	}
 
 	@Override
-	public int createBudgetDetails(int budgetId, String budgetName,String budgetCost, String budgetBy, String budgetDate, String budgetType,
+	public int createBudgetDetails(String budgetName,String budgetCost, String budgetBy, String budgetDate, String budgetType,
 	 		   String other) {
 		// TODO Auto-generated method stub
 		Map<String, Object> paramsMap = new HashMap<String, Object>();
-		paramsMap.put("budget_id", budgetId);
 		paramsMap.put("budget_name", budgetName);
 		paramsMap.put("budget_cost", budgetCost);
 		paramsMap.put("budget_by", budgetBy);

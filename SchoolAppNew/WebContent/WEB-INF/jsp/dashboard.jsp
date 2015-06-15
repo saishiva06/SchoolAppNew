@@ -130,7 +130,7 @@
 				<div class="col-md-3 col-sm-12 col-xs-12">
 					<div class="panel panel-primary text-center no-boder bg-color-red">
 						<div class="panel-body">
-							<i class="fa fa fa-comments fa-5x"></i>
+							<i class="fa fa-inr fa-5x"></i>
 							<h3>15000</h3>
 						</div>
 						<div class="panel-footer back-footer-red">Total Fee
@@ -141,7 +141,7 @@
 					<div
 						class="panel panel-primary text-center no-boder bg-color-brown">
 						<div class="panel-body">
-							<i class="fa fa-users fa-5x"></i>
+							<i class="fa fa-inr fa-5x"></i>
 							<h3>36,752</h3>
 						</div>
 						<div class="panel-footer back-footer-brown">Total Due Fee</div>

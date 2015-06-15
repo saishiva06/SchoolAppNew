@@ -1,8 +1,12 @@
 package com.shiva.controller;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
@@ -10,12 +14,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.shiva.entity.BudgetDetails;
+import com.shiva.entity.FeeDetails;
 import com.shiva.entity.Student;
 import com.shiva.entity.StudentByClass;
 import com.shiva.service.BudgetDetailsService;
 import com.shiva.service.StudentService;
 import com.shiva.service.TeacherService;
 import com.shiva.service.UserService;
+import com.shiva.util.RandomGenerator;
 
 @Controller
 public class DashboardController {
@@ -124,6 +130,67 @@ public class DashboardController {
 			mav.addObject("topDetailsList", topDetailsList);
 		}
 		return mav;
-     
+	}
+		
+	@RequestMapping("/loadNewExpense.do")
+		public ModelAndView loadNewExpenseDashBoard() throws Exception {
+			return new ModelAndView("addNewExpense");
+  }
+
+	@RequestMapping("/addNewExpense.do")
+	public ModelAndView addFeeDetails(HttpServletRequest request,
+			HttpServletResponse response) throws Exception {
+		try {
+			String budgetName = request.getParameter("expenseName");
+			String budgetCost = request.getParameter("expenseCost");
+			String budgetBy = request.getParameter("expenseBy");
+			String budgetDate = request.getParameter("expenseDate");
+			String other = request.getParameter("other");
+			SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+			SimpleDateFormat output = new SimpleDateFormat("yyyy-MM-dd");
+			Date budgetDate1 = null;
+			try {
+				budgetDate1 = sdf.parse(budgetDate);
+			} catch (ParseException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			String formattedBd = output.format(budgetDate1);
+			int result = budgetDetailsService.createBudgetDetails(budgetName,budgetCost,budgetBy, formattedBd,  "Debited",
+		 		    other);
+			System.out.println("@@@ new expense added.........." + result);
+			return new ModelAndView("redirect:budgetDashboard.do");
+			}
+			catch (Exception e) {
+			e.printStackTrace();
+			return new ModelAndView("addNewExpense");
+		}
+		
+	}
+	@RequestMapping("/deleteBudgetDetails.do")
+	public ModelAndView loadFeeDetailsDashboard(HttpServletRequest request,
+			HttpServletResponse response) throws Exception {
+		String budgetId = request.getParameter("budgetId");
+		
+		System.out.println("@@@ delete feeDetailsId.........." + budgetId);
+		if (budgetId != null && budgetId.length() > 0) {
+			boolean status = budgetDetailsService.deleteBudgetDetails(budgetId);
+			System.out.println("@@@ status...." + status);
+		}
+		return new ModelAndView("redirect:budgetDashboard.do");
+	}
+	
+	@RequestMapping("/updateLoanAmount.do")
+	public ModelAndView updateLoanAmount() throws Exception {
+		return new ModelAndView("updateLoanAmount");
 }
+	@RequestMapping("/updateSchoolFunds.do")
+	public ModelAndView updateSchoolFunds() throws Exception {
+		return new ModelAndView("updateSchoolFunds");
+}
+	@RequestMapping("/updateAvailableLimit.do")
+	public ModelAndView updateAvailableLimit() throws Exception {
+		return new ModelAndView("updateAvailableLimit");
+}
+	
 }

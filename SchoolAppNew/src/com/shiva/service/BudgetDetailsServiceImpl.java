@@ -22,9 +22,9 @@ public class BudgetDetailsServiceImpl implements BudgetDetailsService {
 	}
 
 	@Override
-	public int createBudgetDetails(int budgetId, String budgetName,String budgetCost, String budgetBy, String budgetDate, String budgetType,
+	public int createBudgetDetails(String budgetName,String budgetCost, String budgetBy, String budgetDate, String budgetType,
 	 		   String other) {
-		return budgetDetailsDao.createBudgetDetails(budgetId,budgetName,budgetCost,budgetBy, budgetDate,  budgetType,
+		return budgetDetailsDao.createBudgetDetails(budgetName,budgetCost,budgetBy, budgetDate,  budgetType,
 		 		    other);
 	}
 

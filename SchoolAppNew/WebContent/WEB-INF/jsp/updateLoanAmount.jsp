@@ -1,3 +1,6 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	session="true" pageEncoding="ISO-8859-1"%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -15,8 +18,8 @@
 	href="resources/css/formValidation.css" />
 <link rel="icon" type="image/png" sizes="16x16"
 	href="resources/img/favicon.ico">
+
 </head>
-<body>
 <body>
 	<div class="wrapper">
 		<header class="header">
@@ -76,13 +79,17 @@
 			<div class="navbar-collapse collapse" id="navbar-collapse">
 				<ul class="nav navbar-nav">
 					<li class="nav-item"><a href="dashboard.do">Dashboard</a></li>
-					<li class="nav-item active"><a href="teacher.do">Teacher</a></li>
+					<li class="nav-item"><a href="teacher.do">Teacher</a></li>
 					<li class="nav-item"><a href="student.do">Student</a></li>
 					<li class="nav-item"><a href="feeDetails.do">Fee</a></li>
 					<li class="nav-item"><a href="examResults.do">Examination</a></li>
-					<li class="nav-item"><a href="budgetDashboard.do">Budget</a></li>
+					<li class="nav-item active"><a href="budgetDashboard.do">Budget</a></li>
 
 				</ul>
+				<!--//nav-->
+				<!--  <ul class="nav navbar-nav navbar-right">
+                      <li role="presentation"><a role="menuitem" tabindex="-1" href="logout.do">Logout</a></li>
+                      </ul> -->
 
 			</div>
 			<!--//navabr-collapse-->
@@ -92,114 +99,65 @@
 	<!--//main-nav-->
 	<div class="container">
 		<p>
-			<b> <a href="teacher.do" class="btn btn-default">Back</a></b>
+			<b> <a href="budgetDashboard.do" class="btn btn-default">Back</a></b>
 		</p>
 	</div>
-
 	<div class="container">
 		<div class="panel panel-primary">
-			<div class="panel-heading">Teacher New Registration</div>
+			<div class="panel-heading">Add New Expense</div>
 			<div class="panel-body">
 				<div class="container">
 					<div class="row">
 						<div class="col-md-8">
 
-							<form action="addTeacher.do" id="addTeacher" method="post"
-								class="form-horizontal">
+							<form action="addNewExpense.do" id="addExpense" method="post"
+								name="myform" class="form-horizontal">
+								
+								
 								<div class="form-group">
-									<label class="col-sm-3 control-label">Full name</label>
-									<div class="col-sm-4">
-										<input type="text" class="form-control" id="firstName"
-											name="firstName" placeholder="First name" />
-									</div>
-									<div class="col-sm-4">
-										<input type="text" class="form-control" id="lastName"
-											name="lastName" placeholder="Last name" />
-									</div>
-								</div>
-								<div class="form-group">
-									<label class="col-sm-3 control-label">Qualification</label>
+									<label class="col-sm-3 control-label">Expense For</label>
 									<div class="col-sm-5">
-										<input type="text" class="form-control" id="qualification"
-											name="qualification" />
+										<input type="text" class="form-control" id="expenseName"
+											name="expenseName" />
 									</div>
 								</div>
 
 								<div class="form-group">
-									<label class="col-sm-3 control-label">Teaching Subject</label>
+									<label class="col-sm-3 control-label">Expense By</label>
 									<div class="col-sm-5">
-										<input type="text" class="form-control" id="subject"
-											name="subject" />
+										<input type="text" class="form-control" id="expenseBy"
+											name="expenseBy"/>
+									</div>
+								</div>
+								
+								<div class="form-group">
+									<label class="col-sm-3 control-label">Expense Cost</label>
+									<div class="col-sm-5">
+										<input type="text" class="form-control" id="expenseCost"
+											name="expenseCost" />
+									</div>
+								</div>
+								
+							<div class="form-group">
+									<label class="col-sm-3 control-label">Other Notes</label>
+									<div class="col-sm-5">
+										<input id="other" name="other" class="form-control"
+											type="text" placeholder=""/>
 									</div>
 								</div>
 
 								<div class="form-group">
-									<label class="col-sm-3 control-label">Experience</label>
-									<div class="col-sm-5">
-										<input type="text" class="form-control" id="experince"
-											name="experience" placeholder="2.5" />
-									</div>
-								</div>
-								<div class="form-group">
-									<label class="col-xs-3 control-label">Date Of Birth</label>
+									<label class="col-xs-3 control-label">Date</label>
 									<div class="col-xs-5 date">
-										<div class="input-group input-append date" id="TeacherDOB">
-											<input type="text" class="form-control tDob" name="dob" 
+										<div class="input-group input-append date" id="ExpenseDatePicker">
+											<input type="text" class="form-control eDoe" name="expenseDate"
 												placeholder="01/01/2000" /> <span
 												class="input-group-addon add-on"><span
 												class="glyphicon glyphicon-calendar"></span></span>
 										</div>
 									</div>
 								</div>
-								<div class="form-group">
-									<label class="col-sm-3 control-label">Caste</label>
-									<div class="col-sm-5">
-										<input type="text" class="form-control" id="caste"
-											name="caste" />
-									</div>
-								</div>
-								<div class="form-group">
-									<label class="col-sm-3 control-label">Mobile No</label>
-									<div class="col-sm-5">
-										<input id="mobileNo" name="mobileNo" class="form-control"
-											type="number" />
-									</div>
-								</div>
-								<div class="form-group">
-									<label class="col-sm-3 control-label">Address</label>
-									<div class="col-sm-5">
-										<textarea class=" input-xlarge form-control" id="village"
-											name="village" rows="3"></textarea>
-									</div>
-								</div>
 
-
-								<div class="form-group">
-									<label class="col-sm-3 control-label">Gender</label>
-									<div class="col-sm-6">
-										<div class="radio">
-											<label> <input type="radio" name="gender"
-												value="male" /> Male
-											</label>
-										</div>
-										<div class="radio">
-											<label> <input type="radio" name="gender"
-												value="female" /> Female
-											</label>
-										</div>
-									</div>
-								</div>
-								<div class="form-group">
-									<label class="col-xs-3 control-label">Date Of Joinee</label>
-									<div class="col-xs-5 date">
-										<div class="input-group input-append date" id="TeacherDOJ">
-											<input type="text" class="form-control tDoj" name="doj"
-												placeholder="DD/MM/YYYY" /> <span
-												class="input-group-addon add-on"><span
-												class="glyphicon glyphicon-calendar"></span></span>
-										</div>
-									</div>
-								</div>
 								<div class="form-group">
 									<div class="col-sm-9 col-sm-offset-3">
 										<button type="submit" class="btn btn-primary" name="signup"
@@ -215,7 +173,6 @@
 			</div>
 		</div>
 	</div>
-
 	<!-- Footer and Modal
     ==========================-->
 	<footer id="footer-sec" class="footer">
@@ -237,7 +194,7 @@
 	<script src="resources/js/formValidation.js"></script>
 	<script src="resources/js/framework/bootstrap.js"></script>
 	<script src="resources/js/schoolscript.js"></script>
+	
 </body>
-
-
 </html>
+

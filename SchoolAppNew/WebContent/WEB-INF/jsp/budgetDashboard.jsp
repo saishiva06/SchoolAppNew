@@ -4,13 +4,16 @@
 	session="true" pageEncoding="ISO-8859-1"%>
 
 <%
-	
 	String totalFunds = (String) request.getAttribute("totalFunds");
-	String availableLimit = (String) request.getAttribute("availableLimit");
+	String availableLimit = (String) request
+			.getAttribute("availableLimit");
 	String totalLoans = (String) request.getAttribute("totalLoans");
-	String totalExpenses = (String) request.getAttribute("totalExpenses");
-	List<BudgetDetails> latestExpensesData = (List<BudgetDetails>) request.getAttribute("recentDetailsList");
-	List<BudgetDetails> topExpensesData = (List<BudgetDetails>) request.getAttribute("topDetailsList");
+	String totalExpenses = (String) request
+			.getAttribute("totalExpenses");
+	List<BudgetDetails> latestExpensesData = (List<BudgetDetails>) request
+			.getAttribute("recentDetailsList");
+	List<BudgetDetails> topExpensesData = (List<BudgetDetails>) request
+			.getAttribute("topDetailsList");
 %>
 <!DOCTYPE html>
 <html>
@@ -25,6 +28,24 @@
 	href="resources/img/favicon.ico">
 <link href="resources/js/dataTables/dataTables.bootstrap.css"
 	rel="stylesheet" />
+<script type="text/javascript">
+	function deletebudgetDetails2(budgetId) {
+		var f = document.form3;
+		f.budgetId.value = budgetId;
+		f.method = "post";
+		f.action = 'deleteBudgetDetails.do';
+		f.submit();
+	}
+
+	function deleteBudgetDetails(budgetId) {
+		var f = document.form2;
+		f.budgetId.value = budgetId;
+		f.method = "post";
+		f.action = 'deleteBudgetDetails.do';
+		f.submit();
+	}
+</script>
+
 </head>
 <body>
 	<div class="wrapper">
@@ -42,6 +63,7 @@
 				<div class="info col-md-8 col-sm-8 marginTop30">
 					<div class="col-md-12 col-sm-12  text-center">
 						<ul class="menu-top ">
+							<li class="divider"><a href="dashboard.do">Dashboard</a></li>
 							<li><a href="logout.do">&nbsp Logout<i
 									class="fa fa-power-off fa-lg"></i></a></li>
 
@@ -89,8 +111,16 @@
 					<li class="nav-item"><a href="student.do">Student</a></li>
 					<li class="nav-item"><a href="feeDetails.do">Fee</a></li>
 					<li class="nav-item"><a href="examResults.do">Examination</a></li>
-					<li class="nav-item active"><a href="#">Budget</a></li>
-
+					<li class="nav-item dropdown"><a class="dropdown-toggle"
+							data-toggle="dropdown" data-hover="dropdown" data-delay="0"
+							data-close-others="false" href="#">Budget <i
+								class="fa fa-angle-down"></i></a>
+							<ul class="dropdown-menu">
+								<li><a href="loadNewExpense.do" class="btn btn-primary">Add New Expense</a></li>
+								<li><a href="updateLoanAmount.do" class="btn btn-primary">Update Loan Amount</a></li>
+							    <li><a href="updateSchoolFunds.do" class="btn btn-primary">Update School Funds</a></li>
+								<li><a href="updateAvailableLimit.do" class="btn btn-primary">Update Available Limit</a></li>
+						</ul>
 				</ul>
 				<!--//nav-->
 				<!--  <ul class="nav navbar-nav navbar-right">
@@ -111,16 +141,17 @@
 					<div
 						class="panel panel-primary text-center no-boder bg-color-green">
 						<div class="panel-body">
-							<i class="fa fa-bar-chart-o fa-5x"></i>
+							<i class="fa fa-inr fa-5x"></i>
 							<h3><%=totalFunds%></h3>
 						</div>
-						<div class="panel-footer back-footer-green">Total School Funds</div>
+						<div class="panel-footer back-footer-green">Total School
+							Funds</div>
 					</div>
 				</div>
 				<div class="col-md-3 col-sm-12 col-xs-12">
 					<div class="panel panel-primary text-center no-boder bg-color-blue">
 						<div class="panel-body">
-							<i class="fa fa-shopping-cart fa-5x"></i>
+							<i class="fa fa-inr fa-5x"></i>
 							<h3><%=availableLimit%></h3>
 						</div>
 						<div class="panel-footer back-footer-blue">Available Limit</div>
@@ -129,7 +160,7 @@
 				<div class="col-md-3 col-sm-12 col-xs-12">
 					<div class="panel panel-primary text-center no-boder bg-color-red">
 						<div class="panel-body">
-							<i class="fa fa fa-comments fa-5x"></i>
+							<i class="fa fa-inr fa-5x"></i>
 							<h3><%=totalExpenses%></h3>
 						</div>
 						<div class="panel-footer back-footer-red">Total Expenses</div>
@@ -139,10 +170,11 @@
 					<div
 						class="panel panel-primary text-center no-boder bg-color-brown">
 						<div class="panel-body">
-							<i class="fa fa-users fa-5x"></i>
+							<i class="fa fa-inr fa-5x"></i>
 							<h3><%=totalLoans%></h3>
 						</div>
-						<div class="panel-footer back-footer-brown">Total Amount Of Loans</div>
+						<div class="panel-footer back-footer-brown">Total Amount Of
+							Loans</div>
 					</div>
 				</div>
 			</div>
@@ -155,12 +187,19 @@
 				<div class="container">
 					<div class="row">
 						<div class="col-md-12">
-						<div class="table-responsive">
-									<table class="table table-striped table-bordered table-hover"
-										>
+							<form name="SchoolInfo" action="" id=""
+								method="post">
+								<p>
+									<a href="loadNewExpense.do" class="btn btn-primary">Add New Expense</a>
+									<a href="updateLoanAmount.do" class="btn btn-primary">Update Loan Amount</a>
+										<a href="updateSchoolFunds.do" class="btn btn-primary">Update School Funds</a>
+										<a href="updateAvailableLimit.do" class="btn btn-primary">Update Available Limit</a>
+								</p>
+								<div class="table-responsive">
+									<table class="table table-striped table-bordered table-hover">
 										<thead>
 											<tr>
-											     <th>SNo</th>
+												<th>SNo</th>
 												<th>Budget Name</th>
 												<th>Cost</th>
 												<th>Done By</th>
@@ -184,7 +223,7 @@
 												<td><%=budgetDetails.getBudgetDate()%></td>
 												<td><input type="button" name="delete" value="Delete"
 													class="btn btn-danger"
-													onclick="deletebudgetDetails('<%=budgetDetails.getBudgetId()%>')" /></td>
+													onclick="deleteBudgetDetails('<%=budgetDetails.getBudgetId()%>')" /></td>
 											</tr>
 											<%
 												}
@@ -193,65 +232,71 @@
 										</tbody>
 
 									</table>
-								</div>	
+								</div>
+							</form>
+							<form name="form2" method="post" id="form2">
+								<input type="hidden" name="budgetId" value="">
+							</form>
+						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-	</div>
-<div class="container">
+	<div class="container">
 		<div class="panel panel-primary">
 			<div class="panel-heading">TOP 5 EXPENSES</div>
 			<div class="panel-body">
 				<div class="container">
 					<div class="row">
 						<div class="col-md-12">
-						<div class="table-responsive">
-									<table class="table table-striped table-bordered table-hover"
-										>
-										<thead>
-											<tr>
-											     <th>SNo</th>
-												<th>Budget Name</th>
-												<th>Cost</th>
-												<th>Done By</th>
-												<th>Budget Type</th>
-												<th>Budget Date</th>
-												<th>Delete</th>
-											</tr>
-										</thead>
-										<tbody>
-											<tr>
-												<%
-													if (topExpensesData != null && topExpensesData.size() > 0) {
-														for (int i = 0; i < topExpensesData.size(); i++) {
-															BudgetDetails budgetDetails = topExpensesData.get(i);
-												%>
-												<td><%=i + 1%></td>
-												<td><%=budgetDetails.getBudgetName().toUpperCase()%></td>
-												<td><%=budgetDetails.getBudgetCost()%></td>
-												<td><%=budgetDetails.getBudgetBy().toUpperCase()%></td>
-												<td><%=budgetDetails.getBudgetType().toUpperCase()%></td>
-												<td><%=budgetDetails.getBudgetDate()%></td>
-												<td><input type="button" name="delete" value="Delete"
-													class="btn btn-danger"
-													onclick="deletebudgetDetails('<%=budgetDetails.getBudgetId()%>')" /></td>
-											</tr>
+							<div class="table-responsive">
+								<table class="table table-striped table-bordered table-hover">
+									<thead>
+										<tr>
+											<th>SNo</th>
+											<th>Budget Name</th>
+											<th>Cost</th>
+											<th>Done By</th>
+											<th>Budget Type</th>
+											<th>Budget Date</th>
+											<th>Delete</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
 											<%
-												}
-												}
+												if (topExpensesData != null && topExpensesData.size() > 0) {
+													for (int i = 0; i < topExpensesData.size(); i++) {
+														BudgetDetails budgetDetails = topExpensesData.get(i);
 											%>
-										</tbody>
+											<td><%=i + 1%></td>
+											<td><%=budgetDetails.getBudgetName().toUpperCase()%></td>
+											<td><%=budgetDetails.getBudgetCost()%></td>
+											<td><%=budgetDetails.getBudgetBy().toUpperCase()%></td>
+											<td><%=budgetDetails.getBudgetType().toUpperCase()%></td>
+											<td><%=budgetDetails.getBudgetDate()%></td>
+											<td><input type="button" name="delete" value="Delete"
+												class="btn btn-danger"
+												onclick="deletebudgetDetails2('<%=budgetDetails.getBudgetId()%>')" /></td>
+										</tr>
+										<%
+											}
+											}
+										%>
+									</tbody>
 
-									</table>
-								</div>	
+								</table>
+							</div>
+							 <form name="form3" method="post" id="form3">
+								<input type="hidden" name="budgetId" value="">
+							</form> 
+						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-</div>
 	<footer id="footer-sec" class="footer">
 		<div class="bottom-bar">
 			<div class="container">

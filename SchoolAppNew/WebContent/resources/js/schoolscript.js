@@ -66,6 +66,17 @@ $('#ExamDatePicker')
     
 });
 
+$('#ExpenseDatePicker')
+.datepicker({
+    format: 'dd/mm/yyyy',
+    autoclose:true
+})
+.on('changeDate', function(e) {
+    // Revalidate the date field
+    $('#addExpense').formValidation('revalidateField', 'expenseDate');
+    
+});
+
 
 	
     $('#addStudent').formValidation({
@@ -433,6 +444,53 @@ $('#ExamDatePicker')
         }
     });
     
+    $('#addExpense').formValidation({
+        message: 'This value is not valid',
+        icon: {
+           // valid: 'glyphicon glyphicon-ok',
+            invalid: 'glyphicon glyphicon-remove',
+            validating: 'glyphicon glyphicon-refresh'
+        },
+        fields: {
+        	expenseName: {
+                row: '.col-sm-5',
+                validators: {
+                    notEmpty: {
+                        message: 'The Expense name is required'
+                    }
+                }
+            },
+            expenseBy: {
+                row: '.col-sm-5',
+                validators: {
+                    notEmpty: {
+                        message: 'The Expense By is required'
+                    }
+                }
+            },
+            expenseCost: {
+                row: '.col-sm-5',
+                validators: {
+                    notEmpty: {
+                        message: 'The Expense Cost is required'
+                    }
+                }
+            },
+            
+            expenseDate: {
+                selector: '.eDoe',
+                   validators: {
+                       notEmpty: {
+                           message: 'The  Date Of Expense  is required'
+                       },
+                       date: {
+                           format: 'DD/MM/YYYY',
+                           message: 'The date is not a valid'
+                       }
+                   }
+               }     
+        }
+    });
 });
 
 
