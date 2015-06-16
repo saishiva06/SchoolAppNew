@@ -282,7 +282,7 @@
 	</select>
 	
     <update id="updateBudgetDetails" parameterClass="java.util.Map">
-		update budget_details b set b.budget_name=#budget_name#, b.budget_cost=#budget_cost#, b.budget_by=#budget_by#, b.budget_date=#budget_date#,b.budget_type=#budget_type#, b.other= #other# where budget_id =#budget_id#
+		update budget_details b set  b.budget_cost=#budget_cost#, b.budget_by=#budget_by#, b.budget_date=#budget_date#, b.other= #other# where b.budget_id =#budget_id#
 	</update>
 	<delete id="deleteBudgetDetails">
 		delete from budget_details where budget_id =#budget_id#

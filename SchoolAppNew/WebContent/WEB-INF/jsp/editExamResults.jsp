@@ -124,10 +124,7 @@ ExamResults examResults = (ExamResults)request.getAttribute("examResults");
 								<div class="col-md-6">
 								<input type="hidden" name="examResultsId"
 									value="<%= examResults.getExamResultsId()%>" />
-
-								
-
-								<div class="form-group">
+                                <div class="form-group">
 									<label class="col-sm-3 control-label">Roll No</label>
 									<div class="col-sm-5">
 										<input type="text" class="form-control" id="rollno"
@@ -338,9 +335,7 @@ ExamResults examResults = (ExamResults)request.getAttribute("examResults");
 											value="Sign up" onClick="fnSum();">Submit</button>
 									</div>
 								</div>
-</div>
-							</form>
-						</div>
+                      </form>
 					</div>
 				</div>
 			</div>

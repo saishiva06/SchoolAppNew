@@ -1,5 +1,8 @@
 package com.shiva.service;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
@@ -51,7 +54,17 @@ public class BudgetDetailsServiceImpl implements BudgetDetailsService {
 
 	@Override
 	public BudgetDetails getBudgetDetailsById(int reciptId) {
-		return budgetDetailsDao.getBudgetDetailsById(reciptId);
+		BudgetDetails budgetDetails = budgetDetailsDao.getBudgetDetailsById(reciptId);
+		SimpleDateFormat output = new SimpleDateFormat("dd/MM/yyyy");
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+		Date date = null;
+		try {
+			date = sdf.parse(budgetDetails.getBudgetDate());
+		} catch (ParseException e) {
+		}
+	String formattedDate = output.format(date);
+	budgetDetails.setBudgetDate(formattedDate);	
+	return budgetDetails;
 	}
 
 	@Override

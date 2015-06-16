@@ -29,18 +29,24 @@
 <link href="resources/js/dataTables/dataTables.bootstrap.css"
 	rel="stylesheet" />
 <script type="text/javascript">
-	function deletebudgetDetails2(budgetId) {
+	function deletebudgetDetails2(budgetId,amount) {
+	    window.alert(budgetId);
+	    window.alert(amount);
 		var f = document.form3;
 		f.budgetId.value = budgetId;
+		f.amount.value = amount;
 		f.method = "post";
 		f.action = 'deleteBudgetDetails.do';
 		f.submit();
 	}
 
-	function deleteBudgetDetails(budgetId) {
+	function deleteBudgetDetails(budgetId,amount) {
+	 window.alert(budgetId);
+	    window.alert(amount);
 		var f = document.form2;
 		f.budgetId.value = budgetId;
-		f.method = "post";
+		f.amount.value = amount;
+	    f.method = "post";
 		f.action = 'deleteBudgetDetails.do';
 		f.submit();
 	}
@@ -190,11 +196,11 @@
 							<form name="SchoolInfo" action="" id=""
 								method="post">
 								<p>
-									<a href="loadNewExpense.do" class="btn btn-primary">Add New Expense</a>
+									<!-- <a href="loadNewExpense.do" class="btn btn-primary">Add New Expense</a>
 									<a href="updateLoanAmount.do" class="btn btn-primary">Update Loan Amount</a>
-										<a href="updateSchoolFunds.do" class="btn btn-primary">Update School Funds</a>
-										<a href="updateAvailableLimit.do" class="btn btn-primary">Update Available Limit</a>
-								</p>
+									<a href="updateSchoolFunds.do" class="btn btn-primary">Update School Funds</a>
+									<a href="updateAvailableLimit.do" class="btn btn-primary">Update Available Limit</a>
+								 --></p>
 								<div class="table-responsive">
 									<table class="table table-striped table-bordered table-hover">
 										<thead>
@@ -223,7 +229,7 @@
 												<td><%=budgetDetails.getBudgetDate()%></td>
 												<td><input type="button" name="delete" value="Delete"
 													class="btn btn-danger"
-													onclick="deleteBudgetDetails('<%=budgetDetails.getBudgetId()%>')" /></td>
+													onclick="deleteBudgetDetails('<%=budgetDetails.getBudgetId()%>', '<%=budgetDetails.getBudgetCost()%>')" /></td>
 											</tr>
 											<%
 												}
@@ -236,6 +242,7 @@
 							</form>
 							<form name="form2" method="post" id="form2">
 								<input type="hidden" name="budgetId" value="">
+								<input type="hidden" name="amount" value="">
 							</form>
 						</div>
 					</div>
@@ -278,7 +285,7 @@
 											<td><%=budgetDetails.getBudgetDate()%></td>
 											<td><input type="button" name="delete" value="Delete"
 												class="btn btn-danger"
-												onclick="deletebudgetDetails2('<%=budgetDetails.getBudgetId()%>')" /></td>
+												onclick="deletebudgetDetails2('<%=budgetDetails.getBudgetId()%>', '<%=budgetDetails.getBudgetCost()%>')" /></td>
 										</tr>
 										<%
 											}
@@ -290,6 +297,7 @@
 							</div>
 							 <form name="form3" method="post" id="form3">
 								<input type="hidden" name="budgetId" value="">
+								<input type="hidden" name="amount" value="">
 							</form> 
 						</div>
 					</div>

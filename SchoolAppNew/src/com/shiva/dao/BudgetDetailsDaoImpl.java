@@ -1,5 +1,8 @@
 package com.shiva.dao;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
@@ -9,6 +12,7 @@ import org.springframework.orm.ibatis.SqlMapClientTemplate;
 import org.springframework.orm.ibatis.support.SqlMapClientDaoSupport;
 
 import com.shiva.entity.BudgetDetails;
+import com.shiva.util.RandomGenerator;
 
 public class BudgetDetailsDaoImpl extends SqlMapClientDaoSupport implements
 BudgetDetailsDao {
@@ -41,13 +45,12 @@ BudgetDetailsDao {
 		try {
 			Map<String, Object> paramsMap = new HashMap<String, Object>();
 			paramsMap.put("budget_id", budgetDetails.getBudgetId());
-			paramsMap.put("budget_name", budgetDetails.getBudgetName());
 			paramsMap.put("budget_cost", budgetDetails.getBudgetCost());
 			paramsMap.put("budget_by", budgetDetails.getBudgetBy());
-			paramsMap.put("budget_date", budgetDetails.getBudgetDate());
-			paramsMap.put("budget_type", budgetDetails.getBudgetType());
+			SimpleDateFormat output = new SimpleDateFormat("yyyy-MM-dd");
+			String formatteDate = output.format(new Date());
+			paramsMap.put("budget_date", formatteDate);
 			paramsMap.put("other", budgetDetails.getOther());
-			
 			int result = template.update("updateBudgetDetails", paramsMap);
 			return result;
 		} catch (Exception ex) {

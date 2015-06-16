@@ -31,6 +31,8 @@
 	}
 
 	function deleteFeeDetails(recieptNo,feePaid) {
+	window.alert(recieptNo);
+	window.alert(feePaid);
 		var f = document.form2;
 		f.recieptNo.value = recieptNo;
 		f.feePaid.value = feePaid;
@@ -191,6 +193,7 @@
 							</form>
 							<form name="form2" method="post" id="form2">
 								<input type="hidden" name="recieptNo" value="">
+								<input type="hidden" name="feePaid" value="">
 							</form>
 						</div>
 					</div>

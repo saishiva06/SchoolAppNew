@@ -3,7 +3,9 @@ package com.shiva.controller;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -159,6 +161,11 @@ public class DashboardController {
 			int result = budgetDetailsService.createBudgetDetails(budgetName,budgetCost,budgetBy, formattedBd,  "Debited",
 		 		    other);
 			System.out.println("@@@ new expense added.........." + result);
+			BudgetDetails budgetDeails = budgetDetailsService.getBudgetDetailsById(3);
+			int totalBudget = Integer.parseInt(budgetDeails.getBudgetCost());
+			totalBudget = totalBudget + Integer.parseInt(budgetCost);
+			budgetDeails.setBudgetCost(String.valueOf(totalBudget));
+			budgetDetailsService.updateBudgetDetails(budgetDeails);
 			return new ModelAndView("redirect:budgetDashboard.do");
 			}
 			catch (Exception e) {
@@ -171,10 +178,15 @@ public class DashboardController {
 	public ModelAndView loadFeeDetailsDashboard(HttpServletRequest request,
 			HttpServletResponse response) throws Exception {
 		String budgetId = request.getParameter("budgetId");
-		
+		String budgetCost = request.getParameter("amount");
 		System.out.println("@@@ delete feeDetailsId.........." + budgetId);
 		if (budgetId != null && budgetId.length() > 0) {
 			boolean status = budgetDetailsService.deleteBudgetDetails(budgetId);
+			BudgetDetails budgetDeails = budgetDetailsService.getBudgetDetailsById(3);
+			int totalBudget = Integer.parseInt(budgetDeails.getBudgetCost());
+			totalBudget = totalBudget - Integer.parseInt(budgetCost);
+			budgetDeails.setBudgetCost(String.valueOf(totalBudget));
+			budgetDetailsService.updateBudgetDetails(budgetDeails);
 			System.out.println("@@@ status...." + status);
 		}
 		return new ModelAndView("redirect:budgetDashboard.do");
@@ -182,15 +194,45 @@ public class DashboardController {
 	
 	@RequestMapping("/updateLoanAmount.do")
 	public ModelAndView updateLoanAmount() throws Exception {
-		return new ModelAndView("updateLoanAmount");
+		BudgetDetails budgetDetails = budgetDetailsService.getBudgetDetailsById(4);
+		ModelAndView mav = new ModelAndView();
+		mav.setViewName("updateLoanAmount");
+		mav.addObject("loanAmountDetails", budgetDetails);
+		return mav;
 }
 	@RequestMapping("/updateSchoolFunds.do")
 	public ModelAndView updateSchoolFunds() throws Exception {
-		return new ModelAndView("updateSchoolFunds");
+		BudgetDetails budgetDetails = budgetDetailsService.getBudgetDetailsById(1);
+		ModelAndView mav = new ModelAndView();
+		mav.setViewName("updateSchoolFunds");
+		mav.addObject("schoolFunds", budgetDetails);
+		return mav;
 }
 	@RequestMapping("/updateAvailableLimit.do")
 	public ModelAndView updateAvailableLimit() throws Exception {
-		return new ModelAndView("updateAvailableLimit");
+		BudgetDetails budgetDetails = budgetDetailsService.getBudgetDetailsById(2);
+		ModelAndView mav = new ModelAndView();
+		mav.setViewName("updateAvailableLimit");
+		mav.addObject("availbleLimitDetails", budgetDetails);
+		return mav;
 }
 	
+	@RequestMapping("/updateAmountDetails.do")
+	public ModelAndView updateAmountDetails(HttpServletRequest request) throws Exception {
+		String budgetId = request.getParameter("budgetId");
+		String budgetCost = request.getParameter("expenseCost");
+		String budgetBy = request.getParameter("expenseBy");
+		String other = request.getParameter("other");
+		BudgetDetails budgetDetails = new BudgetDetails();
+		budgetDetails.setBudgetBy(budgetBy);
+		budgetDetails.setBudgetCost(budgetCost);
+		budgetDetails.setBudgetId(Integer.parseInt(budgetId));
+		budgetDetails.setOther(other);
+		budgetDetailsService.updateBudgetDetails(budgetDetails);
+		System.out.println("@@@ budget details updated..........");
+		return new ModelAndView("redirect:budgetDashboard.do");
+		
+}
+	
+
 }
