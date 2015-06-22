@@ -77,6 +77,39 @@ $('#ExpenseDatePicker')
     
 });
 
+$('#LimitDatePicker')
+.datepicker({
+    format: 'dd/mm/yyyy',
+    autoclose:true
+})
+.on('changeDate', function(e) {
+    // Revalidate the date field
+    $('#"updateAvailableLimit"').formValidation('revalidateField', 'expenseDate');
+    
+});
+
+$('#SchoolFundsDatePicker')
+.datepicker({
+    format: 'dd/mm/yyyy',
+    autoclose:true
+})
+.on('changeDate', function(e) {
+    // Revalidate the date field
+    $('#updateSchoolFunds').formValidation('revalidateField', 'expenseDate');
+    
+});
+
+$('#LoanDatePicker')
+.datepicker({
+    format: 'dd/mm/yyyy',
+    autoclose:true
+})
+.on('changeDate', function(e) {
+    // Revalidate the date field
+    $('#updateLoanAmount').formValidation('revalidateField', 'expenseDate');
+    
+});
+
 
 	
     $('#addStudent').formValidation({
@@ -479,6 +512,126 @@ $('#ExpenseDatePicker')
             
             expenseDate: {
                 selector: '.eDoe',
+                   validators: {
+                       notEmpty: {
+                           message: 'The  Date Of Expense  is required'
+                       },
+                       date: {
+                           format: 'DD/MM/YYYY',
+                           message: 'The date is not a valid'
+                       }
+                   }
+               }     
+        }
+    });
+    
+    $('#updateLoanAmount').formValidation({
+        message: 'This value is not valid',
+        icon: {
+           // valid: 'glyphicon glyphicon-ok',
+            invalid: 'glyphicon glyphicon-remove',
+            validating: 'glyphicon glyphicon-refresh'
+        },
+        fields: {
+        	 expenseBy: {
+                row: '.col-sm-5',
+                validators: {
+                    notEmpty: {
+                        message: 'The Amount By is required'
+                    }
+                }
+            },
+            expenseCost: {
+                row: '.col-sm-5',
+                validators: {
+                    notEmpty: {
+                        message: 'The Amount is required'
+                    }
+                }
+            },
+            
+            expenseDate: {
+                selector: '.eDol',
+                   validators: {
+                       notEmpty: {
+                           message: 'The  Date Of Expense  is required'
+                       },
+                       date: {
+                           format: 'DD/MM/YYYY',
+                           message: 'The date is not a valid'
+                       }
+                   }
+               }     
+        }
+    });
+    
+    $('#updateSchoolFunds').formValidation({
+        message: 'This value is not valid',
+        icon: {
+           // valid: 'glyphicon glyphicon-ok',
+            invalid: 'glyphicon glyphicon-remove',
+            validating: 'glyphicon glyphicon-refresh'
+        },
+        fields: {
+        	 expenseBy: {
+                row: '.col-sm-5',
+                validators: {
+                    notEmpty: {
+                        message: 'The Amount By is required'
+                    }
+                }
+            },
+            expenseCost: {
+                row: '.col-sm-5',
+                validators: {
+                    notEmpty: {
+                        message: 'The Amount is required'
+                    }
+                }
+            },
+            
+            expenseDate: {
+                selector: '.eDos',
+                   validators: {
+                       notEmpty: {
+                           message: 'The  Date Of Expense  is required'
+                       },
+                       date: {
+                           format: 'DD/MM/YYYY',
+                           message: 'The date is not a valid'
+                       }
+                   }
+               }     
+        }
+    });
+    
+    $('#updateAvailableLimit').formValidation({
+        message: 'This value is not valid',
+        icon: {
+           // valid: 'glyphicon glyphicon-ok',
+            invalid: 'glyphicon glyphicon-remove',
+            validating: 'glyphicon glyphicon-refresh'
+        },
+        fields: {
+        	 expenseBy: {
+                row: '.col-sm-5',
+                validators: {
+                    notEmpty: {
+                        message: 'The Amount By is required'
+                    }
+                }
+            },
+            expenseCost: {
+                row: '.col-sm-5',
+                validators: {
+                    notEmpty: {
+                        message: 'The Amount is required'
+                    }
+                }
+            },
+            
+            expenseDate: {
+                selector: '.eDoa',
                    validators: {
                        notEmpty: {
                            message: 'The  Date Of Expense  is required'

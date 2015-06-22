@@ -113,8 +113,7 @@
 
 							<form action="addFeeDetails.do" id="addFee" method="post"
 								name="myform" class="form-horizontal">
-								
-								<div class="form-group">
+								 <div class="form-group">
 									<label class="col-sm-3 control-label">Admission No</label>
 									<div class="col-sm-5">
 										<input type="text" class="form-control" id="rollno"

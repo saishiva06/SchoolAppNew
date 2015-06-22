@@ -21,6 +21,7 @@ import org.springframework.web.servlet.ModelAndView;
 import com.shiva.entity.Student;
 import com.shiva.service.StudentService;
 import com.shiva.util.RandomGenerator;
+import com.shiva.util.SendSms;
 
 @Controller
 public class StudentController {
@@ -95,6 +96,9 @@ public class StudentController {
 					caste, religion, phoneNumber, village, gender, fees,
 					dateOfJoinee1, 0);
 			System.out.println("@@@ Student added.........." + result);
+			String message= "Thank you for joining in Sri Narayana schools. Student " + studentFirstName + " " +studentLastName + " joined in " + studentClass + " and medium is "+ medium +" succesfully. And Admission number is " + admissionNo +" ";
+			String recipient = request.getParameter("mobileNo");
+			SendSms.sendSms(recipient,message);
 			return new ModelAndView("redirect:student.do");
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -247,5 +251,16 @@ public class StudentController {
 	public Student getStudentDetailsForRollNum(@RequestParam("rollno") String  rollno)throws Exception {
 		Student student = studentService.getStudentById(rollno);
 		return student!=null ? student : null;
+	}
+	
+	@RequestMapping("/viewAllStudents")
+	public ModelAndView loadAllStudentDashboard() throws Exception {
+		List<Student> studentsList = studentService.getStudents();
+		ModelAndView mav = new ModelAndView();
+		mav.setViewName("viewAllStudents");
+		if (studentsList != null && studentsList.size() > 0) {
+			mav.addObject("studentsData", studentsList);
+		}
+		return mav;
 	}
 }

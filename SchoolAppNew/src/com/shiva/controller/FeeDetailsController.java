@@ -9,7 +9,6 @@ import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -19,8 +18,9 @@ import com.shiva.entity.BudgetDetails;
 import com.shiva.entity.FeeDetails;
 import com.shiva.service.BudgetDetailsService;
 import com.shiva.service.FeeDetailsService;
-import com.shiva.util.RandomGenerator;
 import com.shiva.service.StudentService;
+import com.shiva.util.RandomGenerator;
+import com.shiva.util.SendSms;
 
 @Controller
 public class FeeDetailsController {
@@ -98,6 +98,9 @@ public class FeeDetailsController {
 			budgetDeails.setBudgetCost(String.valueOf(totalBudget));
 			budgetDetailsService.updateBudgetDetails(budgetDeails);
 			System.out.println("@@@ FeeDetails added.........." + result);
+			String message= "student " + studentName + " paid fee " + otherFee + " as "+ feeType +" succesfully. And reciept Id is " + recieptNo +" ";
+			String recipient = request.getParameter("mobileNo");
+			SendSms.sendSms(recipient,message);
 			return new ModelAndView("redirect:feeDetails.do");
 			}
 			catch (Exception e) {

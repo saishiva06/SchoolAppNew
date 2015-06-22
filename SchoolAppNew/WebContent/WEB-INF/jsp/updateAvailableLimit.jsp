@@ -113,7 +113,7 @@
 					<div class="row">
 						<div class="col-md-8">
 
-							<form action="updateAmountDetails.do" id="updateAmountDetails" method="post"
+							<form action="updateAmountDetails.do" id="updateAvailableLimit" method="post"
 								name="myform" class="form-horizontal">
 								<input type="hidden" name="budgetId"
 									value="<%= budgetDetails.getBudgetId()%>" />
@@ -152,8 +152,8 @@
 								<div class="form-group">
 									<label class="col-xs-3 control-label">Date</label>
 									<div class="col-xs-5 date">
-										<div class="input-group input-append date" id="ExpenseDatePicker">
-											<input type="text" class="form-control eDoe" name="expenseDate"
+										<div class="input-group input-append date" id="LimitDatePicker">
+											<input type="text" class="form-control eDol" name="expenseDate"
 												placeholder="01/01/2000" value = "<%=budgetDetails.getBudgetDate()%>"/> <span
 												class="input-group-addon add-on"><span
 												class="glyphicon glyphicon-calendar"></span></span>

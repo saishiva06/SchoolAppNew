@@ -9,7 +9,6 @@ import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -17,12 +16,23 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.shiva.entity.ExamResults;
 import com.shiva.service.ExamResultsService;
+import com.shiva.service.StudentService;
+import com.shiva.util.SendSms;
 
 @Controller
 public class ExamResultsController {
 
 	private ExamResultsService examResultsService;
+	private StudentService studentService;
 
+	public StudentService getStudentService() {
+		return studentService;
+	}
+
+	public void setStudentService(StudentService studentService) {
+		this.studentService = studentService;
+	}
+	
 	public ExamResultsService getExamResultsService() {
 		return examResultsService;
 	}
@@ -252,4 +262,18 @@ public class ExamResultsController {
 		return new ModelAndView("redirect:examResults.do");
 	}
 
+	@RequestMapping("/sendResultsSms.do")
+	public ModelAndView sendResultsSms(HttpServletRequest request,
+			HttpServletResponse response) throws Exception {
+		String examResultsId = request.getParameter("examResultsId");
+		System.out.println("@@@ sending alert for .........." + examResultsId);
+		if (examResultsId != null && examResultsId.length() > 0) {
+			ExamResults examResults = examResultsService.getExamResultsById(examResultsId);
+			
+			String message= "Your Student " + examResults.getStudentName() + "(" + examResults.getRollNum() + ") got grade - "+ examResults.getGrade() + " and Rank is " +examResults.getRank() + " In latest "+ examResults.getExamTitle() + " exams. Please visit our webisite to know complete list of marks. Thank you";
+			String recipient = studentService.getStudentById(examResults.getRollNum()).getPhoneNumber(); 
+			SendSms.sendSms(recipient,message);
+		}
+		return new ModelAndView("redirect:examResults.do");
+	}
 }

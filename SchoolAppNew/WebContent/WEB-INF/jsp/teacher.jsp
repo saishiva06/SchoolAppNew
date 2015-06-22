@@ -132,7 +132,7 @@
 						<div class="col-md-12">
 							<form name="SchoolInfo" action="#" id="add-student" method="post">
 								<p>
-									<a href="teacherRegistration.do" class="btn btn-primary">Add
+									<a href="teacherRegistration.do" class="btn btn-primary" >Add
 										Teacher</a>
 								</p>
 								<div class="table-responsive">

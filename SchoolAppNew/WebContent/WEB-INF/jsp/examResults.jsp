@@ -39,6 +39,15 @@
 		f.action = 'deleteExamResults.do';
 		f.submit();
 	}
+	
+	function sendResultsSms(examResultsId) {
+	window.alert(examResultsId);
+		var f = document.form2;
+		f.examResultsId.value = examResultsId;
+		f.method = "post";
+		f.action = 'sendResultsSms.do';
+		f.submit();
+	}
 </script>
 </head>
 <body>
@@ -144,6 +153,7 @@
 												<th>Grade</th>
 												<th>Edit</th>
 												<th>Delete</th>
+												<th>Send Alert</th>
 											</tr>
 										</thead>
 
@@ -165,10 +175,13 @@
 												<td><%=examResults.getGrade()%></td>
 												<td><input type="button" name="edit" value="Edit"
 													class="btn btn-primary"
-													onclick="editExamResults('<%=examResults.getExamResultsId()%>')" /></i></td>
+													onclick="editExamResults('<%=examResults.getExamResultsId()%>')" /></td>
 												<td><input type="button" name="delete" value="Delete"
 													class="btn btn-danger"
-													onclick="deleteExamResults('<%=examResults.getExamResultsId()%>')" /></i></td>
+													onclick="deleteExamResults('<%=examResults.getExamResultsId()%>')" /></td>
+                                   <td><input type="button" name="send" value="Send Marks To Parent"
+													class="btn btn-success"
+													onclick="sendResultsSms('<%=examResults.getExamResultsId()%>')" /></td>
 
 											</tr>
 											<%
