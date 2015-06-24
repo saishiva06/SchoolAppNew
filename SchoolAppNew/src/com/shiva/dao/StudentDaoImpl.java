@@ -212,5 +212,14 @@ public class StudentDaoImpl extends SqlMapClientDaoSupport implements StudentDao
  			return null;
  		}
 	}
+
+	@Override
+	public String getTotalFee() {
+		try {
+			return (String) template.queryForObject("getTotalFee");
+		} catch (Exception e) {
+			return null;
+		}
 	
+}
 }

@@ -13,4 +13,6 @@ public interface FeeDetailsService {
 	 List<FeeDetails>  getAllFeeDetailsBySearch(String studentsClass,String rollNum, String studentName);
 	 boolean deleteFeeDetails(String recieptId);
 	 FeeDetails getFeeDetailsById(String reciptId);
+	 String getTotalPaidFee();
+	 
 }

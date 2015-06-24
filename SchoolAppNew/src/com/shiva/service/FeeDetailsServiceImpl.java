@@ -64,6 +64,11 @@ public class FeeDetailsServiceImpl implements FeeDetailsService {
 		return feeDetailsDao.getFeeDetailsById(reciptId);
 	}
 
+
+      public String getTotalPaidFee() {
+		return feeDetailsDao.getTotalPaidFee();
+	}
+
 	
 
 	

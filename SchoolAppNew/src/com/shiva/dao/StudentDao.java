@@ -24,4 +24,5 @@ public interface StudentDao {
 	String getLastRecordRollNum( String studentClass);
 	List<StudentByClass> getStudentCountByClass();
 	Student getStudentByAdmissionNum(String admNo);
+	String getTotalFee();
 }

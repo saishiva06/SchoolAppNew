@@ -90,5 +90,9 @@ public class StudentServiceImpl implements StudentService {
 	public Student getStudentByAdmissionNum(String admNo) {
 		return studentDao.getStudentByAdmissionNum(admNo);
 	}
+
+	public String getTotalFee() {
+		return studentDao.getTotalFee();	
+}
 	
 }

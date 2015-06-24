@@ -20,6 +20,7 @@ import com.shiva.entity.FeeDetails;
 import com.shiva.entity.Student;
 import com.shiva.entity.StudentByClass;
 import com.shiva.service.BudgetDetailsService;
+import com.shiva.service.FeeDetailsService;
 import com.shiva.service.StudentService;
 import com.shiva.service.TeacherService;
 import com.shiva.service.UserService;
@@ -33,6 +34,7 @@ public class DashboardController {
 	private UserService userService;
 	private StudentService studentService;
 	private TeacherService teacherService;
+	private FeeDetailsService feeDetailsService;
 	public BudgetDetailsService getBudgetDetailsService() {
 		return budgetDetailsService;
 	}
@@ -69,9 +71,19 @@ public class DashboardController {
 	public void setTeacherService(TeacherService teacherService) {
 		this.teacherService = teacherService;
 	}
+	
+	public FeeDetailsService getFeeDetailsService() {
+		return feeDetailsService;
+	}
+
+	public void setFeeDetailsService(FeeDetailsService feeDetailsService) {
+		this.feeDetailsService = feeDetailsService;
+	}
+	
 	@RequestMapping("/dashboard.do")
 	public ModelAndView checkLogin(HttpServletRequest request) throws Exception {
 		session = request.getSession(false);
+		int totalFee = 0;
 		if(session == null) {
 		String userName = request.getParameter("teachername");
 		String userPassword = request.getParameter("teacherpass");
@@ -92,12 +104,18 @@ public class DashboardController {
 	} 
 		List<StudentByClass> studentByClassList= studentService.getStudentCountByClass();
 		int teacherCount = teacherService.getTeachers().size();
-		int studentsCount = studentService.getStudents().size();
-		session.setAttribute("teacherCount", teacherCount);
-		session.setAttribute("studentsCount", studentsCount);
-		
+		List<Student> studentList= studentService.getStudents();
+		int studentsCount = studentList.size();
 		ModelAndView mav = new ModelAndView();
+		mav.addObject("teacherCount", teacherCount);
+		mav.addObject("studentsCount", studentsCount);
 		mav.setViewName("dashboard");
+		totalFee = Integer.parseInt(studentService.getTotalFee());
+		String paidFee = feeDetailsService.getTotalPaidFee();
+		int dueFee = totalFee-Integer.parseInt(paidFee);
+		mav.addObject("collectedFee", paidFee);
+		mav.addObject("dueFee", dueFee);
+		mav.addObject("studentsCount", studentsCount);
 		if(studentByClassList!=null && studentByClassList.size()!=0) {
 			mav.addObject("studentsData", studentByClassList);
 		}

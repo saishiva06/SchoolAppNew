@@ -102,5 +102,15 @@ public class FeeDetailsDaoImpl extends SqlMapClientDaoSupport implements
 		}
 	}
 
+	@Override
+	public String getTotalPaidFee() {
+		try {
+			return (String)template.queryForObject("getTotalPaidFee");
+		} catch (Exception e) {
+			e.printStackTrace();
+			return null;
+		}
+	}
+
 	
 }

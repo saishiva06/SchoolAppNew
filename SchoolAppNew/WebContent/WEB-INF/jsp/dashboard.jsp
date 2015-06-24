@@ -4,12 +4,11 @@
 	session="true" pageEncoding="ISO-8859-1"%>
 
 <%
-	List<StudentByClass> mydata = (List<StudentByClass>) request
-			.getAttribute("studentsData");
-	int teacherCount = (Integer) session.getAttribute("teacherCount");
-	int studentsCount = (Integer) session.getAttribute("studentsCount");
-	int dueFee = (Integer) session.getAttribute("dueFee");
-	int collectedFee = (Integer) session.getAttribute("collectedFee");
+	List<StudentByClass> mydata = (List<StudentByClass>) request.getAttribute("studentsData");
+	int teacherCount = (Integer) request.getAttribute("teacherCount");
+	int studentsCount = (Integer) request.getAttribute("studentsCount");
+	int dueFee = (Integer) request.getAttribute("dueFee");
+	String collectedFee = (String) request.getAttribute("collectedFee");
 %>
 <!DOCTYPE html>
 <html>
@@ -131,7 +130,7 @@
 					<div class="panel panel-primary text-center no-boder bg-color-red">
 						<div class="panel-body">
 							<i class="fa fa-inr fa-5x"></i>
-							<h3>15000</h3>
+							<h3><%=collectedFee%></h3>
 						</div>
 						<div class="panel-footer back-footer-red">Total Fee
 							Collected</div>
@@ -142,7 +141,7 @@
 						class="panel panel-primary text-center no-boder bg-color-brown">
 						<div class="panel-body">
 							<i class="fa fa-inr fa-5x"></i>
-							<h3>36,752</h3>
+							<h3><%=dueFee%></h3>
 						</div>
 						<div class="panel-footer back-footer-brown">Total Due Fee</div>
 					</div>
