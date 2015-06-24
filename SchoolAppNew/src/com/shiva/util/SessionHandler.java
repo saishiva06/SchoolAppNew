@@ -26,6 +26,7 @@ public class SessionHandler extends HandlerInterceptorAdapter implements
 			return true;
 		} else {
 			//String errorMsg = "YOUR SESSION HAS EXPIRED AND YOU NEED TO RE-LOGIN!";
+			System.out.println("logout success");
 			redirect(request, response, "/errorPage.do");
 			return false;
 		}

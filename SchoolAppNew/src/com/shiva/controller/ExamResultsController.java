@@ -276,4 +276,30 @@ public class ExamResultsController {
 		}
 		return new ModelAndView("redirect:examResults.do");
 	}
+	
+	@RequestMapping("/viewExamResults.do")
+	public ModelAndView viewExamResults(HttpServletRequest request,
+			HttpServletResponse response) throws Exception {
+		String examResultsId = request.getParameter("examResultsId");
+		System.out.println("@@@ view examResultsId.........." + examResultsId);
+		ModelAndView mav = new ModelAndView();
+		mav.setViewName("viewExamResults");
+		if (examResultsId != null && examResultsId.length() > 0) {
+			ExamResults examResults = examResultsService
+					.getExamResultsById(examResultsId);
+			SimpleDateFormat output = new SimpleDateFormat("dd/MM/yyyy");
+			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+			Date examDate = null;
+			try {
+				examDate = sdf.parse(examResults.getExamDate());
+			} catch (ParseException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			String formattedExamDate = output.format(examDate);
+			examResults.setExamDate(formattedExamDate);
+			mav.addObject("examResults", examResults);
+		}
+		return mav;
+	}
 }

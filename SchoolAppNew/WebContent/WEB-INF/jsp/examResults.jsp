@@ -48,6 +48,13 @@
 		f.action = 'sendResultsSms.do';
 		f.submit();
 	}
+	function viewExamResults(examResultsId) {
+		var f = document.form2;
+		f.examResultsId.value = examResultsId;
+		f.method = "post";
+		f.action = 'viewExamResults.do';
+		f.submit();
+	}
 </script>
 </head>
 <body>
@@ -146,13 +153,13 @@
 												<th>Student Name</th>
 												<th>Student Class</th>
 												<th>Exam Title</th>
-												<th>Exam Date</th>
 												<th>Total Marks</th>
 												<th>Scored Marks</th>
 												<th>Rank</th>
 												<th>Grade</th>
 												<th>Edit</th>
 												<th>Delete</th>
+												<th>View</th>
 												<th>Send Alert</th>
 											</tr>
 										</thead>
@@ -168,7 +175,6 @@
 												<td><%=examResults.getStudentName()%></td>
 												<td><%=examResults.getStudentClass()%></td>
 												<td><%=examResults.getExamTitle()%></td>
-												<td><%=examResults.getExamDate()%></td>
 												<td><%=examResults.getTotal()%></td>
 												<td><%=calculation.getTotalMarks(examResults)%></td>
 												<td><%=examResults.getRank()%></td>
@@ -179,8 +185,12 @@
 												<td><input type="button" name="delete" value="Delete"
 													class="btn btn-danger"
 													onclick="deleteExamResults('<%=examResults.getExamResultsId()%>')" /></td>
-                                   <td><input type="button" name="send" value="Send Marks To Parent"
+                                  
+											<td><input type="button" name="view" value="View"
 													class="btn btn-success"
+													onclick="viewExamResults('<%=examResults.getExamResultsId()%>')" /></td>
+                               <td><input type="button" name="send" value="Send Marks"
+													class="btn btn-warning"
 													onclick="sendResultsSms('<%=examResults.getExamResultsId()%>')" /></td>
 
 											</tr>

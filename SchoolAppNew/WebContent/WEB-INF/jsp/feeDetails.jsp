@@ -178,7 +178,7 @@
 													class="btn btn-danger"
 													onclick="deleteFeeDetails('<%=feeDetails.getRecieptNo()%>', '<%=feeDetails.getOtherFee()%>')" /></td>
 											<td><input type="button" name="view" value="View"
-														class="btn btn-primary"
+														class="btn btn-success"
 														onclick="viewFeeDetails('<%=feeDetails.getRecieptNo()%>')" /></td>
 											
 											</tr>

@@ -43,6 +43,7 @@ xsi:schemaLocation="http://www.springframework.org/schema/beans
      		<mvc:mapping path="/updateAmountDetails.do" />
      		<mvc:mapping path="/viewAllStudents.do" />
      		<mvc:mapping path="/sendResultsSms.do" />
+     		<mvc:mapping path="/viewExamResults.do" />
      		
      		<bean class="com.shiva.util.SessionHandler" />
    		</mvc:interceptor>

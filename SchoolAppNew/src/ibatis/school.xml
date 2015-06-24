@@ -158,7 +158,7 @@
 	</delete>
 
 	<select id="getStudents" resultMap="Student">
-		select s.* from student s;
+		select roll_num,admission_num,student_fisrt_name,student_last_name,student_class, section, medium, student_father_name,student_mother_name,date_format(student_dob, '%d-%m-%Y') as student_dob,student_caste,student_religion,student_phone_num,student_village,student_gender,fees,date_format(student_doj, '%d-%m-%Y') as student_doj,student_status from student;
 	</select>
 
 	<select id="getStudentByStudentname" parameterClass="string"
@@ -216,7 +216,7 @@
 	</insert>
 	
 	<select id="getFeeDetailsMap" resultMap="FeeDetails">
-		select f.* from fee_details f;
+		SELECT recipt_no,roll_no,student_name,student_class,fee_type,fee_paid, DATE_FORMAT(fee_pay_date_1,'%d-%m-%Y') AS fee_pay_date_1 FROM fee_details;
 	</select>
 	<select id="getFeeDetailsById" parameterClass="string" resultMap="FeeDetails">
 		select f.* from fee_details f where f.recipt_no=#reciptId#;
@@ -244,11 +244,11 @@
 	  </insert>
 
      <select id="getExamResultsMap" resultMap="ExamResults">
-		select e.* from exam_results e;
+		select exam_results_id,roll_num, student_name,student_class,exam_title,telugu_1,telugu_2,hindi_1,hindi_2,english_1,english_2,maths_1,maths_2,science_1,science_2,social_1,social_2,computers, arts, others,total,rank, grade, date_format(exam_date, '%d-%m-%Y') as exam_date from exam_results;
 	</select>
 	
 	<select id="getExamResultsById" parameterClass="string" resultMap="ExamResults">
-		select e.* from exam_results e where e.exam_results_id=#examResultsId#;
+		select e.* from e.exam_results e where e.exam_results_id=#examResultsId#;
 	</select>
 	
     <update id="updateResults" parameterClass="java.util.Map">
@@ -275,7 +275,7 @@
 	</insert>
 	
 	<select id="getBudgetDetailsMap" resultMap="BudgetDetails">
-		select b.* from budget_details b;
+		select budget_id,budget_name,budget_cost, budget_by, date_format(budget_date, '%d-%m-%Y') as budget_date, budget_type,other from budget_details;
 	</select>
 	<select id="getBudgetDetailsById" parameterClass="integer" resultMap="BudgetDetails">
 		select b.* from budget_details b where b.budget_id=#budget_id#;
@@ -293,10 +293,10 @@
 	</select>
 	
 	<select id="getTopExpensesDetailsMap" resultMap="BudgetDetails">
-		select b.* from budget_details b where b.budget_type='debited' order by b.budget_cost desc limit 5;
+		select budget_id,budget_name,budget_cost, budget_by, date_format(budget_date, '%d-%m-%Y') as budget_date, budget_type,other from budget_details where budget_type='debited' order by budget_cost desc limit 5;
 	</select>
 	
 	<select id="getRecentExpensesDetailsMap" resultMap="BudgetDetails">
-		select b.* from budget_details b where b.budget_type='debited' order by b.budget_date desc limit 5;
+		select budget_id,budget_name,budget_cost, budget_by, date_format(budget_date, '%d-%m-%Y') as budget_date, budget_type,other from budget_details where budget_type='debited' order by budget_date desc limit 5;
 	</select>
 </sqlMap>

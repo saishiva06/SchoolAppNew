@@ -183,7 +183,7 @@
 				                        <td><button class="btn btn-danger btn-sm" onclick="deleteStudent('<%=student.getRollno()%>')"  ><i class="fa fa-pencil"></i> Delete</button></td>		 
 								</tr>onclick="deleteStudent('<%=student.getRollno()%>')"/></td> --%>
 													<td><input type="button" name="view" value="View"
-														class="btn btn-primary"
+														class="btn btn-success"
 														onclick="viewStudent('<%=student.getRollno()%>')" /></td>
 
 												</tr>
