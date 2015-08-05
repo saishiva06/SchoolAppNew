@@ -8,8 +8,8 @@ import com.shiva.entity.StudentByClass;
 
 public interface StudentDao {
 	boolean isStudentExists(String u_login);
-	int createStudent( String admissionNo,String studentFirstName,String studentLastName, String studentClass, String section, String medium,
-			String studentFatherName,String studentMotherName, String dob, String caste, String religion,String phoneNumber,
+	int createStudent(String rollNo, String admissionNo,String studentFirstName,String studentLastName, String studentClass, String section, String medium,
+			String studentFatherName,String studentMotherName, String dob, String caste,  String subCaste, String religion,String phoneNumber,
 			String village,String gender, String fees, String doj,int status);
 	boolean deleteAllStudents();
 	List<Student> getStudents();
@@ -25,4 +25,6 @@ public interface StudentDao {
 	List<StudentByClass> getStudentCountByClass();
 	Student getStudentByAdmissionNum(String admNo);
 	String getTotalFee();
+	String getLastRecordAdmNum();
+	Student getStudentByRollNum(String rollNo);
 }

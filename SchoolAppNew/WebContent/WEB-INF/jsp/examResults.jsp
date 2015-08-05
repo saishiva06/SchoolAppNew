@@ -41,7 +41,6 @@
 	}
 	
 	function sendResultsSms(examResultsId) {
-	window.alert(examResultsId);
 		var f = document.form2;
 		f.examResultsId.value = examResultsId;
 		f.method = "post";

@@ -19,4 +19,9 @@ public class UserServiceImpl implements UserService {
 		return userDao.authenticateUser(u_name, u_password);
 	}
 
+	
+	public boolean updatePassword(String u_name, String u_password) {
+		return userDao.updatePassword(u_name, u_password);
+	}
+
 }

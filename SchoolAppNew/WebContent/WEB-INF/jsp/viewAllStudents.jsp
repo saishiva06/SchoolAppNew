@@ -76,13 +76,13 @@
 												    <th>Roll No</th>
 													<th>Admission No</th>
 													<th>Name</th>
-													<th>Class</th>
 													<th>Father's Name</th>
+													<th>Mother's Name</th>
 													<th>Date Of Birth</th>
 													<th>Caste</th>
+													<th>Class</th>
 													<th>Mobile No</th>
 													<th>Date Of Joinee</th>
-													<th>Fees</th>
 												</tr>
 											</thead>
 											<tbody>
@@ -92,17 +92,18 @@
 															for (int i = 0; i < mydata.size(); i++) {
 																Student student = mydata.get(i);
 													%>
-													<td><%=student.getRollno()%></td>
 													<td><%=student.getAdmissionNo()%></td>
+													<td><%=student.getRollno()%></td>
 													<td><%=student.getStudentFirstName() + " "
 							+ student.getStudentLastName()%></td>
-													<td><%=student.getStudentClass()%></td>
+													
 													<td><%=student.getStudentFatherName()%></td>
+													<td><%=student.getStudentMotherName()%></td>
 													<td><%=student.getDob()%></td>
 													<td><%=student.getCaste()%></td>
+													<td><%=student.getStudentClass()%></td>
 													<td><%=student.getPhoneNumber()%></td>
 													<td><%=student.getDoj()%></td>
-													<td><%=student.getFees()%></td>
 													</tr>
 												<%
 													}

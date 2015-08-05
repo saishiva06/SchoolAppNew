@@ -30,4 +30,20 @@ public class UserDaoImpl extends SqlMapClientDaoSupport implements UserDao {
 		}
 	}
 
+	@Override
+	public boolean updatePassword(String u_name, String u_password) {
+		try {
+			Map<String, Object> paramsMap = new HashMap<String, Object>();
+			paramsMap.put("u_login", u_name);
+			paramsMap.put("u_password", u_password);
+			int result = template.update("updatePassword", paramsMap);
+			if (result > 0) {
+				return true;
+			} else {
+				return false;
+			}
+		} catch (Exception e) {
+			return false;
+		}
+   }
 }

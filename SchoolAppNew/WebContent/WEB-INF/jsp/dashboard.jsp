@@ -88,6 +88,7 @@
 					<li class="nav-item"><a href="feeDetails.do">Fee</a></li>
 					<li class="nav-item"><a href="examResults.do">Examination</a></li>
 					<li class="nav-item"><a href="budgetDashboard.do">Budget</a></li>
+					<li class="nav-item"><a href="settings.do">Settings</a></li>
 
 				</ul>
 				<!--//nav-->

@@ -24,23 +24,23 @@
 <link href="resources/js/dataTables/dataTables.bootstrap.css"
 	rel="stylesheet" />
 <script type="text/javascript">
-	function editStudent(rollno) {
+	function editStudent(sno) {
 		var f = document.form2;
-		f.rollno.value = rollno;
+		f.sno.value = sno;
 		f.method = "post";
 		f.action = 'editStudent.do';
 		f.submit();
 	}
-	function deleteStudent(rollno) {
+	function deleteStudent(sno) {
 		var f = document.form2;
-		f.rollno.value = rollno;
+		f.sno.value = sno;
 		f.method = "post";
 		f.action = 'deleteStudent.do';
 		f.submit();
 	}
-	function viewStudent(rollno) {
+	function viewStudent(sno) {
 		var f = document.form2;
-		f.rollno.value = rollno;
+		f.sno.value = sno;
 		f.method = "post";
 		f.action = 'viewStudent.do';
 		f.submit();
@@ -146,8 +146,8 @@
 											id="dataTables-example">
 											<thead>
 												<tr>
-												   <th>Roll No</th>
-													<th>Admission No</th>
+												   <th>Admission No</th>
+												    <th>Roll No</th>
 													<th>Name</th>
 													<th>Class</th>
 													<th>Total Fee</th>
@@ -165,8 +165,8 @@
 															for (int i = 0; i < mydata.size(); i++) {
 																Student student = mydata.get(i);
 													%>
-													<td><%=student.getRollno()%></td>
 													<td><%=student.getAdmissionNo()%></td>
+													<td><%=student.getRollno()%></td>
 													<td><%=student.getStudentFirstName() + " "
 							+ student.getStudentLastName()%></td>
 													<td><%=student.getStudentClass()%></td>
@@ -175,16 +175,16 @@
 													<td><%=calculation.getDueFee(student)%></td>
 													<td><input type="button" name="edit" value="Edit"
 														class="btn btn-primary"
-														onclick="editStudent('<%=student.getRollno()%>')" /></td>
+														onclick="editStudent('<%=student.getsNo()%>')" /></td>
 													<td><input type="button" name="delete" value="Delete"
 														class="btn btn-danger"
-														onclick="deleteStudent('<%=student.getRollno()%>')" /></td>
+														onclick="deleteStudent('<%=student.getsNo()%>')" /></td>
 													<%-- <td><button class="btn btn-primary btn-sm" onclick="editStudent('<%=student.getRollno()%>')" ><i class="fa fa-edit "></i> Edit</button></td>
 				                        <td><button class="btn btn-danger btn-sm" onclick="deleteStudent('<%=student.getRollno()%>')"  ><i class="fa fa-pencil"></i> Delete</button></td>		 
 								</tr>onclick="deleteStudent('<%=student.getRollno()%>')"/></td> --%>
 													<td><input type="button" name="view" value="View"
 														class="btn btn-success"
-														onclick="viewStudent('<%=student.getRollno()%>')" /></td>
+														onclick="viewStudent('<%=student.getsNo()%>')" /></td>
 
 												</tr>
 												<%
@@ -197,7 +197,7 @@
 									</div>
 								</form>
 								<form name="form2" method="post" id="form2">
-									<input type="hidden" name="rollno" value="">
+									<input type="hidden" name="sno" value="">
 								</form>
 							</div>
 						</div>

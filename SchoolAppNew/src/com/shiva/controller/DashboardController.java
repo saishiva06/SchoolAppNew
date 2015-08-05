@@ -30,11 +30,12 @@ import com.shiva.util.RandomGenerator;
 public class DashboardController {
 
 	HttpSession session;
-
-	private UserService userService;
+    private UserService userService;
 	private StudentService studentService;
 	private TeacherService teacherService;
 	private FeeDetailsService feeDetailsService;
+	private BudgetDetailsService budgetDetailsService;
+	
 	public BudgetDetailsService getBudgetDetailsService() {
 		return budgetDetailsService;
 	}
@@ -42,10 +43,7 @@ public class DashboardController {
 	public void setBudgetDetailsService(BudgetDetailsService budgetDetailsService) {
 		this.budgetDetailsService = budgetDetailsService;
 	}
-	private BudgetDetailsService budgetDetailsService;
 	
-
-
 	public UserService getUserService() {
 		return userService;
 	}
@@ -53,7 +51,6 @@ public class DashboardController {
 	public void setUserService(UserService userService) {
 		this.userService = userService;
 	}
-	
 	
 	public StudentService getStudentService() {
 		return studentService;
@@ -83,7 +80,7 @@ public class DashboardController {
 	@RequestMapping("/dashboard.do")
 	public ModelAndView checkLogin(HttpServletRequest request) throws Exception {
 		session = request.getSession(false);
-		int totalFee = 0;
+		String totalFee = "";
 		if(session == null) {
 		String userName = request.getParameter("teachername");
 		String userPassword = request.getParameter("teacherpass");
@@ -110,9 +107,10 @@ public class DashboardController {
 		mav.addObject("teacherCount", teacherCount);
 		mav.addObject("studentsCount", studentsCount);
 		mav.setViewName("dashboard");
-		totalFee = Integer.parseInt(studentService.getTotalFee());
-		String paidFee = feeDetailsService.getTotalPaidFee();
-		int dueFee = totalFee-Integer.parseInt(paidFee);
+		
+		totalFee = studentService.getTotalFee();
+		String paidFee = feeDetailsService.getTotalPaidFee(); 
+		int dueFee = (totalFee != null ? Integer.parseInt(totalFee) : 0)-(Integer.parseInt(paidFee!= null ? paidFee :"0"));
 		mav.addObject("collectedFee", paidFee);
 		mav.addObject("dueFee", dueFee);
 		mav.addObject("studentsCount", studentsCount);
@@ -252,5 +250,35 @@ public class DashboardController {
 		
 }
 	
+	@RequestMapping("/settings.do")
+	public ModelAndView loadSettingsDashboard(HttpServletRequest request) throws Exception {
+		ModelAndView mav = new ModelAndView();
+		mav.setViewName("settings");
+		return mav;
+	}
+	
+	@RequestMapping("/changePassword.do")
+	public ModelAndView changePassword(HttpServletRequest request) throws Exception {
+		String oldPassword = request.getParameter("oldPassword");
+		String newPassword = request.getParameter("newPassword");
+		String newPassword1 = request.getParameter("newPassword1");
+		ModelAndView mav = new ModelAndView();
+		mav.setViewName("settings");
+		session = request.getSession(false);
+		String userName = (String) session.getAttribute("user_name");
+		boolean alert = userService.authenticateUser(userName, oldPassword);
+		if (alert) {
+			if (newPassword.equals(newPassword1)) {
+				userService.updatePassword(userName, newPassword);
+			 mav.addObject("Msg", "password changed successfully");
+		} else {
+			 mav.addObject("Msg", "pasword update failed, please try again");
+		}
+	} else {
+		 mav.addObject("Msg", "pasword update failed, please try again");
+	}
 
+	return mav;
+  }
 }
+	

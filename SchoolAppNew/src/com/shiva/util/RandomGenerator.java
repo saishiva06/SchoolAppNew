@@ -44,7 +44,7 @@ public class RandomGenerator {
 		return randStr.toString();
 	}
 	
-	public static String getAdmissionNum(String studentClass,String lastId) {
+	public static String getRollNum(String studentClass,String lastId) {
 		String admisionConst = "SN";
 		String admissionNum = "";
 		String id ="";
@@ -84,5 +84,16 @@ public class RandomGenerator {
 			randStr.append(ch);
 		}
 		return randStr.toString();
+	}
+	
+	public static String getAdmissionNum(String studentClass,String lastId) {
+		String admissionNum = "";
+		if(studentClass.equalsIgnoreCase("lkg") || studentClass.equalsIgnoreCase("ukg") || studentClass.equalsIgnoreCase("nursery")) {
+			admissionNum = "-";
+		} else {
+				int num= Integer.parseInt(lastId) + 1;
+				admissionNum = String.valueOf(num);
+		}
+			return admissionNum;
 	}
 }

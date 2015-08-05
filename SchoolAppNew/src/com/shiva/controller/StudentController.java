@@ -68,6 +68,7 @@ public class StudentController {
 					.getParameter("studentMotherName");
 			String studentDob = request.getParameter("studentDob");
 			String caste = request.getParameter("caste");
+			String subCaste = request.getParameter("subCaste");
 			String religion = request.getParameter("religion");
 			String phoneNumber = request.getParameter("mobileNo");
 			String village = request.getParameter("village");
@@ -86,14 +87,16 @@ public class StudentController {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-			String LastId = studentService.getLastRecordRollNum(studentClass);
-			String admissionNo = RandomGenerator.getAdmissionNum(studentClass, LastId);
+			String LastRollNo = studentService.getLastRecordRollNum(studentClass);
+			String lastAdmsnNum = studentService.getLastRecordAdmNum();
+	        String admissionNo   = RandomGenerator.getAdmissionNum(studentClass, lastAdmsnNum!=null ? lastAdmsnNum : "0");
+	        String  rollNum = RandomGenerator.getRollNum(studentClass, LastRollNo!=null ? LastRollNo : "");
 			String formattedDob = output.format(studentDob1);
 			String dateOfJoinee1 = output.format(studentDoj);
-			int result = studentService.createStudent(admissionNo,
+			int result = studentService.createStudent(rollNum,admissionNo,
 					studentFirstName, studentLastName, studentClass, section,
 					medium, studentFatherName, studentMotherName, formattedDob,
-					caste, religion, phoneNumber, village, gender, fees,
+					caste, subCaste,religion, phoneNumber, village, gender, fees,
 					dateOfJoinee1, 0);
 			System.out.println("@@@ Student added.........." + result);
 			String message= "Thank you for joining in Sri Narayana schools. Student " + studentFirstName + " " +studentLastName + " joined in " + studentClass + " and medium is "+ medium +" succesfully. And Admission number is " + admissionNo +" ";
@@ -109,7 +112,7 @@ public class StudentController {
 	@RequestMapping("/editStudent.do")
 	public ModelAndView editStudent(HttpServletRequest request,
 			HttpServletResponse response) throws Exception {
-		String studentId = request.getParameter("rollno");
+		String studentId = request.getParameter("sno");
 		System.out.println("@@@ edit studentId.........." + studentId);
 		ModelAndView mav = new ModelAndView();
 		mav.setViewName("editStudent");
@@ -137,7 +140,7 @@ public class StudentController {
 	@RequestMapping("/viewStudent.do")
 	public ModelAndView viewStudent(HttpServletRequest request,
 			HttpServletResponse response) throws Exception {
-		String studentId = request.getParameter("rollno");
+		String studentId = request.getParameter("sno");
 		System.out.println("@@@ view studentId.........." + studentId);
 		ModelAndView mav = new ModelAndView();
 		mav.setViewName("viewStudent");
@@ -165,7 +168,7 @@ public class StudentController {
 	@RequestMapping("/deleteStudent.do")
 	public ModelAndView loadStudentDashboard(HttpServletRequest request,
 			HttpServletResponse response) throws Exception {
-		String studentId = request.getParameter("rollno");
+		String studentId = request.getParameter("sno");
 		System.out.println("@@@ delete studentId.........." + studentId);
 		if (studentId != null && studentId.length() > 0) {
 			boolean status = studentService.deleteStudent(studentId);
@@ -179,6 +182,7 @@ public class StudentController {
 			HttpServletResponse response) throws Exception {
 
 		try {
+			String sNo = request.getParameter("sno");
 			String admissionNum = request.getParameter("admissionNo");
 			String rollnum = request.getParameter("rollno");
 			String studentFirstName = request.getParameter("studentFirstName");
@@ -192,6 +196,7 @@ public class StudentController {
 					.getParameter("studentMotherName");
 			String studentDob = request.getParameter("studentDob");
 			String caste = request.getParameter("caste");
+			String subCaste = request.getParameter("subCaste");
 			String religion = request.getParameter("religion");
 			String phoneNumber = request.getParameter("mobileNo");
 			String village = request.getParameter("village");
@@ -213,6 +218,7 @@ public class StudentController {
 			String formattedDob = output.format(studentDob1);
 			String dateOfJoinee1 = output.format(studentDoj);
 			Map<String, Object> paramsMap = new HashMap<String, Object>();
+			paramsMap.put("s_no", sNo);
 			paramsMap.put("roll_num", rollnum);
 			paramsMap.put("admission_num", admissionNum);
 			paramsMap.put("student_fisrt_name", studentFirstName);
@@ -224,6 +230,7 @@ public class StudentController {
 			paramsMap.put("student_mother_name", studentMotherName);
 			paramsMap.put("student_dob", formattedDob);
 			paramsMap.put("student_caste", caste);
+			paramsMap.put("sub_caste", subCaste);
 			paramsMap.put("student_religion", religion);
 			paramsMap.put("student_phone_num", phoneNumber);
 			paramsMap.put("student_village", village);
@@ -249,7 +256,7 @@ public class StudentController {
 	@RequestMapping(value = "/getStudentDetailsForRollNum.do", method = RequestMethod.GET)
 	@ResponseBody
 	public Student getStudentDetailsForRollNum(@RequestParam("rollno") String  rollno)throws Exception {
-		Student student = studentService.getStudentById(rollno);
+		Student student = studentService.getStudentByRollNum(rollno);
 		return student!=null ? student : null;
 	}
 	

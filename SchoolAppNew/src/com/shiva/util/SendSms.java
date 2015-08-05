@@ -13,18 +13,19 @@ public class SendSms {
 			String username = "shs";
 			String password = "2007";
 			String originator = "SNSKMM";
-			String requestUrl = "http://smsatm.net/spanelv2/api.php?"
+			String requestUrl = "http://103.231.76.120/spanelv2/api.php?"
 					+ "username=" + URLEncoder.encode(username, "UTF-8")
 					+ "&password=" + URLEncoder.encode(password, "UTF-8")
 					+ "&to=" + URLEncoder.encode(recipient, "UTF-8") + "&from="
 					+ URLEncoder.encode(originator, "UTF-8") + "&message="
 					+ URLEncoder.encode(message, "UTF-8");
-			System.out.println(requestUrl);
+			/*System.out.println(requestUrl);
 			URL url = new URL(requestUrl);
 			HttpURLConnection uc = (HttpURLConnection) url.openConnection();
 			System.out.println(uc.getResponseMessage());
+			System.out.println(uc.getResponseCode());
 			uc.disconnect();
-
+*/
 		} catch (Exception ex) {
 			System.out.println(ex.getMessage());
 

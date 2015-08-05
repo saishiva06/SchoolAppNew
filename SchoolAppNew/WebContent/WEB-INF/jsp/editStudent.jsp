@@ -122,9 +122,11 @@
 						<div class="col-md-8">
 							<form action="updateStudent.do" id="updateStudent" method="post"
 								class="form-horizontal">
-								<input type="hidden" name="rollno"
-									value="<%=student.getRollno()%>"> <input type="hidden"
+								<input type="hidden" name="sno"
+									value="<%=student.getsNo()%>"> <input type="hidden"
 									name="admissionNo" value="<%=student.getAdmissionNo()%>">
+									<input type="hidden"
+									name="rollno" value="<%=student.getRollno()%>">
 								<div class="form-group">
 									<label class="col-sm-3 control-label">Full name</label>
 									<div class="col-sm-4">

@@ -21,10 +21,10 @@ public class StudentServiceImpl implements StudentService {
 	}
 
 	@Override
-	public int createStudent( String admissionNo,String studentFirstName,String studentLastName, String studentClass, String section, String medium,
-			String studentFatherName,String studentMotherName, String dob, String caste, String religion,String phoneNumber,
+	public int createStudent(String rollNo, String admissionNo,String studentFirstName,String studentLastName, String studentClass, String section, String medium,
+			String studentFatherName,String studentMotherName, String dob, String caste, String subCaste,String religion,String phoneNumber,
 			String village,String gender, String fees, String doj,int status){
-		return studentDao.createStudent(admissionNo,studentFirstName, studentLastName,  studentClass,  section,  medium, studentFatherName, studentMotherName,  dob,  caste,  religion, phoneNumber, village, gender, fees,  doj,status);
+		return studentDao.createStudent( rollNo,admissionNo,studentFirstName, studentLastName,  studentClass,  section,  medium, studentFatherName, studentMotherName,  dob,  caste, subCaste, religion, phoneNumber, village, gender, fees,  doj,status);
 	}
 
 	@Override
@@ -94,5 +94,13 @@ public class StudentServiceImpl implements StudentService {
 	public String getTotalFee() {
 		return studentDao.getTotalFee();	
 }
+
+	public String getLastRecordAdmNum() {
+		return studentDao.getLastRecordAdmNum();
+	}
+    
+	public Student getStudentByRollNum(String rollNo) {
+		 return studentDao.getStudentByRollNum(rollNo);
+	}
 	
 }

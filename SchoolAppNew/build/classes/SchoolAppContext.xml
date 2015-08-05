@@ -44,6 +44,8 @@ xsi:schemaLocation="http://www.springframework.org/schema/beans
      		<mvc:mapping path="/viewAllStudents.do" />
      		<mvc:mapping path="/sendResultsSms.do" />
      		<mvc:mapping path="/viewExamResults.do" />
+     		<mvc:mapping path="/settings.do" />
+     		<mvc:mapping path="/changePassword.do" />
      		
      		<bean class="com.shiva.util.SessionHandler" />
    		</mvc:interceptor>
@@ -73,7 +75,7 @@ xsi:schemaLocation="http://www.springframework.org/schema/beans
 	<bean name="studentController" class="com.shiva.controller.StudentController" scope="request"><property name="studentService" ref="studentServiceImpl" /></bean>
 	<bean name="feeDetailsController" class="com.shiva.controller.FeeDetailsController" scope="request"><property name="feeDetailsService" ref="feeDetailsServiceImpl" /><property name="studentService" ref="studentServiceImpl" /><property name="budgetDetailsService" ref="budgetDetailsServiceImpl" /></bean>
 	<bean name="examResultsController" class="com.shiva.controller.ExamResultsController" scope="request"><property name="examResultsService" ref="examResultsServiceImpl" /><property name="studentService" ref="studentServiceImpl" /></bean>
-	 <bean name="dashboardController" class="com.shiva.controller.DashboardController"><property name="studentService" ref="studentServiceImpl" /><property name="teacherService" ref="teacherServiceImpl" /><property name="budgetDetailsService" ref="budgetDetailsServiceImpl" /><property name="feeDetailsService" ref="feeDetailsServiceImpl" /></bean>
+	 <bean name="dashboardController" class="com.shiva.controller.DashboardController"><property name="studentService" ref="studentServiceImpl" /><property name="teacherService" ref="teacherServiceImpl" /><property name="budgetDetailsService" ref="budgetDetailsServiceImpl" /><property name="feeDetailsService" ref="feeDetailsServiceImpl" /><property name="userService" ref="userServiceImpl" /></bean>
 	
 
 	<bean id="userServiceImpl" class="com.shiva.service.UserServiceImpl" scope="request"><property name="userDao" ref="userDaoImpl" /></bean>
