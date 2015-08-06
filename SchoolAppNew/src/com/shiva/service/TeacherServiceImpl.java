@@ -24,12 +24,12 @@ public class TeacherServiceImpl implements TeacherService {
 
 	@Override
 	public int createTeacher(String teacherId, String teacherFirstName,
-			String teacherLastName, String qualification, String exp,
-			String subject, String dob, String caste, String phoneNumber,
+			String teacherLastName, String profQualification, String qualification, String exp,
+			String subject, String dob, String caste,String subCaste, String phoneNumber,
 			String village, String gender, String doj, int status) {
 		return teacherDao.createTeacher(teacherId, teacherFirstName,
-				teacherLastName, qualification, exp, subject, dob, caste,
-				phoneNumber, village, gender, doj, status);
+				teacherLastName,profQualification, qualification, exp, subject, dob, caste,
+				subCaste,phoneNumber, village, gender, doj, status);
 
 	}
 

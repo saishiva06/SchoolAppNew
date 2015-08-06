@@ -23,8 +23,8 @@ public class StudentServiceImpl implements StudentService {
 	@Override
 	public int createStudent(String rollNo, String admissionNo,String studentFirstName,String studentLastName, String studentClass, String section, String medium,
 			String studentFatherName,String studentMotherName, String dob, String caste, String subCaste,String religion,String phoneNumber,
-			String village,String gender, String fees, String doj,int status){
-		return studentDao.createStudent( rollNo,admissionNo,studentFirstName, studentLastName,  studentClass,  section,  medium, studentFatherName, studentMotherName,  dob,  caste, subCaste, religion, phoneNumber, village, gender, fees,  doj,status);
+			String village,String gender, String fees, String doj,int status,String mole){
+		return studentDao.createStudent( rollNo,admissionNo,studentFirstName, studentLastName,  studentClass,  section,  medium, studentFatherName, studentMotherName,  dob,  caste, subCaste, religion, phoneNumber, village, gender, fees,  doj,status,mole);
 	}
 
 	@Override

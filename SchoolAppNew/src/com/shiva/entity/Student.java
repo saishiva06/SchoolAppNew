@@ -22,12 +22,13 @@ public class Student {
 	private String fees;
 	private String doj;
 	private int status;
+	private String mole;
 
 	public Student(int sNo, String rollno, String admissionNo, String studentFirstName,
 			String studentLastName, String studentClass, String section,
 			String medium, String studentFatherName, String studentMotherName,
 			String dob, String caste,String subCaste, String religion, String phoneNumber,
-			String village, String gender, String fees, String doj, int status) {
+			String village, String gender, String fees, String doj, int status, String mole) {
 		// TODO Auto-generated constructor stub
 	}
 	
@@ -195,5 +196,13 @@ public class Student {
 	public void setSubCaste(String subCaste) {
 		this.subCaste = subCaste;
 	}
+	public String getMole() {
+		return mole;
+	}
 
+	public void setMole(String mole) {
+		this.mole = mole;
+	}
+
+	
 }

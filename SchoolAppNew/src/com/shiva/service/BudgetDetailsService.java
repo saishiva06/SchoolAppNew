@@ -6,7 +6,7 @@ import java.util.Map;
 import com.shiva.entity.BudgetDetails;
 
 public interface BudgetDetailsService {
-	 int createBudgetDetails(String budgetName,String budgetCost, String budgetBy, String budgetDate, String budgetType,
+	 int createBudgetDetails(String recieptNo,String budgetName,String budgetCost, String budgetBy, String budgetDate, String budgetType,
 	 		   String other);
 	 int updateBudgetDetails(BudgetDetails budgetDetails);
 	 List<BudgetDetails>  getBudgetDetailsMap();

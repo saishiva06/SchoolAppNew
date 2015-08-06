@@ -136,6 +136,13 @@
 									</div>
 								</div>
 								<div class="form-group">
+									<label class="col-sm-3 control-label">Professional Qualification</label>
+									<div class="col-sm-5">
+										<input type="text" class="form-control" id="profQualification"
+											name="profQualification" value="<%=teacher.getProfQualification()%>" />
+									</div>
+								</div>
+								<div class="form-group">
 									<label class="col-sm-3 control-label">Qualification</label>
 									<div class="col-sm-5">
 										<input type="text" class="form-control" id="qualification"
@@ -174,6 +181,13 @@
 									<div class="col-sm-5">
 										<input type="text" class="form-control" id="caste"
 											name="caste" value="<%=teacher.getCaste()%>" />
+									</div>
+								</div>
+								<div class="form-group">
+									<label class="col-sm-3 control-label">Sub Caste</label>
+									<div class="col-sm-5">
+										<input type="text" class="form-control" id="subCaste"
+											name="subCaste" value="<%=teacher.getSubCaste()%>" />
 									</div>
 								</div>
 								<div class="form-group">

@@ -75,7 +75,7 @@ public class StudentController {
 			String gender = request.getParameter("gender");
 			String fees = request.getParameter("fee");
 			String dateOfJoinee = request.getParameter("studentDoj");
-
+			String mole = request.getParameter("mole");
 			SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 			SimpleDateFormat output = new SimpleDateFormat("yyyy-MM-dd");
 			Date studentDob1 = null, studentDoj = null;
@@ -97,7 +97,7 @@ public class StudentController {
 					studentFirstName, studentLastName, studentClass, section,
 					medium, studentFatherName, studentMotherName, formattedDob,
 					caste, subCaste,religion, phoneNumber, village, gender, fees,
-					dateOfJoinee1, 0);
+					dateOfJoinee1, 0,mole);
 			System.out.println("@@@ Student added.........." + result);
 			String message= "Thank you for joining in Sri Narayana schools. Student " + studentFirstName + " " +studentLastName + " joined in " + studentClass + " and medium is "+ medium +" succesfully. And Admission number is " + admissionNo +" ";
 			String recipient = request.getParameter("mobileNo");
@@ -203,6 +203,7 @@ public class StudentController {
 			String gender = request.getParameter("gender");
 			String fees = request.getParameter("fee");
 			String dateOfJoinee = request.getParameter("studentDoj");
+			String mole = request.getParameter("mole");
 			SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 			SimpleDateFormat output = new SimpleDateFormat("yyyy-MM-dd");
 			Date studentDob1 = null, studentDoj = null;
@@ -237,6 +238,7 @@ public class StudentController {
 			paramsMap.put("student_gender", gender);
 			paramsMap.put("student_doj", dateOfJoinee1);
 			paramsMap.put("fees", fees);
+			paramsMap.put("student_moles", mole);
 			paramsMap.put("student_status", 0);
 			int result = studentService.updateStudent(paramsMap);
 			System.out.println("@@@ Student updated.........." + result);

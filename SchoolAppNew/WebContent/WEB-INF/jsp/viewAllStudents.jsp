@@ -80,9 +80,10 @@
 													<th>Mother's Name</th>
 													<th>Date Of Birth</th>
 													<th>Caste</th>
+													<th>Sub Caste</th>
 													<th>Class</th>
-													<th>Mobile No</th>
 													<th>Date Of Joinee</th>
+													<th>Moles</th>
 												</tr>
 											</thead>
 											<tbody>
@@ -101,9 +102,10 @@
 													<td><%=student.getStudentMotherName()%></td>
 													<td><%=student.getDob()%></td>
 													<td><%=student.getCaste()%></td>
+													<td><%=student.getSubCaste()%></td>
 													<td><%=student.getStudentClass()%></td>
-													<td><%=student.getPhoneNumber()%></td>
 													<td><%=student.getDoj()%></td>
+													<td><%=student.getMole()%></td>
 													</tr>
 												<%
 													}

@@ -239,6 +239,13 @@
 									</div>
 								</div>
 								<div class="form-group">
+									<label class="col-sm-3 control-label">Sub Caste</label>
+									<div class="col-sm-5">
+										<input id="subCaste" name="subCaste" class="form-control"
+											type="text" value="<%=student.getSubCaste()%>" />
+									</div>
+								</div>
+								<div class="form-group">
 									<label class="col-sm-3 control-label">Mobile No</label>
 									<div class="col-sm-5">
 										<input id="mobileNo" name="mobileNo"
@@ -269,6 +276,13 @@
 												class="input-group-addon add-on"><span
 												class="glyphicon glyphicon-calendar"></span></span>
 										</div>
+									</div>
+								</div>
+								<div class="form-group">
+									<label class="col-sm-3 control-label">Moles</label>
+									<div class="col-sm-5">
+										<textarea class=" input-xlarge form-control" id="mole"
+											name="mole" rows="3"><%=student.getMole()%></textarea>
 									</div>
 								</div>
 								<div class="form-group">

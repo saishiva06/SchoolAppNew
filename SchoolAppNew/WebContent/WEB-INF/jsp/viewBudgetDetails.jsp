@@ -1,9 +1,9 @@
-<%@page import="com.shiva.entity.FeeDetails"%>
+<%@page import="com.shiva.entity.BudgetDetails"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	session="true" pageEncoding="ISO-8859-1"%>
 
 <%
-FeeDetails feeDetails = (FeeDetails)request.getAttribute("feeDetails");
+BudgetDetails budgetDetails = (BudgetDetails)request.getAttribute("budgetDetails");
 
 %>
 <!DOCTYPE html>
@@ -69,27 +69,21 @@ FeeDetails feeDetails = (FeeDetails)request.getAttribute("feeDetails");
 								<thead>
 									<tr>
 										<th>Reciept No</th>
-										<th><%=feeDetails.getRecieptNo()%></th>
-										<th>Admission NO:</th>
-										<th><%=feeDetails.getRollNo()%></th>
+										<th><%=budgetDetails.getRecieptNo()%></th>
+										<th>Amount:</th>
+										<th><%=budgetDetails.getBudgetCost()%></th>
 									</tr>
 									<tr>
-									<th>Student Name</th>
-										<th><%=feeDetails.getStudentName()%></th>
-										<th>Class</th>
-										<th><%=feeDetails.getStudentClass()%></th>
+									<th>Amount For</th>
+										<th><%=budgetDetails.getBudgetName()%></th>
+										<th>Date</th>
+										<th><%=budgetDetails.getBudgetDate()%></th>
 										</tr>
 									<tr>
-									    <th>Fee Type</th>
-										<th><%=feeDetails.getFeeType()%></th>
-										<th> Paid Fee</th>
-										<th><%=feeDetails.getOtherFee()%></th>
-									</tr>
-									<tr>
-										<th>Date of Issue</th>
-										<th><%=feeDetails.getFeePayDate1()%></th>
-									<th></th>
-										<th></th>
+									    <th>Type</th>
+										<th><%=budgetDetails.getBudgetType()%></th>
+										<th> Other</th>
+										<th><%=budgetDetails.getOther()%></th>
 									</tr>
 								</thead>
 							</table>
@@ -100,7 +94,7 @@ FeeDetails feeDetails = (FeeDetails)request.getAttribute("feeDetails");
 				<br>
 				<div class="row">
 					<div class="col-md-12 ">
-					 <table class="table"  ><tr><th align="left">Parent Signature</th><th></th><th align="center"><input id="printpagebutton" type="button" class="" value="Print this page" onclick="printpage()" /></th><th></th><th align="right">Clerk Signature</th></tr></table>
+					 <table class="table"  ><tr><th align="left">Worker Signature</th><th></th><th align="center"><input id="printpagebutton" type="button" class="" value="Print this page" onclick="printpage()" /></th><th></th><th align="right">Principal Signature</th></tr></table>
 					 
 					<!--   <h4 align="left"><b>Parent Signature</b></h4>
 						<h4 align="center"><input id="printpagebutton" type="button" value="Print this page" onclick="printpage()" /></h4>

@@ -174,7 +174,7 @@ public class DashboardController {
 				e.printStackTrace();
 			}
 			String formattedBd = output.format(budgetDate1);
-			int result = budgetDetailsService.createBudgetDetails(budgetName,budgetCost,budgetBy, formattedBd,  "Debited",
+			int result = budgetDetailsService.createBudgetDetails(RandomGenerator.getReciptNo(),budgetName,budgetCost,budgetBy, formattedBd,  "Debited",
 		 		    other);
 			System.out.println("@@@ new expense added.........." + result);
 			BudgetDetails budgetDeails = budgetDetailsService.getBudgetDetailsById(3);
@@ -280,5 +280,19 @@ public class DashboardController {
 
 	return mav;
   }
+	
+	@RequestMapping("/viewBudgetDetails.do")
+	public ModelAndView viewBudgetDetailsDashboard(HttpServletRequest request,
+			HttpServletResponse response) throws Exception {
+		String budgetId = request.getParameter("budgetId");
+		System.out.println("@@@  budgetDeails.........." + budgetId);
+		ModelAndView mav = new ModelAndView();
+		mav.setViewName("viewBudgetDetails");
+		if (budgetId != null && budgetId.length() > 0) {
+			BudgetDetails budgetDeails = budgetDetailsService.getBudgetDetailsById(Integer.parseInt(budgetId));
+			mav.addObject("budgetDeails", budgetDeails);
+		}
+		return mav;
+	}
 }
 	

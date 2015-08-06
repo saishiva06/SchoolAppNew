@@ -8,7 +8,7 @@ import com.shiva.entity.Teacher;
 
 public interface TeacherService {
 	boolean isTeacherExists(String u_login);
-	int createTeacher(String teacherId, String teacherFirstName,String teacherLastName, String qualification, String exp, String subject, String dob, String caste, String phoneNumber,String village,String gender, String doj,int status);
+	int createTeacher(String teacherId, String teacherFirstName,String teacherLastName, String profQualification,String qualification, String exp, String subject, String dob, String caste,String subCaste, String phoneNumber,String village,String gender, String doj,int status);
     boolean deleteAllTeachers();
     boolean deleteTeacher(String teacherId);
 	List<Teacher> getTeachers();

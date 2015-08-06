@@ -53,11 +53,13 @@ public class TeacherController {
         try {
 	  String firstName = request.getParameter("firstName");
 			String lastName = request.getParameter("lastName");
+			String profQualification = request.getParameter("profQualification");
 			String qualification = request.getParameter("qualification");
 			String subject = request.getParameter("subject");
 			String experience = request.getParameter("experience");
 			String dob = request.getParameter("dob");
 			String caste = request.getParameter("caste");
+			String subCaste = request.getParameter("subCaste");
 			String mobileNo = request.getParameter("mobileNo");
 			String village = request.getParameter("village");
 			String gender = request.getParameter("gender");
@@ -77,8 +79,8 @@ public class TeacherController {
 
 			int result = teacherService.createTeacher(
 					RandomGenerator.getTeacherId(), firstName, lastName,
-					qualification, experience, subject, formattedDob, caste,
-					mobileNo, village, gender, formattedDoj, 1);
+					profQualification,qualification, experience, subject, formattedDob, caste,
+					subCaste,mobileNo, village, gender, formattedDoj, 1);
 			System.out.println("@@@ Teacher added.........." + result);
 			return new ModelAndView("redirect:teacher.do");
 		} catch (Exception e) {
@@ -137,11 +139,13 @@ public class TeacherController {
 			String teacherId = request.getParameter("teacher_id");
 			String firstName = request.getParameter("firstName");
 			String lastName = request.getParameter("lastName");
+			String profQualification = request.getParameter("profQualification");
 			String qualification = request.getParameter("qualification");
 			String subject = request.getParameter("subject");
 			String experience = request.getParameter("experience");
 			String dob = request.getParameter("dob");
 			String caste = request.getParameter("caste");
+			String subCaste = request.getParameter("subCaste");
 			String mobileNo = request.getParameter("mobileNo");
 			String village = request.getParameter("village");
 			String gender = request.getParameter("gender");
@@ -164,11 +168,13 @@ public class TeacherController {
 			paramsMap.put("teacher_id", teacherId);
 			paramsMap.put("teacher_fisrt_name", firstName);
 			paramsMap.put("teacher_last_name", lastName);
+			paramsMap.put("prof_qualification", profQualification);
 			paramsMap.put("teacher_qualification", qualification);
 			paramsMap.put("teacher_exp", experience);
 			paramsMap.put("teacher_subject", subject);
 			paramsMap.put("teacher_dob", formattedDob);
 			paramsMap.put("teacher_caste", caste);
+			paramsMap.put("sub_caste", subCaste);
 			paramsMap.put("teacher_phone_num", mobileNo);
 			paramsMap.put("teacher_village", village);
 			paramsMap.put("teacher_gender", gender);

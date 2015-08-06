@@ -34,7 +34,7 @@ public class StudentDaoImpl extends SqlMapClientDaoSupport implements StudentDao
 	@Override
 	public int createStudent(String rollNo, String admissionNo,String studentFirstName,String studentLastName, String studentClass, String section, String medium,
 			String studentFatherName,String studentMotherName, String dob, String caste, String subCaste, String religion,String phoneNumber,
-			String village,String gender, String fees, String doj,int status) { 
+			String village,String gender, String fees, String doj,int status , String mole) { 
 		Map<String, Object> paramsMap = new HashMap<String, Object>();
 		paramsMap.put("roll_num", rollNo);
 		paramsMap.put("admission_num", admissionNo);
@@ -55,6 +55,7 @@ public class StudentDaoImpl extends SqlMapClientDaoSupport implements StudentDao
 		paramsMap.put("fees", fees);
 		paramsMap.put("student_doj", doj);
 		paramsMap.put("student_status", status);
+		paramsMap.put("student_moles", mole);
 		try {
 			int result = (Integer) template.insert("createStudent", paramsMap);
 			return result;
@@ -109,7 +110,8 @@ public class StudentDaoImpl extends SqlMapClientDaoSupport implements StudentDao
              String fees = Student.getFees();
              String doj = Student.getDoj();
              int status = Student.getStatus();
-            Student resultStudent = new Student(sNo,rollNo, admissionNo, studentFirstName, studentLastName,  classs,  section,  medium, studentFatherName, studentMotherName,  dob,  caste, subCaste, religion, phoneNumber, village, gender, fees,  doj,status);
+             String mole = Student.getMole();
+            Student resultStudent = new Student(sNo,rollNo, admissionNo, studentFirstName, studentLastName,  classs,  section,  medium, studentFatherName, studentMotherName,  dob,  caste, subCaste, religion, phoneNumber, village, gender, fees,  doj,status ,mole);
  			return resultStudent;
  		} catch (Exception ex) {
  			return null;

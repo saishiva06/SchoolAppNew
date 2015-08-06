@@ -10,7 +10,7 @@ public interface StudentService {
 	boolean isStudentExists(String u_login);
 	int createStudent(String rollNo, String admissionNo,String studentFirstName,String studentLastName, String studentClass, String section, String medium,
 			String studentFatherName,String studentMotherName, String dob, String caste, String subCaste,String religion,String phoneNumber,
-			String village,String gender, String fees, String doj,int status);
+			String village,String gender, String fees, String doj,int status,String mole);
 	boolean deleteAllStudents();
 	List<Student> getStudents();
 	Student getStudentByStudentname(String u_login);

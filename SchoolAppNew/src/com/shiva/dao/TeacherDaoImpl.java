@@ -30,18 +30,20 @@ public class TeacherDaoImpl extends SqlMapClientDaoSupport implements
 
 	@Override
 	public int createTeacher(String teacherId, String teacherFirstName,
-			String teacherLastName, String qualification, String exp,
-			String subject, String dob, String caste, String phoneNumber,
+			String teacherLastName, String profQualification,String qualification, String exp,
+			String subject, String dob, String caste, String subCaste,String phoneNumber,
 			String village, String gender, String doj, int status) {
 		Map<String, Object> paramsMap = new HashMap<String, Object>();
 		paramsMap.put("teacher_id", teacherId);
 		paramsMap.put("teacher_fisrt_name", teacherFirstName);
 		paramsMap.put("teacher_last_name", teacherLastName);
+		paramsMap.put("prof_qualification", profQualification);
 		paramsMap.put("teacher_qualification", qualification);
 		paramsMap.put("teacher_exp", exp);
 		paramsMap.put("teacher_subject", subject);
 		paramsMap.put("teacher_dob", dob);
 		paramsMap.put("teacher_caste", caste);
+		paramsMap.put("sub_caste", subCaste);
 		paramsMap.put("teacher_phone_num", phoneNumber);
 		paramsMap.put("teacher_village", village);
 		paramsMap.put("teacher_gender", gender);

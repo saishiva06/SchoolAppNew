@@ -118,7 +118,14 @@
 									</div>
 								</div>
 								<div class="form-group">
-									<label class="col-sm-3 control-label">Qualification</label>
+									<label class="col-sm-3 control-label">Professional Qualification</label>
+									<div class="col-sm-5">
+										<input type="text" class="form-control" id="profQualification"
+											name="profQualification" />
+									</div>
+								</div>
+								<div class="form-group">
+									<label class="col-sm-3 control-label">Acadamic Qualification</label>
 									<div class="col-sm-5">
 										<input type="text" class="form-control" id="qualification"
 											name="qualification" />
@@ -156,6 +163,13 @@
 									<div class="col-sm-5">
 										<input type="text" class="form-control" id="caste"
 											name="caste" />
+									</div>
+								</div>
+								<div class="form-group">
+									<label class="col-sm-3 control-label">Sub Caste</label>
+									<div class="col-sm-5">
+										<input type="text" class="form-control" id="subCaste"
+											name="subCaste" />
 									</div>
 								</div>
 								<div class="form-group">

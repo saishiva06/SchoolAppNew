@@ -30,15 +30,22 @@
 	rel="stylesheet" />
 <script type="text/javascript">
 	function deletebudgetDetails2(budgetId,amount) {
-	    window.alert(budgetId);
-	    window.alert(amount);
-		var f = document.form3;
+	    var f = document.form3;
 		f.budgetId.value = budgetId;
 		f.amount.value = amount;
 		f.method = "post";
 		f.action = 'deleteBudgetDetails.do';
 		f.submit();
 	}
+	function viewBudgetDetails(budgetId) {
+	    var f = document.form2;
+	    window.alert(budgetId);
+		f.budgetId.value = budgetId;
+		f.method = "post";
+		f.action = 'viewBudgetDetails.do';
+		f.submit();
+	}
+	
 
 	function deleteBudgetDetails(budgetId,amount) {
 	 window.alert(budgetId);
@@ -212,6 +219,7 @@
 												<th>Budget Type</th>
 												<th>Budget Date</th>
 												<th>Delete</th>
+												<th>View</th>
 											</tr>
 										</thead>
 										<tbody>
@@ -230,6 +238,10 @@
 												<td><input type="button" name="delete" value="Delete"
 													class="btn btn-danger"
 													onclick="deleteBudgetDetails('<%=budgetDetails.getBudgetId()%>', '<%=budgetDetails.getBudgetCost()%>')" /></td>
+											<td><input type="button" name="view" value="View"
+													class="btn btn-primary"
+													onclick="viewBudgetDetails('<%=budgetDetails.getBudgetId()%>')" /></td>
+											
 											</tr>
 											<%
 												}

@@ -6,10 +6,12 @@ public class Teacher {
 	private String firstName;
 	private String lastName;
 	private String qualification;
+	private String profQualification;
 	private String exp;
 	private String subject;
 	private String dob;
 	private String caste;
+	private String subCaste;
 	private String religion;
 	private String phoneNumber;
 	private String village;
@@ -128,5 +130,23 @@ public class Teacher {
 	public void setReligion(String religion) {
 		this.religion = religion;
 	}
+	
+	public String getProfQualification() {
+		return profQualification;
+	}
+
+	public void setProfQualification(String profQualification) {
+		this.profQualification = profQualification;
+	}
+
+	public String getSubCaste() {
+		return subCaste;
+	}
+
+	public void setSubCaste(String subCaste) {
+		this.subCaste = subCaste;
+	}
+
+	
 
 }

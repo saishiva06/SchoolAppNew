@@ -187,6 +187,13 @@ $('#LoanDatePicker')
                     }
                 }
             },
+            subCaste: {
+                validators: {
+                    notEmpty: {
+                        message: 'The sub caste is required'
+                    }
+                }
+            },
             mobileNo: {
                 validators: {
                     notEmpty: {
@@ -202,7 +209,13 @@ $('#LoanDatePicker')
                     }
                 }
             },
-            
+            mole: {
+                validators: {
+                    notEmpty: {
+                        message: 'please enter atleast one mole'
+                    }
+                }
+            },
         
             studentDob: {
                 selector: '.sDob',

@@ -1,6 +1,5 @@
 package com.shiva.dao;
 
-import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.HashMap;
@@ -12,7 +11,6 @@ import org.springframework.orm.ibatis.SqlMapClientTemplate;
 import org.springframework.orm.ibatis.support.SqlMapClientDaoSupport;
 
 import com.shiva.entity.BudgetDetails;
-import com.shiva.util.RandomGenerator;
 
 public class BudgetDetailsDaoImpl extends SqlMapClientDaoSupport implements
 BudgetDetailsDao {
@@ -22,10 +20,11 @@ BudgetDetailsDao {
 	}
 
 	@Override
-	public int createBudgetDetails(String budgetName,String budgetCost, String budgetBy, String budgetDate, String budgetType,
+	public int createBudgetDetails(String recieptNo,String budgetName,String budgetCost, String budgetBy, String budgetDate, String budgetType,
 	 		   String other) {
 		// TODO Auto-generated method stub
 		Map<String, Object> paramsMap = new HashMap<String, Object>();
+		paramsMap.put("reciept_no", recieptNo);
 		paramsMap.put("budget_name", budgetName);
 		paramsMap.put("budget_cost", budgetCost);
 		paramsMap.put("budget_by", budgetBy);

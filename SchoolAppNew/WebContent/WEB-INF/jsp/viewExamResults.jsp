@@ -118,7 +118,7 @@ ExamResults examResults = (ExamResults)request.getAttribute("examResults");
 				<br>
 				<div class="row">
 					<div class="col-md-12 ">
-					 <table class="table"  ><tr><th align="left">Parent Signature</th><th></th><th align="center"><input id="printpagebutton" type="button" class="" value="Print this page" onclick="printpage()" /></th><th></th><th align="right">Principal Signature</th></tr></table>
+					 <table class="table"  ><tr><th align="left">Parent Signature</th><th></th><th align="center"><input id="printpagebutton" type="button" class="" value="Print this page" onclick="printpage()" /></th><th></th><th align="right">Class Teacher Signature</th></tr></table>
 					 
 					<!--   <h4 align="left"><b>Parent Signature</b></h4>
 						<h4 align="center"><input id="printpagebutton" type="button" value="Print this page" onclick="printpage()" /></h4>

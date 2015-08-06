@@ -46,6 +46,8 @@ xsi:schemaLocation="http://www.springframework.org/schema/beans
      		<mvc:mapping path="/viewExamResults.do" />
      		<mvc:mapping path="/settings.do" />
      		<mvc:mapping path="/changePassword.do" />
+     		<mvc:mapping path="/viewBudgetDetails.do" />
+     		
      		
      		<bean class="com.shiva.util.SessionHandler" />
    		</mvc:interceptor>
