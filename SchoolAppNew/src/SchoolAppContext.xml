@@ -47,6 +47,7 @@ xsi:schemaLocation="http://www.springframework.org/schema/beans
      		<mvc:mapping path="/settings.do" />
      		<mvc:mapping path="/changePassword.do" />
      		<mvc:mapping path="/viewBudgetDetails.do" />
+     		<mvc:mapping path="addComplaint.do" />
      		
      		
      		<bean class="com.shiva.util.SessionHandler" />
@@ -64,9 +65,9 @@ xsi:schemaLocation="http://www.springframework.org/schema/beans
        	</bean>     
 	<bean id="dataSource" destroy-method="close" class="org.apache.commons.dbcp.BasicDataSource">
 		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
-		<property name="url" value="jdbc:mysql://localhost:3306/school?autoReconnect=true" />
-		<property name="username" value="root" />
-		<property name="password" value="root" />
+		<property name="url" value="jdbc:mysql://localhost:3306/snskmm_school?autoReconnect=true" />
+		<property name="username" value="snskmm_user" />
+		<property name="password" value="narayana1234" />
 		<property name="validationQuery" value="select 1 from dual" />
 		<property name="testOnBorrow" value="true" />
 	</bean>
@@ -78,6 +79,7 @@ xsi:schemaLocation="http://www.springframework.org/schema/beans
 	<bean name="feeDetailsController" class="com.shiva.controller.FeeDetailsController" scope="request"><property name="feeDetailsService" ref="feeDetailsServiceImpl" /><property name="studentService" ref="studentServiceImpl" /><property name="budgetDetailsService" ref="budgetDetailsServiceImpl" /></bean>
 	<bean name="examResultsController" class="com.shiva.controller.ExamResultsController" scope="request"><property name="examResultsService" ref="examResultsServiceImpl" /><property name="studentService" ref="studentServiceImpl" /></bean>
 	 <bean name="dashboardController" class="com.shiva.controller.DashboardController"><property name="studentService" ref="studentServiceImpl" /><property name="teacherService" ref="teacherServiceImpl" /><property name="budgetDetailsService" ref="budgetDetailsServiceImpl" /><property name="feeDetailsService" ref="feeDetailsServiceImpl" /><property name="userService" ref="userServiceImpl" /></bean>
+	<bean name="settingsController" class="com.shiva.controller.SettingsController"><property name="settingsService" ref="settingsServiceImpl" /><property name="userService" ref="userServiceImpl" /></bean>
 	
 
 	<bean id="userServiceImpl" class="com.shiva.service.UserServiceImpl" scope="request"><property name="userDao" ref="userDaoImpl" /></bean>
@@ -86,6 +88,7 @@ xsi:schemaLocation="http://www.springframework.org/schema/beans
 	<bean id="feeDetailsServiceImpl" class="com.shiva.service.FeeDetailsServiceImpl" scope="request"><property name="feeDetailsDao" ref="feeDetailsDaoImpl" /></bean>
 	<bean id="examResultsServiceImpl" class="com.shiva.service.ExamResultsServiceImpl" scope="request"><property name="examResultsDao" ref="examResultsDaoImpl" /></bean>
 	<bean id="budgetDetailsServiceImpl" class="com.shiva.service.BudgetDetailsServiceImpl" scope="request"><property name="budgetDetailsDao" ref="budgetDetailsDaoImpl" /></bean>
+	<bean id="settingsServiceImpl" class="com.shiva.service.SettingsServiceImpl" scope="request"><property name="settingsDao" ref="settingsDaoImpl" /></bean>
 	
 	
 	
@@ -94,8 +97,9 @@ xsi:schemaLocation="http://www.springframework.org/schema/beans
     <bean id="studentDaoImpl" class="com.shiva.dao.StudentDaoImpl" scope="request"><property name="sqlMapClient" ref="sqlMapClient" /></bean>
     <bean id="feeDetailsDaoImpl" class="com.shiva.dao.FeeDetailsDaoImpl" scope="request"><property name="sqlMapClient" ref="sqlMapClient" /></bean>
     <bean id="examResultsDaoImpl" class="com.shiva.dao.ExamResultsDaoImpl" scope="request"><property name="sqlMapClient" ref="sqlMapClient" /></bean>
-   <bean id="budgetDetailsDaoImpl" class="com.shiva.dao.BudgetDetailsDaoImpl" scope="request"><property name="sqlMapClient" ref="sqlMapClient" /></bean>
-
+    <bean id="budgetDetailsDaoImpl" class="com.shiva.dao.BudgetDetailsDaoImpl" scope="request"><property name="sqlMapClient" ref="sqlMapClient" /></bean>
+    <bean id="settingsDaoImpl" class="com.shiva.dao.SettingsDaoImpl" scope="request"><property name="sqlMapClient" ref="sqlMapClient" /></bean>
+	
 
 	<bean id="sqlMapClient" class="org.springframework.orm.ibatis.SqlMapClientFactoryBean">
 		<property name="configLocation">

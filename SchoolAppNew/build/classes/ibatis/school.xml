@@ -99,8 +99,33 @@
 		<result property="budgetType" column="budget_type" />
 		<result property="other" column="other" />
 	</resultMap>
+	
+	<resultMap id="News" class="com.shiva.entity.News">
+	    <result property="newsId" column="news_id" />
+	     <result property="newsHeadLine" column="news_headline" />
+		<result property="newsDesc" column="news_description" />
+		<result property="newsDate" column="news_date" />
+		<result property="other" column="other" />
+	</resultMap>
+	
+	<resultMap id="ComplaintBox" class="com.shiva.entity.ComplaintBox">
+	    <result property="cbId" column="cb_id" />
+	     <result property="perName" column="per_name" />
+		<result property="perPhone" column="per_phone" />
+		<result property="perMail" column="per_mail" />
+		<result property="cbDate" column="cb_date" />
+		<result property="cbDesc" column="cb_desc" />
+	</resultMap>
 		
 	<!-- UserDao -->
+	
+	<insert id="addCompalint" parameterClass="java.util.Map">
+		insert into complaint_box(per_name,per_phone,per_mail, cb_date, cb_desc) values (#per_name#,#per_phone#,#per_mail#,#cb_date#, #cb_desc#)
+		<selectKey resultClass="int" keyProperty="id">
+			select
+			last_insert_id() as id
+		</selectKey>
+	</insert>
     
 	<select id="authenticateUser" parameterClass="java.util.Map"
 		resultClass="string">
@@ -187,7 +212,7 @@
 	</select>
 	
 	<select id="getLastRecordAdmNum"  resultClass="string">
-	        SELECT admission_num FROM student WHERE admission_num IN (SELECT MAX(admission_num) FROM student WHERE admission_num != '-')
+	       SELECT admission_num FROM student WHERE s_no IN (SELECT MAX(s_no) FROM student WHERE admission_num != '-')
 	</select>
 	
 	<select id="getStudentCountByClass" resultMap="StudentByClass">
@@ -325,4 +350,5 @@
 	<select id="getRecentExpensesDetailsMap" resultMap="BudgetDetails">
 		select budget_id,reciept_no,budget_name,budget_cost, budget_by, date_format(budget_date, '%d-%m-%Y') as budget_date, budget_type,other from budget_details where budget_type='debited' order by budget_id desc limit 5;
 	</select>
+	
 </sqlMap>

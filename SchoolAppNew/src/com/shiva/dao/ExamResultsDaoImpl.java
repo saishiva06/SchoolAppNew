@@ -9,7 +9,6 @@ import org.springframework.orm.ibatis.SqlMapClientTemplate;
 import org.springframework.orm.ibatis.support.SqlMapClientDaoSupport;
 
 import com.shiva.entity.ExamResults;
-import com.shiva.entity.FeeDetails;
 
 
 public class ExamResultsDaoImpl extends SqlMapClientDaoSupport implements

@@ -3,9 +3,7 @@ package com.shiva.controller;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -16,7 +14,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.shiva.entity.BudgetDetails;
-import com.shiva.entity.FeeDetails;
 import com.shiva.entity.Student;
 import com.shiva.entity.StudentByClass;
 import com.shiva.service.BudgetDetailsService;
@@ -289,8 +286,8 @@ public class DashboardController {
 		ModelAndView mav = new ModelAndView();
 		mav.setViewName("viewBudgetDetails");
 		if (budgetId != null && budgetId.length() > 0) {
-			BudgetDetails budgetDeails = budgetDetailsService.getBudgetDetailsById(Integer.parseInt(budgetId));
-			mav.addObject("budgetDeails", budgetDeails);
+			BudgetDetails budgetDetails = budgetDetailsService.getBudgetDetailsById(Integer.parseInt(budgetId));
+			mav.addObject("budgetDetails", budgetDetails);
 		}
 		return mav;
 	}

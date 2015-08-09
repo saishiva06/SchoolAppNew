@@ -1,3 +1,8 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	 pageEncoding="ISO-8859-1"%>
+<%
+	String successMsg = (String) request.getAttribute("Msg");
+%>
 <!DOCTYPE html>
 <!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
 <!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
@@ -138,37 +143,47 @@
 					</div>
 					<!--//breadcrumbs-->
 				</header>
+				<% if (successMsg != null && successMsg.length()!=0) { %>
+	<h3><span style="margin:auto; display:table; color: red"><%= successMsg %></span></h3>
+	<%} %>
 				<div class="page-content">
 					<div class="row">
 						<article class="contact-form col-md-8 col-sm-7  page-row">
 							<h3 class="title">Get in touch</h3>
 							<p>We would love to hear from you. Please fill Your comments
 								and feedback here.</p>
-							<form>
+							<form action="addComplaint.do" id="addComplaint" method="post"
+								name="myform" class="form-horizontal">
 								<div class="form-group name">
-									<label for="name">Name</label> <input id="name" type="text"
-										class="form-control" placeholder="Enter your name">
+									<label for="name">Name</label> <input id="name" type="text"  name="name"
+										class="form-control" placeholder="Enter your name" required="required" >
 								</div>
 								<!--//form-group-->
 								<div class="form-group email">
 									<label for="email">Email<span class="required">*</span></label>
-									<input id="email" type="email" class="form-control"
-										placeholder="Enter your email">
+									<input id="email" type="email" class="form-control" name="perEmail"
+										placeholder="Enter your email" required="required" >
 								</div>
 								<!--//form-group-->
 								<div class="form-group phone">
-									<label for="phone">Phone</label> <input id="phone" type="tel"
-										class="form-control" placeholder="Enter your contact number">
+									<label for="phone">Phone</label> <input id="phone" type="tel" name="perPhone" 
+										class="form-control" placeholder="Enter your contact number" required="required" >
 								</div>
 								<!--//form-group-->
 								<div class="form-group message">
 									<label for="message">Message<span class="required">*</span></label>
-									<textarea id="message" class="form-control" rows="6"
-										placeholder="Enter your message here..."></textarea>
+									<textarea id="message" class="form-control" rows="6" name = "message"
+										placeholder="Enter your message here..." required="required" ></textarea>
 								</div>
 								<!--//form-group-->
-								<button type="submit" class="btn btn-theme">Send
-									message</button>
+								<div class="form-group">
+									<div class="col-sm-9 col-sm-offset-3">
+										<button type="submit" class="btn btn-primary" name="signup"
+											value="Sign up">Submit</button>
+											<button type="reset" class="btn btn-primary" name="reset"
+											value="RESET">Clear</button>
+									</div>
+								</div>
 							</form>
 						</article>
 						<!--//contact-form-->
