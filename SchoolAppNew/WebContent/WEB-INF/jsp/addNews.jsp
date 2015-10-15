@@ -1,9 +1,6 @@
-<%@page import="com.shiva.entity.BudgetDetails"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	session="true" pageEncoding="ISO-8859-1"%>
-<%
-	BudgetDetails budgetDetails = (BudgetDetails) request.getAttribute("loanAmountDetails");
-	%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -85,7 +82,7 @@
 					<li class="nav-item"><a href="student.do">Student</a></li>
 					<li class="nav-item"><a href="feeDetails.do">Fee</a></li>
 					<li class="nav-item"><a href="examResults.do">Examination</a></li>
-					<li class="nav-item active"><a href="budgetDashboard.do">Budget</a></li>
+					<li class="nav-item"><a href="budgetDashboard.do">Budget</a></li>
 
 				</ul>
 				<!--//nav-->
@@ -106,56 +103,47 @@
 	</div>
 	<div class="container">
 		<div class="panel panel-primary">
-			<div class="panel-heading">Update Loan Amount</div>
+			<div class="panel-heading">Add News</div>
 			<div class="panel-body">
 				<div class="container">
 					<div class="row">
 						<div class="col-md-8">
 
-							<form action="updateAmountDetails.do" id="updateLoanAmount" method="post"
+							<form action="addNews.do" id="addNews" method="post"
 								name="myform" class="form-horizontal">
-								<input type="hidden" name="budgetId"
-									value="<%= budgetDetails.getBudgetId()%>" />
-                                	
+								
 								
 								<div class="form-group">
-									<label class="col-sm-3 control-label">Amount Type</label>
+									<label class="col-sm-3 control-label">News HeadLine</label>
 									<div class="col-sm-5">
-										<input type="text" class="form-control" id="expenseName"
-											name="expenseName" value = "<%=budgetDetails.getBudgetName()%>" readonly="readonly" />
+										<input type="text" class="form-control" id="news_headline"
+											name="news_headline" />
 									</div>
 								</div>
 
 								<div class="form-group">
-									<label class="col-sm-3 control-label">Amount Updated By</label>
+									<label class="col-sm-3 control-label">News Description</label>
 									<div class="col-sm-5">
-										<input type="text" class="form-control" id="expenseBy"
-											name="expenseBy" value = "<%=budgetDetails.getBudgetBy()%>"/>
+										<input type="text" class="form-control" id="news_desc"
+											name="news_desc"/>
 									</div>
 								</div>
 								
-								<div class="form-group">
-									<label class="col-sm-3 control-label">Total Amount</label>
-									<div class="col-sm-5">
-										<input type="text" class="form-control" id="expenseCost"
-											name="expenseCost" value = "<%=budgetDetails.getBudgetCost()%>"/>
-									</div>
-								</div>
 								
 							<div class="form-group">
 									<label class="col-sm-3 control-label">Other Notes</label>
 									<div class="col-sm-5">
 										<input id="other" name="other" class="form-control"
-											type="text" placeholder="" value = "<%=budgetDetails.getOther()%>"/>
+											type="text" placeholder=""/>
 									</div>
 								</div>
 
 								<div class="form-group">
 									<label class="col-xs-3 control-label">Date</label>
 									<div class="col-xs-5 date">
-										<div class="input-group input-append date" id="LoanDatePicker">
-											<input type="text" class="form-control eDol" name="expenseDate"
-												placeholder="01/01/2000" value = "<%=budgetDetails.getBudgetDate()%>"/> <span
+										<div class="input-group input-append date" id="NewsDatePicker">
+											<input type="text" class="form-control eDoe" name="newsDate"
+												placeholder="01/01/2000" /> <span
 												class="input-group-addon add-on"><span
 												class="glyphicon glyphicon-calendar"></span></span>
 										</div>

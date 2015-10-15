@@ -5,12 +5,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	session="true" pageEncoding="ISO-8859-1"%>
 
-<%
-	ExamResults examResults = (ExamResults) request
-			.getAttribute("examResultsData");
-	Calculation calculation = new Calculation();
-%>
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -24,22 +18,13 @@
 	rel="stylesheet" />
 <link rel="icon" type="image/png" sizes="16x16"
 	href="resources/img/favicon.ico">
-	<script language="javascript" type="text/javascript">
-      function printpage() {
-           var divElements = document.getElementById("printResults").innerHTML;
-            var oldPage = document.body.innerHTML;
-             document.body.innerHTML = "<html><head><title></title></head><body>" + 
-             divElements + "</body>";
-             window.print();
-            }
-</script>
 </head>
 <body>
 <body class="home-page">
 	<div class="wrapper">
 		<!-- ******HEADER****** -->
 		<header class="header">
-			<div class="header-main container" id = "tabs">
+			<div class="header-main container">
 				<h1 class="logo col-md-4 col-sm-4">
 					<a href="index.do"><img id="logo"
 						class="img-responsive img-inblock" src="assets/images/logo.png"
@@ -79,7 +64,7 @@
 
 		<!-- ******NAV****** -->
 		<nav class="main-nav" role="navigation">
-			<div class="container" id = "nav">
+			<div class="container">
 				<div class="navbar-header">
 					<button class="navbar-toggle" type="button" data-toggle="collapse"
 						data-target="#navbar-collapse">
@@ -114,67 +99,27 @@
 		</nav>
 		<!--//main-nav-->
 	</div>
-	<div class="container" id = "notice">
+	<div class="container">
 		<div class="panel panel-primary">
 			<div class="panel-heading">Student Marks</div>
 			<div class="panel-body">
 				<div class="container">
 					<div class="row">
 						<div class="col-md-8">
-							<form action="noticeboard.do" id="noticeboard" method="post"
-								class="form-horizontal">
+							<form action="uploadFileProcess.do" id="uploadFile" method="post"
+								class="form-horizontal" enctype="multipart/form-data" >
 								<div class="form-group">
-									<label class="col-sm-3 control-label">Student Roll
-										Number*</label>
+									<label class="col-sm-3 control-label">Please upload File*</label>
 									<div class="col-sm-5">
-										<input type="text" class="form-control" id="rollno"
-											name="rollno" placeholder="Student Roll Number"
-											required="required" />
+										<input type="file" class="form-control" id="uploadFile"
+											name="uploadFile" required="required" />
 									</div>
 								</div>
-								<div class="form-group">
-									<label class="col-sm-3 control-label">Class</label>
-									<div class="col-sm-5">
-										<select name="StudentClass" class="form-control"
-											required="required" >
-											<option value="">choose one</option>
-											<option value="lkg">lkg</option>
-											<option value="ukg">ukg</option>
-											<option value="1st class">1st class</option>
-											<option value="2nd class">2nd class</option>
-											<option value="3rd class">3rd class</option>
-											<option value="4th class">4th class</option>
-											<option value="5th class">5th class</option>
-											<option value="6th class">6th class</option>
-											<option value="7th class">7th class</option>
-											<option value="8th class">8th class</option>
-											<option value="9th class">9th class</option>
-											<option value="SSC">SSC</option>
-										</select>
-									</div>
-								</div>
-								<div class="form-group">
-									<label class="col-sm-3 control-label">Exam Type</label>
-									<div class="col-sm-5">
-										<select name="examType" class="form-control"
-											required="required" >
-											<option value="">choose one</option>
-											<option value="FA1">FA1</option>
-											<option value="FA2">FA2</option>
-											<option value="FA3">FA3</option>
-											<option value="FA4">FA4</option>
-											<option value="Quarterly Exams">Quarterly Exams</option>
-											<option value="Half yearly Exams">Half yearly Exams</option>
-											<option value="Pre Final Exams">Pre Final Exams</option>
-											<option value="Final Exams">Final Exams</option>
-											<option value="Other">Other</option>
-										</select>
-									</div>
-								</div>
+								
 								<div class="form-group">
 									<div class="col-sm-9 col-sm-offset-3">
-										<button type="submit" class="btn btn-primary" name="signup"
-											value="Sign up">Submit</button>
+										<input type="submit" class="btn btn-primary" name="submit"
+										value="upload File"	/>
 											<button type="reset" class="btn btn-primary" name="reset"
 											value="RESET">Clear</button>
 									</div>
@@ -186,78 +131,7 @@
 			</div>
 		</div>
 	</div>
-	<%
-		if (examResults != null) {
-	%>
-	<div class="container" id = "printResults">
-		<div class="row">
-			<div class="col-md-12">
-
-				<div class="panel panel-default">
-					<div class="panel-heading">Results</div>
-					<div class="panel-body">
-						<div class="table-responsive">
-							<table class="table table-striped table-bordered table-hover">
-								<tbody>
-									<tr>
-										<th>Student Name</th>
-										<th><%=examResults.getStudentName()%></th>
-										<th>Student Class</th>
-										<th><%=examResults.getStudentClass()%></th>
-									</tr>
-									<tr>
-										<td>Exam Title</td>
-										<td><%=examResults.getExamTitle()%></td>
-										<td>Exam Date</td>
-										<td><%=examResults.getExamDate()%></td>
-									</tr>
-									<tr>
-										<td>Telugu</td>
-										<td><%=examResults.getTelugu1()%></td>
-										<td>Hindi</td>
-										<td><%=examResults.getHindi1()%></td>
-									</tr>
-									<tr>
-										<td>English</td>
-										<td><%=examResults.getEnglish1()%></td>
-										<td>Maths</td>
-										<td><%=examResults.getMaths1()%></td>
-									</tr>
-									<tr>
-										<td>Science</td>
-										<td><%=examResults.getScience1()%></td>
-										<td>Social</td>
-										<td><%=examResults.getSocial1()%></td>
-									</tr>
-									<tr>
-										<td>Scored Marks</td>
-										<td><%=examResults.getOthers()%></td>
-										<td>Total Marks</td>
-										<td><%=examResults.getTotal()%></td>
-									</tr>
-									<tr>
-										<td>Grade</td>
-										<td><%=examResults.getGrade()%></td>
-										<td>Rank</td>
-										<td><%=examResults.getRank()%></td>
-									</tr>
-								</tbody>
-							</table>
-						</div>
-					</div>
-				</div>
-
-			</div>
-		</div>
-	</div>
-	<div class="row">
-					<div class="col-md-12 ">
-					 <table class="table"  ><tr><th align="left"></th><th></th><th align="center"><input type="button"  value="Print this page" onclick="printpage()" /></th><th></th></tr></table>
-			</div>
-			</div>
-	<%
-		}
-	%>
+	
 	<!-- ******FOOTER****** -->
 
 	<footer id="footer-sec" class="footer">

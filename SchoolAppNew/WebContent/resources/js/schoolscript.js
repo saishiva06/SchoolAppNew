@@ -110,6 +110,17 @@ $('#LoanDatePicker')
     
 });
 
+$('#NewsDatePicker')
+.datepicker({
+    format: 'dd/mm/yyyy',
+    autoclose:true
+})
+.on('changeDate', function(e) {
+    // Revalidate the date field
+    $('#addNews').formValidation('revalidateField', 'newsDate');
+    
+});
+
 
 	
     $('#addStudent').formValidation({
@@ -619,6 +630,45 @@ $('#LoanDatePicker')
     });
     
     $('#updateAvailableLimit').formValidation({
+        message: 'This value is not valid',
+        icon: {
+           // valid: 'glyphicon glyphicon-ok',
+            invalid: 'glyphicon glyphicon-remove',
+            validating: 'glyphicon glyphicon-refresh'
+        },
+        fields: {
+        	 expenseBy: {
+                row: '.col-sm-5',
+                validators: {
+                    notEmpty: {
+                        message: 'The Amount By is required'
+                    }
+                }
+            },
+            expenseCost: {
+                row: '.col-sm-5',
+                validators: {
+                    notEmpty: {
+                        message: 'The Amount is required'
+                    }
+                }
+            },
+            
+            expenseDate: {
+                selector: '.eDoa',
+                   validators: {
+                       notEmpty: {
+                           message: 'The  Date Of Expense  is required'
+                       },
+                       date: {
+                           format: 'DD/MM/YYYY',
+                           message: 'The date is not a valid'
+                       }
+                   }
+               }     
+        }
+    });
+    $('#newsDynamic').formValidation({
         message: 'This value is not valid',
         icon: {
            // valid: 'glyphicon glyphicon-ok',

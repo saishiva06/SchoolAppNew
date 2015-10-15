@@ -49,8 +49,7 @@
 					<div class="contact col-md-12 col-sm-12">
 						<div class=" pull-right">
 							<p class="phone">
-								<i class="fa fa-phone"></i>Call us | +91 - 9666644801 | +91 -
-								8686172057
+								<i class="fa fa-phone"></i>Call us | 08742-231234 | +91-9666644801 | +91-8686172057
 							</p>
 							<p class="email">
 								<i class="fa fa-envelope"></i><a href="#">narayanaolympiadschools@gmail.com</a>

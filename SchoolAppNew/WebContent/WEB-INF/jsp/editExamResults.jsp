@@ -51,8 +51,7 @@ ExamResults examResults = (ExamResults)request.getAttribute("examResults");
 					<div class="contact col-md-12 col-sm-12">
 						<div class=" pull-right">
 							<p class="phone">
-								<i class="fa fa-phone"></i>Call us | +91 - 9666644801 | +91 -
-								8686172057
+								<i class="fa fa-phone"></i>Call us | 08742-231234 | +91-9666644801 | +91-8686172057
 							</p>
 							<p class="email">
 								<i class="fa fa-envelope"></i><a href="#">narayanaolympiadschools@gmail.com</a>
@@ -87,7 +86,15 @@ ExamResults examResults = (ExamResults)request.getAttribute("examResults");
 					<li class="nav-item"><a href="teacher.do">Teacher</a></li>
 					<li class="nav-item"><a href="student.do">Student</a></li>
 					<li class="nav-item"><a href="feeDetails.do">Fee</a></li>
-					<li class="nav-item active"><a href="examResults.do">Examination</a></li>
+					<li class="nav-item dropdown active"><a class="dropdown-toggle"
+							data-toggle="dropdown" data-hover="dropdown" data-delay="0"
+							data-close-others="false" href="examResults.do">Examination <i
+								class="fa fa-angle-down"></i></a>
+							<ul class="dropdown-menu">
+								<li><a href="examResultsReg123.do" class="btn btn-primary">Enter Results For 1 2 3 clasess</a></li>
+								<li><a href="examResultsReg4567.do" class="btn btn-primary">Enter Results For 4 5 6 7 clasess</a></li>
+							    <li><a href="examResultsRegistration.do" class="btn btn-primary">Enter Results For 8 9 10 clasess</a></li>
+					 </ul></li>
 					<li class="nav-item"><a href="budgetDashboard.do">Budget</a></li>
 
 				</ul>
@@ -112,7 +119,7 @@ ExamResults examResults = (ExamResults)request.getAttribute("examResults");
 
 	<div class="container">
 		<div class="panel panel-primary">
-			<div class="panel-heading">Exam Result New Registration</div>
+			<div class="panel-heading">Edit Exam Results </div>
 			<div class="panel-body">
 				<div class="container">
 					<div class="row">
@@ -128,7 +135,7 @@ ExamResults examResults = (ExamResults)request.getAttribute("examResults");
 									<label class="col-sm-3 control-label">Roll No</label>
 									<div class="col-sm-5">
 										<input type="text" class="form-control" id="rollno"
-											value="<%=examResults.getRollNum() %>" name="rollno"
+											value="<%=examResults.getRollNum()%>" name="rollno"
 											placeholder="Roll No:" readonly="readonly" />
 									</div>
 								</div>
@@ -137,8 +144,8 @@ ExamResults examResults = (ExamResults)request.getAttribute("examResults");
 									<div class="col-sm-5">
 										<select name="StudentClass" class="form-control"
 											readonly="readonly">
-											<option value="<%=examResults.getStudentClass() %>"
-												selected="selected"><%=examResults.getStudentClass() %></option>
+											<option value="<%=examResults.getStudentClass()%>"
+												selected="selected"><%=examResults.getStudentClass()%></option>
 											<!-- <option value="lkg">lkg</option>
 											<option value="ukg">ukg</option>
 											<option value="1st class">1st class</option>
@@ -155,76 +162,66 @@ ExamResults examResults = (ExamResults)request.getAttribute("examResults");
 									</div>
 								</div>
 
-
-								<div class="form-group">
+                                   <div class="form-group">
 									<label class="col-sm-3 control-label">Exam Title </label>
 									<div class="col-sm-5">
-										<input id="examTitle" class="form-control" name="examTitle"
-											type="text" value="<%=examResults.getExamTitle() %>" />
+										<select name="examTitle" class="form-control"
+											required="required" readonly="readonly">
+											<option value="<%=examResults.getExamTitle()%>"
+												selected="selected"><%=examResults.getExamTitle()%></option>
+											<option value="Slip Test">Slip Test</option>
+											<option value="Weekly Test">Weekly Test</option>
+											<option value="Monthly Test">Monthly Test</option>
+											<option value="Unit Test">Unit Test</option>
+											<option value="Quarterly Exams">Quarterly Exams</option>
+											<option value="Half yearly Exams">Half yearly Exams</option>
+											<option value="Pre Final Exams">Pre Final Exams</option>
+											<option value="Final Exams">Final Exams</option>
+											<option value="Other">Other</option>
+										</select>
 									</div>
 								</div>
-								
 								<div class="form-group">
-									<label class="col-sm-3 control-label">Telugu-1</label>
+									<label class="col-sm-3 control-label">Telugu</label>
 									<div class="col-sm-5">
 										<input id="telugu_1" class="form-control" name="telugu_1"
-											type="text" value="<%=examResults.getTelugu1() %>" />
-									</div>
-								</div>
-								
-
-								<div class="form-group">
-									<label class="col-sm-3 control-label">Hindi-1</label>
-									<div class="col-sm-5">
-										<input id="hindi_1" class="form-control" name="hindi_1"
-											type="text" value="<%=examResults.getHindi1() %>" />
+											type="text" value="<%=examResults.getTelugu1()%>" />
 									</div>
 								</div>
 								
 								<div class="form-group">
-									<label class="col-sm-3 control-label">English-1</label>
+									<label class="col-sm-3 control-label">English</label>
 									<div class="col-sm-5">
 										<input id="english_1" class="form-control" name="english_1"
-											type="text" value="<%=examResults.getEnglish1() %>" />
+											type="text" value="<%=examResults.getEnglish1()%>"/>
 									</div>
 								</div>
-								
-
-								<div class="form-group">
-									<label class="col-sm-3 control-label">Maths-1</label>
-									<div class="col-sm-5">
-										<input id="maths_1" class="form-control" name="maths_1"
-											type="text" value="<%=examResults.getMaths1() %>" />
-									</div>
-								</div>
-								
-
-								<div class="form-group">
-									<label class="col-sm-3 control-label">Science-1</label>
+                            <div class="form-group">
+									<label class="col-sm-3 control-label">Science (EVS for Primary)</label>
 									<div class="col-sm-5">
 										<input id="science_1" class="form-control" name="science_1"
-											type="text" value="<%=examResults.getScience1() %>" />
+											type="text" value="<%=examResults.getScience1()%>" />
 									</div>
 								</div>
                      <div class="form-group">
-									<label class="col-sm-3 control-label">Social-1</label>
+									<label class="col-sm-3 control-label">Social(Optional for Primary)</label>
 									<div class="col-sm-5">
 										<input id="social_1" class="form-control" name="social_1"
-											type="text" value="<%=examResults.getSocial1() %>" />
+											type="text" value="<%=examResults.getSocial1()%>" />
 									</div>
 								</div>
               <div class="form-group">
 									<label class="col-sm-3 control-label">Computers</label>
 									<div class="col-sm-5">
 										<input id="computers" class="form-control" name="computers"
-											type="text" value="<%=examResults.getComputers() %>" />
+											type="text" value="<%=examResults.getComputers()%>" />
 									</div>
 								</div>
 								<div class="form-group">
 									<label class="col-sm-3 control-label">Total</label>
 									<div class="col-sm-5">
 										<input id="total" name="total" class="form-control"
-											type="text" value="<%=examResults.getTotal() %>" />
+											type="text" value="<%=examResults.getTotal()%>" />
 									</div>
 								</div>
 								<div class="form-group">
@@ -246,76 +243,58 @@ ExamResults examResults = (ExamResults)request.getAttribute("examResults");
 									<label class="col-sm-3 control-label">Full name</label>
 									<div class="col-sm-4">
 										<input type="text" class="form-control" id="studentName"
-											value="<%=examResults.getStudentName() %>" name="studentName"
+											value="<%=examResults.getStudentName()%>" name="studentName"
 											placeholder="Student full name" readonly="readonly" />
 									</div>
+									
 								</div>
 								<div class="form-group">
                                         <label class="col-sm-3 control-label">Exam Date</label>
                                         <div class="col-xs-5 date">
                                         <div class="input-group input-append date" id="ExamDatePicker">
 										<input type = "text" class="form-control" name="examDate" 
-											type="text" value="<%=examResults.getExamDate() %>" /><span
+											type="text" value="<%=examResults.getExamDate()%>" /><span
 												class="input-group-addon add-on"><span
 												class="glyphicon glyphicon-calendar"></span></span></div>
 									</div>
 									</div>
 								
 								<div class="form-group">
-									<label class="col-sm-3 control-label">Telugu-2</label>
+									<label class="col-sm-3 control-label">Hindi</label>
 									<div class="col-sm-5">
-										<input id="telugu_2" class="form-control" name="telugu_2"
-											type="text" value="<%=examResults.getTelugu2() %>" />
+										<input id="hindi_1" class="form-control" name="hindi_1"
+											type="text" value="<%=examResults.getHindi1()%>"/>
 									</div>
 								</div>
 								<div class="form-group">
-									<label class="col-sm-3 control-label">Hindi-2</label>
+									<label class="col-sm-3 control-label">Maths</label>
 									<div class="col-sm-5">
-										<input id="hindi_2" class="form-control" name="hindi_2"
-											type="text" value="<%=examResults.getHindi2() %>" />
+										<input id="maths_1" class="form-control" name="maths_1"
+											type="text" value="<%=examResults.getMaths1()%>" />
 									</div>
 								</div>
+								
+								
 								<div class="form-group">
-									<label class="col-sm-3 control-label">English-2</label>
-									<div class="col-sm-5">
-										<input id="english_2" class="form-control" name="english_2"
-											type="text" value="<%=examResults.getEnglish2() %>" />
-									</div>
-								</div>
-								<div class="form-group">
-									<label class="col-sm-3 control-label">Maths-2</label>
-									<div class="col-sm-5">
-										<input id="maths_2" class="form-control" name="maths_2"
-											type="text" value="<%=examResults.getMaths2() %>" />
-									</div>
-								</div>
-								<div class="form-group">
-									<label class="col-sm-3 control-label">Science-2</label>
+									<label class="col-sm-3 control-label">Biology (Optional)</label>
 									<div class="col-sm-5">
 										<input id="science_2" class="form-control" name="science_2"
-											type="text" value="<%=examResults.getScience2() %>" />
-									</div>
-								</div>
-								<div class="form-group">
-									<label class="col-sm-3 control-label">Social-2</label>
-									<div class="col-sm-5">
-										<input id="social_2" class="form-control" name="social_2"
-											type="text" value="<%=examResults.getSocial2() %>" />
+											type="text" value="<%=examResults.getScience2()%>" />
 									</div>
 								</div>
 								
 								<div class="form-group">
-									<label class="col-sm-3 control-label">Arts</label>
+									<label class="col-sm-3 control-label">G K(Only for Primary)</label>
 									<div class="col-sm-5">
 										<input id="arts" name="arts" class="form-control" type="text"
-											value="<%=examResults.getArts() %>" />
+											value="<%=examResults.getArts()%>" />
 									</div>
 								</div>
 								<div class="form-group">
-									<label class="col-sm-3 control-label">Others</label>
+									<label class="col-sm-3 control-label">Marks Obtained</label>
 									<div class="col-sm-5">
 										<input id="others" name="others" class="form-control"
-											type="text" value="<%=examResults.getOthers() %> "
+											type="text" value="<%=examResults.getOthers()%>"
 											onClick="fnSum();" />
 									</div>
 								</div>
@@ -326,7 +305,7 @@ ExamResults examResults = (ExamResults)request.getAttribute("examResults");
 									<label class="col-sm-3 control-label">Rank</label>
 									<div class="col-sm-5">
 										<input id="rank" name="rank" class="form-control" type="text"
-											value="<%=examResults.getRank() %>" />
+											value="<%=examResults.getRank()%>" />
 									</div>
 								</div>
 								<div class="form-group">
@@ -334,6 +313,7 @@ ExamResults examResults = (ExamResults)request.getAttribute("examResults");
 										<button type="submit" class="btn btn-primary" name="signup"
 											value="Sign up" onClick="fnSum();">Submit</button>
 									</div>
+								</div>
 								</div>
                       </form>
 					</div>
@@ -396,22 +376,17 @@ ExamResults examResults = (ExamResults)request.getAttribute("examResults");
     {
      var num = [];
          num[0] = parseInt(document.getElementById("telugu_1").value);
-         num[1] = parseInt(document.getElementById("telugu_2").value);
-         num[2] = parseInt(document.getElementById("hindi_1").value);
-         num[3]  = parseInt(document.getElementById("hindi_2").value);
-         num[4]  = parseInt(document.getElementById("english_1").value);
-         num[5]  = parseInt(document.getElementById("english_2").value);
-         num[6] = parseInt(document.getElementById("maths_1").value);
-         num[7]  = parseInt(document.getElementById("maths_2").value);
-         num[8]  = parseInt(document.getElementById("science_1").value);
-         num[9] = parseInt(document.getElementById("science_2").value);
-         num[10] = parseInt(document.getElementById("social_1").value);
-         num[11] = parseInt(document.getElementById("social_2").value);
-         num[12] = parseInt(document.getElementById("computers").value);
-         num[13] = parseInt(document.getElementById("arts").value);
+         num[1] = parseInt(document.getElementById("hindi_1").value);
+         num[2]  = parseInt(document.getElementById("english_1").value);
+         num[3] = parseInt(document.getElementById("maths_1").value);
+         num[4]  = parseInt(document.getElementById("science_1").value);
+         num[5] = parseInt(document.getElementById("science_2").value);
+         num[6] = parseInt(document.getElementById("social_1").value);
+         num[7] = parseInt(document.getElementById("computers").value);
+         num[8] = parseInt(document.getElementById("arts").value);
          
          var total = 0;
-         for (i = 0; i <= 13; i++) { 
+         for (i = 0; i <=8; i++) { 
          var check = isNaN(num[i]);
          if(!check) {
           total = total +  num[i];

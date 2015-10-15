@@ -57,56 +57,59 @@ public class ExamResultsController {
 	public ModelAndView loadResultsEntryDashboard() throws Exception {
 		return new ModelAndView("examResultsRegistration");
 	}
+	@RequestMapping("/examResultsReg123")
+	public ModelAndView loadexamResultsReg123Dashboard() throws Exception {
+		return new ModelAndView("examResultsReg123");
+	}
+	@RequestMapping("/examResultsReg4567")
+	public ModelAndView loadexamResultsReg4567Dashboard() throws Exception {
+		return new ModelAndView("examResultsReg4567");
+	}
 
 	@RequestMapping("/addExamResults.do")
 	public ModelAndView addExamResults(HttpServletRequest request,
 			HttpServletResponse response) throws Exception {
+		int telugu1=0,hindi1=0,english1=0,maths1=0,science1=0,social1=0,computers=0,arts=0;
+		int telugu2=0,hindi2=0,english2=0,maths2=0,science2=0,social2=0;
+		String studentClass = "";
 		try {
 			String rollNo = request.getParameter("rollno");
 			String studentName = request.getParameter("studentName");
-			String studentClass = request.getParameter("StudentClass");
+			studentClass = request.getParameter("StudentClass");
 			String examTitle = request.getParameter("examTitle");
 			String examDate = request.getParameter("examDate");
-			int telugu1 = Integer.parseInt(request.getParameter("telugu_1")
-					.length() != 0 ? request.getParameter("telugu_1") : "0");
-			int telugu2 = Integer.parseInt(request.getParameter("telugu_2")
-					.length() != 0 ? request.getParameter("telugu_2") : "0");
-			int hindi1 = Integer.parseInt(request.getParameter("hindi_1")
-					.length() != 0 ? request.getParameter("hindi_1") : "0");
-			int hindi2 = Integer.parseInt(request.getParameter("hindi_2")
-					.length() != 0 ? request.getParameter("hindi_2") : "0");
-			int english1 = Integer.parseInt(request.getParameter("english_1")
-					.length() != 0 ? request.getParameter("english_1") : "0");
-			int english2 = Integer.parseInt(request.getParameter("english_2")
-					.length() != 0 ? request.getParameter("english_2") : "0");
-			int maths1 = Integer.parseInt(request.getParameter("maths_1")
-					.length() != 0 ? request.getParameter("maths_1") : "0");
-			int maths2 = Integer.parseInt(request.getParameter("maths_2")
-					.length() != 0 ? request.getParameter("maths_2") : "0");
-			int science1 = Integer.parseInt(request.getParameter("science_1")
-					.length() != 0 ? request.getParameter("science_1") : "0");
-			int science2 = Integer.parseInt(request.getParameter("science_2")
-					.length() != 0 ? request.getParameter("science_2") : "0");
-			int social1 = Integer.parseInt(request.getParameter("social_1")
-					.length() != 0 ? request.getParameter("social_1") : "0");
-			int social2 = Integer.parseInt(request.getParameter("social_2")
-					.length() != 0 ? request.getParameter("social_2") : "0");
-			int computers = Integer.parseInt(request.getParameter("arts")
-					.length() != 0 ? request.getParameter("arts") : "0");
-			int arts = Integer
-					.parseInt(request.getParameter("arts").length() != 0 ? request
-							.getParameter("arts") : "0");
-			int others = Integer.parseInt(request.getParameter("others")
-					.length() != 0 ? request.getParameter("others") : "0");
-			int total = Integer
-					.parseInt(request.getParameter("total").length() != 0 ? request
-							.getParameter("total") : "0");
-			int rank = Integer
-					.parseInt(request.getParameter("rank").length() != 0 ? request
-							.getParameter("rank") : "0");
+			if (studentClass.equalsIgnoreCase("1st class") || studentClass.equalsIgnoreCase("2nd class") || studentClass.equalsIgnoreCase("3rd class")) {
+				 telugu1 = Integer.parseInt(request.getParameter("telugu_1").length() != 0 ? request.getParameter("telugu_1") : "0");
+				 hindi1 = Integer.parseInt(request.getParameter("hindi_1").length() != 0 ? request.getParameter("hindi_1") : "0");
+				 english1 = Integer.parseInt(request.getParameter("english_1").length() != 0 ? request.getParameter("english_1") : "0");
+				 maths1 = Integer.parseInt(request.getParameter("maths_1").length() != 0 ? request.getParameter("maths_1") : "0");
+				 science1 = Integer.parseInt(request.getParameter("science_1").length() != 0 ? request.getParameter("science_1") : "0");
+				 computers = Integer.parseInt(request.getParameter("computers").length() != 0 ? request.getParameter("computers") : "0");
+				 arts = Integer.parseInt(request.getParameter("arts").length() != 0 ? request.getParameter("arts") : "0");
+			}   else if (studentClass.equalsIgnoreCase("4th class") || studentClass.equalsIgnoreCase("5th class") || studentClass.equalsIgnoreCase("6th class") || studentClass.equalsIgnoreCase("7th class")) {
+				 telugu1 = Integer.parseInt(request.getParameter("telugu_1").length() != 0 ? request.getParameter("telugu_1") : "0");
+				 hindi1 = Integer.parseInt(request.getParameter("hindi_1").length() != 0 ? request.getParameter("hindi_1") : "0");
+				 english1 = Integer.parseInt(request.getParameter("english_1").length() != 0 ? request.getParameter("english_1") : "0");
+				 maths1 = Integer.parseInt(request.getParameter("maths_1").length() != 0 ? request.getParameter("maths_1") : "0");
+				 science1 = Integer.parseInt(request.getParameter("science_1").length() != 0 ? request.getParameter("science_1") : "0");
+				 social1 = Integer.parseInt(request.getParameter("social_1").length() != 0 ? request.getParameter("social_1") : "0");
+				 computers = Integer.parseInt(request.getParameter("computers").length() != 0 ? request.getParameter("computers") : "0");
+			} else if (studentClass.equalsIgnoreCase("8th class") || studentClass.equalsIgnoreCase("9th class") || studentClass.equalsIgnoreCase("SSC")) {
+				 telugu1 = Integer.parseInt(request.getParameter("telugu_1").length() != 0 ? request.getParameter("telugu_1") : "0");
+				 hindi1 = Integer.parseInt(request.getParameter("hindi_1").length() != 0 ? request.getParameter("hindi_1") : "0");
+				 english1 = Integer.parseInt(request.getParameter("english_1").length() != 0 ? request.getParameter("english_1") : "0");
+				 maths1 = Integer.parseInt(request.getParameter("maths_1").length() != 0 ? request.getParameter("maths_1") : "0");
+				 science1 = Integer.parseInt(request.getParameter("science_1").length() != 0 ? request.getParameter("science_1") : "0");
+				 science2 = Integer.parseInt(request.getParameter("science_2").length() != 0 ? request.getParameter("science_2") : "0");
+				 social1 = Integer.parseInt(request.getParameter("social_1").length() != 0 ? request.getParameter("social_1") : "0");
+				 computers = Integer.parseInt(request.getParameter("computers").length() != 0 ? request.getParameter("computers") : "0");
+			}
+			
+			int others = Integer.parseInt(request.getParameter("others").length() != 0 ? request.getParameter("others") : "0");
+			int total = Integer.parseInt(request.getParameter("total").length() != 0 ? request.getParameter("total") : "0");
+			int rank = Integer.parseInt(request.getParameter("rank").length() != 0 ? request.getParameter("rank") : "0");
 			String grade = request.getParameter("grade");
-
-			SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+            SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 			SimpleDateFormat output = new SimpleDateFormat("yyyy-MM-dd");
 			Date examDate1 = null;
 			try {
@@ -125,7 +128,15 @@ public class ExamResultsController {
 			return new ModelAndView("redirect:examResults.do");
 		} catch (Exception e) {
 			e.printStackTrace();
-			return new ModelAndView("examResultsRegistration");
+			if (studentClass.equalsIgnoreCase("1st class") || studentClass.equalsIgnoreCase("2nd class") || studentClass.equalsIgnoreCase("3rd class")) {
+			return new ModelAndView("examResultsReg123");
+			}   else if (studentClass.equalsIgnoreCase("4th class") || studentClass.equalsIgnoreCase("5th class") || studentClass.equalsIgnoreCase("6th class") || studentClass.equalsIgnoreCase("7th class")) {
+				return new ModelAndView("examResultsReg4567");
+			} else if (studentClass.equalsIgnoreCase("8th class") || studentClass.equalsIgnoreCase("9th class") || studentClass.equalsIgnoreCase("SSC")) {
+					return new ModelAndView("examResultsRegistration");
+			}	else {
+				return new ModelAndView("redirect:examResults.do");
+			}
 		}
 	}
 
@@ -174,49 +185,43 @@ public class ExamResultsController {
 			HttpServletResponse response) throws Exception {
 
 		try {
+			int telugu1=0,hindi1=0,english1=0,maths1=0,science1=0,social1=0,computers=0,arts=0;
+			int telugu2=0,hindi2=0,english2=0,maths2=0,science2=0,social2=0;
 			String examResultsId = request.getParameter("examResultsId");
 			String studentName = request.getParameter("studentName");
 			String rollNo = request.getParameter("rollno");
 			String studentClass = request.getParameter("StudentClass");
 			String examTitle = request.getParameter("examTitle");
 			String examDate = request.getParameter("examDate");
-			int telugu1 = Integer.parseInt(request.getParameter("telugu_1")
-					.length() != 0 ? request.getParameter("telugu_1") : "0");
-			int telugu2 = Integer.parseInt(request.getParameter("telugu_2")
-					.length() != 0 ? request.getParameter("telugu_2") : "0");
-			int hindi1 = Integer.parseInt(request.getParameter("hindi_1")
-					.length() != 0 ? request.getParameter("hindi_1") : "0");
-			int hindi2 = Integer.parseInt(request.getParameter("hindi_2")
-					.length() != 0 ? request.getParameter("hindi_2") : "0");
-			int english1 = Integer.parseInt(request.getParameter("english_1")
-					.length() != 0 ? request.getParameter("english_1") : "0");
-			int english2 = Integer.parseInt(request.getParameter("english_2")
-					.length() != 0 ? request.getParameter("english_2") : "0");
-			int maths1 = Integer.parseInt(request.getParameter("maths_1")
-					.length() != 0 ? request.getParameter("maths_1") : "0");
-			int maths2 = Integer.parseInt(request.getParameter("maths_2")
-					.length() != 0 ? request.getParameter("maths_2") : "0");
-			int science1 = Integer.parseInt(request.getParameter("science_1")
-					.length() != 0 ? request.getParameter("science_1") : "0");
-			int science2 = Integer.parseInt(request.getParameter("science_2")
-					.length() != 0 ? request.getParameter("science_2") : "0");
-			int social1 = Integer.parseInt(request.getParameter("social_1")
-					.length() != 0 ? request.getParameter("social_1") : "0");
-			int social2 = Integer.parseInt(request.getParameter("social_2")
-					.length() != 0 ? request.getParameter("social_2") : "0");
-			int computers = Integer.parseInt(request.getParameter("arts")
-					.length() != 0 ? request.getParameter("arts") : "0");
-			int arts = Integer
-					.parseInt(request.getParameter("arts").length() != 0 ? request
-							.getParameter("arts") : "0");
-			int others = Integer.parseInt(request.getParameter("others")
-					.length() != 0 ? request.getParameter("others") : "0");
-			int total = Integer
-					.parseInt(request.getParameter("total").length() != 0 ? request
-							.getParameter("total") : "0");
-			int rank = Integer
-					.parseInt(request.getParameter("rank").length() != 0 ? request
-							.getParameter("rank") : "0");
+			if (studentClass.equalsIgnoreCase("1st class") || studentClass.equalsIgnoreCase("2nd class") || studentClass.equalsIgnoreCase("3rd class")) {
+				 telugu1 = Integer.parseInt(request.getParameter("telugu_1").length() != 0 ? request.getParameter("telugu_1") : "0");
+				 hindi1 = Integer.parseInt(request.getParameter("hindi_1").length() != 0 ? request.getParameter("hindi_1") : "0");
+				 english1 = Integer.parseInt(request.getParameter("english_1").length() != 0 ? request.getParameter("english_1") : "0");
+				 maths1 = Integer.parseInt(request.getParameter("maths_1").length() != 0 ? request.getParameter("maths_1") : "0");
+				 science1 = Integer.parseInt(request.getParameter("science_1").length() != 0 ? request.getParameter("science_1") : "0");
+				 computers = Integer.parseInt(request.getParameter("computers").length() != 0 ? request.getParameter("computers") : "0");
+				 arts = Integer.parseInt(request.getParameter("arts").length() != 0 ? request.getParameter("arts") : "0");
+			}   else if (studentClass.equalsIgnoreCase("4th class") || studentClass.equalsIgnoreCase("5th class") || studentClass.equalsIgnoreCase("6th class") || studentClass.equalsIgnoreCase("7th class")) {
+				 telugu1 = Integer.parseInt(request.getParameter("telugu_1").length() != 0 ? request.getParameter("telugu_1") : "0");
+				 hindi1 = Integer.parseInt(request.getParameter("hindi_1").length() != 0 ? request.getParameter("hindi_1") : "0");
+				 english1 = Integer.parseInt(request.getParameter("english_1").length() != 0 ? request.getParameter("english_1") : "0");
+				 maths1 = Integer.parseInt(request.getParameter("maths_1").length() != 0 ? request.getParameter("maths_1") : "0");
+				 science1 = Integer.parseInt(request.getParameter("science_1").length() != 0 ? request.getParameter("science_1") : "0");
+				 social1 = Integer.parseInt(request.getParameter("social_1").length() != 0 ? request.getParameter("social_1") : "0");
+				 computers = Integer.parseInt(request.getParameter("computers").length() != 0 ? request.getParameter("computers") : "0");
+			} else if (studentClass.equalsIgnoreCase("8th class") || studentClass.equalsIgnoreCase("9th class") || studentClass.equalsIgnoreCase("SSC")) {
+				 telugu1 = Integer.parseInt(request.getParameter("telugu_1").length() != 0 ? request.getParameter("telugu_1") : "0");
+				 hindi1 = Integer.parseInt(request.getParameter("hindi_1").length() != 0 ? request.getParameter("hindi_1") : "0");
+				 english1 = Integer.parseInt(request.getParameter("english_1").length() != 0 ? request.getParameter("english_1") : "0");
+				 maths1 = Integer.parseInt(request.getParameter("maths_1").length() != 0 ? request.getParameter("maths_1") : "0");
+				 science1 = Integer.parseInt(request.getParameter("science_1").length() != 0 ? request.getParameter("science_1") : "0");
+				 science2 = Integer.parseInt(request.getParameter("science_2").length() != 0 ? request.getParameter("science_2") : "0");
+				 social1 = Integer.parseInt(request.getParameter("social_1").length() != 0 ? request.getParameter("social_1") : "0");
+				 computers = Integer.parseInt(request.getParameter("computers").length() != 0 ? request.getParameter("computers") : "0");
+			}
+			int others = Integer.parseInt(request.getParameter("others").length() != 0 ? request.getParameter("others") : "0");
+			int total = Integer.parseInt(request.getParameter("total").length() != 0 ? request.getParameter("total") : "0");
+			int rank = Integer.parseInt(request.getParameter("rank").length() != 0 ? request.getParameter("rank") : "0");
 			String grade = request.getParameter("grade");
 
 			SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");

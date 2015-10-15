@@ -126,6 +126,13 @@
 			last_insert_id() as id
 		</selectKey>
 	</insert>
+	<insert id="addNews" parameterClass="java.util.Map">
+		insert into news(news_headline,news_desc,other, news_date) values (#news_headline#,#news_desc#,#other#,#news_date#)
+		<selectKey resultClass="int" keyProperty="id">
+			select
+			last_insert_id() as id
+		</selectKey>
+	</insert>
     
 	<select id="authenticateUser" parameterClass="java.util.Map"
 		resultClass="string">
@@ -313,7 +320,7 @@
 	</delete>
 
    <select id="getAllResultsBySearch" parameterClass="java.util.Map" resultMap="ExamResults">
-		select e.* from exam_results e where (e.student_name=#student_name#) OR ( (e.student_class=#student_class#) and (e.roll_num=#roll_no#) )
+		select e.* from exam_results e where (e.student_name=#student_name#) OR ( (e.student_class=#student_class#) and (e.roll_num=#roll_no#) and (e.exam_title=#exam_title#))  
 	</select>
 	
 	 <!-- BudgetDao -->

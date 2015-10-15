@@ -87,13 +87,14 @@ ExamResultsDao {
 	@SuppressWarnings({ "unchecked", "finally" })
 	@Override
 	public List<ExamResults> getAllResultsBySearch(String studentClass,
-			String rollNum, String studentName) {
+			String rollNum, String examType,String studentName) {
 	List<ExamResults> examResultsList = new LinkedList<ExamResults>();
 	try {
 		Map<String, Object> paramsMap = new HashMap<String, Object>();
 		paramsMap.put("roll_no", rollNum);
 		paramsMap.put("student_name", studentName);
 		paramsMap.put("student_class", studentClass);
+		paramsMap.put("exam_title", examType);
 		examResultsList = (List<ExamResults>) template.queryForList("getAllResultsBySearch", paramsMap);
     } catch (Exception e) {
 		e.printStackTrace();
@@ -124,6 +125,26 @@ ExamResultsDao {
 		}
 	}
 
-	
-	
-}
+	@Override
+	public boolean insertMarks(String rollnum, String Name, String subject,
+			String Marks,String studentClass, String examTitle, String examDate) {
+		try {
+		Map<String, Object> paramsMap = new HashMap<String, Object>();
+		paramsMap.put("student_name", Name);
+		paramsMap.put("student_class", studentClass);
+		paramsMap.put("exam_title", examTitle);
+		paramsMap.put("exam_date", examDate);
+		paramsMap.put(subject, Marks);
+		ExamResults examResults = (ExamResults) template.queryForObject("getExamResult", paramsMap);	
+		if(examResults == null) {
+			this.createResult(rollnum, Name, studentClass, examTitle, examDate, 0, 0, 0, 0, 0, 0, 0, 0, 0,0,0, 0, 0, 0, 0, 0,"", 0);
+		}
+		
+		int result = this.updateResults(paramsMap);
+		return result > 0 ? true : false;
+		} catch (Exception e) {
+				e.printStackTrace();
+				return false;
+			}
+		}
+	}

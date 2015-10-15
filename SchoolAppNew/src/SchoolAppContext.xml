@@ -47,9 +47,10 @@ xsi:schemaLocation="http://www.springframework.org/schema/beans
      		<mvc:mapping path="/settings.do" />
      		<mvc:mapping path="/changePassword.do" />
      		<mvc:mapping path="/viewBudgetDetails.do" />
-     		<mvc:mapping path="addComplaint.do" />
-     		
-     		
+     		<mvc:mapping path="/addNews.do" />
+     		<mvc:mapping path="/newsDynamic.do" />
+     		<mvc:mapping path="/examResultsReg123.do" />
+     		<mvc:mapping path="/examResultsReg4567.do" />
      		<bean class="com.shiva.util.SessionHandler" />
    		</mvc:interceptor>
 	</mvc:interceptors> 
@@ -78,7 +79,7 @@ xsi:schemaLocation="http://www.springframework.org/schema/beans
 	<bean name="studentController" class="com.shiva.controller.StudentController" scope="request"><property name="studentService" ref="studentServiceImpl" /></bean>
 	<bean name="feeDetailsController" class="com.shiva.controller.FeeDetailsController" scope="request"><property name="feeDetailsService" ref="feeDetailsServiceImpl" /><property name="studentService" ref="studentServiceImpl" /><property name="budgetDetailsService" ref="budgetDetailsServiceImpl" /></bean>
 	<bean name="examResultsController" class="com.shiva.controller.ExamResultsController" scope="request"><property name="examResultsService" ref="examResultsServiceImpl" /><property name="studentService" ref="studentServiceImpl" /></bean>
-	 <bean name="dashboardController" class="com.shiva.controller.DashboardController"><property name="studentService" ref="studentServiceImpl" /><property name="teacherService" ref="teacherServiceImpl" /><property name="budgetDetailsService" ref="budgetDetailsServiceImpl" /><property name="feeDetailsService" ref="feeDetailsServiceImpl" /><property name="userService" ref="userServiceImpl" /></bean>
+	<bean name="dashboardController" class="com.shiva.controller.DashboardController"><property name="studentService" ref="studentServiceImpl" /><property name="teacherService" ref="teacherServiceImpl" /><property name="budgetDetailsService" ref="budgetDetailsServiceImpl" /><property name="feeDetailsService" ref="feeDetailsServiceImpl" /><property name="userService" ref="userServiceImpl" /></bean>
 	<bean name="settingsController" class="com.shiva.controller.SettingsController"><property name="settingsService" ref="settingsServiceImpl" /><property name="userService" ref="userServiceImpl" /></bean>
 	
 

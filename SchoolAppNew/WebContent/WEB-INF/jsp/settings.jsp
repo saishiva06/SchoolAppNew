@@ -49,8 +49,7 @@
 					<div class="contact col-md-12 col-sm-12">
 						<div class=" pull-right">
 							<p class="phone">
-								<i class="fa fa-phone"></i>Call us | +91 - 9666644801 | +91 -
-								8686172057
+								<i class="fa fa-phone"></i>Call us | 08742-231234 | +91-9666644801 | +91-8686172057
 							</p>
 							<p class="email">
 								<i class="fa fa-envelope"></i><a href="#">narayanaolympiadschools@gmail.com</a>
@@ -87,7 +86,14 @@
 					<li class="nav-item"><a href="feeDetails.do">Fee</a></li>
 					<li class="nav-item"><a href="examResults.do">Examination</a></li>
 					<li class="nav-item"><a href="budgetDashboard.do">Budget</a></li>
-					<li class="nav-item active"><a href="settings.do">Settings</a></li>
+					<li class="nav-item dropdown"><a class="dropdown-toggle"
+							data-toggle="dropdown" data-hover="dropdown" data-delay="0"
+							data-close-others="false" href="#">Settings <i
+								class="fa fa-angle-down"></i></a>
+							<ul class="dropdown-menu">
+								<li><a href="settings.do" class="btn btn-primary">Change Password</a></li>
+								<li><a href="newsDynamic.do" class="btn btn-primary">Add News</a></li>
+							    </ul>
                 </ul>
 				<!--//nav-->
 				<!--  <ul class="nav navbar-nav navbar-right">

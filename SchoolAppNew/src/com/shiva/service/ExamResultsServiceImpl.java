@@ -46,8 +46,8 @@ public class ExamResultsServiceImpl implements ExamResultsService {
 
 	@Override
 	public List<ExamResults> getAllResultsBySearch(String studentsClass,
-			String rollNum, String studentName) {
-		return examResultsDao.getAllResultsBySearch(studentsClass, rollNum, studentName);
+			String rollNum,String examType, String studentName) {
+		return examResultsDao.getAllResultsBySearch(studentsClass, rollNum, examType,studentName);
 	}
 
 	@Override
@@ -58,6 +58,13 @@ public class ExamResultsServiceImpl implements ExamResultsService {
 	@Override
 	public ExamResults getExamResultsById(String reciptId) {
 		return examResultsDao.getExamResultsById(reciptId);
+	}
+
+
+	@Override
+	public boolean insertMarks(String rollnum, String Name, String subject,
+			String Marks, String studentClass, String examTitle, String examDate) {
+		return examResultsDao.insertMarks(rollnum, Name, subject, Marks, studentClass, examTitle, examDate);
 	}
 
 

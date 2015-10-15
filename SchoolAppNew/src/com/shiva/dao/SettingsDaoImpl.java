@@ -28,4 +28,20 @@ public class SettingsDaoImpl extends SqlMapClientDaoSupport implements SettingsD
 			return -1;
 		}
 	}
+
+	@Override
+	public int addNews(int newsId, String news_headline, String news_desc,
+			String other, String cbDate) {
+		Map<String, Object> paramsMap = new HashMap<String, Object>();
+		paramsMap.put("news_headline", news_headline);
+		paramsMap.put("news_desc", news_desc);
+		paramsMap.put("other", other);
+		paramsMap.put("news_date", cbDate);
+		try {
+			int result = (Integer) template.insert("addNews", paramsMap);
+			return result;
+		} catch (Exception ex) {
+			return -1;
+		}
 	}
+}

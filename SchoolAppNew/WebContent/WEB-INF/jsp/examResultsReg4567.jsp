@@ -175,9 +175,8 @@
 
 
 								
-
 								<div class="form-group">
-									<label class="col-sm-3 control-label">Physical Science</label>
+									<label class="col-sm-3 control-label">Science</label>
 									<div class="col-sm-5">
 										<input id="science_1" class="form-control" name="science_1"
 											type="text" />
@@ -191,6 +190,7 @@
 											type="text" />
 									</div>
 								</div>
+								
 								<div class="form-group">
 									<label class="col-sm-3 control-label">Total Marks</label>
 									<div class="col-sm-5">
@@ -256,14 +256,7 @@
 											type="text" />
 									</div>
 								</div>
-								<div class="form-group">
-									<label class="col-sm-3 control-label">Biology Science</label>
-									<div class="col-sm-5">
-										<input id="science_2" class="form-control" name="science_2"
-											type="text" />
-									</div>
-								</div>
-
+								
 								<div class="form-group">
 									<label class="col-sm-3 control-label">Computers</label>
 									<div class="col-sm-5">
@@ -373,12 +366,11 @@
          num[2]  = parseInt(document.getElementById("english_1").value);
          num[3] = parseInt(document.getElementById("maths_1").value);
          num[4]  = parseInt(document.getElementById("science_1").value);
-         num[5] = parseInt(document.getElementById("science_2").value);
-         num[6] = parseInt(document.getElementById("social_1").value);
-         num[7] = parseInt(document.getElementById("computers").value);
+         num[5] = parseInt(document.getElementById("social_1").value);
+         num[6] = parseInt(document.getElementById("computers").value);
          
          var total = 0;
-         for (i = 0; i <= 7; i++) { 
+         for (i = 0; i <= 6; i++) { 
          var check = isNaN(num[i]);
          if(!check) {
           total = total +  num[i];

@@ -1,18 +1,19 @@
 package com.shiva.controller;
 
-import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.shiva.service.SettingsService;
 import com.shiva.service.UserService;
 
+@Controller
 public class SettingsController {
 	HttpSession session;
     private UserService userService;
@@ -35,7 +36,7 @@ public class SettingsController {
 		this.settingsService = settingsService;
 	}
 
-	@RequestMapping("/changePassword.do")
+	/*@RequestMapping("/changePassword.do")
 	public ModelAndView changePassword(HttpServletRequest request) throws Exception {
 		String oldPassword = request.getParameter("oldPassword");
 		String newPassword = request.getParameter("newPassword");
@@ -57,7 +58,7 @@ public class SettingsController {
 	}
 
 	return mav;
-  }
+  }*/
 	
 	@RequestMapping("/addComplaint.do")
 	public ModelAndView addComplaint(HttpServletRequest request) throws Exception {
@@ -70,7 +71,30 @@ public class SettingsController {
 		cbDate = output.format(new Date());
         settingsService.addCompalint(0, perName, perPhone, perEmail, cbDate, message);
 		ModelAndView mav = new ModelAndView();
-		mav.setViewName("contact.do");
+		mav.setViewName("contact");
+		mav.addObject("Msg", "Your complaint registered");
+	    return mav;
+        }
+	
+	@RequestMapping("/newsDynamic.do")
+	public ModelAndView newsDash(HttpServletRequest request) throws Exception {
+		ModelAndView mav = new ModelAndView();
+		mav.setViewName("addNews");
+		return mav;
+	}  
+	
+	@RequestMapping("/addNews.do")
+	public ModelAndView addNews(HttpServletRequest request) throws Exception {
+		String cbDate = "";
+	    String news_headline = request.getParameter("news_headline");
+		String news_desc = request.getParameter("news_desc");
+		String other = request.getParameter("other");
+		String newsDate = request.getParameter("newsDate");
+		SimpleDateFormat output = new SimpleDateFormat("yyyy-MM-dd");
+		cbDate = output.format(newsDate);
+        settingsService.addNews(0, news_headline, news_desc, other, cbDate);
+		ModelAndView mav = new ModelAndView();
+		mav.setViewName("contact");
 		mav.addObject("Msg", "Your complaint registered");
 	    return mav;
         }

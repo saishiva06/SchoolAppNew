@@ -14,9 +14,10 @@ public interface ExamResultsService {
 			       		int total,String grade,int rank);
 			 int updateResults(Map<String, Object> ExamResultsMap);
 			 List<ExamResults>  getExamResultsMap();
-			 List<ExamResults>  getAllResultsBySearch(String studentsClass,String rollNum, String studentName);
+			 List<ExamResults>  getAllResultsBySearch(String studentsClass,String rollNum, String examType, String studentName);
 			 boolean deleteExamResults(String recieptId);
 			 ExamResults getExamResultsById(String reciptId);
+			 boolean insertMarks(String rollnum,String Name,String subject,String Marks,String studentClass, String examTitle, String examDate);
 		
 	
 }

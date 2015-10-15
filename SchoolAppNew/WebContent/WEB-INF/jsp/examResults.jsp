@@ -82,8 +82,7 @@
 					<div class="contact col-md-12 col-sm-12">
 						<div class=" pull-right">
 							<p class="phone">
-								<i class="fa fa-phone"></i>Call us | +91 - 9666644801 | +91 -
-								8686172057
+								<i class="fa fa-phone"></i>Call us | 08742-231234 | +91-9666644801 | +91-8686172057
 							</p>
 							<p class="email">
 								<i class="fa fa-envelope"></i><a href="#">narayanaolympiadschools@gmail.com</a>
@@ -118,11 +117,17 @@
 					<li class="nav-item"><a href="teacher.do">Teacher</a></li>
 					<li class="nav-item"><a href="student.do">Student</a></li>
 					<li class="nav-item"><a href="feeDetails.do">Fee</a></li>
-					<li class="nav-item active"><a href="#">Examination</a></li>
-					<li class="nav-item"><a href="budgetDashboard.do">Budget</a></li>
-
-				</ul>
-				<!--//nav-->
+					<li class="nav-item dropdown active"><a class="dropdown-toggle"
+							data-toggle="dropdown" data-hover="dropdown" data-delay="0"
+							data-close-others="false" href="examResults.do">Examination <i
+								class="fa fa-angle-down"></i></a>
+							<ul class="dropdown-menu">
+								<li><a href="examResultsReg123.do" class="btn btn-primary">Enter Results For 1 2 3 clasess</a></li>
+								<li><a href="examResultsReg4567.do" class="btn btn-primary">Enter Results For 4 5 6 7 clasess</a></li>
+							    <li><a href="examResultsRegistration.do" class="btn btn-primary">Enter Results For 8 9 10 clasess</a></li>
+							   </ul></li>
+                <li class="nav-item"><a href="budgetDashboard.do">Budget</a></li>
+<!--//nav-->
 
 			</div>
 			<!--//navabr-collapse-->
@@ -139,10 +144,7 @@
 					<div class="row">
 						<div class="col-md-12">
 							<form name="SchoolInfo" action="#" id="add-student" method="post">
-								<p>
-									<a href="examResultsRegistration.do" class="btn btn-primary">Add
-										Exam Results</a>
-								</p>
+								
 								<div class="table-responsive">
 									<table class="table table-striped table-bordered table-hover"
 										id="dataTables-example">

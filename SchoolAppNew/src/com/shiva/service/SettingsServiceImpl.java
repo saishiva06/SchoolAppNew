@@ -15,6 +15,12 @@ public class SettingsServiceImpl implements SettingsService {
 		
 		return settingsDao.addCompalint(cbId, perName, perPhone, perMail, cbDate, cbDesc);
 	}
+	@Override
+	public int addNews(int newsId, String news_headline, String news_desc,
+			String other, String cbDate) {
+		
+		return settingsDao.addNews(newsId, news_headline, news_desc, other, cbDate);
+	}
 
 	
 }
