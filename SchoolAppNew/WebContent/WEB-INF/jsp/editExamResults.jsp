@@ -188,6 +188,14 @@ ExamResults examResults = (ExamResults)request.getAttribute("examResults");
 											type="text" value="<%=examResults.getTelugu1()%>" />
 									</div>
 								</div>
+								<div class="form-group">
+									<label class="col-sm-3 control-label">Hindi</label>
+									<div class="col-sm-5">
+										<input id="hindi_1" class="form-control" name="hindi_1"
+											type="text" value="<%=examResults.getHindi1()%>"/>
+									</div>
+								</div>
+								
 								
 								<div class="form-group">
 									<label class="col-sm-3 control-label">English</label>
@@ -196,6 +204,15 @@ ExamResults examResults = (ExamResults)request.getAttribute("examResults");
 											type="text" value="<%=examResults.getEnglish1()%>"/>
 									</div>
 								</div>
+								<div class="form-group">
+									<label class="col-sm-3 control-label">Maths</label>
+									<div class="col-sm-5">
+										<input id="maths_1" class="form-control" name="maths_1"
+											type="text" value="<%=examResults.getMaths1()%>" />
+									</div>
+								</div>
+								
+								
                             <div class="form-group">
 									<label class="col-sm-3 control-label">Science (EVS for Primary)</label>
 									<div class="col-sm-5">
@@ -203,6 +220,14 @@ ExamResults examResults = (ExamResults)request.getAttribute("examResults");
 											type="text" value="<%=examResults.getScience1()%>" />
 									</div>
 								</div>
+								<div class="form-group">
+									<label class="col-sm-3 control-label">Biology (Optional)</label>
+									<div class="col-sm-5">
+										<input id="science_2" class="form-control" name="science_2"
+											type="text" value="<%=examResults.getScience2()%>" />
+									</div>
+								</div>
+								
                      <div class="form-group">
 									<label class="col-sm-3 control-label">Social(Optional for Primary)</label>
 									<div class="col-sm-5">
@@ -210,33 +235,7 @@ ExamResults examResults = (ExamResults)request.getAttribute("examResults");
 											type="text" value="<%=examResults.getSocial1()%>" />
 									</div>
 								</div>
-              <div class="form-group">
-									<label class="col-sm-3 control-label">Computers</label>
-									<div class="col-sm-5">
-										<input id="computers" class="form-control" name="computers"
-											type="text" value="<%=examResults.getComputers()%>" />
-									</div>
-								</div>
-								<div class="form-group">
-									<label class="col-sm-3 control-label">Total</label>
-									<div class="col-sm-5">
-										<input id="total" name="total" class="form-control"
-											type="text" value="<%=examResults.getTotal()%>" />
-									</div>
-								</div>
-								<div class="form-group">
-									<label class="col-sm-3 control-label">Grade</label>
-									<div class="col-sm-5">
-										<select name="grade" class="form-control">
-											<option value="<%=examResults.getGrade() %>"
-												selected="selected"><%=examResults.getGrade() %></option>
-											<option value="A">A</option>
-											<option value="B">B</option>
-											<option value="C">C</option>
-											<option value="D">D</option>
-										</select>
-									</div>
-								</div>
+                            
 								</div>
 								<div class="col-md-6">
 								<div class="form-group">
@@ -259,35 +258,19 @@ ExamResults examResults = (ExamResults)request.getAttribute("examResults");
 									</div>
 									</div>
 								
-								<div class="form-group">
-									<label class="col-sm-3 control-label">Hindi</label>
-									<div class="col-sm-5">
-										<input id="hindi_1" class="form-control" name="hindi_1"
-											type="text" value="<%=examResults.getHindi1()%>"/>
-									</div>
-								</div>
-								<div class="form-group">
-									<label class="col-sm-3 control-label">Maths</label>
-									<div class="col-sm-5">
-										<input id="maths_1" class="form-control" name="maths_1"
-											type="text" value="<%=examResults.getMaths1()%>" />
-									</div>
-								</div>
-								
-								
-								<div class="form-group">
-									<label class="col-sm-3 control-label">Biology (Optional)</label>
-									<div class="col-sm-5">
-										<input id="science_2" class="form-control" name="science_2"
-											type="text" value="<%=examResults.getScience2()%>" />
-									</div>
-								</div>
 								
 								<div class="form-group">
 									<label class="col-sm-3 control-label">G K(Only for Primary)</label>
 									<div class="col-sm-5">
 										<input id="arts" name="arts" class="form-control" type="text"
 											value="<%=examResults.getArts()%>" />
+									</div>
+								</div>
+								<div class="form-group">
+									<label class="col-sm-3 control-label">Computers</label>
+									<div class="col-sm-5">
+										<input id="computers" class="form-control" name="computers"
+											type="text" value="<%=examResults.getComputers()%>" />
 									</div>
 								</div>
 								<div class="form-group">
@@ -298,9 +281,26 @@ ExamResults examResults = (ExamResults)request.getAttribute("examResults");
 											onClick="fnSum();" />
 									</div>
 								</div>
-								
-
-								
+								<div class="form-group">
+									<label class="col-sm-3 control-label">Total</label>
+									<div class="col-sm-5">
+										<input id="total" name="total" class="form-control"
+											type="text" value="<%=examResults.getTotal()%>" />
+									</div>
+								</div>
+								<div class="form-group">
+									<label class="col-sm-3 control-label">Grade</label>
+									<div class="col-sm-5">
+										<select name="grade" class="form-control">
+											<option value="<%=examResults.getGrade() %>"
+												selected="selected"><%=examResults.getGrade() %></option>
+											<option value="A">A</option>
+											<option value="B">B</option>
+											<option value="C">C</option>
+											<option value="D">D</option>
+										</select>
+									</div>
+								</div>
 								<div class="form-group">
 									<label class="col-sm-3 control-label">Rank</label>
 									<div class="col-sm-5">

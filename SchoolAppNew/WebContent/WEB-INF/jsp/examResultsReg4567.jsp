@@ -162,7 +162,13 @@
 									</div>
 								</div>
 
-
+                           <div class="form-group">
+									<label class="col-sm-3 control-label">Hindi</label>
+									<div class="col-sm-5">
+										<input id="hindi_1" class="form-control" name="hindi_1"
+											type="text" />
+									</div>
+								</div>
 								
 
 								<div class="form-group">
@@ -173,7 +179,14 @@
 									</div>
 								</div>
 
-
+                           <div class="form-group">
+									<label class="col-sm-3 control-label">Maths</label>
+									<div class="col-sm-5">
+										<input id="maths_1" class="form-control" name="maths_1"
+											type="text" />
+									</div>
+								</div>
+								
 								
 								<div class="form-group">
 									<label class="col-sm-3 control-label">Science</label>
@@ -191,25 +204,7 @@
 									</div>
 								</div>
 								
-								<div class="form-group">
-									<label class="col-sm-3 control-label">Total Marks</label>
-									<div class="col-sm-5">
-										<input id="total" name="total" class="form-control"
-											type="text" />
-									</div>
-								</div>
-								<div class="form-group">
-									<label class="col-sm-3 control-label">Grade</label>
-									<div class="col-sm-5">
-										<select name="grade" class="form-control">
-											<option value="">Choose One</option>
-											<option value="A">A</option>
-											<option value="B">B</option>
-											<option value="C">C</option>
-											<option value="D">D</option>
-										</select>
-									</div>
-								</div>
+								
 
 							</div>
 							<div class="col-md-6">
@@ -243,28 +238,12 @@
 								</div>
 
 								<div class="form-group">
-									<label class="col-sm-3 control-label">Hindi</label>
-									<div class="col-sm-5">
-										<input id="hindi_1" class="form-control" name="hindi_1"
-											type="text" />
-									</div>
-								</div>
-								<div class="form-group">
-									<label class="col-sm-3 control-label">Maths</label>
-									<div class="col-sm-5">
-										<input id="maths_1" class="form-control" name="maths_1"
-											type="text" />
-									</div>
-								</div>
-								
-								<div class="form-group">
 									<label class="col-sm-3 control-label">Computers</label>
 									<div class="col-sm-5">
 										<input id="computers" class="form-control" name="computers"
 											type="text" />
 									</div>
 								</div>
-
 								<div class="form-group">
 									<label class="col-sm-3 control-label">Marks Obtained</label>
 									<div class="col-sm-5">
@@ -272,6 +251,27 @@
 											type="text" onClick="fnSum();" />
 									</div>
 								</div>
+								<div class="form-group">
+									<label class="col-sm-3 control-label">Total Marks</label>
+									<div class="col-sm-5">
+										<input id="total" name="total" class="form-control"
+											type="text" />
+									</div>
+								</div>
+								<div class="form-group">
+									<label class="col-sm-3 control-label">Grade</label>
+									<div class="col-sm-5">
+										<select name="grade" class="form-control">
+											<option value="">Choose One</option>
+											<option value="A">A</option>
+											<option value="B">B</option>
+											<option value="C">C</option>
+											<option value="D">D</option>
+										</select>
+									</div>
+								</div>
+
+								
 								<div class="form-group">
 									<label class="col-sm-3 control-label">Rank</label>
 									<div class="col-sm-5">

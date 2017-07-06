@@ -66,9 +66,9 @@ xsi:schemaLocation="http://www.springframework.org/schema/beans
        	</bean>     
 	<bean id="dataSource" destroy-method="close" class="org.apache.commons.dbcp.BasicDataSource">
 		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
-		<property name="url" value="jdbc:mysql://localhost:3306/snskmm_school?autoReconnect=true" />
-		<property name="username" value="snskmm_user" />
-		<property name="password" value="narayana1234" />
+		<property name="url" value="jdbc:mysql://localhost:3306/school?autoReconnect=true" />
+		<property name="username" value="root" />
+		<property name="password" value="root" />
 		<property name="validationQuery" value="select 1 from dual" />
 		<property name="testOnBorrow" value="true" />
 	</bean>
