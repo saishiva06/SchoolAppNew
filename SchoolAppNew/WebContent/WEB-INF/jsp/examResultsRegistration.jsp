@@ -46,7 +46,7 @@
 								<i class="fa fa-phone"></i>Call us | 08742-231234 | +91-9666644801 | +91-8686172057
 							</p>
 							<p class="email">
-								<i class="fa fa-envelope"></i><a href="#">narayanaolympiadschools@gmail.com</a>
+								<i class="fa fa-envelope"></i><a href="#">srinarayanaolympiadschools@gmail.com</a>
 							</p>
 						</div>
 					</div>
@@ -158,7 +158,7 @@
 									<label class="col-sm-3 control-label">Telugu</label>
 									<div class="col-sm-5">
 										<input id="telugu_1" class="form-control" name="telugu_1"
-											type="text" />
+											type="number" />
 									</div>
 								</div>
 
@@ -166,7 +166,7 @@
 									<label class="col-sm-3 control-label">Hindi</label>
 									<div class="col-sm-5">
 										<input id="hindi_1" class="form-control" name="hindi_1"
-											type="text" />
+											type="number" />
 									</div>
 								</div>
 								
@@ -175,35 +175,35 @@
 									<label class="col-sm-3 control-label">English</label>
 									<div class="col-sm-5">
 										<input id="english_1" class="form-control" name="english_1"
-											type="text" />
+											type="number" />
 									</div>
 								</div>
                <div class="form-group">
 									<label class="col-sm-3 control-label">Maths</label>
 									<div class="col-sm-5">
 										<input id="maths_1" class="form-control" name="maths_1"
-											type="text" />
+											type="number" />
 									</div>
 								</div>
                     <div class="form-group">
 									<label class="col-sm-3 control-label">Physical Science</label>
 									<div class="col-sm-5">
 										<input id="science_1" class="form-control" name="science_1"
-											type="text" />
+											type="number" />
 									</div>
 								</div>
                      <div class="form-group">
 									<label class="col-sm-3 control-label">Biology Science</label>
 									<div class="col-sm-5">
 										<input id="science_2" class="form-control" name="science_2"
-											type="text" />
+											type="number" />
 									</div>
 								</div>
                          <div class="form-group">
 									<label class="col-sm-3 control-label">Social</label>
 									<div class="col-sm-5">
 										<input id="social_1" class="form-control" name="social_1"
-											type="text" />
+											type="number" />
 									</div>
 								</div>
 								
@@ -244,7 +244,7 @@
 									<label class="col-sm-3 control-label">Computers</label>
 									<div class="col-sm-5">
 										<input id="computers" class="form-control" name="computers"
-											type="text" />
+											type="number" />
 									</div>
 								</div>
 
@@ -252,14 +252,14 @@
 									<label class="col-sm-3 control-label">Marks Obtained</label>
 									<div class="col-sm-5">
 										<input id="others" name="others" class="form-control"
-											type="text" onClick="fnSum();" />
+											type="number" onClick="fnSum();" />
 									</div>
 								</div>
 								<div class="form-group">
 									<label class="col-sm-3 control-label">Total Marks</label>
 									<div class="col-sm-5">
 										<input id="total" name="total" class="form-control"
-											type="text" />
+											type="number" />
 									</div>
 								</div>
 								<div class="form-group">
@@ -277,7 +277,7 @@
 								<div class="form-group">
 									<label class="col-sm-3 control-label">Rank</label>
 									<div class="col-sm-5">
-										<input id="rank" name="rank" class="form-control" type="text" />
+										<input id="rank" name="rank" class="form-control" type="number" />
 									</div>
 								</div>
 

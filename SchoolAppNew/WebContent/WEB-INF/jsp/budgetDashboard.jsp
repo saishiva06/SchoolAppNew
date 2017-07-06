@@ -91,7 +91,7 @@
 								8686172057
 							</p>
 							<p class="email">
-								<i class="fa fa-envelope"></i><a href="#">narayanaolympiadschools@gmail.com</a>
+								<i class="fa fa-envelope"></i><a href="#">srinarayanaolympiadschools@gmail.com</a>
 							</p>
 						</div>
 					</div>

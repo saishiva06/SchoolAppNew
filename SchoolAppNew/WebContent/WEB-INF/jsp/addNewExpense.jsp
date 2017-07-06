@@ -49,7 +49,7 @@
 								<i class="fa fa-phone"></i>Call us | 08742-231234 | +91-9666644801 | +91-8686172057
 							</p>
 							<p class="email">
-								<i class="fa fa-envelope"></i><a href="#">narayanaolympiadschools@gmail.com</a>
+								<i class="fa fa-envelope"></i><a href="#">srinarayanaolympiadschools@gmail.com</a>
 							</p>
 						</div>
 					</div>
@@ -132,7 +132,7 @@
 								<div class="form-group">
 									<label class="col-sm-3 control-label">Expense Cost</label>
 									<div class="col-sm-5">
-										<input type="text" class="form-control" id="expenseCost"
+										<input type="number" class="form-control" id="expenseCost"
 											name="expenseCost" />
 									</div>
 								</div>

@@ -54,7 +54,7 @@ ExamResults examResults = (ExamResults)request.getAttribute("examResults");
 								<i class="fa fa-phone"></i>Call us | 08742-231234 | +91-9666644801 | +91-8686172057
 							</p>
 							<p class="email">
-								<i class="fa fa-envelope"></i><a href="#">narayanaolympiadschools@gmail.com</a>
+								<i class="fa fa-envelope"></i><a href="#">srinarayanaolympiadschools@gmail.com</a>
 							</p>
 						</div>
 					</div>

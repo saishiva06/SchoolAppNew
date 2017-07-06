@@ -78,7 +78,7 @@
 							<i class="fa fa-phone"></i>Call us | 08742-231234 | +91-9666644801 | +91-8686172057
 							</p>
 							<p class="email">
-							<i class="fa fa-envelope"></i><a href="#">narayanaolympiadschools@gmail.com</a>
+							<i class="fa fa-envelope"></i><a href="#">srinarayanaolympiadschools@gmail.com</a>
 							</p>
 						</div>
 					</div>
@@ -193,7 +193,7 @@
 								<p class="adr">
 									<span class="adr-group"> <span><b>Sri
 												Narayana Olympiad Schools</b></span><br> <span
-										class="street-address">(Saradha High School)</span><br> <span
+										class="street-address">Near Beraca Church</span><br> <span
 										class="region">Mustafa Nagar Khammam(District)</span><br>
 										<span class="postal-code">Telangana-507001</span><br> <span
 										class="country-name">India</span>
@@ -209,7 +209,7 @@
 									<i class="fa fa-phone"></i>9666644801 (or) 8686172057 (or)  08742-231234
 								</p>
 								<p class="email">
-									<i class="fa fa-envelope"></i> <a href="#">narayanaolympiadschools@gmail.com</a>
+									<i class="fa fa-envelope"></i> <a href="#">srinarayanaolympiadschools@gmail.com</a>
 								</p>
 							</section>
 						</aside>
