@@ -127,7 +127,7 @@
 		</selectKey>
 	</insert>
 	<insert id="addNews" parameterClass="java.util.Map">
-		insert into news(news_headline,news_desc,other, news_date) values (#news_headline#,#news_desc#,#other#,#news_date#)
+		insert into news(news_headline,news_description,news_date,other) values (#news_headline#,#news_desc#,#news_date#,#other#)
 		<selectKey resultClass="int" keyProperty="id">
 			select
 			last_insert_id() as id

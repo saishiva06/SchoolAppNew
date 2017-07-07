@@ -507,7 +507,9 @@ ul.custom-list-style li {
     background-clip: padding-box;
     border: 0 none;
     border-radius: 0;
+    overflow: hidden;
     box-shadow: 0 0 0;
+    height: 300px;
 }
 .flexslider .flex-control-nav {
     bottom: -35px;

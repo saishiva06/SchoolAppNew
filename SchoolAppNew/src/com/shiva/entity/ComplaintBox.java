@@ -1,13 +1,15 @@
 package com.shiva.entity;
 
+import java.util.Date;
+
 public class ComplaintBox {
 
 	private int cbId;
 	private String perName;
 	private String perPhone;
 	private String perMail;
-   private String cbDate;
-   public int getCbId() {
+    private Date cbDate;
+    public int getCbId() {
 	return cbId;
 }
 
@@ -39,11 +41,11 @@ public void setPerMail(String perMail) {
 	this.perMail = perMail;
 }
 
-public String getCbDate() {
+public Date getCbDate() {
 	return cbDate;
 }
 
-public void setCbDate(String cbDate) {
+public void setCbDate(Date cbDate) {
 	this.cbDate = cbDate;
 }
 

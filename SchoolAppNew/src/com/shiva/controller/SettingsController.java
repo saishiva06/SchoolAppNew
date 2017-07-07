@@ -1,5 +1,6 @@
 package com.shiva.controller;
 
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -67,8 +68,9 @@ public class SettingsController {
 		String perPhone = request.getParameter("perPhone");
 		String perEmail = request.getParameter("newPassword1");
 		String message = request.getParameter("message");
+		Date today = new Date();
 		SimpleDateFormat output = new SimpleDateFormat("yyyy-MM-dd");
-		cbDate = output.format(new Date());
+		cbDate = output.format(today);
         settingsService.addCompalint(0, perName, perPhone, perEmail, cbDate, message);
 		ModelAndView mav = new ModelAndView();
 		mav.setViewName("contact");
@@ -90,12 +92,18 @@ public class SettingsController {
 		String news_desc = request.getParameter("news_desc");
 		String other = request.getParameter("other");
 		String newsDate = request.getParameter("newsDate");
+		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 		SimpleDateFormat output = new SimpleDateFormat("yyyy-MM-dd");
-		cbDate = output.format(newsDate);
+		Date date1 = null;
+		try {
+			date1 = sdf.parse(newsDate);
+		} catch (ParseException e) {
+		}
+		cbDate = output.format(date1);
         settingsService.addNews(0, news_headline, news_desc, other, cbDate);
 		ModelAndView mav = new ModelAndView();
-		mav.setViewName("contact");
-		mav.addObject("Msg", "Your complaint registered");
+		mav.setViewName("news");
+		mav.addObject("Msg", "News Updated");
 	    return mav;
         }
 }

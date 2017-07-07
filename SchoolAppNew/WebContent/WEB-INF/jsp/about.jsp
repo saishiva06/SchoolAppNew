@@ -134,7 +134,7 @@
 							</p>
 							<p>
 								Narayana olympiad schools was establsihed in 2003 as Saradha
-								High School in Mustafa nagar Khammam.after successfull 12 years
+								High School in Mustafa nagar Khammam.after successfull 14 years
 								in education system now name changed to Sri narayana Olympiad
 								Schools. <br>
 							<h4>
