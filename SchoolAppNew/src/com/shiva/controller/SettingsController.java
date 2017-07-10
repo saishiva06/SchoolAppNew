@@ -3,6 +3,7 @@ package com.shiva.controller;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -11,6 +12,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.shiva.entity.News;
 import com.shiva.service.SettingsService;
 import com.shiva.service.UserService;
 
@@ -102,9 +104,26 @@ public class SettingsController {
 		cbDate = output.format(date1);
         settingsService.addNews(0, news_headline, news_desc, other, cbDate);
 		ModelAndView mav = new ModelAndView();
-		mav.setViewName("news");
+		mav.setViewName("addNews");
 		mav.addObject("Msg", "News Updated");
 	    return mav;
         }
+	
+	@RequestMapping("/news")
+	public ModelAndView loadNewsSingle() throws Exception {
+		return new ModelAndView("news");
+	}
+	
+	
+	@RequestMapping("/news-single")
+	public ModelAndView loadNewsPage() throws Exception {
+		List<News> newsData = settingsService.getAllNews();
+		ModelAndView mav = new ModelAndView();
+		mav.setViewName("news-single");
+		if (newsData != null && newsData.size()!=0) {
+			mav.addObject("newsData", newsData);
+		}
+		return mav;
+	}
 }
 

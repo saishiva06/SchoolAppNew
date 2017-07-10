@@ -1,10 +1,15 @@
 package com.shiva.dao;
 
 import java.util.HashMap;
+import java.util.LinkedList;
+import java.util.List;
 import java.util.Map;
 
 import org.springframework.orm.ibatis.SqlMapClientTemplate;
 import org.springframework.orm.ibatis.support.SqlMapClientDaoSupport;
+
+import com.shiva.entity.News;
+import com.shiva.entity.Student;
 
 public class SettingsDaoImpl extends SqlMapClientDaoSupport implements SettingsDao {
 	private SqlMapClientTemplate template = getSqlMapClientTemplate();
@@ -42,6 +47,19 @@ public class SettingsDaoImpl extends SqlMapClientDaoSupport implements SettingsD
 			return result;
 		} catch (Exception ex) {
 			return -1;
+		}
+	}
+
+	@SuppressWarnings({ "unchecked", "finally" })
+	@Override
+	public List<News> getAllNews() {
+		List<News> resultList = new LinkedList<News>();
+		try {
+			resultList = template.queryForList("getAllNews");
+		} catch (Exception ex) {
+			System.out.println(ex.getMessage());
+		} finally {
+			return resultList;
 		}
 	}
 }

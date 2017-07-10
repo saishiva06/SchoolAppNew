@@ -65,7 +65,7 @@
 		<header class="header">
 			<div class="header-main container">
 				<h1 class="logo col-md-4 col-sm-4">
-					<a href="index.do"><img id="logo"
+					<a href="dashboard.do"><img id="logo"
 						class="img-responsive img-inblock" src="assets/images/logo.png"
 						alt="Logo"></a>
 				</h1>
@@ -133,7 +133,15 @@
 								<li><a href="updateLoanAmount.do" class="btn btn-primary">Update Loan Amount</a></li>
 							    <li><a href="updateSchoolFunds.do" class="btn btn-primary">Update School Funds</a></li>
 								<li><a href="updateAvailableLimit.do" class="btn btn-primary">Update Available Limit</a></li>
-						</ul>
+						</ul></li>
+						<li class="nav-item dropdown"><a class="dropdown-toggle"
+							data-toggle="dropdown" data-hover="dropdown" data-delay="0"
+							data-close-others="false" href="#">Settings <i
+								class="fa fa-angle-down"></i></a>
+							<ul class="dropdown-menu">
+								<li><a href="settings.do" class="btn btn-primary">Change Password</a></li>
+								<li><a href="newsDynamic.do" class="btn btn-primary">Add News</a></li>
+							    </ul></li>
 				</ul>
 				<!--//nav-->
 				<!--  <ul class="nav navbar-nav navbar-right">

@@ -358,4 +358,7 @@
 		select budget_id,reciept_no,budget_name,budget_cost, budget_by, date_format(budget_date, '%d-%m-%Y') as budget_date, budget_type,other from budget_details where budget_type='debited' order by budget_id desc limit 5;
 	</select>
 	
+	<select id="getAllNews" resultMap="News">
+		select n.* from news n order by news_date desc limit 5
+	</select>
 </sqlMap>

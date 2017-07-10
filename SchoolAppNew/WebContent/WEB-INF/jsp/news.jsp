@@ -136,7 +136,7 @@
 								</figure>
 								<div class="details col-md-10 col-sm-9 col-xs-8">
 									<h3 class="title">
-										<a href="news-single.do">Web Site Launched</a>
+										<a href="news-single.do">New Web Site Launched</a>
 									</h3>
 									<p>Our new School Website launched and published.</p>
 									<a class="btn btn-theme read-more" href="news-single.do">Read
@@ -169,10 +169,9 @@
 								</figure>
 								<div class="details col-md-10 col-sm-9 col-xs-8">
 									<h3 class="title">
-										<a href="news-single.do">New Building For School</a>
+										<a href="news-single.do">New Staff And New Environment in our School</a>
 									</h3>
-									<p>This acadamic Year our new building is opening with full
-										furintued class rooms near beracha chaurch Mustafa Nagar</p>
+									<p>This acadamic Year We recruited new staff and providing new environmentis to develop students skills in all areas.</p>
 									<a class="btn btn-theme read-more" href="news-single.do">Read
 										more<i class="fa fa-chevron-right"></i>
 									</a>
@@ -188,7 +187,7 @@
 									<h3 class="title">
 										<a href="news-single.do">SSC Results Announced</a>
 									</h3>
-									<p>SSC results came out for Academic year 2014-15. And our
+									<p>SSC results came out for Academic year 2016-17. And our
 										School got great %'s and marks all over.</p>
 									<a class="btn btn-theme read-more" href="news-single.do">Read
 										more<i class="fa fa-chevron-right"></i>
@@ -223,7 +222,7 @@
 										<a href="news-single.do">Annual Day Celebrations</a>
 									</h3>
 									<p>Celebrated our school annual day for the acadamic year
-										2014-15 in a grand way</p>
+										2016-17 in a grand way</p>
 									<a class="btn btn-theme read-more" href="news-single.do">Read
 										more<i class="fa fa-chevron-right"></i>
 									</a>

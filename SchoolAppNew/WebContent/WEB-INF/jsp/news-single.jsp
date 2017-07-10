@@ -1,4 +1,14 @@
-<!DOCTYPE html>
+<%@page import="com.shiva.entity.News"%>
+<%@page import="java.util.List"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	session="true" pageEncoding="ISO-8859-1"%>
+<%
+
+	List<News> mydata = (List<News>) request
+			.getAttribute("newsData");
+	
+
+%><!DOCTYPE html>
 <!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
 <!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
 <!--[if !IE]><!-->
@@ -129,38 +139,27 @@
 					<div class="row page-row">
 						<div class="news-wrapper col-md-8">
 							<article class="news-item">
-								<p class="meta text-muted">Posted on: 05 June 2015</p>
+								<p class="meta text-muted">Posted on: July 2017</p>
 								<p class="featured-image">
 									<img class="img-responsive" src="assets/images/news/news-1.jpg"
 										alt="" />
 								</p>
+							<%
+													if (mydata != null && mydata.size() > 0) {
+														for (int i = 0; i < mydata.size(); i++) {
+															News news = mydata.get(i);
+												%>
+							
+							
 								<p>
-<h4><b>Website launched::</b></h4>
-05/06/2015<br>
-Our new website has been launched today. Tell your visitors why you have started a new presentation and how it benefits them. Mention your goals and project advantages. 
-Try to briefly give your visitors reasons why they should return to your pages.<br>
-<h4><b>New Bus</b></h4>
-01/07/2014 10:57<br>
-we brought 36 seats of new school bus for transport of school children<br>
-<h4><b>250 Admissions</b></h4>
-01/07/2014 10:46<br>
-we cross the 250 new students join in our school in this academic year 2014-2015.<br>
-<h4><b>school reopens</b></h4>
-12/06/2014 00:17<br>
-DEAR PARENT OUR SHARADHA HIGH SCHOOL REOPEN ON 09.06.2014.<br>
-<h4><b>half day schools</b></h4>
-22/03/2014 01:41<br>
-Half-day schools will be started from date: 24.03.2014.School runs from 8.00 am to 1.00 pm.So I request all parents and students follow the time table.<br>
-<h4><b>Upcoming Events</b></h4>
-14/03/2014 06:00<br>
-Celebrating Our School Anniversary Day on March 14th 2014 at our School.(Saradha Public School, Mustafa Nagar Khammam).   <br>
-Science Fair at Saradha School<br>
-05/03/2014 21:27<br>
-								
-								
-								
-								
-								</p>
+<h4><b><%=news.getNewsHeadLine()%>:</b></h4>
+<h6><b>Date:</b><%=news.getNewsDate()%></h6>
+<h6><%=news.getNewsDesc()%></h6><br>
+<%
+}
+}
+%>
+</p>
 
 							</article>
 							<!--//news-item-->

@@ -61,6 +61,14 @@
 	</div>
 		<!--  Jquery Table Start Here
     ++++++++++++++++++++++++++++++-->
+    <div class="container">
+              <div class="row">
+					<div class="col-md-6 ">
+					<button id="printpagebutton" value="Print this page" onclick="printpage()" class="btn btn-primary pull-right" style="background:#c0c0c0 ;color:#000;margin-right:16px;">Print this page</button>&nbsp;&nbsp;
+                    <a id = "backButton" href="dashboard.do"><button class="btn btn-primary pull-right" style="background:#c0c0c0 ;color:#000;margin-right:16px;">BACK</button></a> 
+                  </div>
+			</div>
+			</div>
 		<div class="container">
 			<div class="panel panel-primary">
 				<div class="panel-heading">STUDENT DETAILS</div>
@@ -122,12 +130,6 @@
 			</div>
 		</div>
 	
-	<div class="row">
-					<div class="col-md-12 ">
-					 <table class="table"  ><tr><th align="left"></th><th></th><th align="center"><input id="printpagebutton" type="button" class="" value="Print this page" onclick="printpage()" /></th><th></th><th align="right"><a id = "backButton" href="dashboard.do" class="btn btn-default">Back</a></th></tr></table>
-			</div>
-</div>
-
 	<footer id="footer-sec" class="footer">
 		<div class="bottom-bar">
 			<div class="container">

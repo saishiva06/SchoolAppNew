@@ -1,6 +1,10 @@
 package com.shiva.service;
 
 import com.shiva.dao.SettingsDao;
+import com.shiva.entity.News;
+import java.util.List;
+
+
 public class SettingsServiceImpl implements SettingsService {
 	private SettingsDao settingsDao;
 	public SettingsDao getSettingsDao() {
@@ -20,6 +24,10 @@ public class SettingsServiceImpl implements SettingsService {
 			String other, String cbDate) {
 		
 		return settingsDao.addNews(newsId, news_headline, news_desc, other, cbDate);
+	}
+
+	public List<News> getAllNews() {
+		return settingsDao.getAllNews();
 	}
 
 	
