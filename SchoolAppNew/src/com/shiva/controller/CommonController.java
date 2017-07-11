@@ -99,51 +99,5 @@ public class CommonController {
 	public ModelAndView loadTeamPage() throws Exception {
 		return new ModelAndView("team");
 	}
-	@RequestMapping("/uploadFile.do")
-	public ModelAndView uploadFilePage() throws Exception {
-		return new ModelAndView("uploadFile");
-	}
-	@RequestMapping("/uploadFileProcess.do")
-	public void uploadFile(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String fileType = "";
-		boolean isMultipart = ServletFileUpload.isMultipartContent(request);
-		if (!isMultipart) {
-			return;
-		}
-		DiskFileItemFactory factory = new DiskFileItemFactory();
-		DateFormat dateFormat = new SimpleDateFormat("yyyyMMdd");
-		Date today = new Date();
-		String filePath = "";
-        String uploadFolder = "D:/backup";
-        String studentClass = request.getParameter("StudentClass");
-		String examTitle = request.getParameter("examTitle");
-		String subject = request.getParameter("subject");
-		String examDate = request.getParameter("examDate");
-		
-		ServletFileUpload upload = new ServletFileUpload(factory);
-		try {
-			List<FileItem> items = upload.parseRequest(request);
-			Iterator<FileItem> iterator = items.iterator();
-			while (iterator.hasNext()) {
-				FileItem item = (FileItem) iterator.next();
-				if (!item.isFormField()) {
-					String Name = new File(item.getName()).getName();
-					String filenamewithoutext = FilenameUtils.removeExtension(Name);
-					String ext = FilenameUtils.getExtension(Name);
-					String fileName = filenamewithoutext + "_" + dateFormat.format(today) + "_" + "1234" + "." + ext;
-					 filePath = uploadFolder + File.separator + fileName;
-					File uploadedFile = new File(filePath);
-					item.write(uploadedFile);
-					if (fileName.endsWith(".xls")) {
-						fileType = "xls";
-					} else if (fileName.endsWith(".xlsx")) {
-						fileType = "xlsx";
-					}
-				}
-			}
-			ExcelReader.insertMarks(fileType,filePath,subject,studentClass, examTitle, examDate);
-		}  catch (Exception e) {
-			
-		}
-	}
+	
 }

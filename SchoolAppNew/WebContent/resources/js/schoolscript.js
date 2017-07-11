@@ -1,3 +1,7 @@
+var EXCEL_SUPPORTED_FORMATS = 'application/vnd.ms-excel,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet';
+var EXCEL_EXTENSIONS = 'xlsx,xls';
+
+
 $(document).ready(function() {
 	
 	$('#TeacherDOB')
@@ -118,6 +122,17 @@ $('#NewsDatePicker')
 .on('changeDate', function(e) {
     // Revalidate the date field
     $('#addNews').formValidation('revalidateField', 'newsDate');
+    
+});
+
+$('#uploadDatePicker')
+.datepicker({
+    format: 'dd/mm/yyyy',
+    autoclose:true
+})
+.on('changeDate', function(e) {
+    // Revalidate the date field
+    $('#uploadFileProcess').formValidation('revalidateField', 'uploadDate');
     
 });
 
@@ -707,6 +722,61 @@ $('#NewsDatePicker')
                }     
         }
     });
+    
+    
+    
+    $('#uploadFileForm').formValidation({
+        message: 'This value is not valid',
+        icon: {
+           // valid: 'glyphicon glyphicon-ok',
+            invalid: 'glyphicon glyphicon-remove',
+            validating: 'glyphicon glyphicon-refresh'
+        },
+        fields: {
+        	uploadFile: {
+                validators: {
+                    notEmpty: {
+                        message: 'The file is required.'
+                    },
+                    file: {
+                        extension: EXCEL_EXTENSIONS,
+                        type: EXCEL_SUPPORTED_FORMATS,
+                        message: 'Please choose a excel file'
+                    }
+                }
+            },
+            StudentClass: {
+                row: '.col-sm-5',
+                validators: {
+                    notEmpty: {
+                        message: 'The Class is required'
+                    }
+                }
+            },
+            examTitle: {
+                row: '.col-sm-5',
+                validators: {
+                    notEmpty: {
+                        message: 'The exam title is required'
+                    }
+                }
+            }, 
+            uploadDate: {
+                selector: '.UDoe',
+                validators: {
+                    notEmpty: {
+                        message: 'The  Date Of Exam is required'
+                    },
+                    date: {
+                        format: 'DD/MM/YYYY',
+                        message: 'The date is not a valid'
+                    }
+                }
+            }
+
+        }
+    });
+
 });
 
 

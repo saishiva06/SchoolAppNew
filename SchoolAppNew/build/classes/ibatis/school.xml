@@ -323,6 +323,16 @@
 		select e.* from exam_results e where (e.student_name=#student_name#) OR ( (e.student_class=#student_class#) and (e.roll_num=#roll_no#) and (e.exam_title=#exam_title#))  
 	</select>
 	
+	<select id="getExamResult" parameterClass="java.util.Map" resultMap="ExamResults">
+		select e.* from exam_results e where e.student_class=#student_class# and e.roll_num=#roll_num#  and e.exam_title=#exam_title# 
+	</select>
+	
+	 <update id="updateResultsForSubject" parameterClass="java.util.Map">
+		update exam_results e set e.$subject$= #marks# where e.exam_results_id =#exam_results_id#
+	</update>
+	
+	
+	
 	 <!-- BudgetDao -->
 	 <insert id="createBudgetDetails" parameterClass="java.util.Map">
 		insert into budget_details(reciept_no,budget_name,budget_cost, budget_by, budget_date, budget_type,other) values (#reciept_no#,#budget_name#,#budget_cost#, #budget_by#, #budget_date#, #budget_type#,#other#)

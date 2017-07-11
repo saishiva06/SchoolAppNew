@@ -1,15 +1,24 @@
 package com.shiva.controller;
 
+import java.io.File;
+import java.io.IOException;
+import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
+import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.commons.fileupload.FileItem;
+import org.apache.commons.fileupload.disk.DiskFileItemFactory;
+import org.apache.commons.fileupload.servlet.ServletFileUpload;
+import org.apache.commons.io.FilenameUtils;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
@@ -17,6 +26,7 @@ import org.springframework.web.servlet.ModelAndView;
 import com.shiva.entity.ExamResults;
 import com.shiva.service.ExamResultsService;
 import com.shiva.service.StudentService;
+import com.shiva.util.ExcelReader;
 import com.shiva.util.SendSms;
 
 @Controller
@@ -307,4 +317,68 @@ public class ExamResultsController {
 		}
 		return mav;
 	}
+	
+	@RequestMapping("/uploadFile.do")
+	public ModelAndView uploadFilePage() throws Exception {
+		return new ModelAndView("uploadFile");
+	}
+	
+	@RequestMapping("/uploadFileProcess.do")
+	public ModelAndView uploadFile(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		String fileType = "";
+		boolean isMultipart = ServletFileUpload.isMultipartContent(request);
+		if (!isMultipart) {
+			return new ModelAndView("uploadFile");
+		}
+		DiskFileItemFactory factory = new DiskFileItemFactory();
+		DateFormat dateFormat = new SimpleDateFormat("yyyyMMdd");
+		Date today = new Date();
+		String filePath = "";
+        String uploadFolder = "D:/backup";
+        String studentClass = request.getParameter("studentClass");
+		String examTitle = request.getParameter("examTitle");
+		String subject = request.getParameter("subject");
+		String examDate = request.getParameter("uploadDate");
+	    ServletFileUpload upload = new ServletFileUpload(factory);
+	    try {
+			File uploadedFile =  null;
+			List<FileItem> items = upload.parseRequest(request);
+			Iterator<FileItem> iterator = items.iterator();
+			while (iterator.hasNext()) {
+				FileItem item = (FileItem) iterator.next();
+				if (!item.isFormField()) {
+					String Name = new File(item.getName()).getName();
+					String filenamewithoutext = FilenameUtils.removeExtension(Name);
+					String ext = FilenameUtils.getExtension(Name);
+					String fileName = filenamewithoutext + "_" + dateFormat.format(today) + "_" + "1234" + "." + ext;
+					 filePath = uploadFolder + File.separator + fileName;
+					 uploadedFile = new File(filePath);
+					item.write(uploadedFile);
+					if (fileName.endsWith(".xls")) {
+						fileType = "xls";
+					} else if (fileName.endsWith(".xlsx")) {
+						fileType = "xlsx";
+					}
+				} else {
+					 String fieldname = item.getFieldName();
+				     String fieldvalue = item.getString();
+				    if (fieldname.equals("studentClass")) {
+				    	 studentClass = fieldvalue;
+				        } else if (fieldname.equals("examTitle")) {
+				        	examTitle = fieldvalue;
+				        }  else if (fieldname.equals("subject")) {
+				        	subject = fieldvalue;
+				        } else if (fieldname.equals("uploadDate")) {
+				        	examDate = fieldvalue;
+				        }
+				}
+			}
+			ExcelReader.insertMarks(fileType,filePath,subject,studentClass, examTitle, examDate);
+			uploadedFile.delete();	 
+		}  catch (Exception e) {
+			
+		}
+		return new ModelAndView("uploadFile");
+	}
+
 }

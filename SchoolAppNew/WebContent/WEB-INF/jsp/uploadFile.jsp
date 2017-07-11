@@ -1,139 +1,138 @@
-<%@page import="com.shiva.entity.ExamResults"%>
-<%@page import="com.shiva.util.Calculation"%>
-<%@page import="com.shiva.util.*"%>
-<%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	session="true" pageEncoding="ISO-8859-1"%>
 
 <!DOCTYPE html>
 <html>
 <head>
-<title>SRI NARAYANA OLYPIAD SCHOOL</title>
+<title>Sri Narayana Olympiad School</title>
 <link type="text/css" rel="stylesheet"
 	href="resources/css/bootstrap.css" />
-<link type="text/css" href="resources/css/font-awesome.css"
-	rel="stylesheet">
+<link type="text/css" rel="stylesheet"
+	href="resources/css/font-awesome.css">
 <link type="text/css" rel="stylesheet" href="resources/css/style.css" />
-<link href="resources/js/dataTables/dataTables.bootstrap.css"
-	rel="stylesheet" />
+<link type="text/css" rel="stylesheet"
+	href="resources/css/datepicker.min.css" />
+<link type="text/css" rel="stylesheet"
+	href="resources/css/datepicker3.min.css" />
+<link type="text/css" rel="stylesheet"
+	href="resources/css/formValidation.css" />
 <link rel="icon" type="image/png" sizes="16x16"
 	href="resources/img/favicon.ico">
+
+
 </head>
 <body>
-<body class="home-page">
-	<div class="wrapper">
-		<!-- ******HEADER****** -->
-		<header class="header">
-			<div class="header-main container">
-				<h1 class="logo col-md-4 col-sm-4">
-					<a href="dashboard.do"><img id="logo"
-						class="img-responsive img-inblock" src="assets/images/logo.png"
-						alt="Logo"></a>
-				</h1>
-				<!--//logo-->
-
-
-
-				<div class="info col-md-8 col-sm-8 marginTop30">
-					<div class="col-md-12 col-sm-12  text-center">
-						<ul class="menu-top ">
-							<li class="divider"><a href="index.do">Home</a></li>
-							<li class="divider"><a href="admin.do">Admin Login</a></li>
-						</ul>
-						<!--//menu-top-->
-					</div>
-					<div class="clearfix text-center"></div>
-					<div class="contact col-md-12 col-sm-12">
-						<div class=" pull-right">
-							<p class="phone">
-								<i class="fa fa-phone"></i>Call us | 08742-231234 | +91-9666644801 | +91-8686172057
-							</p>
-							<p class="email">
-								<i class="fa fa-envelope"></i><a href="#">srinarayanaolympiadschools@gmail.com</a>
-							</p>
-						</div>
-					</div>
-					<!--//contact-->
-				</div>
-				<!--//info-->
-
-			</div>
-			<!--//header-main-->
-		</header>
-		<!--//header-->
-
-		<!-- ******NAV****** -->
-		<nav class="main-nav" role="navigation">
-			<div class="container">
-				<div class="navbar-header">
-					<button class="navbar-toggle" type="button" data-toggle="collapse"
-						data-target="#navbar-collapse">
-						<span class="sr-only">Toggle navigation</span> <span
-							class="icon-bar"></span> <span class="icon-bar"></span> <span
-							class="icon-bar"></span>
-					</button>
-					<!--//nav-toggle-->
-				</div>
-				<!--//navbar-header-->
-				<div class="navbar-collapse collapse" id="navbar-collapse">
-					<ul class="nav navbar-nav">
-						<li class="nav-item"><a href="index.do">Home</a></li>
-						<li class="nav-item dropdown"><a class="dropdown-toggle"
-							data-toggle="dropdown" data-hover="dropdown" data-delay="0"
-							data-close-others="false" href="#">About Us <i
-								class="fa fa-angle-down"></i></a>
-							<ul class="dropdown-menu">
-								<li><a href="about.do">About</a></li>
-								<li><a href="team.do">Our Staff</a></li>
-								<li><a href="gallery.do">School Gallery</a></li>
-							</ul></li>
-						<li class="nav-item"><a href="news.do">News</a></li>
-						<li class="nav-item"><a href="contact.do">Contact</a></li>
-						<li class="nav-item active "><a href="noticeboard.do">Results</a></li>
-					</ul>
-					<!--//nav-->
-				</div>
-				<!--//navabr-collapse-->
-			</div>
-			<!--//container-->
-		</nav>
-		<!--//main-nav-->
+	<jsp:include page="header.jsp" />
+	<div class="container">
+		<p>
+			<b> <a href="feeDetails.do" class="btn btn-default">Back</a></b>
+		</p>
 	</div>
 	<div class="container">
 		<div class="panel panel-primary">
-			<div class="panel-heading">Student Marks</div>
+			<div class="panel-heading">Fee New Registration</div>
 			<div class="panel-body">
 				<div class="container">
 					<div class="row">
 						<div class="col-md-8">
-							<form action="uploadFileProcess.do" id="uploadFile" method="post"
+                          <form action="uploadFileProcess.do" id="uploadFileForm" method="post"
 								class="form-horizontal" enctype="multipart/form-data" >
+								
+								
+								<div class="form-group">
+									<label class="col-sm-3 control-label">Class</label>
+									<div class="col-sm-5">
+										<select name="studentClass" class="form-control" required = "required">
+											<option value="">choose one</option>
+											<option value="Nursery">Nursery</option>
+											<option value="LKG">Lkg</option>
+											<option value="UKG">Ukg</option>
+											<option value="1st class">1st class</option>
+											<option value="2nd class">2nd class</option>
+											<option value="3rd class">3rd class</option>
+											<option value="4th class">4th class</option>
+											<option value="5th class">5th class</option>
+											<option value="6th class">6th class</option>
+											<option value="7th class">7th class</option>
+											<option value="8th class">8th class</option>
+											<option value="9th class">9th class</option>
+											<option value="SSC">SSC</option>
+										</select>
+									</div>
+								</div>
+								<div class="form-group">
+									<label class="col-sm-3 control-label">Exam Title </label>
+									<div class="col-sm-5">
+										<select name="examTitle" class="form-control"
+											required="required" >
+											<option value="">choose one</option>
+											<option value="FA1">FA1</option>
+											<option value="FA2">FA2</option>
+											<option value="FA3">FA3</option>
+											<option value="FA4">FA4</option>
+											<option value="Quarterly Exams">Quarterly Exams</option>
+											<option value="Half yearly Exams">Half yearly Exams</option>
+											<option value="Pre Final Exams">Pre Final Exams</option>
+											<option value="Final Exams">Final Exams</option>
+											<option value="Other">Other</option>
+										</select>
+									</div>
+								</div>
+								<div class="form-group">
+									<label class="col-sm-3 control-label">Subject </label>
+									<div class="col-sm-5">
+										<select name="subject" class="form-control"
+											required="required" >
+											<option value="">choose one</option>
+											<option value="telugu_1">Telugu</option>
+											<option value="hindi_1">Hindi</option>
+											<option value="english_1">English</option>
+											<option value="maths_1">Maths</option>
+											<option value="science_1">Physical Science</option>
+											<option value="science_2">Biology Science</option>
+											<option value="social_1">Social</option>
+											<option value="arts">General Knowledge</option>
+											<option value="science_1">EVS</option>
+											<option value="computers">Computers</option>
+											<option value="other">Other</option>
+										</select>
+									</div>
+								</div>
+								<div class="form-group">
+									<label class="col-xs-3 control-label">Exam Start Date</label>
+									<div class="col-xs-5 date">
+										<div class="input-group input-append date" id="uploadDatePicker">
+											<input type="text" class="form-control UDoe" name="uploadDate"
+												placeholder="DD/MM/YYYY" /> <span
+												class="input-group-addon add-on"><span
+												class="glyphicon glyphicon-calendar"></span></span>
+										</div>
+									</div>
+								</div>
 								<div class="form-group">
 									<label class="col-sm-3 control-label">Please upload File*</label>
 									<div class="col-sm-5">
-										<input type="file" class="form-control" id="uploadFile"
-											name="uploadFile" required="required" />
+										<input type="file" class="form-control" id="uploadFile" name="uploadFile" accept="application/vnd.ms-excel,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"/>
 									</div>
 								</div>
 								
 								<div class="form-group">
 									<div class="col-sm-9 col-sm-offset-3">
-										<input type="submit" class="btn btn-primary" name="submit"
-										value="upload File"	/>
+										<button type="submit" class="btn btn-primary" value="submit">Submit</button>
 											<button type="reset" class="btn btn-primary" name="reset"
-											value="RESET">Clear</button>
+											value="Reset">Clear</button>
 									</div>
 								</div>
 							</form>
+							
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-	
-	<!-- ******FOOTER****** -->
-
+	<!-- Footer and Modal
+    ==========================-->
 	<footer id="footer-sec" class="footer">
 		<div class="bottom-bar">
 			<div class="container">
@@ -145,24 +144,17 @@
 		</div>
 	</footer>
 
-
-	<!-- Javascript -->
-	<script type="text/javascript"
-		SRC="assets/plugins/jquery-1.10.2.min.js"></script>
-	<script type="text/javascript"
-		SRC="assets/plugins/jquery-migrate-1.2.1.min.js"></script>
-	<script type="text/javascript"
-		SRC="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
-	<script type="text/javascript"
-		SRC="assets/plugins/bootstrap-hover-dropdown.min.js"></script>
-	<script type="text/javascript" SRC="assets/plugins/back-to-top.js"></script>
-	<script type="text/javascript"
-		SRC="assets/plugins/jquery-placeholder/jquery.placeholder.js"></script>
-	<script type="text/javascript"
-		SRC="assets/plugins/pretty-photo/js/jquery.prettyPhoto.js"></script>
-	<script type="text/javascript"
-		SRC="assets/plugins/flexslider/jquery.flexslider-min.js"></script>
-	<script type="text/javascript" SRC="assets/js/main.js"></script>
+	<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+   <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+   <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>
+   <script src="resources/js/formValidation.js"></script>
+	<script src="resources/js/bootstrap.js"></script>
+	<script src="resources/js/dataTables/jquery.dataTables.js"></script>
+	<script src="resources/js/dataTables/dataTables.bootstrap.js"></script>
+	<script src="resources/js/bootstrap-datepicker.min.js"></script>
+	<script src="resources/js/framework/bootstrap.js"></script>
 	<script src="resources/js/schoolscript.js"></script>
+	
 </body>
 </html>
+

@@ -130,17 +130,20 @@ ExamResultsDao {
 			String Marks,String studentClass, String examTitle, String examDate) {
 		try {
 		Map<String, Object> paramsMap = new HashMap<String, Object>();
-		paramsMap.put("student_name", Name);
 		paramsMap.put("student_class", studentClass);
 		paramsMap.put("exam_title", examTitle);
-		paramsMap.put("exam_date", examDate);
-		paramsMap.put(subject, Marks);
+		paramsMap.put("roll_num", rollnum);
+		paramsMap.put("subject", subject);
+		paramsMap.put("marks", Marks);
 		ExamResults examResults = (ExamResults) template.queryForObject("getExamResult", paramsMap);	
 		if(examResults == null) {
-			this.createResult(rollnum, Name, studentClass, examTitle, examDate, 0, 0, 0, 0, 0, 0, 0, 0, 0,0,0, 0, 0, 0, 0, 0,"", 0);
+			int examId = this.createResult(rollnum, Name, studentClass, examTitle, examDate, 0, 0, 0, 0, 0, 0, 0, 0, 0,0,0, 0, 0, 0, 0, 0,"", 0);
+			paramsMap.put("exam_results_id", examId);
+		} else {
+			paramsMap.put("exam_results_id", examResults.getExamResultsId());
 		}
 		
-		int result = this.updateResults(paramsMap);
+		int result = template.update("updateResultsForSubject", paramsMap);
 		return result > 0 ? true : false;
 		} catch (Exception e) {
 				e.printStackTrace();

@@ -51,6 +51,8 @@ xsi:schemaLocation="http://www.springframework.org/schema/beans
      		<mvc:mapping path="/newsDynamic.do" />
      		<mvc:mapping path="/examResultsReg123.do" />
      		<mvc:mapping path="/examResultsReg4567.do" />
+     		<mvc:mapping path="uploadFile" />
+     		<mvc:mapping path="/uploadFileProcess.do" />
      		<bean class="com.shiva.util.SessionHandler" />
    		</mvc:interceptor>
 	</mvc:interceptors> 
