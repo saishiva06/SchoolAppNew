@@ -1,5 +1,6 @@
 var EXCEL_SUPPORTED_FORMATS = 'application/vnd.ms-excel,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet';
 var EXCEL_EXTENSIONS = 'xlsx,xls';
+var IMAGE_EXTENSIONS = 'jpg';
 
 
 $(document).ready(function() {
@@ -683,7 +684,7 @@ $('#uploadDatePicker')
                }     
         }
     });
-    $('#newsDynamic').formValidation({
+    $('#addNews').formValidation({
         message: 'This value is not valid',
         icon: {
            // valid: 'glyphicon glyphicon-ok',
@@ -691,28 +692,28 @@ $('#uploadDatePicker')
             validating: 'glyphicon glyphicon-refresh'
         },
         fields: {
-        	 expenseBy: {
+        	news_headline: {
                 row: '.col-sm-5',
                 validators: {
                     notEmpty: {
-                        message: 'The Amount By is required'
+                        message: 'The News Head Line is required'
                     }
                 }
             },
-            expenseCost: {
+            news_desc: {
                 row: '.col-sm-5',
                 validators: {
                     notEmpty: {
-                        message: 'The Amount is required'
+                        message: 'The News Description required'
                     }
                 }
             },
             
-            expenseDate: {
-                selector: '.eDoa',
+            newsDate: {
+                selector: '.nDoe',
                    validators: {
                        notEmpty: {
-                           message: 'The  Date Of Expense  is required'
+                           message: 'The  Date Of News  is required'
                        },
                        date: {
                            format: 'DD/MM/YYYY',
@@ -777,6 +778,47 @@ $('#uploadDatePicker')
         }
     });
 
+    $('#uploadimage').formValidation({
+        message: 'This value is not valid',
+        icon: {
+           // valid: 'glyphicon glyphicon-ok',
+            invalid: 'glyphicon glyphicon-remove',
+            validating: 'glyphicon glyphicon-refresh'
+        },
+        fields: {
+        	uploadFile: {
+                validators: {
+                    notEmpty: {
+                        message: 'The file is required.'
+                    },
+                    file: {
+                        extension: IMAGE_EXTENSIONS,
+                        message: 'Please choose a image file'
+                    }
+                }
+            },
+            imgviewNum: {
+                row: '.col-sm-5',
+                validators: {
+                    notEmpty: {
+                        message: 'The Number is required'
+                    }
+                }
+            },
+            imagePage: {
+                row: '.col-sm-5',
+                validators: {
+                    notEmpty: {
+                        message: 'The page is required'
+                    }
+                }
+            }
+            
+
+        }
+    });
+
+    
 });
 
 

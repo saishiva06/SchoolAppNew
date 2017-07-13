@@ -36,19 +36,7 @@
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-<script src="https://maps.googleapis.com/maps/api/js"></script>
-<script>
-	function initialize() {
-		var mapCanvas = document.getElementById('map123');
-		var mapOptions = {
-			center : new google.maps.LatLng(17.227546, 80.150414),
-			zoom : 8,
-			mapTypeId : google.maps.MapTypeId.ROADMAP
-		}
-		var map = new google.maps.Map(mapCanvas, mapOptions)
-	}
-	google.maps.event.addDomListener(window, 'load', initialize);
-</script>
+
 </head>
 
 <body>
@@ -219,7 +207,7 @@
 					<div class="page-row">
 						<article class="map-section">
 							<h3 class="title">How to find us</h3>
-							<div id="map123"></div>
+							<div id="map"></div>
 							<!--//map-->
 						</article>
 						<!--//map-->
@@ -267,7 +255,29 @@
 	<script type="text/javascript"
 		SRC="assets/plugins/flexslider/jquery.flexslider-min.js"></script>
 	<script type="text/javascript" SRC="assets/js/main.js"></script>
-
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBIsBkbN_4n_AJbXUz2lTqED4hxrYldwYc&callback=initMap"
+  type="text/javascript"></script>
+<script type = "text/javascript">
+	 function initMap() {
+		var mapCanvas = document.getElementById('map');
+		var mapOptions = {
+			center : new google.maps.LatLng(17.2257368, 80.1503438),
+			zoom : 17,
+			mapTypeId : google.maps.MapTypeId.ROADMAP
+		}
+		var map = new google.maps.Map(mapCanvas, mapOptions)
+	}
+	google.maps.event.addDomListener(window, 'load', initMap); 
+	
+	/* var map;
+      function initMap() {
+        map = new google.maps.Map(document.getElementById('map'), {
+          center: {lat: 17.2273946, lng: 80.1492624},
+          zoom: 45
+        });
+      } */
+      
+</script>
 
 
 </body>

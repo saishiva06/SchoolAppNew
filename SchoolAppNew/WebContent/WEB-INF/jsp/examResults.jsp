@@ -35,9 +35,12 @@
 	function deleteExamResults(examResultsId) {
 		var f = document.form2;
 		f.examResultsId.value = examResultsId;
+		var x = confirm("Are you sure you want to delete?");
+		if(x) {
 		f.method = "post";
 		f.action = 'deleteExamResults.do';
 		f.submit();
+		}
 	}
 	
 	function sendResultsSms(examResultsId) {

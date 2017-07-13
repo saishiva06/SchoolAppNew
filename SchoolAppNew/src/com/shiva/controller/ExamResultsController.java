@@ -327,14 +327,17 @@ public class ExamResultsController {
 	public ModelAndView uploadFile(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String fileType = "";
 		boolean isMultipart = ServletFileUpload.isMultipartContent(request);
+		ModelAndView mav = new ModelAndView();
+		mav.setViewName("uploadFile");
 		if (!isMultipart) {
-			return new ModelAndView("uploadFile");
+			mav.addObject("Msg", "Some Thing Went Wrong Please Try Again");
+			return mav;
 		}
 		DiskFileItemFactory factory = new DiskFileItemFactory();
 		DateFormat dateFormat = new SimpleDateFormat("yyyyMMdd");
 		Date today = new Date();
 		String filePath = "";
-        String uploadFolder = "D:/backup";
+		String uploadFolder = System.getProperty("user.home");
         String studentClass = request.getParameter("studentClass");
 		String examTitle = request.getParameter("examTitle");
 		String subject = request.getParameter("subject");
@@ -376,9 +379,11 @@ public class ExamResultsController {
 			ExcelReader.insertMarks(fileType,filePath,subject,studentClass, examTitle, examDate);
 			uploadedFile.delete();	 
 		}  catch (Exception e) {
-			
+			mav.addObject("Msg", "Some Thing Went Wrong Please Try Again");
+			return mav;
 		}
-		return new ModelAndView("uploadFile");
+	    mav.addObject("Msg", "SuccessFully uploaded Results");
+		return mav;
 	}
 
 }

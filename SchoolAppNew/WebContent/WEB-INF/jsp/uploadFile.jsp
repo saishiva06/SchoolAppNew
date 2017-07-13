@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	session="true" pageEncoding="ISO-8859-1"%>
-
+<%
+	String successMsg = (String) request.getAttribute("Msg");
+%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -28,6 +30,9 @@
 			<b> <a href="feeDetails.do" class="btn btn-default">Back</a></b>
 		</p>
 	</div>
+	<% if (successMsg != null && successMsg.length()!=0) { %>
+	<h1><span style="margin:auto; display:table; color: red"><%= successMsg %></span></h1>
+	<%} %>
 	<div class="container">
 		<div class="panel panel-primary">
 			<div class="panel-heading">Fee New Registration</div>

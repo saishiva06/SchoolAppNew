@@ -34,9 +34,12 @@
 	function deleteStudent(sno) {
 		var f = document.form2;
 		f.sno.value = sno;
+		var x = confirm("Are you sure you want to delete?");
+		if(x) {
 		f.method = "post";
 		f.action = 'deleteStudent.do';
 		f.submit();
+		}
 	}
 	function viewStudent(sno) {
 		var f = document.form2;
@@ -60,12 +63,13 @@
 					<div class="container">
 						<div class="row">
 							<div class="col-md-12">
-								<form name="SchoolInfo" action="addStudent.do" id="add-student"
+							 <form name="SchoolInfo" action="addStudent.do" id="add-student"
 									method="post">
 									<p>
 										<a href="studentRegistration.do" class="btn btn-primary">Add
 											Student</a>
 									</p>
+									
 									<div class="table-responsive">
 										<table class="table table-striped table-bordered table-hover"
 											id="dataTables-example">
@@ -121,6 +125,7 @@
 										</table>
 									</div>
 								</form>
+								</div>
 								<form name="form2" method="post" id="form2">
 									<input type="hidden" name="sno" value="">
 								</form>
@@ -153,6 +158,5 @@
 			$('#dataTables-example').dataTable();
 		});
 	</script>
-
 </body>
 </html>

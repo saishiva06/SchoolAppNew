@@ -1,5 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	session="true" pageEncoding="ISO-8859-1"%>
+<%
+	String successMsg = (String) request.getAttribute("Msg");
+%>
+
 
 <!DOCTYPE html>
 <html>
@@ -24,9 +28,12 @@
 	<jsp:include page="header.jsp" />
 	<div class="container">
 		<p>
-			<b> <a href="budgetDashboard.do" class="btn btn-default">Back</a></b>
+			<b> <a href="settings.do" class="btn btn-default">Back</a></b>
 		</p>
 	</div>
+	<% if (successMsg != null && successMsg.length()!=0) { %>
+	<h1><span style="margin:auto; display:table; color: red"><%= successMsg %></span></h1>
+	<%} %>
 	<div class="container">
 		<div class="panel panel-primary">
 			<div class="panel-heading">Add News</div>
@@ -36,7 +43,7 @@
 						<div class="col-md-8">
 
 							<form action="addNews.do" id="addNews" method="post"
-								name="myform" class="form-horizontal">
+								 class="form-horizontal">
 								
 								
 								<div class="form-group">
@@ -68,7 +75,7 @@
 									<label class="col-xs-3 control-label">Date</label>
 									<div class="col-xs-5 date">
 										<div class="input-group input-append date" id="NewsDatePicker">
-											<input type="text" class="form-control eDoe" name="newsDate"
+											<input type="text" class="form-control nDoe" name="newsDate"
 												placeholder="01/01/2000" /> <span
 												class="input-group-addon add-on"><span
 												class="glyphicon glyphicon-calendar"></span></span>
@@ -104,14 +111,17 @@
 		</div>
 	</footer>
 
-	<script src="resources/js/jquery.js"></script>
+	<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+   <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+   <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>
+   <script src="resources/js/formValidation.js"></script>
 	<script src="resources/js/bootstrap.js"></script>
 	<script src="resources/js/dataTables/jquery.dataTables.js"></script>
 	<script src="resources/js/dataTables/dataTables.bootstrap.js"></script>
 	<script src="resources/js/bootstrap-datepicker.min.js"></script>
-	<script src="resources/js/formValidation.js"></script>
 	<script src="resources/js/framework/bootstrap.js"></script>
 	<script src="resources/js/schoolscript.js"></script>
+	
 	
 </body>
 </html>

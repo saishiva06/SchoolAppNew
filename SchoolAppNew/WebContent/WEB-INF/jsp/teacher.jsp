@@ -33,9 +33,12 @@
 	function deleteTeacher(teacherId) {
 		var f = document.form2;
 		f.teacher_id.value = teacherId;
+		var x = confirm("Are you sure you want to delete?");
+		if(x) {
 		f.method = "post";
 		f.action = 'deleteTeacher.do';
 		f.submit();
+		}
 	}
 </script>
 </head>

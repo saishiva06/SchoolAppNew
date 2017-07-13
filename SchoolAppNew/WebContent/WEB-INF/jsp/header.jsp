@@ -110,6 +110,7 @@ $(function (){
 							<ul class="dropdown-menu">
 								<li><a href="settings.do" class="btn btn-primary">Change Password</a></li>
 								<li><a href="newsDynamic.do" class="btn btn-primary">Add News</a></li>
+								<li><a href="addImages.do" class="btn btn-primary">Upload Images</a></li>
 							    </ul></li>
 							    </ul>
 <!--//nav-->

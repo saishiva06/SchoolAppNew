@@ -31,14 +31,15 @@
 	}
 
 	function deleteFeeDetails(recieptNo,feePaid) {
-	window.alert(recieptNo);
-	window.alert(feePaid);
 		var f = document.form2;
 		f.recieptNo.value = recieptNo;
 		f.feePaid.value = feePaid;
+		var x = confirm("Are you sure you want to delete?");
+		if(x) {
 		f.method = "post";
 		f.action = 'deleteFeeDetails.do';
 		f.submit();
+		}
 	}
 	
 	function viewFeeDetails(recieptNo) {

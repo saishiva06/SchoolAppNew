@@ -33,9 +33,12 @@
 	    var f = document.form3;
 		f.budgetId.value = budgetId;
 		f.amount.value = amount;
+		var x = confirm("Are you sure you want to delete?");
+		if(x) {
 		f.method = "post";
 		f.action = 'deleteBudgetDetails.do';
 		f.submit();
+		}
 	}
 	function viewBudgetDetails(budgetId) {
 	    var f = document.form2;

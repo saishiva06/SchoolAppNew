@@ -1,13 +1,19 @@
 package com.shiva.controller;
 
+import java.io.File;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Iterator;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
+import org.apache.commons.fileupload.FileItem;
+import org.apache.commons.fileupload.disk.DiskFileItemFactory;
+import org.apache.commons.fileupload.servlet.ServletFileUpload;
+import org.apache.commons.io.FilenameUtils;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
@@ -125,5 +131,65 @@ public class SettingsController {
 		}
 		return mav;
 	}
+	
+	@RequestMapping("/addImages")
+	public ModelAndView loadImagesUploadDash(HttpServletRequest request) throws Exception {
+		System.out.println(request.getSession().getServletContext().getRealPath("assets"));
+		return new ModelAndView("addImages");
+	}
+	
+	@SuppressWarnings("unchecked")
+	@RequestMapping("/uploadimage")
+	public ModelAndView saveImages(HttpServletRequest request) throws Exception {
+		boolean isMultipart = ServletFileUpload.isMultipartContent(request);
+		ModelAndView mav = new ModelAndView();
+		mav.setViewName("addImages");
+		if (!isMultipart) {
+	    	mav.addObject("Msg", "Some Thing Went Wrong Please Try Again");
+			return mav;
+		}
+		DiskFileItemFactory factory = new DiskFileItemFactory();
+		String filePath = "";
+        String imagePage = request.getParameter("imgviewNum");
+		String imgviewNum = request.getParameter("imgviewNum");
+		ServletFileUpload upload = new ServletFileUpload(factory);
+	    try {
+			File uploadedFile =  null;
+			List<FileItem> items = upload.parseRequest(request);
+			Iterator<FileItem> iterator = items.iterator();
+			while (iterator.hasNext()) {
+				FileItem item = (FileItem) iterator.next();
+				if (item.isFormField()) {
+					String fieldname = item.getFieldName();
+				     String fieldvalue = item.getString();
+				    if (fieldname.equals("imagePage")) {
+				    	imagePage = fieldvalue;
+				        } else if (fieldname.equals("imgviewNum")) {
+				        	imgviewNum = fieldvalue;
+				        } 
+				}
+			}
+			String appPath = request.getSession().getServletContext().getRealPath("assets") + "/images/" +imagePage;
+			Iterator<FileItem> iterator1 = items.iterator();
+			
+			while (iterator1.hasNext()) {
+				FileItem item = (FileItem) iterator1.next();
+				if (!item.isFormField()) {
+					String Name = new File(item.getName()).getName();
+					String ext = FilenameUtils.getExtension(Name);
+					String fileName = imagePage + "_" + imgviewNum  + "." + ext;
+					filePath = appPath + File.separator + fileName;
+					uploadedFile = new File(filePath);
+					item.write(uploadedFile);
+				} 
+			}
+		}  catch (Exception e) {
+			mav.addObject("Msg", "Some Thing Went Wrong Please Try Again");
+			return mav;
+		}
+	    mav.addObject("Msg", "SuccessFully uploaded image");
+	    return mav;
+	}
+	
 }
 
